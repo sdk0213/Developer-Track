@@ -165,9 +165,10 @@ Permission for wireless scanning
 ---
 ---
 * (Q이상)사용자위치 파악을 하기위해 기존에 사용하던 ACCESS_COARSE_LOCATION 말고 추가적으로 ACCESS_FINE_LOCATION을 권한을 필요로함
+
 > ACCESS_BACKGROUND_LOCATION
-> > ACCESS_COARSE_LOCATION(approximate location)
-> > ACCESS_FINE_LOCATION(precise lcoation)
+>	> * ACCESS_COARSE_LOCATION(approximate location)
+>	> * ACCESS_FINE_LOCATION(precise lcoation)
 
 * 위치허용을 할때 다음과 같이 세가지 옵션으로 바뀐다.
 	* 항상 허용
