@@ -53,9 +53,9 @@
 =========================
 ###### 출처 : https://brunch.co.kr/magazine/androidq
 
-> Scoped storage = 개별 앱은 공용 폴더에 접근하거나 파일을 추가할 수 없다.
----
-> >(Q이상, opt-in인경우 => 체크박스? 잘 이해가 안감)
+> Scoped storage 개별 앱은 공용 폴더에 접근하거나 파일을 추가할 수 없다.(Q이상, opt-in인경우)
+> > * gg
+> > > * aa
 
 +내부 저장소
 ㅡㅡㅡㅡㅡㅡ
