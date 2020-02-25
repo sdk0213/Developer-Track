@@ -1,6 +1,6 @@
 안드로이드 10(Q) 변경점
 ===================================
-###### 출처 : https://developer.android.com/about/versions/10/features?hl=ko#peer2peer
+###### 출처 : [안드로이드 공식 ](https://developer.android.com/about/versions/10/features?hl=ko#peer2peer)
 
 ---
 개인정보 보호 변경점
@@ -51,9 +51,10 @@
 
 안드로이드 Q(10) 대응 방법
 =========================
-###### 출처 : https://brunch.co.kr/magazine/androidq
+###### 출처 : [Chansuk Yang](https://brunch.co.kr/magazine/androidq)
 
 Scoped storage
+---
 ---
 * 개별 앱은 공용 폴더에 접근하거나 파일을 추가할 수 없다.(Q이상, opt-in인경우)
 * 내부메모리를 사진 및 동영상, 음악, 다운로드(공용공간) 으로 바꾸고 오너쉽(누가 생성하였고 소유하는지) 이 명확히 제공
@@ -100,6 +101,99 @@ Scoped storage
 2. Uri를 통해 공용저장소나 샌드박스 공간에 접근, 다른앱에 파일 전달하는 경우 
 3. 공용저장소(MeidaStore)에 접근할때도 Uri를 사용
 4. 앱이 삭제 될경우 샌드 박스 공간도 같이 삭제되며 공용저장소를 이용할경우 후에 삭제시 팝업창이 표시된다.
+
+New foreground-only permission
+---
+---
+* foreground = 서비스의 동작을 사용자가 명시적으로 인지하는 대신 메모리 부족시 시스템에 의한 종료대상에서 제외
+* 상태바에 진행중(on-going)이라는 알림이 표시
+
+Background activity starts
+---
+---
+* 백,포그라운드에서 새로운 액티비티 시작불가, 전화수신표시와 같은것은 FullScreenIntent을 활용
+* 그동안은 FLAG_ACTIVITY_NEW_TASK 플래그를 사용하여서 백그라운드에서도 엑티비티를 시작할수 있었음
+	* 하지만 이때문에 사용자가 원하지 않음에도 갑자기 광고 화면을 표시하는경우가 있어서 불편했었음
+* 그래서 다음과 같은 예외상황말고 액티비티를 시작하는 것이 금지되었음
+	* 포그라운드 앱이 액티비티 실행을 위해 PendingIntent를 백그라운드앱에 보내는 경우 
+	* PendingIntent를 통해 액티비티를 시작하는 경우
+		* PendingIntent -> 다른 어플리케이션의 권한을 허가하여 가지고 있는 Intent를 마치 본인 앱의 프로세스에서 실행하는 것처럼 사용하게 하는것
+	* SECRET_CODE_ACTION 으로 인텐트를 보내는 경우
+
+1. AlarmManager, JobScheduler > 광고SDK에서 하는 방식
+2. 특정 FCM 메시지(Firebase을 사용한 FCM메시지 알림을 보내는것)를 받아 엑티비티 실행 불가 
+3. 특정 시스템 이벤트(브로드캐스트 인텐트)를 받아 엑티비티 시작 할 수 없습니다.
+
+* 그렇기 때문에 공식문서에서는 알림(Notification)으로 사용하라고 권유
+	* Head-up 알림, 알림 채널 설정, DND(방해금지모드)를 설정한경우 엑티비티 실행안됨
+* FullScreen인텐트를 사용하려면 새로 추가된 USE_FULL_SCREEN_INTENT 권한이 필요
+
+* 보안 모듈 호환성 - 안드로이드 플랫폼이 업데이트될 때마다 자주 일어나는 현상
+* 비SDK인터페이스사용제한 - 블랙리스트에 올라갈 API가 변경될수 있음
+
+Non-resettable hardware identifiers
+---
+---
+* 기기의 재설정할수 없는 식별자에 엑세스 불가합니다. 다른식별자를 사용하도록 해야함
+1. 수명이 긴 식별자의 경우 특정 사용자 행동을 추적할 수 있는 위험성이 생긴다.
+2. 그래서 DeviceId,mei,Meid,getSerial,SERIAL,getMacAddress => null or mac같은경우 02:00...00 만 반복 반환
+3. 또한 /proc/net 파일 시스템 접근 금지됨
+4. 따라서 다음 같은 식별자 사용을 권장함
+     * InstanceID말고 -> FirebaseInstanceID사용 == 앱 or 데이터 삭제 및 재설치
+     * 광고ID = 구글 플레이의 Android 광고 ID 사용 정책을 잘 준수해야함
+     * SSAID = 서명키가 동일한 앱은 동일한 식별자를 갖는다. 8.0미만은 사용 권장X, 수명이 긴 식별자 필요시 사용하며 
+     * imei,serial, etc
+
+* 접근 디바이스 수 제한하기 위해 고유 식별자 필요한경우) UX적 해결, SSAID 사용
+* 부정 사용이 의심되는 디바이스 / 사용자) 디바이스의 무결성을 검증할 수 있는 다른 수단 - SafetyNet Attestation API을 활용하고 추가적인 신호 사용 권장
+* 동일 회사에서 제공하는 서로 다른 앱 간의 프로모션이나 사용 트래킹을 위한) 무료앱,유료앱 동시에 설치될경우 유료앱결제 알림을 띄우지 않기위해 - SSAID사용
+
+1. READ_PRIVILEGED_PHONE_STATE 권한 사용
+	-> UICC(심카드)나 전화관련하여 서명된 앱을 사용 그러므로 통신사와 관련된 디바이스에서만 사용가능하다.
+2. Device Administration 
+	-> 안드로이드 엔터프라이즈 환경에서는 특정 정책을 해당 디바이스에 강제하는 Devie Policy Client앱이 필요 이러한앱을 Profile Owner 또는 Deivce Owner라고 하는데 이를 사용하면 기존처럼 IMEI의 고유 식별자를 사용할수 있다.
+3. DRM API
+	-> DRM 프레임 워크 (4.3이상)를 제공함. 4.3 미만은 사용불가
+	-> MediaDRM API를 사용하여서 Widevine ID를 사용할수있다.
+	-> 수명 긴 고유식별자인 SSAID는 초기화후에는 사라지지만 Widevine DRM 레벨 (L1,L2,L3)에서 L1을 할경우는 초기화후에도 유지된다.
+	-> 넷플릭스 등 주요 콘텐츠 앱들이 DRM L1 인증을 사용함
+
+	* 하지만 지원되는 디바이스의 제약 조건이 있고 각별한 주의가 필요한 식별자인 만큼 **일반적인 경우는 SSAID를 선택**하는것이 좋다
+
+
+Permission for wireless scanning
+---
+---
+* (Q이상)사용자위치 파악을 하기위해 기존에 사용하던 ACCESS_COARSE_LOCATION 말고 추가적으로 ACCESS_FINE_LOCATION을 권한을 필요로함
+> ACCESS_BACKGROUND_LOCATION
+> > ACCESS_COARSE_LOCATION(approximate location)
+> > ACCESS_FINE_LOCATION(precise lcoation)
+
+* 위치허용을 할때 다음과 같이 세가지 옵션으로 바뀐다.
+	* 항상 허용
+	* 앱 사용 중에 허용
+	* 거부
+
+### ACCESS_BACKGROUND_LOCATION 권한이 없는 경우 백그라운드 모드일때 다음과 같은 현상이 발생함
+1. FusedLocationProviderClient = 위치정보 가져올수 없음
+2. GeofencingClient = 추가 자체가 실패
+3. TelephonyManager API's = getCellLocation, getAllCellInfo => null 값 반환, PhoneStateListener의 onCellLocationChanged 기기위치 callback 호출 불가능
+4. WifiScan / Bluetooth Discovery API = startScan() / startDiscovery() = false 리턴
+
+### 그러므로 다음과 같이 어플리케이션을 바꿔야함
+1. 사용자가 앱을 사용하는 동안에만 위치 정보를 확인
+2. 포그라운드를 사용하여서 위치정보를 유지할수 있음 하지만 이는 남용이 될수있기 있음
+ -> 포그라운드 타입에 다음과 같이 명시
+	android:name = "MyNavigationService"
+	android:foregroundServiceType = "location" .... >
+
+3. 그래도 BACKGROUND를 사용하고 싶을경우
+ -> 권한이 필요한 이유를 설명하는 UX를 준비해야함
+
+### 이외 Location 관한 추가적인 사항
+1. 사진 내 위치 정보 제거 => ACCESS_MEDIA_LOCATION권한 요청
+2. 랜덤 MAC 주소 => 접속하는 공유기에 따라서 MAC주소 달라짐 => 주소기반 필터링 정상 동장함
+
 
 
 
