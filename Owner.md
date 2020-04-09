@@ -5,7 +5,7 @@ Device Owner(디바이스 소유자)
 + Device Owner
   + 기기관리자로 실행되는 어플리케이션
   + 이 '기기관리자'로 실행이 되는 어플리케이션은 DevicePolicyManager 클래스를 사용할수있다.
-  + DevicePolicyManager 클래스의 클라이언트(?)는 장치관리자로 등록되어야 사용할수있고 장치관리자는 Device Owner를 사용하여야 등록 할 수 있다. ㄷ
+  + DevicePolicyManager 클래스의 클라이언트(?)는 장치관리자로 등록되어야 사용할수있고 장치관리자는 Device Owner를 사용하여야 등록 할 수 있다.
   + Device or Profile Owner로 제한되지 않는 한 모든 메소드를 사용할수 있다.**(무슨말인지 모르겠다.)**
   + 어떤 어플리케이션도 Device Owner가 될수있지만 반드시 Device Owner로 될수있도록 하여야한다.
     + Provisioning 이란 ?
@@ -23,12 +23,26 @@ Device Owner(디바이스 소유자)
       + 하지만 Device Owner Application > Profile Owner Application 이다.
       + Device Owner는 특별한 권한이있는 장치 관리자로 생각하면 된다.
       + Device Administrator -> Android 2.2 에서도입되었다.
+    + 장치 소유자(Device Owner) 와 프로파일 소유자(Profile Owner) 차이점
+      + Profile Owner는 업무용 데이터와 개인용 데이터가 모두있는 장치에서 사용이 된다.
+      + 하지만 Device Owner는 Profile Owner보다 다음과 같은 기능들을 더 수행할수 있다.
+        + Wi-Fi 및 Bluetooth를 비활성화
+        + Device Data 삭제
+        + Kiosk(키오스크) 응용 프로그램을 구성 할 수 있다.
+      + EMM 에이전트 (DPC) 는 Device,Profile Owner 모두 작동하도록 작성 될 수 있다.      
     + DPC(Device Policy Controller)란?
       + EMM Agent라고도 불리며 장치의 보안 및 사용제한을 적용하는 EMM 공급자의 응용 프로그램이다.
-      + 
-    + Provisioning 방법
-      + 기기가 
-+ DevicePolicyManager로 통제할수 있는 영역
+    + Install Device Owner Using NFC
+      + 1. do a factory reset of android 5.0 device ( it will be in the "unprovisioned" state )
+      + 2. do not touch the screen!
+      + 3. re-built App"[Set Device Owner](http://sdgsystems.net/flong/SetDeviceOwner.apk)"
+        + c.2 Compile it from [Source code](http://sdgsystems.net/flong/SetDeviceOwner.zip) on a **different device that Supports NFC**
+        + c.3 second device **should be running android 4.1.2 or above**
+      + 4. run the Set Device Owner app
+      + 5. click that "Compute Checksum" button
+      + 6. .... 그 다음의 과정은 다음 사이트 참고
+      + 7. 참고 사이트 : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-3-android-lollipop-and-marshmallow>
+      + DevicePolicyManager로 통제할수 있는 영역
   + 하드웨어의 기능 비활성화
   + 잠금화면 
   + 알림
