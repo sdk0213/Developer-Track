@@ -32,16 +32,18 @@ Device Owner(디바이스 소유자)
       + EMM 에이전트 (DPC) 는 Device,Profile Owner 모두 작동하도록 작성 될 수 있다.      
     + DPC(Device Policy Controller)란?
       + EMM Agent라고도 불리며 장치의 보안 및 사용제한을 적용하는 EMM 공급자의 응용 프로그램이다.
-    + Install Device Owner Using NFC
+    + Install Device Owner Using NFC(device Provisioning)
+      + 0. They call kiosk mode as “screen pinning” or “task locking”(화면 고정, 작업잠금)
       + 1. do a factory reset of android 5.0 device ( it will be in the "unprovisioned" state )
       + 2. do not touch the screen!
       + 3. re-built App"[Set Device Owner](http://sdgsystems.net/flong/SetDeviceOwner.apk)"
-        + c.2 Compile it from [Source code](http://sdgsystems.net/flong/SetDeviceOwner.zip) on a **different device that Supports NFC**
+        + c.2 Or Compile it from [Source code](http://sdgsystems.net/flong/SetDeviceOwner.zip) on a **different device that Supports NFC**
         + c.3 second device **should be running android 4.1.2 or above**
       + 4. run the Set Device Owner app
       + 5. click that "Compute Checksum" button
-      + 6. .... 그 다음의 과정은 다음 사이트 참고
-      + 7. 참고 사이트 : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-3-android-lollipop-and-marshmallow>
+      + 6. 그 다음의 과정은 다음 사이트 참고
+      + 7. 참고 사이트(3부) : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-3-android-lollipop-and-marshmallow>
+      + 8. 참고 사이트(4부) : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-4-a-better-provisioning-method-for-dpc-device-owner>
       + DevicePolicyManager로 통제할수 있는 영역
   + 하드웨어의 기능 비활성화
   + 잠금화면 
