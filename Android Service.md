@@ -35,4 +35,4 @@ BindService - [출처](http://i5on9i.blogspot.com/2013/01/service-bind-local-ser
 BoundService
 ---
 + 자신에게 Bind 를 할 수 있게 해주는 Service이다.
-+ 바운드 서비스
++ ... 바운드 서비스 계속 진행
