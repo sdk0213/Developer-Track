@@ -20,7 +20,7 @@ Parcelable
 ---
 + 표준 Androd SDK의 Interface
 + Reflection이 필요 없다.
-+ BoilerPlate가 발생한다 - [출처](https://aroundck.tistory.com/2082]
++ BoilerPlate가 발생한다 - [출처](https://aroundck.tistory.com/2082)
   + BoilerPlater는 코딩에서 꼭 필요한 간단한 기능인데, 반복적인 코드를 필요로 하며 이것이 중복되어 많은 양의 코드를 양산하는것을 의미
   + 예를들면 get/set func 로서 꼭필요하지만 반복적이고 그래서 계속 양산되는 코드와 같은 것이다.
   + kotlin 언어를 통해 많이 사라짐
