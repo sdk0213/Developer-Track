@@ -48,4 +48,7 @@
   + javah
     + Native Method를 C header file과 C SourceFile 로 구현해주는 기능을 제공
   
-  
++ 자세한 설치, 사용
+	+ https://re-build.tistory.com/7
+	+ https://gamdekong.tistory.com/102
+	+ 
