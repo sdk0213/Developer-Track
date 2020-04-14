@@ -54,22 +54,33 @@
 	+ https://duzi077.tistory.com/134
 	+ https://question0.tistory.com/39
 	
-+ c(source) , h(header) file로 .so 파일 만들기
-	+ https://question0.tistory.com/39
-	+ 위에 있는 블로그대로 따라하되 다음 순서대로 한다.
-	+ 파일설정은 다음처럼 한다.
-	+ ![ex_screenshot](./img/NdkExternaltools.png)
-	+ 무언가 안된다면 build - Rebuild Project를 실행한다.
-	+ 큰 흐름은 다음과 같다.
-		+ MainActivity 에서 LoadLibrary 를 하고 javah를 하면은 HeaderFile이 생성된다.
-		+ MainActivity 에서 Native를 사용한다면 javah를 사용하여서 다시 HeaderFile을 만들어야한다.
-		+ javah를 사용하여도 HedaerFile이 변경이 되지 않는다면 build - Rebuild Project를 수행하고 다시 하여야한다.
-		+ MainActivity 에서 사용하려는 함수는 헤더파일에 명시되어야 하며 헤더파일에 명시된 함수는 .cpp 에 존재하여야한다.
-		+ .cpp 에 함수명은 다음형식으로 되어있다.
-			+ Java_패키지명1_패키지명2_class명_메소드명 ( ex :  Java_com_example_ndkexample_MainActivity_helloNDK )
-		+ android.mk , application.mk 를 생성한다. ( .cpp 파일이름 변경 )
-		+ .cpp 파일을 만든다.
-		+ MainActivity 에서 우클릭 Link c++ 클릭
-			+ 1. ndklib-build 선택 
-			+ 2. andorid.mk 파일 선택(위에서 생성한)
-		+ MainActivity 에서 우클릭 NDK -> ndklib-build 하면 .so가 생성된다.
+c(source) , h(header) file로 .so 파일 만들기
+---
++ https://question0.tistory.com/39
++ 위에 있는 블로그대로 따라하되 다음 순서대로 한다.
++ 파일설정은 다음처럼 한다.
++ ![ex_screenshot](./img/NdkExternaltools.png)
++ 무언가 안된다면 build - Rebuild Project를 실행한다.
++ 큰 흐름은 다음과 같다.
+	+ MainActivity 에서 LoadLibrary 를 하고 javah를 하면은 HeaderFile이 생성된다.
+	+ MainActivity 에서 Native를 사용한다면 javah를 사용하여서 다시 HeaderFile을 만들어야한다.
+	+ javah를 사용하여도 HedaerFile이 변경이 되지 않는다면 build - Rebuild Project를 수행하고 다시 하여야한다.
+	+ MainActivity 에서 사용하려는 함수는 헤더파일에 명시되어야 하며 헤더파일에 명시된 함수는 .cpp 에 존재하여야한다.
+	+ .cpp 에 함수명은 다음형식으로 되어있다.
+		+ Java_패키지명1_패키지명2_class명_메소드명 ( ex :  Java_com_example_ndkexample_MainActivity_helloNDK )
+	+ android.mk , application.mk 를 생성한다. ( .cpp 파일이름 변경 )
+	+ .cpp 파일을 만든다.
+	+ MainActivity 에서 우클릭 Link c++ 클릭
+		+ 1. ndklib-build 선택 
+		+ 2. andorid.mk 파일 선택(위에서 생성한)
+	+ MainActivity 에서 우클릭 NDK -> ndklib-build 하면 .so가 생성된다.
+
+.so 파일을 android 에 사용하기
+---
++ 새로운 프로젝트를 생성한다.
+	+ 새로운 프로젝트의 package명은 .so 파일을 만들었을당시 .cpp 에 들어있는 함수가 패키지명과 동일해야한다.
+	+ **그러므로 .so를 만든 프로젝트와 동일한 package명을 넣어야한다 ( 프로젝트 이름 말하는거아님 )**
+	+ 위와 똑같은 MainActivity와 똑같은 xml을 가지고 수행을 한다.
+	+ 다만 jniLibs ( 폴더명 반드시 jniLibs여야함 jni(X), lib(X), libs(X) 안됨 이유는 아직 모름)에 .so파일을 cpu폴더이름 전체적으로 집어넣는다.
+	+ 수행하면 돌아간다.
+	
