@@ -88,14 +88,19 @@ XmlPullParser 사용법 - [출처](https://recipes4dev.tistory.com/134)
     <OVER20>true</OVER20>
 </CONTACT>
 ```
-+ 코드 대충 개략 - [예제풀코드](https://recipes4dev.tistory.com/137?category=697793)
-  + parserFactorynewPullParser();
-  + parser.setInput(is, "UTF-8");
-  + while(eventType != XmlPullParser.End_DOCUMNET)
-    + if(..START_DOCUMNET)
-    + else if(XmlPullParser.START_TAG)
-    + else if(XmlPullParser.ENT_TEAG)
-    + else if(XmlPullParser.TEXT)
-    + 중간중간 에러처리
-  + 받아온값 반영
++ 코드 요약 - [예제풀코드](https://recipes4dev.tistory.com/137?category=697793)
+```java
+...
+parserFactorynewPullParser();
+..
+parser.setInput(is, "UTF-8");
+while(eventType != XmlPullParser.End_DOCUMNET)
+  if(..START_DOCUMNET) ...
+  else if(XmlPullParser.START_TAG) ...
+  else if(XmlPullParser.ENT_TEAG) ...
+  else if(XmlPullParser.TEXT) ...
+  중간중간 에러처리 ...
+...
+받아온값 반영
+```
   
