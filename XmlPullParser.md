@@ -42,11 +42,60 @@ Xml Parser - [출처](https://recipes4dev.tistory.com/134)
   |적합성|탐색이 빈번한곳, 구조가 자주 변경되는곳|구조가 간단하나 동일한 요소가 반복되거나 요소의 값이 중요한경우|
   + 
         
-+ XmlPullParser
+XmlPullParser
+---
   + http://www.xmlpull.org/ 에서 제공하는 구문 분석 기능을 정의하는 Interface이다.
   + Android에서 지원하는 Xml 파서로서 **SAX(Simple API for XML)** 방식으로 동작
   + **그리고 이를 사용할수있게 Android에서는 다음과 같은 두가지 함수를 제공하는데 둘중 하나만 사용하면된다.**
     + KXmlParser -> XmlPullParserFactory.newPullParser() 로 생성
-    ''' System.out.println("hello"); '''
-    + ExpatPullParser -> Xml.newPullParser() 로 생성
-    + 
+    + KXmlParser 사용하는 코드
+    ```Java
+      try {
+         XmlPullParserFactory parserFactory = XmlPullParserFactory.newInstance();
+         XmlPullParser parser = parserFactory.newPullParser() ;
+      } catch () {
+         ...
+      }
+    ```
+    + ExpatPullParser 사용하는 코드
+    ```Java
+      try {
+          XmlPullParser parser = Xml.newPullParser() ;
+      } catch () {
+          ...
+      }
+     ```
+    + 위의 초기화과정은 다르지만 결과적으로 얻는 Instance는 XmlPullParser 타입으로 참조가 가능하다. 그러므로 차이가 없다.
+    + xml 파일열기 - 직접적으로 xml을 여는 방법은 존재하지 않고 스트림으로 처리하도록 되어있음
+      ```java
+      FileInputStream fis = new FileInputStream("file.xml");
+      parser.setInput(fis, null);
+      ```
+    + next()함수는 Xml요소를 식별할때까지 지속
+ 
+ 
+XmlPullParser 사용법 - [출처](https://recipes4dev.tistory.com/134)
+---
+  
++ ![Alt text](https://t1.daumcdn.net/cfile/tistory/2723E03B594A18831A)
++ src/main/assets/contact.xml 에 다음과 같이 정의하였을때
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<CONTACT>
+    <NO>1</NO>
+    <NAME>ppotta</NAME>
+    <PHONE>010-8888-9999</PHONE>
+    <OVER20>true</OVER20>
+</CONTACT>
+```
++ 코드 대충 개략 - [예제풀코드](https://recipes4dev.tistory.com/137?category=697793)
+  + parserFactorynewPullParser();
+  + parser.setInput(is, "UTF-8");
+  + while(eventType != XmlPullParser.End_DOCUMNET)
+    + if(..START_DOCUMNET)
+    + else if(XmlPullParser.START_TAG)
+    + else if(XmlPullParser.ENT_TEAG)
+    + else if(XmlPullParser.TEXT)
+    + 중간중간 에러처리
+  + 받아온값 반영
+  
