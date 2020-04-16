@@ -19,8 +19,8 @@ Device Owner(디바이스 소유자)
       + NFC를 사용해서 Non-Provisioning Device 로 보내기
       + Device Owner가 설정되면 공장초기화, 루팅을 제외하고는 제거 불가능
     + 장치 소유자(Device Owner) 와 장치 관리자(Device Administrator)의 차이점
-      + Device Owner Application == Device Administrator, Profile Owner Application == Device Administrator
-      + 하지만 Device Owner Application > Profile Owner Application 이다.
+      + **Device Owner Application == Device Administrator, Profile Owner Application == Device Administrator
+      + **하지만 Device Owner Application > Profile Owner Application 이다.
       + Device Owner는 특별한 권한이있는 장치 관리자로 생각하면 된다.
       + Device Administrator -> Android 2.2 에서도입되었다.
     + 장치 소유자(Device Owner) 와 프로파일 소유자(Profile Owner) 차이점
@@ -30,7 +30,7 @@ Device Owner(디바이스 소유자)
         + Device Data 삭제
         + Kiosk(키오스크) 응용 프로그램을 구성 할 수 있다.
       + EMM 에이전트 (DPC) 는 Device,Profile Owner 모두 작동하도록 작성 될 수 있다.      
-    + DPC(Device Policy Controller)란?
+    + (Device Policy Controller)란?
       + EMM Agent라고도 불리며 장치의 보안 및 사용제한을 적용하는 EMM 공급자의 응용 프로그램이다.
     + Install Device Owner Using NFC(device Provisioning)
       + 0. They call kiosk mode as “screen pinning” or “task locking”(화면 고정, 작업잠금)
@@ -45,20 +45,36 @@ Device Owner(디바이스 소유자)
       + 7. 참고 사이트(3부) : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-3-android-lollipop-and-marshmallow>
       + 8. 참고 사이트(4부) : <https://www.sdgsystems.com/post/implementing-kiosk-mode-in-android-part-4-a-better-provisioning-method-for-dpc-device-owner>
       + DevicePolicyManager로 통제할수 있는 영역
-  + 하드웨어의 기능 비활성화
-  + 잠금화면 
-  + 알림
-  + 위젯
-  + 응용프로그램 Hiding
-  + 자격증명 비활성화
-  + 장치암호화 비활성화
-  + 비밀번호 정책 구성
-  + 사용자 계정 구성
-  + Network 매개변수
-  + CA 인증서
-  + VPN 정보 구성
-  + 외부 저장소의 장치
-  + Airplane, Gps, Bluetooth, Roaming
-  + 사용자 전환
-  + Device Owner 삭제
-+ 
+  + 다음과 같은 기능을 사용할수 있다.
+    + 하드웨어의 기능 비활성화
+    + 잠금화면 
+    + 알림
+    + 위젯
+    + 응용프로그램 Hiding
+    + 자격증명 비활성화
+    + 장치암호화 비활성화
+    + 비밀번호 정책 구성
+    + 사용자 계정 구성
+    + Network 매개변수
+    + CA 인증서
+    + VPN 정보 구성
+    + 외부 저장소의 장치
+    + Airplane, Gps, Bluetooth, Roaming
+    + 사용자 전환
+    + Device Owner 삭제
+    
+Profile Owner    
+===
+
++ ![Alt text](https://developer.android.com/images/work/dpc/profiles.svg)
++ Work Profile 사용해서 정책을 시행하는것
++ 개인/직장 영역이 분리된다.
+
+
+Device Administrator(디바이스 관리자)
+===
+
++ Device Administrator는 Device Owner와 Profile Owner로 불리기도 한다.
++ Device Administrator가 된다면 Device Administration API 를 사용할수 있다.
+  + Device administration API를 사용하면 각종 정책(비밀번호 설정, 카메라, 기기 잠금 등)을 시행할수있다.
+
