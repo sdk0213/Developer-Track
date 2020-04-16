@@ -5,6 +5,7 @@
 
 Service
 ---
+* 길지않은 작업을 할때 사용되며, 만약 오래걸리는 작업을 Service에서 실행된다면 스레드를 사용해야한다. 
 * UI 없이 실행이 된다.
 * startService() 로 시작한다.
 * 아무 스레드에서 생성되며 아무곳에서 실행 가능
@@ -13,6 +14,7 @@ Service
 
 IntentService
 ---
+* 오래걸리지만 메인스레드와 관련이 없는 작업을 할때 주로 이용한다. 메인스레드와 관련된 작업을 해야 한다면 Handler와 BroadCastIntent를 사용해야 한다.
 * Main Thread랑 상관없는 작업을 할 때 주로 이용
 * Intent로 실행되며 새로운 스레드에서 onhandleIntent()가 불린다.
 * 아무 스레드에서 생성되며 아무곳에서 실행 가능
