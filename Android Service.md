@@ -8,7 +8,7 @@ Service
 * UI 없이 실행이 된다.
 * startService() 로 시작한다.
 * 아무 스레드에서 생성되며 아무곳에서 실행 가능
-* Main Thread에 포함되는 백그라운드에서 동장
+* Main Thread에 포함되는 백그라운드에서 동작
 * 무거운 작업이면 Main Thread에 영향을 줄수 있음
 
 IntentService
