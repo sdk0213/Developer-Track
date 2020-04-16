@@ -1,9 +1,7 @@
 서비스
 ===
 
-[출처](https://fullstatck.tistory.com/23)
-
-Service
+Service - [출처](https://fullstatck.tistory.com/23)
 ---
 * 길지않은 작업을 할때 사용되며, 만약 오래걸리는 작업을 Service에서 실행된다면 스레드를 사용해야한다. 
 * UI 없이 실행이 된다.
