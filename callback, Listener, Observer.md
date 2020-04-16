@@ -3,9 +3,9 @@
 개요
 ---
 * mouse click이 발생했다고 하면, 이를 변화시키는건 back-end 단이고
- + middleware framework 쪽에서 객체의 mouse-click 관련 속성 값을 변화시키면
- + **observer**가 이를 보고 listener에게 통지하여
- + **listener**에 등록된 **callback**들을 호출하는 형식이 됩니다
+  + middleware framework 쪽에서 객체의 mouse-click 관련 속성 값을 변화시키면
+  + **observer**가 이를 보고 listener에게 통지하여
+  + **listener**에 등록된 **callback**들을 호출하는 형식이 됩니다
 
 * listener도 callback과 동작 원리는 같다.
   * callback이 어떤 작업이 종료되는 시점에 되호출( 호출한 쪽이 지정한 함수를 호출 ) 하는 것이라면,
