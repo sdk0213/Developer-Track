@@ -1,8 +1,7 @@
 FCM과 GCM
 ===
-출처 : <https://life-with-coding.tistory.com/28>
 
-FCM,GCM 개념
+FCM,GCM 개념 - [출처](https://life-with-coding.tistory.com/28)
 ---
   + 서버에서 클라이언트 애플리케이션으로 메시지(알림)을 안정적으로 보낼수 있는 교차 플랫폼 메시징 솔루션
     + GCM
