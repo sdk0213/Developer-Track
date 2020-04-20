@@ -119,3 +119,30 @@ RPC - [출처](https://androidyongyong.tistory.com/8)
 * 이럴때는 Binder FrameWork를 사용한다.
 * ![Alt text](https://t1.daumcdn.net/cfile/tistory/234B3D4E5799694A1E)
 
+
+Parcel - [출처](https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220299966104&proxyReferer=https:%2F%2Fwww.google.com%2F)
+---
+* IPC 전용 데이터로 사용하기 위해 만들어진 클래스
+  * 프로세스간 데이터 전달에 특화되어 속도가 매우 빠르다.
+* Parcel은 다음과 같은 함수들이 제공된다.
+  * 객체를 반환
+    * public static Parcel obtain()
+  * 직렬화 객체 쓰기
+    * public final void writeInt(int val)
+    * public final void writeLong(long val)
+    * public final void wrtieString(String val)
+    * public final void writeSerializable(Serializable s)
+  * 직렬화 객체 읽기
+    * public final int readInt()
+    * public final long readLong()
+    * public final String readString()
+    * public final Serializable readSerializable()
+* 그리고 Parcelable 객체를 통해Parcle 데이터를 읽고 쓰는 함수들을 구현할수 있게한다.
+* 하지만 이 방식은 Parcelable을 상속받아 구현되어서 다른앱들에서도 사용할수있도록 Parcelable 인터페이스를 배포해야한다.
+* **이는 상당히 불편하다.** 그리고 여기서 Bundle이라는 객체가 나온다.
+
+Bundle - [출처](https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220299966104&proxyReferer=https:%2F%2Fwww.google.com%2F)
+---
+* IPC을 위한 직렬화 객체이다.
+* Android Sdk에 포함되어 Parcelable을 상속받아 구현되었기 때문에 배포할필요가 없다.
+* **Parcel과 다르게 읽고 쓰는 순서를 일치시킬 필요가 없다.**
