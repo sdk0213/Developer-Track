@@ -139,6 +139,7 @@ Parcel - [출처](https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=22
     * public final Serializable readSerializable()
 * 그리고 Parcelable 객체를 통해Parcle 데이터를 읽고 쓰는 함수들을 구현할수 있게한다.
 * 하지만 이 방식은 Parcelable을 상속받아 구현되어서 다른앱들에서도 사용할수있도록 Parcelable 인터페이스를 배포해야한다.
+* 그리고 읽고 쓰는데 순서가 필요하다.
 * **이는 상당히 불편하다.** 그리고 여기서 Bundle이라는 객체가 나온다.
 
 Bundle - [출처](https://m.blog.naver.com/PostView.nhn?blogId=horajjan&logNo=220299966104&proxyReferer=https:%2F%2Fwww.google.com%2F)
