@@ -1,4 +1,4 @@
-Content Provider/Resolver
+Content Provider, Resolver, UriMatcher, withAppendedId, notifychanged
 ===
 
 Content Provdier - [출처](https://blog.naver.com/PostView.nhn?blogId=qbxlvnf11&logNo=221420601185&redirect=Dlog&widgetTypeCall=true&directAccess=false), [출처2](https://galid1.tistory.com/28), [출처](https://gakari.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-Content-Provider-%EC%BD%98%ED%85%90%ED%8A%B8-%ED%94%84%EB%A1%9C%EB%B0%94%EC%9D%B4%EB%8D%94)
