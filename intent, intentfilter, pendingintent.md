@@ -43,6 +43,20 @@ PendingIntent - [출처](https://parkho79.tistory.com/38)
   * 사용자가 AppWidget 으로 작업을 수행할 때 인텐트가 실행되도록 선언(홈 스크린이 인텐트를 실행).
   * 향후 지정된 시간에 인텐트가 실행되도록 선언(Android 시스템의 AlarmManager가 Intent를 실행).
   * ![](https://t1.daumcdn.net/cfile/tistory/99F0E1445C89A7BC31)
+* 사용법 - [출처](https://techlog.gurucat.net/80)
+ * ```java
+   Intent notificationIntent = new Intent(this, NotificationSomething.class); 
+   notificationIntent.putExtra("notificationId", notfi_id); //전달할 값 
+   notificationIntent.putExtra("extraString", "Hello PendingIntent"); //전달할 값
+   PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT); 
+   NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+   builder.setContentTitle("상태바 드래그시 보이는 타이틀")  
+   .setContentText("상태바 드래그시 보이는 서브타이틀") 
+   ... 생략
+   .setContentIntent(contentIntent)  // 등록
+   ... 생략
+   ```
+
 
 
 
