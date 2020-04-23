@@ -22,6 +22,9 @@ Intent(명시적 Intent)
        </intent-filter>
      </receiver>
      ```
+      * setComponent() / setClassNamed()로 인텐트를 생성할 경우 이를 명시적 인텐트라고 부르는게 맞다. - [출처](https://hashcode.co.kr/questions/3700/%EC%95%94%EC%8B%9C%EC%A0%81-%EB%AA%85%EC%8B%9C%EC%A0%81-intent-%EC%A7%88%EB%AC%B8-%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4)
+      * setComponent()로 값을 설정 할 경, action, type, categories와 같은 값은 의미가 없어진다.
+      *  action, category 정보가 설정되어 있더라도 setComponent()로 지정된 클 래스가 항상 실행된다.
 IntentFilter(암시적 Intent)
 ---
 * 특정 대상을 특정해놓지 않고 보내는 intent
