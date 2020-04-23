@@ -14,6 +14,14 @@ Intent(명시적 Intent)
     Intent i = new Intent(FirstrActivity.this, SecondActivity.class);
     startActivity(i);
     ```  
+   * BroadCasterReceiver 예제)
+     ```xml
+     <receiver android:name=".Receivers.ServiceLauncher">
+       <intent-filter>
+         <action android:name="com.jiransecurity.mdm.Receivers.ServiceLauncher" />
+       </intent-filter>
+     </receiver>
+     ```
 IntentFilter(암시적 Intent)
 ---
 * 특정 대상을 특정해놓지 않고 보내는 intent
@@ -26,14 +34,6 @@ IntentFilter(암시적 Intent)
       </category>
     </action>
     </intent-filter>
-    ```
-  * BroadCasterReceiver 예제)
-    ```xml
-    <receiver android:name=".Receivers.ServiceLauncher">
-      <intent-filter>
-        <action android:name="com.jiransecurity.mdm.Receivers.ServiceLauncher" />
-      </intent-filter>
-    </receiver>
     ```
 * 명령
   * ```java
