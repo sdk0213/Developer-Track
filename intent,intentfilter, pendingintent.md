@@ -1,4 +1,4 @@
-인텐트 - [출처](https://arabiannight.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9CAndroid-%EC%9D%B8%ED%85%90%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B3%B4%EC%9E%90-intent-filter)
+Intent(인텐트) - [출처](https://arabiannight.tistory.com/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9CAndroid-%EC%9D%B8%ED%85%90%ED%8A%B8%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%B4-%EB%B3%B4%EC%9E%90-intent-filter)
 ===
 
 * intent를 보내는 방법에는 다음과 같이 두가지가 있다.
