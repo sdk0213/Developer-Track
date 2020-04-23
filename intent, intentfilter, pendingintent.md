@@ -27,11 +27,20 @@ IntentFilter(암시적 Intent)
     </action>
     </intent-filter>
     ```
+  * BroadCasterReceiver 예제)
+    ```xml
+    <receiver android:name=".Receivers.ServiceLauncher">
+      <intent-filter>
+        <action android:name="com.jiransecurity.mdm.Receivers.ServiceLauncher" />
+      </intent-filter>
+    </receiver>
+    ```
 * 명령
   * ```java
     Intent i = new Intent("arabiannight.tistory.com.intentfilter.secondview");
     startActivity(i);
     ```
+ 
     
 PendingIntent - [출처](https://parkho79.tistory.com/38)
 ---
