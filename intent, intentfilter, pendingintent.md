@@ -16,9 +16,9 @@ Intent(명시적 Intent)
     ```  
    * BroadCasterReceiver 예제)
      ```xml
-     <receiver android:name=".Receivers.ServiceLauncher">
+     <receiver android:name=".Receivers.HelloLauncher">
        <intent-filter>
-         <action android:name="com.jiransecurity.mdm.Receivers.ServiceLauncher" />
+         <action android:name="com.hello.application.Receivers.HelloLauncher" />
        </intent-filter>
      </receiver>
      ```
