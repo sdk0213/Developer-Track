@@ -50,11 +50,15 @@ PendingIntent - [출처](https://parkho79.tistory.com/38)
 * Pending = 보류하는
 * 외부 애플리케이션에 내 권한을 허가해서 전달하는 intent.
 * 외부 애플리케이션에서 Intent를 동작하도록 하는 방법
-* 예르들어서 다음과 같은 경우가 있다.
+* 예를들어 다음과 같은 경우가 있다.
   * 사용자가 Notification 으로 작업을 수행할 때 인텐트가 실행되도록 선언(Android 시스템의 NotificationManager가 인텐트를 실행).
   * 사용자가 AppWidget 으로 작업을 수행할 때 인텐트가 실행되도록 선언(홈 스크린이 인텐트를 실행).
   * 향후 지정된 시간에 인텐트가 실행되도록 선언(Android 시스템의 AlarmManager가 Intent를 실행).
   * ![](https://t1.daumcdn.net/cfile/tistory/99F0E1445C89A7BC31)
+* 생성하는법 - [출처](https://www.charlezz.com/?p=861)
+  * Activity를 시작하는 Intent의 경우 PendingIntent.getActivity()
+  * Service를 시작하는 Intent의 경우 PendingIntent.getService()
+  * BroadcastReceiver를 시작하는 Intent의 경우 PendingIntent.getBroadcast()
 * 사용법 - [출처](https://techlog.gurucat.net/80)
  * ```java
    Intent notificationIntent = new Intent(this, NotificationSomething.class); 
