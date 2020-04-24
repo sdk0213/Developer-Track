@@ -62,6 +62,38 @@ Handler - [출처](https://itmining.tistory.com/5)
   * Looper
     * MessageQueue에서 Message를 꺼내어 Handler에다가 전달
 * Handler는 **의존적**이다.
+* [코드 출처 - IT마이닝](https://itmining.tistory.com/16)
+* ```java 
+  onCreate(...){
+    ....
+    Thread.start();
+    ...
+    
+  }
+  // 대충 쓴 코드
+  final Handler handler = new Handler(){
+    public void handleMessage(Message msg){
+      swtich(msg.what){
+        case SEND_INFORMATION:
+          textView.setText(Integer.toString(msg.arg1) + msg.obj);
+          break;
+          ...
+          ...
+        
+      }
+    }
+  }
+  
+  Thread(){
+    run(){
+      String information = new String("hello");
+      message.obj = information;
+
+      // 메시지 전
+      handler.sendMessage(message);
+    }
+  }
+  ```
 
 
 Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
