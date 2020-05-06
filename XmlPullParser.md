@@ -34,7 +34,7 @@ Xml Parser - [출처](https://recipes4dev.tistory.com/134)
   + xml파서는 숙련된 소프트웨어 엔지니어가 아니라면 쉽지 않은 작업이다.
     + 하지만, 대부분 플랫폼에서 API형태로 제공된다.
   + 
-  |항목|DOM(Documnet Object Model)|SAM(Simple API for XMl)|
+  |항목|DOM(Documnet Object Model)|SAX(Simple API for XMl)|
   |:------:|:-----------------------------------------:|:------------------------------------:|
   |파서의 동작|파싱 시작후 완료될때가지 대기후 Object return|파싱중 유효한 요소가 식별되면 event로 전달|
   |장점|탐색,추가,수정,삭제 용이|속도 빠름, 메모리 적음|
