@@ -103,4 +103,14 @@ while(eventType != XmlPullParser.End_DOCUMNET)
 ...
 받아온값 반영
 ```
+* getName()
+  * 태그를 파싱했을 때 태그의 이름을 가져올 때 사용
+* getText()
+  * 텍스트를 파싱했을 때 텍스트의 내용을 가져올 때 사용
+* getAttributeName()
+  * 시작 태그에 존재하는 속성의 이름을 가져올 때 사용
+  * 예를들면 다음과 같을때 firstname = "true"를 가져올때 필요한 함수이다.
+  ```xml
+  <NAME firstname="true">ppotta</NAME>
+  ```
   
