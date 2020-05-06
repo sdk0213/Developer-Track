@@ -94,6 +94,13 @@ Handler - [출처](https://itmining.tistory.com/5)
     }
   }
   ```
+  * Handler 주요함수 - [출처 - mystoryg](https://brunch.co.kr/@mystoryg/84)
+    * Handler.sendMessage(Message msg) 
+      * Message 객체를 message queue에 전달하는 함수
+    * Handler.sendEmptyMessage(int what)
+      * Message의 wha 필드를 전다랗는 함수
+    * Hnadler.post(new Runnable())
+      * Message객체가 아닌 Runnable 객체를 Message Queue에 전달하는 함수
 
 
 Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
