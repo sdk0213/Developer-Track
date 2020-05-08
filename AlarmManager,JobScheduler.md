@@ -9,6 +9,51 @@ AlarmManager - [출처](https://doraeul.tistory.com/73)
   * Service 호출
   * BroadCast Receiver 호출
 * Alarm은 App을 강제적으로 kill하여도 작동되며 이는 **AlarmManager의 생명주기가 Application이 아닌 OS와 함께하기 때문이다.**
+* **반복알람의 장단점** - [출처 - 안드로이드 공식문서](https://developer.android.com/training/scheduling/alarms?hl=ko)
+  * 네트워크 작업을 트리거하는 앱에는 최선이 아닐수 있다.
+  * 잘못 설계시 배터리소모에 악영향을 끼칠수 있다.
+  * 호스팅이 존재한다면 동기화 어뎁터와 함께 GCM 또는 FCM을 사용하는것이 좋을수도있다.
+* 단말이 재부팅되면 알람들이 모두 사라진다. **재부팅할 경우 ACTION_BOOT_COMPLETED 액션을 사용해 알람 재등록**을 하면 된다.
+* 디바이스를 깨울려면 PowerManager와 WakeLock을 사용해 전력관리를 해야 한다.
+  * 메니페스트에 다음을 등록한다.
+    * ```xml
+      <uses-permission android:name="android.permission.WAKE_LOCK"/>
+      ```
+  * WakeLock 설정
+    * ```java
+      PowerManager pm = (PowerManager)ctx.getSystemService(Context.POWER_SERVICE);
+      WakeLock lock = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "my_app");
+      lock.acquire();
+      ```
+  * WakefulBroadcastReceiver 클래
+    * 이 클래스는 부분적인 WakeLock을 획득하고 해제하는 두 메서드를 가지고 획득과 동시에 서비스 시작도 할 수 있다.  
+      * ```java
+        WakefulBroadcastReceiver.startWakefulService(context, serviceIntent);
+        WakefulBroadcastReceiver.completeWakefulService(serviceIntent);
+        ```
+  * onReceive()
+    * ```java
+      @Override
+      public void onReceive(Context context, Intent intent){
+	         Intent serviceIntent = new Intent(context, MyService.class);
+	         WakefulBroadcastReceiver.startWakefulService(context, serviceIntent);
+	     }
+  * 해제 - 그렇지 않으면 CPU가 불필요하게 작동되 배터리를 소모
+    * ```java
+      @Override
+      protected final void onHandleIntent(Intent intent){
+	      try{
+		
+      	}finally{
+		      WakefulBroadcastReceiver.completeWakefulService(serviceIntent);	
+	      }
+      }
+      ```
+* 예약된 알람은 **잠자기 모드를 종료할때**까지 **지연** 된다.
+  * 대안 
+    * **setAndAllowWhileIdle()**
+    * **setExactAndAllowWhileIdle()**
+    * **WorkManager API 사용 - [WorkManager Link](https://developer.android.com/topic/libraries/architecture/workmanager?hl=ko)**
 * | |Don’t wake up Device|Wake up Device|
   |:---:|:---:|:---:|
   |RTC|RTC|RTC_WAKEUP|
