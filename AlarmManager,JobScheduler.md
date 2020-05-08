@@ -14,7 +14,9 @@ AlarmManager - [출처](https://doraeul.tistory.com/73)
   * 잘못 설계시 배터리소모에 악영향을 끼칠수 있다.
   * 호스팅이 존재한다면 동기화 어뎁터와 함께 GCM 또는 FCM을 사용하는것이 좋을수도있다.
 * 단말이 재부팅되면 알람들이 모두 사라진다. **재부팅할 경우 ACTION_BOOT_COMPLETED 액션을 사용해 알람 재등록**을 하면 된다.
-* 디바이스를 깨울려면 PowerManager와 WakeLock을 사용해 전력관리를 해야 한다. - [출처 - programmingfbf7290.tistory](https://programmingfbf7290.tistory.com/entry/7-AlarmManager-%EC%9E%91%EC%97%85-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)
+* Service 알람처리를 사용할경우 잠들어있을경우 깨우지 못한다.
+	* 그러므로 디바이스를 깨워야한다.
+	* **디바이스를 깨울려면 PowerManager와 WakeLock을 사용**해 전력관리를 해야 한다. - [출처 - programmingfbf7290.tistory](https://programmingfbf7290.tistory.com/entry/7-AlarmManager-%EC%9E%91%EC%97%85-%EC%8A%A4%EC%BC%80%EC%A4%84%EB%A7%81)
   * 메니페스트에 다음을 등록한다.
     * ```xml
       <uses-permission android:name="android.permission.WAKE_LOCK"/>
