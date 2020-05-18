@@ -27,4 +27,4 @@ Doze - [출처 : kimch3617 티스토리](https://kimch3617.tistory.com/entry/Doz
   * Wi-Fi 검색 안함
   * 동기화 어댑터 실행 안함
   * JobScheduler 실행 안함
-* ** 가능한 FCM 사용 **
+* **가능한 FCM 사용 **
