@@ -20,7 +20,8 @@ Push Message [출처 - rationalowl.tistory](https://rationalowl.tistory.com/6)
     * 속도가 느리다.
   * 자체 프로토콜
     * 잘 만들면 좋지만 못만들면 망한다.
-  * 
+  * 진행 ------------ https://d2.naver.com/helloworld/1119
+   ------------ https://rationalowl.tistory.com/6#recentComments
 
 
 upns
