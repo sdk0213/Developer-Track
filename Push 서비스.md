@@ -20,13 +20,31 @@ Push Message [출처 - rationalowl.tistory](https://rationalowl.tistory.com/6)
     * 속도가 느리다.
   * 자체 프로토콜
     * 잘 만들면 좋지만 못만들면 망한다.
-  * 진행 ------------ https://d2.naver.com/helloworld/1119
-   ------------ https://rationalowl.tistory.com/6#recentComments
+  * 웹소켓 기반 실시간 메시징 서비스
+    * 웹소켓을 이용한 메시징 서비스
+    * 시간 0.5 초 이내
+      * Foreground 상태 : 웹소켓 방식 사용
+      * Background 상태 : Public Push 방식 사용
+  * 결론
+    * Public Push 방식을 벗어나지 못한다.
+    * 실시간의 기준을 넉넉히 1~2초를 잡아도 이를 실현한 메시징 서비스는 현재 없다.
+  * Rational Owl (광고인것같다.)
+    * 현재 유일한 실시간 메시징 서비스
+    * 99.99% 전송률
+    * 0.48 초 전송속도
 
-
-upns
+upns - [모피어스 출처](https://d2.naver.com/helloworld/1119)
 ---
 * **Uracle Push Notification System**
 * MQTT Protocol 기반으로 Android Application으로 data를 전송하게 해주는 private Service이다.
 * Server에서 가져와야할 새로운 data가 있음을 알리는 메시지를 지원 (4k(권고) ~ 256Mbtes)
 * 단순히 원시 data를 android 단말로 보내며 이 data를 통해 application 에서 제어함
+
+
+apns
+---
+* **Apple Push Notification Service**
+* 애플사에서 모바일 서비스를 위해 만든 Push서비스 플랫폼이다.
+* IOS 3.0에서 포함되어 정식으로 출시되었다.
+* APNS메시지는 Device Token(Device Number와 비슷한 것)과 Payload(JSON 형태의 Data)로 구성되어있다.
+
