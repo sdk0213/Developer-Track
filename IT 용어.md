@@ -1,4 +1,4 @@
-BMT
+IT 용어(BMT, Vendor)
 ===
 
 BMT - [출처 - sharedit 글 답변](https://www.sharedit.co.kr/qnaboards/2423)
@@ -9,3 +9,12 @@ BMT - [출처 - sharedit 글 답변](https://www.sharedit.co.kr/qnaboards/2423)
 * <=> POC(새로운 솔루션을 현업에 적용하여 검증받는 것)는 이와 반대되는 개념이다.
 * 장점
   * 원하는 수준의 하드웨어를 과도한 투자 없이 적절한 선에서 구입할수 있는 장점 (비용절약)
+  
+Vendor
+---
+* 판매인 또는 판매업자를 가리키는 말
+* 싱글 벤더
+  * 특정 회사의 제품만으로 시스템을 구축하는 것
+* 멀티 벤더
+  * 여러 회사 제품을 조합하여 시스템을 구축하는 것
+ 
