@@ -1,7 +1,7 @@
 BMT
 ===
 
-BMT
+BMT - [출처 - sharedit 글 답변](https://www.sharedit.co.kr/qnaboards/2423)
 ---
 * Bench Marking Test
 * 실제 도입할 장비에 대해 테스트
