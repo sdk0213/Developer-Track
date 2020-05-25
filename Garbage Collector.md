@@ -23,4 +23,4 @@ Reachablity
 * GC는 어떤 객체의 유효한 참조가 있는 기준에 따라서 다음과 같이 나눈다.
   * reachable
   * unreachable -> Garbage
-* Weak Reference는 new로 할당된 객체의 유효 참조를 인위적으로 설정 할 수 있게 해주기 때문에,원래의 데이터가 삭제되면 이 객체에 Weak Refrence가 걸려있는 객체들은 모두 가비지로 인식된다
+* Weak Reference는 new로 할당된 객체의 유효 참조를 인위적으로 설정 할 수 있게 해주기 때문에,원래의 데이터가 삭제되면 이 객체에 Weak Refrence가 걸려있는 객체들은 모두 가비지로 인식된다 - [WeakReference 란 ? ](https://github.com/sdk0213/Android-Develop-Info/blob/master/WeakRefrence%2C%20Strong%20Reference%2C%20SoftReference.md)
