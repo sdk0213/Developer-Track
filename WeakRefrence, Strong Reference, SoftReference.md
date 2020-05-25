@@ -1,6 +1,6 @@
 WeakRefrence, SoftReference
 ===
-접근성
+접근성 - [출처 - itmining.tistory](https://itmining.tistory.com/10)
 ---
 * GC는 Reference 강약에 따라 쓰레기로 처리할지 말지 판단을 한다.
 Strong Reference
@@ -16,4 +16,4 @@ Soft Reference
 WeakRefrence
 ---
 * GC발생하면 무조건 없애버림
-* 짧은시간 자주 쓰이는 객체를 위해 
+* 내가 사용하고 있는 변수를 GC할수 있게 하고싶어서 사용
