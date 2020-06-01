@@ -34,4 +34,5 @@ Non-static Nested Class, Inner Class
   ```
 * **외부에서 OuterClass.new StaticNestedClass로 생성불가**
 * ![inner out 차이](/img/innerout.png)
-
+*  InnerClass 내부에서 OuterClass의 내부변수에 접근이 가능하다
+  * 즉 OuterClass를 참조할수있음을 뜻하며 이는 메모리누수의 원인이 될수있다.
