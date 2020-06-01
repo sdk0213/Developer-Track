@@ -53,7 +53,7 @@ Runnable - [출처](https://aileen93.tistory.com/105)
     
 Handler - [출처](https://itmining.tistory.com/5)
 ---
-* ![](https://t1.daumcdn.net/cfile/tistory/232EB335577C080F21)
+* ![](/img/handlerThread.png)
 * Message는 handleMessage()메서드를 이용해 처리하는데 위의 그림처럼 handler가 handlemessage | sendMessage()를 통해 처리한다.
   * handleMessage()
     * Looper에서 받은 Message 처리
