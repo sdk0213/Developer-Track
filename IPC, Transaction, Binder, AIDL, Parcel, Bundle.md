@@ -1,6 +1,7 @@
 IPC, Parcel, Bundle...
 ===
-
+매우 깊은 공부 출처 - [출처](https://sites.google.com/site/taesaza0/windows-api/comuigaeyo)
+---
 IPC통신을 통해 AIDL을 하는 이유 - [출처](https://oysu.tistory.com/17)
 ===
 * App <-> App 통신은 BroadcastReceiver와 Messenger로도 충분하다고 생각하지만 다음과같은 상황에서는 AIDL이 필요하다.
@@ -60,6 +61,8 @@ Binder - [출처](https://androidyongyong.tistory.com/8)
 
 AIDL - [출처](https://androidyongyong.tistory.com/8)
 ---
+* 백그라운드 서비스와 액티비티 간에 주고 받아야 하는 메시지의 종류가 다양하고 특히 동기식으로 함수 호출의 결과를 바로 받아봐야 할 필요가 있는 경우
+* [예제코드 - oysu.tistory](https://gitlab.com/iroiroys/aidl-test-sample) (꼭 살피기)
 * [출처 - oysu.tistory](https://oysu.tistory.com/17) BroadcastReceiver : 구현 난이도 쉬움 / 다른 프로세스에서 데이터 획득 가능 / UI Thread에서 동작 -> 일반적인 사용
 * Messenger : 구현 난이도 중간 / 싱글 스레드에서 동작 -> Service - Activity 간 통신에서 사용
 * AIDL : 구현 난이도 어려움 / 멀티 스레드에서 동작 -> 데이터 요청이 자주 있거나 여러 앱에서 요청 및 브로드캐스팅이 필요하나 그 외의 앱들에게 데이터를 공개하고 싶지 않을 때.
@@ -70,6 +73,8 @@ AIDL - [출처](https://androidyongyong.tistory.com/8)
 * .aidl -> compiling -> .java 파일이 생성되며 **Client/Server 모두에 포함** 된다.
 * Proxy, Stub의 역할
   * Server에서 실행되더라도 Client가 지역적으로 메서드를 호출할수 있도록 허용하는 두 프로그램대신해서 RPC를 관리
+* **안드로이드에서 제공하는 SDK의 AIDL 도구는 빌드하는 과정에서 개발자가 제작한 .aidl 을 .java라는 자바 인터페이스 파일로 변환시켜준다.**
+  * 여기에는 AIDL 인터페이스를 구현하는 Stub 추상 클래스와 Stub 클래스를 이용하는 Stub.Proxy클래스를 제공한다.
   
 Proxy,stub - [출처](https://powere.tistory.com/79)
 ---
