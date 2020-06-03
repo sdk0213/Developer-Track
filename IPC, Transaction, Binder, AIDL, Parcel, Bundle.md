@@ -60,6 +60,9 @@ Binder - [출처](https://androidyongyong.tistory.com/8)
 
 AIDL - [출처](https://androidyongyong.tistory.com/8)
 ---
+* [출처 - oysu.tistory](https://oysu.tistory.com/17) BroadcastReceiver : 구현 난이도 쉬움 / 다른 프로세스에서 데이터 획득 가능 / UI Thread에서 동작 -> 일반적인 사용
+* Messenger : 구현 난이도 중간 / 싱글 스레드에서 동작 -> Service - Activity 간 통신에서 사용
+* AIDL : 구현 난이도 어려움 / 멀티 스레드에서 동작 -> 데이터 요청이 자주 있거나 여러 앱에서 요청 및 브로드캐스팅이 필요하나 그 외의 앱들에게 데이터를 공개하고 싶지 않을 때.
 * Android Interface Definition Language(안드로이드 인터페이스 정의 언어)
 * 하나의 프로세스가 다른 프로세스에서 접근하도록 허용하고 싶은 기능이 있을때는 어떻게 해야할까?
   * 이럴때는 통신 계약을 정의해야한다.
