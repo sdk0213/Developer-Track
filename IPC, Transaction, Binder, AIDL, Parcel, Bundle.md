@@ -79,6 +79,13 @@ Proxy,stub - [출처](https://powere.tistory.com/79)
   * 그리고 여기서 가상함수 table pointer를 Interface라고 부른다.
   * 그렇다면 사실 Client Application은 COM을 통해서 table pointer를 얻고 거기서 함수를 사용한다.
   * **그런데 COM은 InProcess, OutProcess으로 나뉘는데**
+    * 실행화일 형태를 가지는 (exe)을 OutProcess 컴포넌트라고 한다. - [출처](http://www.devpia.com/MAEUL/Contents/Detail.aspx?BoardID=50&MAEULNo=20&no=298453&ref=298445)
+      * 다른 주소 공간에 놓이게 된다.
+    * DLL 형태를 가지는것은 InProcess 컴포넌트라고 한다.
+      * 같은 주소 공간에 놓이게 된다.
+    * 이 둘의 차이를 극복하기 위해서 나온것이 마샬링(Marshalling)이다.
+    * 여기서 OutProcess 컴포넌트 사용을 지원하기 위해서 COM 컴포넌트 쪽에는 Stub이라는 모듈을 올린다.
+    * 사용 프로그램쪽에서는 Proxy라는 것을 올려서 내부의 DLL 처럼 사용하는 것처럼 해결해 준다.
     * InProcess
       * COM이 Application 메모리영역으로 올라감
       * 그러므로 COM에서 알려준데로 table pointer를 바로사용가능
@@ -92,6 +99,7 @@ Proxy,stub - [출처](https://powere.tistory.com/79)
         * Proxy요청을 받아서 COM이랑 통신담당자
       * Applciation이 Proxy에 있는 Interface를 이용해 Methode Call하면 Proxy는 Stub과 IPC를 통해 전달하고 COM에게 요청해서 다시 반대로 보낸다.
       * 이러한 IPC통신중에 규약이 필요하고 통신 규약에 맞춰서 변경하는것을 Marshalling이라고 부른다. 반대의 경우 unMarshalling 이다.
+      * 쉽게 말해서 둘 사이에 통신하기 위해서는 데이터가 표준 포맷으로 바뀌어 통신해야한다.
 * 가상함수 table pointer를 Component(Component Object Model)에서 Interface라고 부른
 * COM object
 * 인터페이스란?
@@ -100,7 +108,6 @@ Proxy,stub - [출처](https://powere.tistory.com/79)
 * 그렇게 해서 전체적인 그림은 다음과 같다.
 * ![Alt text](https://t1.daumcdn.net/cfile/tistory/260AE550579959E02B)
 * ![](/img/aidl.png)
-
 
 RPC - [출처](https://androidyongyong.tistory.com/8)
 ---
