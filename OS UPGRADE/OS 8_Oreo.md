@@ -9,4 +9,4 @@ Noticiation Channel
 * 출처를 알 수 없는 앱
   * [대응법](https://github.com/sdk0213/Android-Develop-Info/blob/master/%EC%B6%9C%EC%B2%98%EB%A5%BC%EC%95%8C%EC%88%98%EC%97%86%EB%8A%94%EC%86%8C%EC%8A%A4.md)
 * 암시적 브로드 캐스트 제한
-  * [대응법](https://github.com/sdk0213/Android-Develop-Info/commit/8636d5faf7ef8d72e4002738856001f7e797d3ca)
+  * [대응법](https://github.com/sdk0213/Android-Develop-Info/blob/master/BroadcastReceiver%2C%20OrderedBroadcast.md)
