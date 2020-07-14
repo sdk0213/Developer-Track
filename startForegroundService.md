@@ -3,7 +3,7 @@ startForegroundService
 startForegroundService
 ---
 * 백그라운드 실행제한
-  * OS 8.0 부터 백그라운드 실행제한으로 인하여서 **startService 사용불가**
+  * OS 8.0 부터 백그라운드 실행제한으로 인하여서 **startService 반드시 앱이 Foreground상태일때만 사용가능**
     * 만약사용하게 된다면 IllegalStateException 발생한다.
   * context.startForegroundService(intent)
     * startService말고 위의 코드를 사용한다.
