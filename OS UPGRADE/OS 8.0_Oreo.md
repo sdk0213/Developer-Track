@@ -1,4 +1,4 @@
-OS 8
+OS 8.0
 ===
 * 채널 유형이 추가
   * [대응법](https://github.com/sdk0213/Android-Develop-Info/blob/master/Notification.md)
