@@ -3,6 +3,13 @@
 
 GC알고리즘 - [출처 - @joongwon](https://medium.com/@joongwon/android-memory-leak-%EC%82%AC%EB%A1%80-6565b817a8fe)
 ---
+* 안드로이드
+  * activity instance 에 대한 누수
+    * 자바의 일반적인 객체의 생명주기와 다르다.
+      * 왜냐하면 activity와 같은 컴포넌트가 자신만의 생명주기를 가지고 있기 때문이다.
+    * 그래서 onDestory() 이후에도 activity의 instance는 계속해서 heap 에 남는 상황이 발생할 수 있다.
+      * GC가 이 부분을 처리함
+        * **하지만 만약에 activity에 대한 참조가 남아있다면? --> 메모리 누수**
 * Java의 일반적인 객체는 Strong reference이다.
 * 다음과 같은 상황에서는 GC가 작동하지 않는다.
 * ![](/img/GCException.png)
