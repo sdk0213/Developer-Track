@@ -104,7 +104,7 @@ Handler - [출처](https://itmining.tistory.com/5)
       * Message객체가 아닌 Runnable 객체를 Message Queue에 전달하는 함수
 
 
-Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
+Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5) , [출처 - what-is-the-purpose-of-looper-and-how-to-use-it](https://qastack.kr/programming/7597742/what-is-the-purpose-of-looper-and-how-to-use-it)
 ---
 * **필요성**
   * 메인 쓰레드는 유일하게 UI를 조정한다. 그런데 사용자가 순서대로 UI를 클릭한다고 가정한다고 가정을 해보자. 그런데 만약에 작업이 오래걸린다면 어떻게 해야할까?
@@ -172,7 +172,7 @@ Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
 *    
   * quit()
     * 모든 메시지큐 제거
-  * quitSafely()
+  * quitSafely() - API 18 이상
     * 지연된 메시지는 루프가 종료되기전에 전달되고 나머지 메시지 제거
 
 
