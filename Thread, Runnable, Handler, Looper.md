@@ -154,6 +154,22 @@ Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
          sMainLooper = myLooper();
      }
   }
+* quit() , quitSafely()
+  ```java
+  public void quit() {
+     mQueue.quit(false);
+  }
+  
+  public void quitSafely() {
+      mQueue.quit(true);
+  }
+  * quit()
+    * 모든 메시지큐 제거
+  * quitSafely()
+    * 지연된 메시지는 루프가 종료되기전에 전달되고 나머지 메시지 제거
+
+
+  
 * ```java
   public class MainActivity extends AppCompatActivity {  
     Handler mHandler = null; 
