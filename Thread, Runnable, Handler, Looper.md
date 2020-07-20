@@ -163,6 +163,7 @@ Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
   public void quitSafely() {
       mQueue.quit(true);
   }
+*    
   * quit()
     * 모든 메시지큐 제거
   * quitSafely()
@@ -194,4 +195,12 @@ Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
     }
     ```
     * 메인 스레드에서 Handler를 생성하면 해당 Handler는 호출한 스레드의 메시지큐와 루퍼에 자동 연결 되므로 다른 스레드에서 Handler를 통해 메시지를 전달하면 메인 스레드(UI 스레드)에서 UI 작업을 가능
+    
+HandlerThread
+---
+* Thread를 상속하고 자동으로 Looper.prepare()와 Looper.loop()를 실행하여 개별 Looper를 가지는 내부에서 무한루프를 도는 백그라운드 스레드
+* ```java
+  HandlerThread handlerThread = new HandlerThread("myHandlerThread");
+  handlerThread.start();
+
 
