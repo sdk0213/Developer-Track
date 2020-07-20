@@ -129,9 +129,31 @@ Looper - [출처 - IT 마이닝](https://itmining.tistory.com/5)
     * Message 전달을 기다리는 작업이 시작
   * onDestory()
     * **Activity에서 handler.getLooper().quit()를 이용해 꼭 종료 시켜야 된다.**
+  * 코드 흐름
+    * ![](/img/Looper.png)
     
-* **하지만 많은 소스를 보면 Handler를 Looper없이 단독 사용한다.**
-  * **왜냐하면** 안드로이드에서는 편리성을 제공하기 위해 Handler의 기본 생성자를 통해 Handler 단독으로 사용할수 있게 해주기 때문!!!
+* **메인스레드는 MainLooper가 있기 때문에 루퍼를 따로 생성하지 않아도된다.**
+* 다음 코드를 보면 알수있다. Looper클래스에 의해 guarded 되고있다.
+  ```java
+  @UnsupportedAppUsage
+  private static Looper sMainLooper;  // guarded by Looper.class
+* 또한 주석에 안드로이드 환경에서 만들어지니 prepareMainLooper를 호출하지 말라고 한다.
+  ```java
+  /**
+  * Initialize the current thread as a looper, marking it as an
+  * application's main looper. The main looper for your application
+  * is created by the Android environment, so you should never need
+  * to call this function yourself.  See also: {@link #prepare()}
+  */
+  public static void prepareMainLooper() {
+     prepare(false);
+     synchronized (Looper.class) {
+         if (sMainLooper != null) {
+             throw new IllegalStateException("The main Looper has already been prepared.");
+         }
+         sMainLooper = myLooper();
+     }
+  }
 * ```java
   public class MainActivity extends AppCompatActivity {  
     Handler mHandler = null; 
