@@ -7,6 +7,7 @@
 * MVVM(Model-View-View Model)
 * 역사적으로 본다면 MVC -> MVP -> MVVM 으로 등장했다.
 
+# 예제코드 GitHUB -> [https://github.com/ericmaxwell2003/ticTacToe](https://github.com/ericmaxwell2003/ticTacToe)
 MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
 * ![](/img/MVC.png)
@@ -40,6 +41,8 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
   * Presenter
     * 뷰에 직접연결하는것이 아니라 인터페이스로 구성된다 => 테스트 가능성 + 모듈화 + 유연성 해결
     * MVP가 극단적으로 갈경우 어떤 안드로이드 API도 참고하면 안된다는 의견도 있음
+* 코드 분석
+  * ![](/img/MVPCODE.png)
 * 장점
   * API연결이 안되어있어 테스트 용이
 * 단점
