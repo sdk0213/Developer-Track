@@ -53,7 +53,49 @@ MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/
 ---
 * ![](/img/MVVM.png)
 * **뷰결합(데이터바인딩) : https://developer.android.com/topic/libraries/data-binding/index.html#java 을 사용하여서 하는것이 가장 큰 특징**
+  * 아래는 tictactoe.xml 코드이다.
+  * ```xml
+    <data>
+        <import type="android.view.View" />
+        <variable name="viewModel" type="com.acme.tictactoe.viewmodel.TicTacToeViewModel" />
+    </data>
+    ...
+    ...
+    <Button
+         style="@style/tictactoebutton"
+         android:onClick="@{() -> viewModel.onClickedCellAt(0,0)}"
+         android:text='@{viewModel.cells["00"]}' />
+         
+    <Button
+         style="@style/tictactoebutton"
+         android:onClick="@{() -> viewModel.onClickedCellAt(0,1)}"
+         android:text='@{viewModel.cells["01"]}' />
+    ...
+    ...
+    <LinearLayout
+            android:id="@+id/winnerPlayerViewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.winner != null ? View.VISIBLE : View.GONE}"
+            tools:visibility="visible">
 
+            <TextView
+                android:id="@+id/winnerPlayerLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="40sp"
+                android:text="@{viewModel.winner}"
+                tools:text="X" />
+   * ViewModel은 어려운구조
+   * ViewModel에는 다음과 같은 도구들이 필요 - [출처](https://thdev.tech/androiddev/2018/08/05/Android-Architecture-Components-ViewModel-Inject/)
+     * DataBinding
+     * Dagger2와 같은 DI(Dependency injection)
+     * Rxjava
+     * Koin (Kotlin 사용할경우)
+   * 이러한것을 도와주는 도구로 AAC ViewModel과 LifeCycle을 잘 활용하여야 한다고함
 * 구성
   * Model
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함 
