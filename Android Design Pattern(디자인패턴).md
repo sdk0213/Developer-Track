@@ -18,6 +18,7 @@ MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-m
     * 아는것이 아무것도 없는 멍청한 역할 => 종속성 하락 => 변화 용이
   * Controller
     * 모델과 View를 이어주는 역할
+    * 주로 액티비티나 프래그먼트로 표현됩니다. 한마디로 그냥 일반적으로 우리가 하는 안드로이드 프로그래밍이랑 매우 비슷
 * 장점
   * 모델과 뷰를 분리하는것이 용이하고 뷰는 테스트하기가 용이
 * 단점
@@ -27,7 +28,7 @@ MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-m
     * 모듈화 및 유연성
       * 뷰와 컨트룰러가 강하게 결합될수 있음
     * 유지 보수
-      * 코드가 컨트룰러로 모이면서 문제가 많이 발생
+      * **코드가 컨트룰러로 모이면서 코드가 비대해지며 문제가 많이 발생**
       
 MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
@@ -51,6 +52,8 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
 MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
 * ![](/img/MVVM.png)
+* **뷰결합(데이터바인딩) : https://developer.android.com/topic/libraries/data-binding/index.html#java 을 사용하여서 하는것이 가장 큰 특징**
+
 * 구성
   * Model
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함 
