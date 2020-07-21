@@ -95,7 +95,7 @@ MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/
      * Dagger2와 같은 DI(Dependency injection)
      * Rxjava
      * Koin (Kotlin 사용할경우)
-   * 이러한것을 도와주는 도구로 AAC ViewModel과 LifeCycle을 잘 활용하여야 한다고함[활용](https://thdev.tech/androiddev/2018/08/05/Android-Architecture-Components-ViewModel-Inject/)
+   * 이러한것을 도와주는 도구로 AAC ViewModel과 LifeCycle을 잘 활용하여야 한다고함 - [[활용](https://thdev.tech/androiddev/2018/08/05/Android-Architecture-Components-ViewModel-Inject/)]
 * 구성
   * Model
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함 
