@@ -46,3 +46,6 @@ var,val
   
   
 # 출처 - https://academy.realm.io/kr/posts/kotlin-2/ 계속.....................
+
+# 더나아가기 - https://ponyozzang.tistory.com/229?category=792393
+
