@@ -222,7 +222,8 @@ when()
   } 
   
   
-# 출처 - https://academy.realm.io/kr/posts/kotlin-2/ 계속.....................
+# 출처 - https://academy.realm.io/kr/posts/kotlin-2/ 계속..................... 0721
+# 출처 - https://jepark-diary.tistory.com/69 계속..... 0722
 
 # 더나아가기 - https://ponyozzang.tistory.com/229?category=792393
 
