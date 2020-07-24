@@ -42,7 +42,7 @@ with
 * with() 함수는 사실상 run()함수와 기능이 거의 동일
 * run() 함수 = with() + let(), 즉, 편하게 사용하기 위해서 만든것이라고 봐도 무방
 * 수신 객체이며 결과가 필요하지 않은 경우 유용
-* **safeCalls 지안하기때문 run함수 더 자주사용할듯**
+* **safeCalls 지하기때문 run함수 더 자주사용할듯**
 * ```kotlin
   supportActionBar?.let {
   with(it) {
