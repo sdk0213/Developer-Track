@@ -43,12 +43,7 @@ Kotlin
 * safe Call기능
   * 물음표를 이용해서 null이 아니라면 다음 변수를 참조할 수 있도록 체이닝하는 기능
 * **★★Scope Functions★★** - [그림출처 - @limgyumin 블로그](https://medium.com/@limgyumin/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%9D%98-apply-with-let-also-run-%EC%9D%80-%EC%96%B8%EC%A0%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94%EA%B0%80-4a517292df29)
-  * ![](https://miro.medium.com/max/700/1*qgUKSwzEicuHwaQBgN5UFw.png)
-  * Scope(범위, 영역) 를 일시적으로 만들어서 속성(property)나 함수를 처리하는 용도로 사용되는 함수
-  * 여기서 범위를 만든다는것은 중괄호를 뜻하는것으로 이해될수 있음
-  * 종류
-    * let
-      * 
+ 
 class
 ---
 * [코드 출처 - 박상권님의 블로그](https://gun0912.tistory.com/81)
