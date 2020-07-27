@@ -56,7 +56,6 @@ enum
           return krName; 
       }
     }
-* [enum if문 사용 줄이기 부터 계속하기](http://www.nextree.co.kr/p11686/)
 * ```java
   enum Fruit{
     APPLE, PEACH, BANANA;
