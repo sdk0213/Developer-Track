@@ -2,8 +2,61 @@ enum
 ===
 네 이놈(enum) 누구냐.. - [출처 - opentutorials](https://opentutorials.org/course/2517/14151)
 ---
-# 역사 - [꼭 읽기 - 출처](http://www.nextree.co.kr/p11686/)
-* 서로 연관된 상수들의 집합이다.
+역사 - [꼭 읽기 - 출처](http://www.nextree.co.kr/p11686/)
+---
+* 상수를 정의하는데 있어서 그동안 많은 불편함이 있었는데 이를 해결하기 위해 나온것이 enum이다.
+* 관련된 역사는 위의 출처를 확인하면된다.
+* ![](/img/enum.png)
+  * 위와같은 코드가 좋은점은 아래와 같은 코드에서 비교결과가 다르다고 나와야하는데 가능하다고 나오기 때문이다.
+    * ```java
+      interface DAY{  
+        int MONDAY = 1;
+      }
+      
+      interface MONTH{
+        int JANUARY = 1;
+      }
+      
+      public class EnumExample {
+
+      public static void main(String[] args) {
+
+        if(DAY.MONDAY == MONTH.JANUARY){
+          System.out.println("두 상수는 같습니다.");
+        } 
+        
+       ...
+       ..
+       .
+* 하지만 **switch문을 사용할수없는데 그래서 나온것이 enum이다**.
+
+특징
+---
+* 서로 연관된 상수들의 집합이다.(열거형)
+* 생성자
+  * ```java
+    public enum RoadSide {  
+      Left("왼쪽"), 
+      Right("오른쪽"); 
+
+      private String krName;
+
+      private RoadSide() {
+          //
+      } 
+
+      // 본래 Left("왼쪽")은 public final static RoadSide Left = new RoadSide("왼쪽") 이다. 이런식으로 생성자를 사용하였기 때문에 RoadSide(String krName)을 생성해주어야한다.
+      // 생성자는 무조건 private이면 이와 비슷한게 생성하는것으로 singletone 디자인 패턴이 있다.
+      // private이기 때문에 외부에서 new로 생성이 불가능하다.
+      private RoadSide(String krName) {
+          this.krName = krName; 
+      }
+
+      public String getKrName() {
+          return krName; 
+      }
+    }
+* [enum if문 사용 줄이기 부터 계속하기](http://www.nextree.co.kr/p11686/)
 * ```java
   enum Fruit{
     APPLE, PEACH, BANANA;
