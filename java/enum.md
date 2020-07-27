@@ -2,6 +2,7 @@ enum
 ===
 네 이놈(enum) 누구냐.. - [출처 - opentutorials](https://opentutorials.org/course/2517/14151)
 ---
+# 역사 - [꼭 읽기 - 출처](http://www.nextree.co.kr/p11686/)
 * 서로 연관된 상수들의 집합이다.
 * ```java
   enum Fruit{
