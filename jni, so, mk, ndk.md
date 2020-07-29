@@ -58,6 +58,7 @@ c(source) , h(header) file로 .so 파일 만들기
 ---
 + https://question0.tistory.com/39
 + 위에 있는 블로그대로 따라하되 다음 순서대로 한다.
++ **해당블로그에서 \(￦) <-> ₩ 이 변경되어서 입력되있으므로 주의**
 + 파일설정은 다음처럼 한다.
 + ![ex_screenshot](./img/NdkExternaltools.png)
 + 무언가 안된다면 build - Rebuild Project를 실행한다.
