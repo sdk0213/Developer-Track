@@ -4,7 +4,9 @@ lambda expression
 ---
 * 람다 표현식
 * **람다 함수는 프로그래밍 언어에서 사용되는 개념으로 익명 함수(Anonymous functions)를 지칭하는 용어이다.**
+* **1개의 추상메서드를 가지고 있는 인터페이스를 람다식으로 변경 가능하다.**
 * 클래스를 작성하고 객체를 생성하지 않아도 메소드를 사용할 수 있음
+* 람다식은 단순히 메소드를 선언하는 것이 아니라 이 메소드를 가지고 있는 객체를 생성해 내는 것.
 * 메서드
   * **메서드를 람다식으로 표현하면 메서드의 이름과 반환값이 없어지므로 람다식을 익명함수(anonymous function)라고도 한다.**
   * [코드출처 - ryan-han.com](https://ryan-han.com/post/java/java-lambda/)
@@ -26,6 +28,27 @@ lambda expression
     // ▽ 변신 ▽
     //매개변수 타입 생략
     (a, b) -> a > b ? a : b
+  * ```java
+    // 추상메서드 한개
+    public interface MyfunctionalInterface {
+      public void method();
+    }
+    
+    public class MyfunctionalInterfaceExample {
+      public static void main(String[] args) {
+        MyFuctionalInterface fi;
+        
+        fi = () -> {
+             String call = "hello";
+             System.out.println(call)
+        };
+        fi.method(); // 결과 => hello
+        
+        fi = (x) -> {System.out.println("x : " x*2);};
+        fi.method(2); // 결과 => x : 4
+        
+        
+        
   * **매개변수 한개일경우**
     * ```java
       //매개변수 1개일 경우 괄호 생략
@@ -63,6 +86,15 @@ lambda expression
   * 가 다음과 같이 간편하다.
   * ```java
     new Thread(()->System.out.println("Lambda Thread")).start();
+    // 또는
+    // 인터페이스 변수 = 람다식
+    // 즉, 인터페이스의 익명 구현 객체를 생성한다는 뜻
+    Runnbale runnable = new Runnable(){  //익명 구현 객체
+      public void run(){...}  //Runnable 인터페이스의 추상메소드
+    } 
+    // ▽▽▽
+    Runnable runnable = ()->{ ...};  //람다식
+  
 * **쉽게 말해서 interface를 구현해야 하는부분에서 매개변수랑 구현부분만 작성해야되는것이 간편하기 때문에 쓴다.**
 * 모든 람다 예시
   ```Java
