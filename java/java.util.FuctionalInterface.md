@@ -33,5 +33,5 @@ FunctionalInterface - [출처 - javaplant.tistory](https://javaplant.tistory.com
           Assert.assertEquals(firstNumber + secondNumber, result);
       } 
     }
-* 수많은 예시들이 있다. - https://beomseok95.tistory.com/277
+* 수많은 예시들이 있다. - https://beomseok95.tistory.com/277 
   * 사용방법과 사용하는 때 참
