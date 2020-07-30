@@ -39,3 +39,7 @@ Method References
     * ```java
       System.out::println은 x -> System.out.println(x)
   * ![](/img/mehtodreference.png)
+  
+파라미터는 어디로??
+---
+* input parameter & method & method parameter를 일일이 작성했던 lambda 식을 개선해, 단순히 lambda 식에서 호출하려고 하는 method가 무엇인지만 전달해 작업을 수행하는 것이기 때문에 파라미터를 넣을 필요가 없다.
