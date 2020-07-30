@@ -134,3 +134,11 @@ void 호환규칙 - [출처 - tourspace.tistory](https://tourspace.tistory.com/6
   Consumer<String> c = s -> list.add(s);
 * list.add()는 return으로 boolean을 반환하지만 Consumer<T>: (T) -> void 에서도 사용할 수 있습니다. (하지만 명확한 함수 signature를 사용하는것을 권장합니다.)
 
+형식추론
+---
+* 형식을 알아서 추론해주는것
+* ```java
+  Comparator<Person> p = (Person p1, Person p2) -> p1.getAge() - p2.getAge();
+  /*인자의 형식 추론*/
+  Comparator<Person> p = (p1, p2) -> p1.getAge() - p2.getAge();
+
