@@ -125,3 +125,12 @@ lambda expression
   (final int x) -> x+1 // Modified declared-type parameter 
   (x, final y) -> x+y // Illegal: can't modify inferred-type parameters 
   (x, int y) -> x+y // Illegal: can't mix inferred and declared types
+  
+void 호환규칙 - [출처 - tourspace.tistory](https://tourspace.tistory.com/6)
+---
+* void를 반환하는 signature의 경우 다른 타입도 받을 수 있습니다.
+* ```java
+  Predicate<String> p = s -> list.add(s);
+  Consumer<String> c = s -> list.add(s);
+* list.add()는 return으로 boolean을 반환하지만 Consumer<T>: (T) -> void 에서도 사용할 수 있습니다. (하지만 명확한 함수 signature를 사용하는것을 권장합니다.)
+
