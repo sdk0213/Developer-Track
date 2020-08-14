@@ -27,7 +27,7 @@ import java.util.Arrays;
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class CameraActivity extends AppCompatActivity {
 
-    private final static String TAG = "MK_" + CameraActivity.class.getSimpleName();
+    private final static String TAG = "CAMERA2 " + CameraActivity.class.getSimpleName();
 
     private TextureView mTextureView;
     private CameraManager mCameraManager;
