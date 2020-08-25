@@ -29,3 +29,12 @@ RxJava 탄생
 
 [도서 - RxJava 프로그래밍, 리액티브 프로그래밍 기초부터 안드로이드까지 한 번에 – 유동환, 박정준](https://play.google.com/store/books/details/RxJava_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EA%B8%B0%EC%B4%88%EB%B6%80%ED%84%B0_%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EA%B9%8C%EC%A7%80_%ED%95%9C_%EB%B2%88%EC%97%90?id=Nh40DwAAQBAJ&hl=ca)
 ---
+
+RxJava 공부법
+---
+* RxJava는 함수형 프로그래밍을 도입했다.
+* Rxjava는 리엑티브 연산자를 제공하고 이를 활용하면 '함수형 프로그래밍' 방식으로 '스레드에 안전한 비동기 프로그램'을 작성할수있다.
+* Rxjava는 어렵다
+  * 왜 어려운가?
+    * 함수형 연산자를 어떻게 호출해야하는지 모르기때문이다.
+
