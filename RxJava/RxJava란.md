@@ -26,6 +26,33 @@ RxJava 탄생
   * 콜백방식의 문제점을 개선해야 한다(Callbacks Have Their Own Problems).
     * 콜백 지옥Callback Hell 상황이 코드의 가독성을 떨어 뜨리고 문제 발생 시 디버깅을 어렵게 만들기 때문이다. --> **RxJava는 콜백을 사용하지 않는 방향으로 설계**
 
+예제
+---
+* ```java
+  import io.reactivex.Observable; 
+
+  public class FirstExample { 
+    public void emit() { 
+      Observable.just("Hello", "RxJava 2!!") 
+      .subscribe(System.out::println);  // <==> data -> System.out.println(data)
+    } 
+  
+    public static void main(String args[]) {
+      FirstExample demo = new FirstExample();
+      demo.emit(); 
+    }
+  }
+
+just()
+---
+* Observable을 선언하는 방식이다.
+* 발행하는것이다.
+
+subscribe()
+---
+* 데이터를 수신한 구독자가 subscribe()을 호출해야 Observable에서 데이터가 발행된다.
+
+
 
 [도서 - RxJava 프로그래밍, 리액티브 프로그래밍 기초부터 안드로이드까지 한 번에 – 유동환, 박정준](https://play.google.com/store/books/details/RxJava_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EB%A6%AC%EC%95%A1%ED%8B%B0%EB%B8%8C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D_%EA%B8%B0%EC%B4%88%EB%B6%80%ED%84%B0_%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%EA%B9%8C%EC%A7%80_%ED%95%9C_%EB%B2%88%EC%97%90?id=Nh40DwAAQBAJ&hl=ca)
 ---
