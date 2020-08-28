@@ -91,5 +91,9 @@ create()
   // 100
   // 200
   // 300
-  
+* RxJava의 javadoc에 따르면 create()는 RxJava에 익숙한 사용자만 활용하도록 권고
+  * dispose -> calllback 해제(메모리 누수 가능성)
+  * 에러발생시 반드시 onError로 처리
+  * 반드시 구독중에만 onNext, onComplete 호출
+  * 배압 직접처리
   
