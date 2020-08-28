@@ -25,5 +25,47 @@ Observable
   
   
 * just()
+  * 예제
+    ```java
+    public class firstexample { 
+      public void emit() { 
+        observable.just(1, 2, 3, 4, 5, 6) 
+        .subscribe(system.out::println);
+        } 
+       ...
+     } 
+     // 출력
+     // 1
+     // 2
+     // 3
+     // 4
+     // 5
+     // 6
   * MarbleDiagram
-    * ![](img/marble_Just.png);
+    * ![](img/marble_Just2.png);
+    
+subscribe()
+---
+  * 동작시키기 원하는것을 사전에 정의해둔 다음 실제 그것이 **실행되는 시점을 조절가능**
+  * subscribe() 함수를호출해야 실제로 데이터를 발행한다.
+  * ```java
+    Disposable subscribe() 
+    // onError가 발생했을때만 OnErrorNotImplementedException을 throw함
+    Disposable subscribe(Consumer<? super T> onNext)
+    // onNext
+    Disposable subscribe(Consumer<? super T> onNext, Throwable> onError)
+    // onNext, onError
+    Disposable subscribe(Consumer<? super T> onNext, Consumer<? super java.lang. Consumer<? super java.lang.Throwable> onError, Action onComplete)
+    // onNext, onError, onComplete
+    
+Disposable Interface
+---
+* dispose()는
+  * Observable에게 더 이상 데이터를 발행하지 않도록 구독을 해지하는 함수
+* isDisposed()
+  * Observable이 데이터를 발행하지 않는지(구독을 해 지했는지) 확인하는 함수
+* Observable 계약(Observable Contract)에 따르면 **Observable이 onComplete 알림을 보냈을 때 자동으로 dispose()를 호출해 Observable과 구독자의 관계를 끊는다.**
+
+create()
+---
+* 
