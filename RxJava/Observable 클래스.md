@@ -68,4 +68,28 @@ Disposable Interface
 
 create()
 ---
-* 
+* create() 함수 는 onNext, onComplete, onError 같은 알림을 개발자가 직접 호출해야 한다.
+* 원형
+  ```java
+  // interface
+  Observable<T> create(ObservableOnSubscribe<T> source)
+  // ObservableOnSubscribe<T>
+  public interface ObservableOnSubscribe<T> { 
+    void subscribe(ObservableEmitter<T> e) throws Exception;
+  }
+* 예제
+  ```java
+  Observable<Integer> source = Observable.create( 
+   (ObservableEmitter<Integer> emitter) -> { 
+     emitter.onNext(100); 
+     emitter.onNext(200); 
+     emitter.onNext(300); 
+     emitter.onComplete();
+  }); 
+  source.subscribe(System.out::println); // 발행을 꼭해줘야한다.!!!
+  // 출력
+  // 100
+  // 200
+  // 300
+  
+  
