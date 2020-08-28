@@ -11,6 +11,9 @@ RxJava의 개념
   * 부수효과(sideEffect)가 존재하지 않는다.
     * Callback 또는 Observer Pattern이 ThreadSafe하지 않는 이유는 여러 스레드가 경쟁조건에 빠지기 때문이다.
     * **하지만 리엑티브 프로그래밍은 이러한 sideEffect가 존재하지 않는다.**
+  * = 선언형 프로그래밍
+    * 어떤 방법(how)으로 동작하는지가 아니라 프로그래밍할 대상이 무엇(what)인지 알려준다.
+    * 목표를 명시할뿐 실행할 알고리즘을 명시하지 않는다.
 * 원론적인 이야기
   * wiki
     * Reactive programs also maintain a continuous interaction with their environment, but at a speed which is determined by the environment, not the program itself. Interactive programs work at their own pace and mostly deal with communication, while reactive programs only work in respond to external demands and mostly deal with accurate interrupt handling.(리엑티브 프로그램은 주변의 환경과 끊임없이 상호작용하며 환경이 변하면 이벤트를 받아 동작하고 외부요구에 반응에 맞춰 일하고 대부분 정확한 인터럽트를 담당한다.)
