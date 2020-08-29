@@ -97,7 +97,8 @@ create()
   * 반드시 구독중에만 onNext, onComplete 호출
   * 배압 직접처리
   
-* fromArray()
+fromArray()
+---
   * fromXXX() 계열 함수는 단일 데이터를 처리하는 just(), create()와 다르게 다중데이터를 처리할때 사용한다.
   * fromArray()는 배열에 들어있는 데이터를 처리할때 활용 사용
   * ```java
