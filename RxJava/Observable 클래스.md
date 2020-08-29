@@ -97,3 +97,30 @@ create()
   * 반드시 구독중에만 onNext, onComplete 호출
   * 배압 직접처리
   
+* fromArray()
+  * fromXXX() 계열 함수는 단일 데이터를 처리하는 just(), create()와 다르게 다중데이터를 처리할때 사용한다.
+  * fromArray()는 배열에 들어있는 데이터를 처리할때 활용 사용
+  * ```java
+    Integer[] arr = {100, 200, 300};
+    Observable<Integer> source = Observable.fromArray(arr);
+    source.subscribe(System.out::println)
+    // result:
+    // 100
+    // 200
+    // 300
+    
+    // int[] array (X)
+    int[] intArray = {400, 500, 600};
+    Observable.fromArray(intArray).subscribe(System.out::println);
+    // result:
+    // I@200a570f
+    
+    //use toIntegerArray() function when you use int[] array (O)
+    int[] intArray = {400, 500, 600};
+    Observable<Integer> source = Observable.fromArray(toIntegerArray(intArray));
+    source.subscribe(System.out::println);
+    // result:
+    // 400
+    // 500
+    // 600
+    
