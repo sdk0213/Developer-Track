@@ -125,3 +125,40 @@ fromArray()
     // 500
     // 600
     
+fromIterable()
+---
+* 반복자를 반환할때 사용
+* 사용 예
+  * ArrayList(List 인터페이스)
+  * Array BlockingQueue(BlockingQueue 인터페이스)
+  * HashSet(Set 인터페이스)
+  * LinkedList
+  * Stack
+  * TreeSet
+  * Vector
+* ```java
+  // ArrayList
+  List<String> names = new ArrayList<>(); 
+  names.add("Jerry");
+  names.add("William");
+  names.add("Bob");
+ 
+  Observable<String> source = Observable.fromIterable(names);
+  source.subscribe(System.out::println);
+  // result :
+  // Jerry
+  // William
+  // Bob
+* ```java
+  // BlockingQueue
+  BlockingQueue<Order> orderQueue = new ArrayBlockingQueue<>(100);
+  orderQueue.add(new Order("ORD-1"));
+  orderQueue.add(new Order("ORD-2"));
+  orderQueue.add(new Order("ORD-3"));
+ 
+  Observable<Order> source = Observable.fromIterable(orderQueue);
+  source.subscribe(order -> System.out.println(order.getId()));
+  // result :
+  // ORD-1
+  // ORD-2
+  // ORD-3
