@@ -162,3 +162,6 @@ fromIterable()
   // ORD-1
   // ORD-2
   // ORD-3
+
+fromCallable() - Java 기본 제공 비동기
+---
