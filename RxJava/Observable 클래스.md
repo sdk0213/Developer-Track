@@ -163,5 +163,76 @@ fromIterable()
   // ORD-2
   // ORD-3
 
-fromCallable() - Java 기본 제공 비동기
+fromCallable()
 ---
+* **Java5 기본 제공 비동기**
+* 메서드 하나
+* 리턴값 존재
+* 기존 사용하던 callable을 RxJava의 fromCallable과 연동이 가능하다.
+* ```java
+  // lambda
+  Callable<String> callable = () -> {
+    Thread.sleep(1000);
+    return "Hello Callable";
+  };
+ 
+  // non-lambda
+  Callable<String> callable = new Callable<String>() {
+      @override
+      public String call() throws Exception {
+        Thread.sleep(1000);
+        return "Hello Callable";
+      }
+  };
+ 
+  Observable<String> source = Observable.fromCallable(callable);
+  source.subscribe(System.out::println);
+  // result:
+  // Hello Callable
+
+fromFutrue()
+---
+* **Java5 기본 제공 비동기**
+* Future는 비동기 처리 결과를 표현하기 위해서 사용된다. 비동기 처리가 완료되었는지 확인하고, 처리 완료를 기다리고, 처리 결과를 리턴하는 메소드를 제공한다.
+* 비동기 계산의 **결과**를 구할 때 사용한다.
+* ```java
+  Future<String> future = Executors.newSingleThreadExecutor().submit(() ->
+    Thread.sleep(1000);
+    return "Hello Future";
+  });
+ 
+  Observable<String> source = Observable.fromFuture(future);
+  source.subscribe(System.out::println);
+* Executors 클래스는 newSingleThreadExecutor() 외에 FixedThreadPool, CachedThreadPoll을 지원한다. **하지만** RxJava에서 **제공하는** 스케쥴러를 활용하도록 **권장**
+ 
+fromPublisher()
+---
+* **Java9 Flow API의 일부**
+* Publisher의 패키지명이 org.reactivestreams이다.
+* ```java
+  import org.reactivestreams.Publisher;
+  import org.reactivestreams.Subscriber;
+  import io.reactivex.Observable;
+  
+  //lambda
+  Publisher<String> publisher = (Subscriber<? super String> s) -> {
+    s.onNext("Hello Observable.fromPublisher()");
+    s.onComplete();
+  };
+
+  //non-lambda
+  Publisher<String? publisher = new Publisher<String>() {
+    @override
+    public void subscribe(Subscriber<? super String> s) {
+        s.onNext("Hello Observable.fromPublisher()");
+        s.onComplete();
+    }
+  };
+
+  Observable<String> source = Observable.fromPublisher(publisher);
+  source.subscribe(System.out::println);
+  Observable(String> source = Observable.fromPublisher(publisher);
+  source.subscribe(System.out::println);
+  // result:
+  // Hello Observable.fromPublisher()
+ 
