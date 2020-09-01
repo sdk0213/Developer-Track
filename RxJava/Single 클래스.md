@@ -42,7 +42,8 @@ just()
       // Red
       
   * empty() 함수를 통해서 Single객체 생성
-    * Observable.empty()
+    * ```java
+      Observable.empty()
         .single("default value")
         .subscribe(System.out::println);
       // result:
