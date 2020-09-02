@@ -58,4 +58,14 @@ just()
       // result:
       // Order ID: ORD-1
        
-       
+* 만약에 값을 여러개 넣으면 어떻게 될까??
+  * ```java
+    Single<String> source = Observable
+      .just("Hello Single", "Error").single("default item");
+    source.subscribe(System.out::println);
+ 
+    // result:
+    // **ERROR!!**
+    // java.lang.illegalArgumentException: Sequnce **contains more than one element!**
+    // at io.reactivex.inter.....
+    // ...
