@@ -4,7 +4,7 @@ Scope Function
 ---
 * ![](https://miro.medium.com/max/700/1*qgUKSwzEicuHwaQBgN5UFw.png)
 * Scope(범위, 영역) 를 일시적으로 만들어서 속성(property)나 함수를 처리하는 용도로 사용되는 함수
-* **쉽게말해서 scope( 대괄호 '{', '}' } 안에서 한번에 처리할때 편하게 하기위해서 사용한다. 잘보면 전부다 대괄호안에서 처리되는것으 확인할수 있다.**
+* **쉽게말해서 scope( 대괄호 '{', '}' } 안에서 한번에 처리할때 편하게 하기위해서 사용한다. 잘보면 전부다 대괄호안에서 처리되는것으 확인할수 있다.** 그래서 코드가 깔끔해지고 가독성이 높아진다.
 * 만들어진 이유
   * 특정 객체에 있는 함수를 연속해서 사용 
   * 다른 함수의 인자로 전달하기 위해 변수를 선언하고 이를 다른 곳에서는 사용하지 않는 경우
@@ -37,13 +37,43 @@ let
   obj?.let {
       Toast.makeText(applicationContext, it, Toast.LENGTH_LONG).show()
   }
+* run과의 차이점은 **같은 이름의 변수나 함수가 'scope 바깥에 중복'되어 있는 경우에 혼란을 방지하기 위해서 사용하다는 점이다.** apply나 also도 같은 관점에서 이와 같다.
+  ```kotlin
+  fun main() {
+  
+    var price = 5000
+    
+    var a = Book("프로그래밍 천재가 되는법", 10000).apply {
+      name = "[할인]" + name
+      discount()
+    }
+    
+    a.run {
+      println("상품명: ${name}, 가격: ${price}원") // 여기까지는 5000원이라고 표시된다. 스코프밖에 price가 우선시 되어서 5000으로 출력되는것이다.
+    }
+    
+    a.let {
+      println("상품명: ${it.name}, 가격: ${it.price}원")
+    }
+    
+  }
+  
+  class Book(var name: String, var price: Int) { // kotlin에서는 자동으로 변수가 알아서 처리되어서 생성됨
+    fun discount() {
+      price -= 2000
+    }
+  }
+  // reuslt:
+  // 상품명: [할인]프로그래밍 천재가 되는법, 가격: 5000
+  // 상품명: [할인]프로그래밍 천재가 되는법, 가격: 8000
   
 with
 ---
 * with() 함수는 사실상 run()함수와 기능이 거의 동일
-* run() 함수 = with() + let(), 즉, 편하게 사용하기 위해서 만든것이라고 봐도 무방
+* run() 함수 = with() + let(), 즉, 편하게 사용하기위해서 만든것이라고 봐도 무방
+* **단지 인스턴스를 참조연산자 대신 패러미터로 받는다는 차이**밖에 없다.
 * 수신 객체이며 결과가 필요하지 않은 경우 유용
-* **safeCalls 지하기때문 run함수 더 자주사용할듯**
+* **safeCalls 지원하기때문 run함수를 더 자주사용할듯**
 * ```kotlin
   supportActionBar?.let {
   with(it) {
@@ -54,7 +84,7 @@ with
       
 run
 ---
-* apply()와 적용 예가 유사하지만, apply()는 새로운 객체를 생성함과 동시에 연속된 작업이 필요할 때 사용하고 run()은 이미 생성된 객체에 연속된 작업이 필요할 때 사용한다는 점이 다르다.
+* apply()와 적용 예가 유사하지만, apply()는 새로운 객체를 생성함과 동시에 연속된 작업이 필요할 때 사용하고 **run()은 이미 생성된 객체에 연속된 작업이 필요할 때 사용한다는 점**이 다르다.
 * 블록 내에서 여러 작업을 할때 사용
 * ```kotlin
   override fun onCreate(savedInstanceState: Bundle?) {
