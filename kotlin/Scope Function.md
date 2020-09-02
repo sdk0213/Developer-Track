@@ -4,6 +4,7 @@ Scope Function
 ---
 * ![](https://miro.medium.com/max/700/1*qgUKSwzEicuHwaQBgN5UFw.png)
 * Scope(범위, 영역) 를 일시적으로 만들어서 속성(property)나 함수를 처리하는 용도로 사용되는 함수
+* **쉽게말해서 scope( 대괄호 '{', '}' } 안에서 한번에 처리할때 편하게 하기위해서 사용한다. 잘보면 전부다 대괄호안에서 처리되는것으 확인할수 있다.**
 * 만들어진 이유
   * 특정 객체에 있는 함수를 연속해서 사용 
   * 다른 함수의 인자로 전달하기 위해 변수를 선언하고 이를 다른 곳에서는 사용하지 않는 경우
@@ -64,10 +65,29 @@ run
      }
      ...
   }
+* ```kotlin
+  fun main() {
+    var a = Book("프로그래밍 천재가 되는법", 10000).apply {
+      name = "[할인]" + name
+      discount()
+    }
+    
+    a.run {
+      println("상품명: ${name}, 가격: ${price}원")
+    }
+  }
+  
+  class Book(var name: String, var price: Int) { // kotlin에서는 자동으로 변수가 알아서 처리되어서 생성됨
+    fun discount() {
+      price -= 2000
+    }
+  }
+  // reuslt:
+  // 상품명: [할인]프로그래밍 천재가 되는법, 가격: 8000
     
 apply
 ---
-* 특정 객체를 생성하면서 함께 호출해야 하는 초기화 코드가 있는 경우 사용\
+* 특정 객체(인스턴스)를 생성한후 **변수에 담기전에 초기화과정을 수행할때 많이 쓴다.**
 * 프로퍼티에 값을 할당할때 유용
 * ```kotlin
   val param = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.WRAP_CONTENT)
