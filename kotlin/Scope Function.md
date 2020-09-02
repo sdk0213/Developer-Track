@@ -24,9 +24,15 @@ let
 * 위의 자바코드를 아래의 코틀린코드로 옮기면 다음과 같다.
 * ```kotlin
   TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16f,
-  resources.displayMetrics).toInt().let { padding ->  // |padding ->| <== 인자가 하나이므로 생략가능하다.
+  resources.displayMetrics).toInt().let { padding ->  // "padding ->" <== 인자가 하나이므로 생략가능하다.
   // 계산된 값을 padding 이라는 이름의 인자로 받음
   setPadding(padding, 0, padding, 0)
+* **인자가 하나일경우 it으로 대체가능**
+  ```kotlin
+  TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 16f,
+  resources.displayMetrics).toInt().let {
+    setPadding(it, 0, it, 0)
+  }
 * safeCall과 함께 사용해서 null체크가능
 * ```kotlin
   // obj가 null이 아닐 경우 작업 수행 (기존 방식)
