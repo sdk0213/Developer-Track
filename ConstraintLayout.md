@@ -20,3 +20,23 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
 * 만약 모든 자식(Children) 뷰가 **어떠한 제약도 가지지 않는다면**, 컨스트레인트레이아웃에 포함된 뷰들은 모두 레이아웃 영역의 **왼쪽 위를 기준으로 배치된다.** 
   * 그렇기 때문에 나중에 추가된 뷰가 앞서 작성된 뷰를 덮어버리게 된다.
   * 컨스트레인트레이아웃을 사용할 때는 **자식(Children) 뷰에 반드시 하나 이상의 제약(또는 수평, 수직 방향에 대한 양 방향 위치 제약)을 적용**해야 한다.
+
+* 크기조정
+  * 연속적인 TextView 만들기
+    ```xml
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_heigh="wrap.......
+      ...
+      android:id="@+id/text1"
+      .. />
+                            
+    <TextView
+      android:layout_widht="0dp"
+      android:layout_height="wrap_content"
+      ...
+      ..
+      app:layout_constraintLeft_toRightOf="@id/text1"
+      app:layout_constraintRight_toRightOf="parent" />
+  * **0dp**
+    * 크기를 dp와 같은것이 아닌 제약(MATCH_CONSTRAINT)에 맞춘다는 뜻이다.
