@@ -37,6 +37,6 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
       ...
       ..
       app:layout_constraintLeft_toRightOf="@id/text1"
-      app:layout_constraintRight_toRightOf="parent" />
+      app:layout_constraintRight_toRightOf="parent" /> <!-- <= 이 Contraint에 조건을 맞춘다는뜻이다.-->
   * **0dp**
     * 크기를 dp와 같은것이 아닌 제약(MATCH_CONSTRAINT)에 맞춘다는 뜻이다.
