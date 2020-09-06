@@ -40,3 +40,22 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
       app:layout_constraintRight_toRightOf="parent" /> <!-- <= 이 Contraint에 조건을 맞춘다는뜻이다.-->
   * **0dp**
     * 크기를 dp와 같은것이 아닌 제약(MATCH_CONSTRAINT)에 맞춘다는 뜻이다.
+* layout_gravity
+  * 컨스트레인트레이아웃에서는 "layout_gravity" 속성이 적용되지 않는다. 
+  * **컨스트레인트레이아웃에서는 제약(Constraint)을 통해 뷰의 위치가 결정 "gravity"와 같은 개념은 무의미**
+                                                         
+상대위치지정
+---
+* Relative Layout과의 차이점
+  * Relative Layout
+     * 전부다 다른 영역에서 따로따로 존재한다.
+       * 자식 뷰 간 상대 위치
+       * 자식 뷰와 부모 간 상대 위치
+       * 맞춤 정렬(Alignment) 등에 대한 속성 
+  * ConstraintLayout
+     * "자식 뷰 간 상대 위치"와 "자식 뷰와 부모 간 상대 위치"를 동일한 속성을 통해 지정 가능하다.
+     * **맞춤 정렬(Alignment)을 위한 속성이 별도로 존재하지 않는다**는 차이가 있다.
+* 속성
+  * layout_constraint[SIDE1]_to[SIDE2]Of
+     * 내 Side1 쪽에 있는놈 위치를 기준으로 side2 로 이동한다.
+                           
