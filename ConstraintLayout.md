@@ -2,7 +2,12 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
 ===
 * constraint == 강제, 제약 이라는 뜻을 가진다.
   * 제약(Constraint)"이란, 각 요소들의 최종 위치와 크기를 결정하게 될 조건이다.
-* View Widget 의 위치와 크기를 **유연하게** 조절할 수 있게 만들어주는 레이아웃이다.
+* View Widget 의 위치와 크기를 **유연하게** 조절할 수 있게 만들어주는 레이아웃이다
+* **장점**
+  * 유지보수 및 성능이 다 빠르다.
+    * ![](img/constaintlayout_performance.png)
+  * relative layout에서 4 depth이상 들어가야하는 것도 1 depth로 가능하다.
+  * 기존의 많은 기능들이 deprecated 되어서 constraintlayout이 유일한 대안이다.
 * layout_constraint[제약조건]의 형식을 가진다.
 * **많은 수의 제약조건들을 가지고 있다.**
 * |||
@@ -40,9 +45,16 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
       app:layout_constraintRight_toRightOf="parent" /> <!-- <= 이 Contraint에 조건을 맞춘다는뜻이다.-->
   * **0dp**
     * 크기를 dp와 같은것이 아닌 제약(MATCH_CONSTRAINT)에 맞춘다는 뜻이다.
-* layout_gravity
-  * 컨스트레인트레이아웃에서는 "layout_gravity" 속성이 적용되지 않는다. 
-  * **컨스트레인트레이아웃에서는 제약(Constraint)을 통해 뷰의 위치가 결정 "gravity"와 같은 개념은 무의미**
+                                                   
+layout_gravity
+---
+* 컨스트레인트레이아웃에서는 "layout_gravity" 속성이 적용되지 않는다. 
+* **컨스트레인트레이아웃에서는 제약(Constraint)을 통해 뷰의 위치가 결정 "gravity"와 같은 개념은 무의미**
+                                                          
+Margins
+---
+* ConstraintLayout 에서의 사이드 Margin 은 기존의 있던 layout_margin 속성들을 그대로 사용하여 적용한다.
+* ![](img/constaintlayout_margins.png)
                                                          
 상대위치지정
 ---
@@ -58,4 +70,8 @@ ConstraintLayout - [출처 - dev님의 tistory](https://recipes4dev.tistory.com/
 * 속성
   * layout_constraint[SIDE1]_to[SIDE2]Of
      * 내 Side1 쪽에 있는놈 위치를 기준으로 side2 로 이동한다.
-                           
+  * ![](img/constaintlayout_orientation.png)
+  * 부모 layout 도 똑같이 적용된다.
+    * ```xml
+      android:"@+id/A
+      ...Left_toLeftOf="parent"
