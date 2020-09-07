@@ -19,7 +19,7 @@ AsyncSubject
     ![](img/marblediagram_asyncsubject.png)
 * code
   ```java
-  AsyncSubject<String> subject = AsyncSubject.create();
+  AsyncSubject<String> subject = AsyncSubject.create(); // create()로 생성
   subejct.subscribe(data -> System.out.prinln("Subscriber #1 => "+ data)); // 구독 시작
   subject.onNext("1");
   subject.onNext("3");
@@ -29,3 +29,36 @@ AsyncSubject
   // result:
   // Subscriber #1 => 5
   // Subscriber #2 => 5
+* AsyncSubject클래스가 Observable의 구독자로 동작하기
+  * ```java
+    // ※ public abstract class Subject<T> extends Observable<T> implements Observer<T>
+    // 형식이기 때문에 subject는 Observable인 source를 구독가능하다
+ 
+    Float[] temperature = {10.1f, 13.4f, 12.5f};
+    Observable<Float> source = Observable.fromArray(temperature);
+ 
+    AsyncSubject<Float> subject = AsyncSubject.create();
+    subject.subscribe(data -> System.out.println("Subscriber #1 => " + data));
+ 
+    source.subscribe(subject);
+    // result:
+    // Subscriber #1 => 12.5
+* OBservable과 마찬가지로 onComlete() 함수 호출 이후에는 onNext 이벤트를 무시
+  * ```java
+    AsyncSubject<Integer> subject = AsyncSubject.create();
+    subject.onNext(10);
+    subject.onNext(11);
+    subject.subscribe(data -> System.out.println("Subscriber #1 => " + data));
+    subject.onNext(12);
+    subject.onComlete();
+    subject.onNext(13);
+    subject.subscribe(data -> System.out.println("Subscriber #2 => " + data));
+    subject.subscribe(data -> System.out.println("Subscriber #3 => " + data));
+    // result:
+    // Subscriber #1 => 12
+    // Subscriber #1 => 12
+    // Subscriber #1 => 12
+
+BehaviorSubject
+---
+*
