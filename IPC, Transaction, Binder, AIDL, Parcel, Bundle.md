@@ -58,8 +58,6 @@ Binder - [출처](https://androidyongyong.tistory.com/8)
 * Transaction 전송은 Parcel 객체로 구성된다.
 * IPC는 양방향 동작이 가능하다.
   * IBinder.FLAG_ONEWAY를 설정함으로써 비동기 Transaction을 지원하며 설정시에는 transact를 호출후 onTransact를 기다리지 않고, 즉시 반환된다.
-* **생명주기**
-  * ![](https://developer.android.com/images/fundamentals/service_binding_tree_lifecycle.png?hl=ko)
 
 AIDL - [출처](https://androidyongyong.tistory.com/8)
 ---
@@ -77,6 +75,10 @@ AIDL - [출처](https://androidyongyong.tistory.com/8)
   * Server에서 실행되더라도 Client가 지역적으로 메서드를 호출할수 있도록 허용하는 두 프로그램대신해서 RPC를 관리
 * **안드로이드에서 제공하는 SDK의 AIDL 도구는 빌드하는 과정에서 개발자가 제작한 .aidl 을 .java라는 자바 인터페이스 파일로 변환시켜준다.**
   * 여기에는 AIDL 인터페이스를 구현하는 Stub 추상 클래스와 Stub 클래스를 이용하는 Stub.Proxy클래스를 제공한다.
+* ![](img/aidl_connection.png)
+* **생명주기**
+  * ![](https://developer.android.com/images/fundamentals/service_binding_tree_lifecycle.png?hl=ko)
+
   
 Proxy,stub - [출처](https://powere.tistory.com/79)
 ---
