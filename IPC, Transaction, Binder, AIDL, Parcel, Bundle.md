@@ -58,6 +58,8 @@ Binder - [출처](https://androidyongyong.tistory.com/8)
 * Transaction 전송은 Parcel 객체로 구성된다.
 * IPC는 양방향 동작이 가능하다.
   * IBinder.FLAG_ONEWAY를 설정함으로써 비동기 Transaction을 지원하며 설정시에는 transact를 호출후 onTransact를 기다리지 않고, 즉시 반환된다.
+* **생명주기**
+  * ![](https://developer.android.com/images/fundamentals/service_binding_tree_lifecycle.png?hl=ko)
 
 AIDL - [출처](https://androidyongyong.tistory.com/8)
 ---
