@@ -72,7 +72,7 @@ BroadcastReceiver - [출처](https://limkydev.tistory.com/49)
       intent.putExtra("MyName","sudeky");
       intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
       intent.setComponent(  
-          new ComponentName("com.the.App.A","com.the.App.B.ReceiverFromB"));  
+          new ComponentName("com.the.App.A","com.the.App.A.ReceiverFromB"));  
       sendBroadcast(intent);
     
 OrderedBroadCast
