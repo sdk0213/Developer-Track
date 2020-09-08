@@ -76,13 +76,25 @@
    * 위 코드르 테스트하기 위해서는 Mock 계정으로 거래를 등록해야된다.
      * 금융관련쪽에서 Mock 계정을 하나 만드는것조차 얼마나 까다우로운지는 알수없으나 엉청나게 까다로울것이라고 예상된다. 또한 Mock이 일반 계정과 똑같이 작용하는지 또한 테스트해야한다. 그야말로 최악이다.
    * **해결법**
-     * ```kotlin 
-       fun buyDonut(quantity: Int = 1, creditCard: CreditCard): Purchase =
+     * buyDonut 함수가 **도넛과 카드 지급**에 대한 표현을 **함께 반환**해야 한다.
+     * 
+     * ```kotlin
+       class Purchase(val donut: Donut, val payment: Payment) // kotlin에서 getter,setter,hashCode, toString,copy,equals 자동생성
+     
+       fun buyDonut(creditCard: CreditCard): Purchase { // 이 상태에서는 신용 카드 지급이 어떻게 이뤄지는지를 신경 쓰지 않는다. Purchase로 넘어갔기 때문이다.
+         val donut = Donut()
+         val payment = Payment(creditCard, Donut.price)
+         retrun Purchase(donut, payment)
+       }
+       
+       // 이제 조금더 자유롭게 코드를 작성할수있다. 예를들어 나중에 처리하기위해 저장을 할수도 있고, 한꺼번에 처리할수도 있다.
+       fun buyDonut(quantity: Int = 1, creditCard: CreditCard): Purchase = 
          Purchase(List(quantitiy) {
            Donut()
          }, Payment(creditCard, Donut.price * quantity))
       
-       class Payment(val creditCard: CreditCard, val amount: Int) {
+       // 여러 지급을 하나로 묶기
+       class Payment(val creditCard: CreditCard, val amount: Int) { // 신용 카드와 청구금액이 포함되어있다.
          fun combine(payment: Payment): Payment =
            if (creditCard == payment.creditCard)
              Payment(creditCard, amount + payment.amount)
@@ -97,3 +109,5 @@
          }
        }
    * **가장중요한것은 추상화이다.**
+   * **끝까지 추상화하면 프로그램을 더 안전하게 만들 수 있다. 추상화된 부분을 단 한 번만 작성하면 되기 때문이다. 
+   * 루프도 추상화가 가능하다.
