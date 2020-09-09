@@ -61,4 +61,25 @@ AsyncSubject
 
 BehaviorSubject
 ---
-*
+* 구독자가 구독을 하면 가장 최근 값 혹은 기본값을 넘겨주는 클래스
+* marblediagram
+  * ![](img/marblediagram_behaviorsubject.png)
+  * '6'은 초기값
+* ```java
+  BehaviorSubject<String> subject = BehaviorSubject.createDefault("6");
+  subject.subscribe(data -> System.out.println("Subscrbier #1 => " _ data));
+  subject.onNext("1");
+  subject.onNext("3");
+  subject.subscribe(data -> System.out.println("Subscriber #2 => " + data));
+  subject.onNext("5");
+  subject.onComplete();
+  // result:
+  // Subscriber #1 => 6
+  // Subscriber #1 => 1
+  // Subscriber #1 => 3
+  // Subscriber #2 => 3
+  // Subscriber #1 => 5
+  // Subscriber #2 => 5
+ 
+PublishSubject
+---
