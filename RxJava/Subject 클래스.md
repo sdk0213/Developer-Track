@@ -83,3 +83,21 @@ BehaviorSubject
  
 PublishSubject
 ---
+* 가장 평범한 Subject 클래스
+  * 오직 해당 시간에 발생한 데이터를 그대로 구독자에게 전달받는다
+* marblediagram
+  * ![](img/marblediagram_publishsubject.png)
+* ``java
+  PublishSubject<String> subject = Publishsubject.create();
+  subject.subscribe(data -> System.out.println("Subscriber #1 => " + data));
+  subject.onNext("1");
+  subject.onNext("3");
+  subject.subscribe(data -> System.out.println("Subscriber #2 => " + data));
+  subject.onNext("5");
+  subject.onComplete();
+  // result:
+  // Subscriber #1 => 1
+  // Subscriber #1 => 3
+  // Subscriber #1 => 5
+  // Subscriber #1 => 5
+* 첫 번째 구독자가 "1","3" 데이터 발행될때 출력후 두번째 구독자가 구독한 후 "5"를 발행한 순간 둘다 값을 받는다.
