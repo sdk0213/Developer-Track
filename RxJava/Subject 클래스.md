@@ -93,6 +93,7 @@ PublishSubject
   subject.onNext("1");
   subject.onNext("3");
   subject.subscribe(data -> System.out.println("Subscriber #2 => " + data));
+ 
   subject.onNext("5");
   subject.onComplete();
   // result:
@@ -104,5 +105,29 @@ PublishSubject
 
 ReplaySubject
 ---
-* 차가운 Observable처럼 동작하는 방식이라서 특이하고 주의해야하는 클래스이다.
-* 
+* **동작방식이 차가운 Observable처럼 특이하고 주의해야하는 클래스이다.
+  * 모든 데이터내용을 저장해두는 과정중 **메모리 누수 가능성**
+* 구독자가 새로 생기면 항상 데이터의 **처음부터 끝까지 발행하는것을 보장**해준다.
+  * ex) 새로운 사람이 들어오면 다시 음악을 들려주는것과 똑같다.
+* marblediagram
+  * ![](img/marblediagram_replaysubject.png)
+* ```java
+  ReplaySubject<String> subject = ReplaySubject.create();
+  subject.subscribe(data -> System.out.println("Subscriber #1 => " + data));
+  subject.onNext("1");
+  subject.onNext("3");
+  subject.subsriber(data -> System.out.println("Subscriber #2 => " + data));
+  subject.onNext("5");
+  subject.onComplete();
+  // result:
+  // Subscriber #1 => 1
+  // Subscriber #1 => 3
+  // Subscriber #2 => 1
+  // Subscriber #2 => 3
+  // Subscriber #1 => 5
+  // Subscriber #2 => 5
+
+
+
+ 
+
