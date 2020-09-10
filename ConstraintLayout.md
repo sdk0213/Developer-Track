@@ -75,3 +75,30 @@ Margins
     * ```xml
       android:"@+id/A
       ...Left_toLeftOf="parent"
+* baseline 기준으로 뷰정렬시 baseline 의미
+  * [출처 - recipes4dev님의 tistory](https://recipes4dev.tistory.com/161?category=658689)
+  * ![](https://t1.daumcdn.net/cfile/tistory/9943BD345CB9656119)
+  * .xml
+    ```xml
+    <android:support.constraint.ConstraintLayout ... ..>          
+              
+    <TextView ... ..
+      android:id="@+id/text1"
+      android:text="TEXT1"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView ... ..
+      android:id="@+id/text2"
+      android:text="TEXT2"
+      app:layout_constraintLeft_toRightOf="@+id/text1"
+      app:layout_constraintBaseline_toBaselineOf="@id/text1" />
+
+    <TextView ... ..
+      android:id="@+id/text3"
+      android:text="TEXT3"
+      app:layout_constraintLeft_toRightOf="@+id/text2"
+      app:layout_constraintBaseline_toBaselineOf="@id/text1" />
+
+    </android.support.constraint.ConstraintLayout>
+  * ![](img/constraintlayout_baseline.png)
