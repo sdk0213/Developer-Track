@@ -236,16 +236,16 @@ fromPublisher()
   // result:
   // Hello Observable.fromPublisher()
  
-Hot Observable, Cold Observable
+뜨거운(Hot) Observable, 차가운(Cold) Observable
 ---
-* Cold Observable (≒ lazy)
+* 차가운(Cold) Observable (≒ lazy)
   * just(), fromIterable() 함수를호출해도 Observer가 subscribe() 함수를 호출하여 구독하지 않으면 절대 데이터를 발행하지 않는다.
   * 구독을 할경우 준비된 데이터를 처음부터 발행
   * 예
     * 웹요청
     * 데이터베이스 쿼리
     * 파일 읽기
-* Hot Observable
+* 뜨거운(Hot) Observable
   * 구독자 존재여부 없이 데이터를 발행한다.
   * 구독을 할경우 Observable에서 발행한 데이터를 받음 (※ 준비된 데이터를 받는것이 아니다)
   * 예
