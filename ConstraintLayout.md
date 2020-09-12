@@ -75,7 +75,7 @@ Margins
     * ```xml
       android:"@+id/A
       ...Left_toLeftOf="parent"
-* baseline 기준으로 뷰정렬시 baseline 의미
+> baseline 기준으로 뷰정렬시 baseline 의미
   * [출처 - recipes4dev님의 tistory](https://recipes4dev.tistory.com/161?category=658689)
   * ![](https://t1.daumcdn.net/cfile/tistory/9943BD345CB9656119)
   * .xml
@@ -102,3 +102,44 @@ Margins
 
     </android.support.constraint.ConstraintLayout>
   * ![](img/constraintlayout_baseline.png)
+* 제약에 따르게 해서(0dp) 가운데 뷰 가득 채우기 
+  * .xml
+    ```xml
+    <android.support.ConstraintLayout .. ....>
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/text1"
+      app:constraintLeft_toLeftOf="parent"
+      app:constraintTop_toTopOf="parent" />
+     
+      <TextView  . . ...
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/text2"
+        app:layout_constraintLeft_toRightOf="@+id/text1"
+        app:layout_constraintRight_toLeftOf="@id/text3"
+              
+      <TextView  . . ...
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/text3"
+        android:text="TEXT3"
+        app:layout_constraintRight_toRightOf="parent" />
+   
+    </android.support.ConstraintLayout>
+     
+> Start/End 속성
+* 우리가 글씨를 왼쪽에서 오른쪽으로 작성하는것이 외국에서는 다르게 작용되는데 예로 아랍권에서는 반대 반향인 경우가 있다.
+  * 그거에 대해서 헷갈리지 않게 주어지는 옵션이 Start와 End이다.
+     
+여백(Margin)
+---
+|여백(Margin) 관련 속성|설명|
+|:---:|:---|
+|layout_marginStart|뷰 위젯의 시작(Start) 사이드 여백 설정|
+|layout_marginEnd|뷰 위젯의 끝(Start) 사이드 여백 설정|
+|layout_marginLeft|뷰 위젯의 왼쪽(Left) 사이드 여백 설정|
+|layout_marginTop|뷰 위젯의 위(Top) 사이드 여백 설정|
+|layout_marginRight|뷰 위젯의 오른쪽(Right) 사이드 여백 설정|
+|layout_marginBotton|부 위젯의 아래(Bottom) 사이드 여백 설정|
+|
