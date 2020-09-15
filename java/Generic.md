@@ -114,12 +114,16 @@ Generic
 
     public void addAll(List<? extends Number> list) { /* ... */ }
     
-* Bounded wildcard type - [@joongwon medium - 자세한 내용](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)
+* 물음표 - Bounded wildcard type - [@joongwon medium - 자세한 내용](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)
+  * 와일드카드(Wildcard)
+    * 와일드 카드란 "파일을 지정할 때, 구체적인 이름 대신에 **여러 파일을 동시에 지정**할 목적으로 사용하는 특수 기호" 로 **자바에서는 '?(물음표)'로 나타낸다.**
   * 종류
     * Upper bounded wildcard
+      * T가 상속하는 모든 클래스가 사용가능
       * ```java
         <? super T>
     * Lower bounded wildcard
+      * T를 상속하는 모든 클래스가 사용가능
       * ```java
         <? extends T>
 * PECS - [@joongwon medium - 자세한 내용](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)
