@@ -122,6 +122,45 @@ Generic
       * T가 상속하는 모든 클래스가 사용가능 [[더 쉬운 내용 출처]](https://eskeptor.tistory.com/84)
       * ```java
         <? super T>
+      * .java
+        ```java
+        class Human {
+          ...
+        }
+        
+        class Student extends Human {
+          ...
+        }
+        
+        class Introduce<T> {
+          private T obj;
+          introduce (final T obj) {
+            this.obj = obj;
+          }
+          
+          public T ReturnOBJ() {
+            return obj;
+          }
+        }
+        
+        public class GenericTest {
+          
+          public static void printSubject(final Introduce<? extends Human> param) {
+            Human tmp = param.ReturnOBJ();
+            tmp.printName();
+          }
+          
+          public staic void main....
+              Introduce<Student> introduce = new Introduce<>(new Student("앙대경"));
+              
+              ...
+              
+              printSubject(introduce);
+              
+          }
+          
+        }
+        
     * Lower bounded wildcard
       * T를 상속하는 모든 클래스가 사용가능 [[더 쉬운 내용 출처]](https://eskeptor.tistory.com/84)
       * ```java
