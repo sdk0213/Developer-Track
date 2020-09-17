@@ -134,12 +134,13 @@ Margins
      
 여백(Margin)
 ---
-|여백(Margin) 관련 속성|설명|
-|:---:|:---|
-|layout_marginStart|뷰 위젯의 시작(Start) 사이드 여백 설정|
-|layout_marginEnd|뷰 위젯의 끝(Start) 사이드 여백 설정|
-|layout_marginLeft|뷰 위젯의 왼쪽(Left) 사이드 여백 설정|
-|layout_marginTop|뷰 위젯의 위(Top) 사이드 여백 설정|
-|layout_marginRight|뷰 위젯의 오른쪽(Right) 사이드 여백 설정|
-|layout_marginBotton|부 위젯의 아래(Bottom) 사이드 여백 설정|
-|
+* |여백(Margin) 관련 속성|설명|
+  |:---:|:---|
+  |layout_marginStart|뷰 위젯의 시작(Start) 사이드 여백 설정|
+  |layout_marginEnd|뷰 위젯의 끝(Start) 사이드 여백 설정|
+  |layout_marginLeft|뷰 위젯의 왼쪽(Left) 사이드 여백 설정|
+  |layout_marginTop|뷰 위젯의 위(Top) 사이드 여백 설정|
+  |layout_marginRight|뷰 위젯의 오른쪽(Right) 사이드 여백 설정|
+  |layout_marginBotton|부 위젯의 아래(Bottom) 사이드 여백 설정|
+* **여백**과 관련된 속성이 **적용** 되려면, 속성이 적용된 **사이드**(Side) 에 해당하는 **제약**(Contraint)이 **명시적**으로 **지정**되어 **있어야** 한다.
+  
