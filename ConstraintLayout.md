@@ -143,4 +143,30 @@ Margins
   |layout_marginRight|뷰 위젯의 오른쪽(Right) 사이드 여백 설정|
   |layout_marginBotton|부 위젯의 아래(Bottom) 사이드 여백 설정|
 * **여백**과 관련된 속성이 **적용** 되려면, 속성이 적용된 **사이드**(Side) 에 해당하는 **제약**(Contraint)이 **명시적**으로 **지정**되어 **있어야** 한다.
-  
+* .xml
+  ```xml
+  <android.suupport.constraint.ConstraintLayout xmlns:......
+                                                
+  >
+   
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/text1"
+      android:text="TEXT1"
+      android:textSize="60sp"
+      android:background="#00FF00"
+      android:layout_marginLeft="30dp"
+      android:layout_marginTop="30dp" />
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="TEXT2"
+      android:textSize="60sp"
+      android:background="#FF0000"
+      android:layout_marginLeft="30dp"
+      android:layout_marginTop="30dp"
+      app:layout_constraintLeft_toRightOf="@id/text1"
+      app:layout_constraintTop_toTopOf="parent" />
+   
