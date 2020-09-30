@@ -102,7 +102,7 @@ Margins
 
     </android.support.constraint.ConstraintLayout>
   * ![](img/constraintlayout_baseline.png)
-* 제약에 따르게 해서(0dp) 가운데 뷰 가득 채우기 
+* 제약에 따르게 해서(0dp) 가운데 뷰 가득 채우기 [출처 - reciippes4dev님의 tistory](https://recipes4dev.tistory.com/162?category=658689)
   * .xml
     ```xml
     <android.support.ConstraintLayout .. ....>
@@ -132,7 +132,7 @@ Margins
 * 우리가 글씨를 왼쪽에서 오른쪽으로 작성하는것이 외국에서는 다르게 작용되는데 예로 아랍권에서는 반대 반향인 경우가 있다.
   * 그거에 대해서 헷갈리지 않게 주어지는 옵션이 Start와 End이다.
      
-여백(Margin)
+여백(Margin) [출처 - reciippes4dev님의 tistory](https://recipes4dev.tistory.com/162?category=658689)
 ---
 * |여백(Margin) 관련 속성|설명|
   |:---:|:---|
@@ -143,6 +143,7 @@ Margins
   |layout_marginRight|뷰 위젯의 오른쪽(Right) 사이드 여백 설정|
   |layout_marginBotton|부 위젯의 아래(Bottom) 사이드 여백 설정|
 * **여백**과 관련된 속성이 **적용** 되려면, 속성이 적용된 **사이드**(Side) 에 해당하는 **제약**(Contraint)이 **명시적**으로 **지정**되어 **있어야** 한다.
+* 만약에 제약(constraint)가 없다면 속성이 적용되지 않는다.
 * .xml
   ```xml
   <android.suupport.constraint.ConstraintLayout xmlns:......
@@ -157,7 +158,7 @@ Margins
       android:textSize="60sp"
       android:background="#00FF00"
       android:layout_marginLeft="30dp"
-      android:layout_marginTop="30dp" />
+      android:layout_marginTop="30dp" /> <!-- Contraint(제약)이 없기 때문에 여백이 적용되지 않는다. -->
 
   <TextView
       android:layout_width="wrap_content"
@@ -169,4 +170,180 @@ Margins
       android:layout_marginTop="30dp"
       app:layout_constraintLeft_toRightOf="@id/text1"
       app:layout_constraintTop_toTopOf="parent" />
-   
+* ![](img/constraintlayout_margins2.png)
+  
+화면에 보이지 않는 상태(GONE)에서의 여백 [출처 - reciippes4dev님의 tistory](https://recipes4dev.tistory.com/162?category=658689)
+---
+* ![](https://t1.daumcdn.net/cfile/tistory/996A2B3A5CBFFF3916)
+* ![](https://t1.daumcdn.net/cfile/tistory/99BF38365CBFFF3929)
+
+가운데 위치 조정하고 Bias(치우침) 적용하기 [출처 - reciippes4dev님의 tistory](https://recipes4dev.tistory.com/163?category=658689)
+---
+* 서로가 잡아당겨서 균형을 맞춘다고 생각하면됨
+* ![](img/constraintlayout_center.png)
+* 뷰와 위젯간에도 동일하게 적용된다.
+* ![](https://t1.daumcdn.net/cfile/tistory/999E2D485CD3C72C19)
+* ![](https://t1.daumcdn.net/cfile/tistory/9962F6405CD3C72C1D)
+* ![](https://t1.daumcdn.net/cfile/tistory/9913974F5CD3C72C17)
+* ![](https://t1.daumcdn.net/cfile/tistory/99D6F6445CD3C72C12)
+  
+원형위치 지정 - [출처 - reciippes4dev님의 tistory](https://recipes4dev.tistory.com/165?category=658689)
+---
+* ![](https://t1.daumcdn.net/cfile/tistory/9938D34F5CDCD7A72E)
+* ```xml
+  <?xml version="1.0" encoding="utf-8"?>
+  <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="#00FF00"
+        android:id="@+id/watchCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="1"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="30" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="2"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="60" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="3"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="90" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="4"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="120" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="5"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="150" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="6"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="180" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="7"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="210" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="8"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="240" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="9"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="270" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="10"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="300" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="11"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="330" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="60sp"
+        android:text="12"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="250dp"
+        app:layout_constraintCircleAngle="0" />
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:background="#FF0000"
+        android:id="@+id/handSecond"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="100dp"
+        app:layout_constraintCircleAngle="90" />
+
+    <View
+        android:layout_width="160dp"
+        android:layout_height="2dp"
+        android:background="#0000FF"
+        android:id="@+id/handMinute"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="80dp"
+        app:layout_constraintCircleAngle="90" />
+
+    <View
+        android:layout_width="100dp"
+        android:layout_height="2dp"
+        android:background="#000000"
+        android:id="@+id/handHour"
+        app:layout_constraintCircle="@id/watchCenter"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintCircleAngle="90" />
+   </android.support.constraint.ConstraintLayout>
+* ![](https://t1.daumcdn.net/cfile/tistory/990FE7345CDCD7A705)
