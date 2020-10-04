@@ -1,4 +1,4 @@
-맵(Map)
+맵(Map) - [출처 wikidocs](https://wikidocs.net/208)
 ===
 * 자료형으로 Associative array, Hash라고도 불린다.
 * 맵은 **사전과 비슷**하다.
