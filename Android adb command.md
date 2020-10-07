@@ -1,0 +1,49 @@
+Android adb command - [출처 - superfelix님의 tistory](https://superfelix.tistory.com/89)
+===
+> adb 도움말
+* adb -h
+패키지관련
+---
+> 패키지 강제 종료
+* adb shell am force-stop [packagename]
+> App data 삭제
+* adb shell pm clear 패키지명
+> APK 설치
+* adb install -r APK_FILE
+> APK 제거
+* adb unintall 패키지명
+> 모든 패키지명 가져오기
+* adb shell pm list packages -f
+
+소프트웨어 정보
+---
+> Android 버전 확인
+* adb shell getprop ro.build.version.release
+> SDK 버전 확인
+* adb shell getprop ro.build.version.sdk
+> Android Setting 열기
+* adb shell am start -n com.android.settings/com.android.settings.Settings
+
+하드웨어
+---
+> 장치 모델명 확인
+* adb shell getprop ro.product.model
+> 화면 해상도 확인
+* adb shell dupsys window | grep DisplayWidth
+> Screenshot 저장
+* adb shell /system/bin/screencap -p 장치내경로
+> 장치 검색
+* adb devices
+> 장치 재부팅
+* adb reboot 
+> 장치 작동 시간 확인
+* adb uptime
+
+ADB
+---
+> adb 종료
+* adb kill-sever
+> adb 실행
+* adb start-server
+> adb shell 실행
+* adb shell
