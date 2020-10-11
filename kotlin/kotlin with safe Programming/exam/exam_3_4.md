@@ -7,5 +7,11 @@ exam_3_4
     fun square(n: Int) = n * n
     fun triple(n: Int) = n * 3
 * ```kotlin
-  val<T> sqaure: (T) -> T = it*it
-  val<T> triple: (T) -> T = it*3
+  val compose: ((Int) -> Int) -> ((Int) -> Int) -> (Int) -> Int =
+    { x -> { y -> { z -> x(y(z)) } } }
+    
+  // 타입 추론 사용
+  
+  val compose = { x: (Int) -> Int -> { y: (Int) -> Int ->
+    { z: Int -> x(y(z)) } } } 
+    
