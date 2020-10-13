@@ -1,6 +1,13 @@
 exam_3_5
 ===
-> 다형적 compose 함수를 작성하라.
+> 다형적 highercompose 함수를 작성하라.
 * ```kotlin
-  val <T, U, V> highercompose:  ((U) -> V) -> ((T) -> U) -> (T) -> V = 
-                                   { f -> { g -> { x -> f(g(x)) } } }
+  val <T, U, V> highercompose:  ((U) -> V) -> ((T) -> U) -> (T) -> V = { f -> { g -> { x -> f(g(x)) } } }
+  
+  // 다형적 프로퍼티를 정의불가능 -> val 는 상수를 의미한다. 아마 제네릭타입을 사용불가능하다는 뜻 같다.
+  // 그러므로 fun을 사용하여야 한다.
+  
+  fun <T, U, V> higherCompose(): ((U) -> V) -> ((T) -> U) -> (T) -> V = { f -> { g -> { x -> f(g(x)) } } }
+  // 'fun'이라는 함수로 정의했지만 이것은 아무 파라미터도 받지 않기 때문에 항상 같은 값을 반환한다.
+  // 따라서 이 함수는 상수다.
+  
