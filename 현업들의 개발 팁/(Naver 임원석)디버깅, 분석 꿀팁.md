@@ -48,3 +48,26 @@
   * 3td party app
   * 시스템의 가용 메모리를 억지로 점유하는 앱(포어그라운드일떄 
   * 
+
+Android FrameWork 분석
+---
+* developer 문서상에서 굉장히 부족한 정보
+* 공부하다가 문제가 생길경우 google issue tracker에서 찾아보기
+
+분석
+---
+* 경험이 중요하다.
+* Dexplorer
+* Apk Extractor
+* Apk Analser (Android Studio)
+* Apk Decomiler
+  * APK Tool
+  * Dex2.jar
+  * JD-GUI
+* Developer Assistant
+  * 현재 표시되는 UI의(스마트폰상에서 체크가능) 기능 함수
+  * **추천 유료**
+* Native Libs Monitor
+  * so파일 확인할때 유용
+* OpenSource License
+  * 오픈소스 라이선스 사용한다면 반드시 명시해야하기 때문에 이부분을 참고해보는것도 좋음
