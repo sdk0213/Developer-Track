@@ -171,6 +171,16 @@ Generic
       * T를 상속하는 모든 클래스가 사용가능 [[더 쉬운 내용 출처]](https://eskeptor.tistory.com/84)
       * ```java
         <? extends T>
+* 구현 - [ict nroo 님의 tistory](https://ict-nroo.tistory.com/42)
+  * 타입 파라미터는 자식 클래스에도 기술해야 한다.
+    * ```java
+      public class ChildProduct<T,M> extends Product<T,M> { ... }
+  * 추가적인 타입 파라미터를 가질 수 있다.
+    * ```java
+      public class ChildProduct<T,M,C> extends Product<T,M> { ... }
+  * 타입 파라미터는 구현 클래스에도 기술해야 한다.
+    * ```java
+      public class StorageImpl<T> implements Storage<T> { ... }
 * PECS - [@joongwon medium - 자세한 내용](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)
   * ```java
     //  Producer-extends는 읽기만 가능하고 Consumer-super는 쓰기만 가능하다는 것이다.
