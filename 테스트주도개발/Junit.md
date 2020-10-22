@@ -32,12 +32,41 @@ Junit
   * 테스트 클래스 실행 후 한번 실행
 > 간단한 예
 * ```java
-  package test.junit;
   
-  public class Calculator {
-   
-    public int sum(int num1, int num2 ) {
-      return num1+num2;
-    }
- 
+  public class Calculator { 
+      int a, b;
+
+      public Calculator() { }
+      public Calculator(int b, int a) {
+      ...
+      // 대충 사칙연산 해주는 클래스(이하 생략)
+      ... 
   }
+* ```java
+  import android.support.test.runner.AndroidJUnit4;
+  import android.test.suitebuilder.annotation.SmallTest;
+  import org.junit.Before; 
+  import org.junit.Test;
+  import org.junit.runner.RunWith;
+  import static org.hamcrest.CoreMatchers.is;
+  import static org.junit.Assert.assertThat;
+
+  @RunWith(AndroidJUnit4.class) // 특정 라이브러리 사용
+  @SmallTest 
+  public class TestSample {
+    private Calculator calculator;
+
+    @Before // 테스트 수행전 수행되는 부분
+    public void setUp() { 
+      calculator = new Calculator(); 
+    } 
+   
+    @Test // 테스트
+    public void test() { 
+      int result = calculator.add(12, 11);
+      assertThat(result, is(20)); 
+    } 
+   }
+> 테스트 수행하기
+  * 메뉴 -> Run -> Edit Configurations -> '+'버튼 -> Android Test -> 테스트의 이름을 작성 -> Module을 app선택 -> Test는 Class 선택 -> Class는 테스트 클래스인 TestSample을 선택 -> instrumentation runner는 gradle에서 설정한 AndroidJUnitRunner를 선택 -> **Run(실행)**
+  * 예상값과 다르다면 에러 아니면 초록색으로 성공표시됨
