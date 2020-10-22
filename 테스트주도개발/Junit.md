@@ -70,3 +70,4 @@ Junit
 > 테스트 수행하기
   * 메뉴 -> Run -> Edit Configurations -> '+'버튼 -> Android Test -> 테스트의 이름을 작성 -> Module을 app선택 -> Test는 Class 선택 -> Class는 테스트 클래스인 TestSample을 선택 -> instrumentation runner는 gradle에서 설정한 AndroidJUnitRunner를 선택 -> **Run(실행)**
   * 예상값과 다르다면 에러 아니면 초록색으로 성공표시됨
+
