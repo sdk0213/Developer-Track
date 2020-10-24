@@ -1,5 +1,6 @@
 espresso Test 기본사항 - [안드로이드 공식문서](https://developer.android.com/training/testing/espresso/basics?hl=ko)
 ===
+* Espresso API는 테스트 **작성자에게 사용자**가 애플리케이션과 상호작용(UI 요소를 찾고 상호작용)하는 동안 **실행하는 작업의 관점에서 생각하도록 권장**
 * ```java
   // 만약 my_view가 display 되고 있다면 클릭해라
 
