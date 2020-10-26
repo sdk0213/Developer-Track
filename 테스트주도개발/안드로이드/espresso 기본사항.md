@@ -19,4 +19,15 @@ espresso Test 기본사항 - [안드로이드 공식문서](https://developer.an
 
     // 매처를 역전시키지 않도록 선택
     onView(allOf(withId(R.id.my_view), not(withText("Unwanted"))));
+    
+> 뷰에 작업 실행
+* ```java
+  onView(...).perform(click());
+  // OR
+  onView(...).perform(typeText("Hello"), click());
+  // 작업 중인 뷰가 ScrollView(세로 또는 가로) 내부에 있다면
+  onView(...).perform(scrollTo(), click());
+    
+    
+
 
