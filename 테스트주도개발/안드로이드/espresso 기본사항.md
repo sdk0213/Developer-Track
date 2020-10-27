@@ -32,8 +32,10 @@ espresso Test 기본사항 - [안드로이드 공식문서](https://developer.an
 * ```java
   onView(...).check(matches(withText("Hello!")));
  
-  // 잘못된 
+  // "Hello!"가 뷰의 콘텐츠인지 어설션하려는 경우 다음은 잘못된 사례로 간주
   // 뷰가 표시되지 않는지 어설션하는 것과 뷰가 뷰 계층 구조에 없는지 어설션하는 것의 차이에 주의해야 합니다.
+  onView(allOf(withId(...), withText("Hello!"))).check(matches(isDisplayed()));
+
     
     
 
