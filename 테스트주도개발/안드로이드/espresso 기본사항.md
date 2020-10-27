@@ -27,6 +27,13 @@ espresso Test 기본사항 - [안드로이드 공식문서](https://developer.an
   onView(...).perform(typeText("Hello"), click());
   // 작업 중인 뷰가 ScrollView(세로 또는 가로) 내부에 있다면
   onView(...).perform(scrollTo(), click());
+ 
+> 뷰 어설션 확인
+* ```java
+  onView(...).check(matches(withText("Hello!")));
+ 
+  // 잘못된 
+  // 뷰가 표시되지 않는지 어설션하는 것과 뷰가 뷰 계층 구조에 없는지 어설션하는 것의 차이에 주의해야 합니다.
     
     
 
