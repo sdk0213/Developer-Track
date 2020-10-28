@@ -36,7 +36,24 @@ espresso Test 기본사항 - [안드로이드 공식문서](https://developer.an
   // 뷰가 표시되지 않는지 어설션하는 것과 뷰가 뷰 계층 구조에 없는지 어설션하는 것의 차이에 주의해야 합니다.
   onView(allOf(withId(...), withText("Hello!"))).check(matches(isDisplayed()));
 
+> 뷰 어설션 단순 테스트
+* 버튼을 클릭하면 TextView의 콘텐츠가 "Hello Espresso!"로 변경되는 코드가 있을때 이를 테스트하는 테스트 코드는 다음과 같다.
+* ```java
+  onView(withId(R.id.button_simple)).perform(click());
+  
+  // 변경되었는지 확인하기
+  onView(withId(R.id.text_simple)).check(matches(withText("Hello Espresso!")));
+
+> 어댑터 뷰에서 데이터 로드 확인
+* 동적으로 로드되기때문에 onView로 확인이 힘들다. 데이터를 불러올때 찾고자하는 데이터가 존재하지 않을수도 있기 때문이다. 그리고 onView는 아직 로드되지 않는 데이터까지 읽지는 않는다. 이럴때 사용가능한것이 onData()이다.
+* onData()
+  * 문제의 어댑터 항목을 먼저 로드할 수 있는 별도의 진입점을 제공해준다.
+* SimpleActivity에는 커피 음료의 유형을 나타내는 몇 가지 항목이 있는 Spinner가 포함되어 있습니다. 항목을 선택하면 "One %s a day!"로 변경되는 TextView가 있습니다. 여기서 %s는 선택된 항목을 나타냅니다.
+* ```java
+  onData(allOf(is(instanceOf(String.class)), is("Americano"))).perform(click());
+
+  // 확인
+  onView(withId(R.id.spinnertext_simple))
+     .check(matches(withText(containsString("Americano"))));
     
     
-
-
