@@ -8,7 +8,7 @@ Android Debugging 속도올리기
               splits.abi.enable = false
               splits.density.enable = false
               ext.alwaysUpdateBuildId = false
-              aaptOptions.cruncherEnabled = false  // png 최적화 끄끼
+              aaptOptions.cruncherEnabled = false  // png 최적화 끄기
   }
 
 
