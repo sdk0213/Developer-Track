@@ -12,7 +12,7 @@ Android Debugging 속도올리기
   }
 
 
-> build.properties
+> gradle.properties
 * ```java
   org.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
   org.gradle.daemon=true
