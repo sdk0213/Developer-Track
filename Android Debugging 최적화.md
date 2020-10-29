@@ -1,4 +1,4 @@
-Android Debugging 속도올리기
+Android Debugging 최적화
 ---
 > build.gradle
 * ```java
