@@ -57,3 +57,9 @@ espresso Test 기본사항 - [안드로이드 공식문서](https://developer.an
      .check(matches(withText(containsString("Americano"))));
     
     
+
+> onView 예외메시지
+* NoMatchingViewException
+  * 타겟뷰 못찾음
+* AmbiguousViewMatcherException
+  * 지정된 매체와 여러뷰를 찾음
