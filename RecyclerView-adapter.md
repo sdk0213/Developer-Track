@@ -76,6 +76,71 @@ Viewholder
       }
   }
 
-Viewtype 지정
+Viewtype 지정 - [lktprogrammer님의 tistory](https://lktprogrammer.tistory.com/190)
 ---
-* https://ppizil.tistory.com/m/entry/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EA%B8%B0%EB%B3%B8%EC%A0%81%EC%9D%B8-Recyclerview-ViewType%EC%9C%BC%EB%A1%9C-%ED%99%80%EB%8D%94-%EB%82%98%EB%88%84%EA%B8%B0-%EB%8B%A4%EB%A5%B8-Layout%EB%A7%8C%EB%93%A4%EA%B8%B0
+* ```java
+  // MainActivity부분 -> MainAcitivty에서 recyclerview adapter를 생성하고 viewtype을 지정해준다.
+  
+  public void initializeData()
+   {
+       dataList = new ArrayList<>();
+
+       dataList.add(new DataItem("사용자1님이 입장하셨습니다.", null,  Code.ViewType.CENTER_CONTENT));
+       dataList.add(new DataItem("사용자2님이 입장하셨습니다.", null,  Code.ViewType.CENTER_CONTENT));
+       dataList.add(new DataItem("안녕하세요", "사용자1",  Code.ViewType.LEFT_CONTENT));
+       dataList.add(new DataItem("안녕하세요", "사용자2",  Code.ViewType.RIGHT_CONTENT))
+   }
+* ```java
+  // Enum 클래스를 사용하지 않고 클래스로 만든 이유는 궁금하다.
+  public class Code {
+    public class ViewType{
+        public static final int LEFT_CONTENT = 0;
+        public static final int RIGHT_CONTENT = 1;
+        public static final int CENTER_CONTENT = 2;
+    }
+  }
+* ```java
+  public class DataItem {
+
+    private String content;
+    private String name;
+    private int viewType;
+
+    public DataItem(String content, String name ,int viewType) {
+        this.content = content;
+        this.viewType = viewType;
+        this.name = name;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getViewType() {
+        return viewType;
+    }
+  }
+* ```java
+   // 이곳에서 position으로 viewtype을 가져오고 onBindViewHolder의 viewtype으로 보낸다.
+  @Override
+  public int getItemViewType(int position) {
+      return myDataList.get(position).getViewType();
+  }
+* ```java
+  // adapeter 부분
+  public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType)
+        {
+            View view;
+            Context context = parent.getContext();
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
+            if(viewType == Code.ViewType.CENTER_CONTENT)
+            {
+                view = inflater.inflate(R.layout.center_content, parent, false);
+                return new CenterViewHolder(view);
+            }
+            else if(viewType == Code.ViewType.LEFT_CONTENT
