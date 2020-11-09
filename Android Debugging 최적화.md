@@ -15,7 +15,7 @@ Android Debugging 최적화
 
 > gradle.properties
 * ```properties
-  org.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=1024m -XX:+HeapDorg.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
+  org.gradle.jvmargs=-Xmx4096m -XX:MaxPermSize=1024m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8
   # Gradle Daemon 사용 (백그라운드 대기상태 유지)
   org.gradle.daemon=true 
   # 서브 모듈을 동시에 빌드
