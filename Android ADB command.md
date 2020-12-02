@@ -52,7 +52,7 @@ ADB
 
 파일 삭제
 ---
-* 파일 삭제
-adb shell find PATH sdcard/Download/ -exec rm {} \;
-* 폴더 삭제
-adb shell find PATH sdcard/Download/ -exec rm -r {} \;
+> 파일 삭제
+* adb shell find PATH sdcard/Download/ -exec rm {} \;
+> 폴더 삭제
+*adb shell find PATH sdcard/Download/ -exec rm -r {} \;
