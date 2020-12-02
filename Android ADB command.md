@@ -47,3 +47,12 @@ ADB
 * adb start-server
 > adb shell 실행
 * adb shell
+
+>> 리눅스 명령은 adb shell 이후에 처리하면됨 예를들어 다음과같이 리눅스 명령어를 활용해서 특저 파일을 삭제할수있음
+
+파일 삭제
+---
+* 파일 삭제
+adb shell find PATH sdcard/Download/ -exec rm {} \;
+* 폴더 삭제
+adb shell find PATH sdcard/Download/ -exec rm -r {} \;
