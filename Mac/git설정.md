@@ -24,4 +24,4 @@ git설정 - [출처 - ZeddiOS님의 티스토리](https://zeddios.tistory.com/4)
     git push -u origin [브랜치]
     // 브랜치 기본값은 보통 master
   
-  
+* gitflow - [출처 : gmlwd9405](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html)
