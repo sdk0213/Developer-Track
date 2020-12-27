@@ -19,6 +19,7 @@
 > 리플렉션(reflection)은 구체적인 클래스 타입을 알지 못해도, 그 클래스의 메소드, 타입, 변수들을 접근할 수 있도록 해주는 Java PI
 * **즉, 작성 시점에는 어떤 클래스를 사용해야 할지 모를때 사용**
   * **Heap Memory** 영역에 올라가있는 Class 정보를 통해 가져온다.
+  * 컴파일 시간(Compile Time)이 아니라 실행 시간(Run Time)에 동적으로 특정 클래스의 정보를 객체화를 통해 분석 및 추출해낼 수 있는 프로그래밍 기법이라고 표현할 수 있다.
 * .java
   ```java
   import java.lang.reflect.Method; // 리플렉션의 Method 사용하기
