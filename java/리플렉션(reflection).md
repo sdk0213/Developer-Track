@@ -1,21 +1,24 @@
 리플렉션(reflection) - [출처 madplay.github](https://madplay.github.io/post/java-reflection)
 ===
-* 다음처럼 최상위 클래스인 Object에 담을수는 있지만 사용은 불가능하다. 왜냐하면 Object의 메서드와 변수만 사용가능하기 때문이다. 그러니까 car의메 메서드는 사용하지 못한다.
-* .java
-  ```java
-  public class Car{
-    public void drive(){
-      //do Something
+* 사용하게 되는 이유
+  * 다음처럼 최상위 클래스인 Object에 담을수는 있지만 사용은 불가능하다. 왜냐하면 Object의 메서드와 변수만 사용가능하기 때문이다. 그러니까 car의메 메서드는 사용하지 못한다.
+  * .java
+    ```java
+    public class Car{
+      public void drive(){
+        //do Something
+      }
     }
-  }
   
-  public class Main{
-    public static void main(String[] args){
-      Object car = new Car();
-      car.drive(); // 컴파일 에러
+    public class Main{
+      public static void main(String[] args){
+        Object car = new Car();
+        car.drive(); // 컴파일 에러
+      }
     }
-  }
-* 
+  * 그런데 위의 상황같이 구체적인 타입의 클래스를 모를때 사용하는것이 리플랙션이다.
+  * 그런데 자기가 작성하는 코드인데 어떻게 모를수 있을까?
+    * 코드를 작성할 시점에는 어떤 타입인지 모를때가 있을수 있음 그런데 런타임에서 지금 실행되고 있는 클래스를 가져와야됨
 > 리플렉션(reflection)은 구체적인 클래스 타입을 알지 못해도, 그 클래스의 메소드, 타입, 변수들을 접근할 수 있도록 해주는 Java PI
 * **즉, 작성 시점에는 어떤 클래스를 사용해야 할지 모를때 사용**
   * **Heap Memory** 영역에 올라가있는 Class 정보를 통해 가져온다.
