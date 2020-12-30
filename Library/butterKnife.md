@@ -1,6 +1,6 @@
 butterKnife - [박상권의 삽질블로그](https://gun0912.tistory.com/2)
 ===
-* [ButterKnife github](http://jakewharton.github.io/butterknife/)
+* [ButterKnife github](https://github.com/JakeWharton/butterknife)
 * 안드로이드에서 작업을 할때 가장 귀찮은 반복작업중 하나가 view 를 선언하고 할당하는 작업들이다.
 * 이를 간단하게 표현할수 있느 라이브러리가 바로 ButterKnife 이다.
 * **노가다 작업을 줄여주는 라이브러리다.**
