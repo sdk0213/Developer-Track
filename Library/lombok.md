@@ -13,4 +13,23 @@ Lombok 라이브러리
   @Builder
   public class lombokEx {
       private @NonNull String name;
-      private 
+      private @NonNull String age;
+      private @NonNull String sex;
+  }
+  
+  
+  ....
+  ...
+  .. main Class
+  
+  .... main(){
+    lombokEX lmb = new LombokModelBuilder()
+        .name("sungDaekyoung")
+        .age("28")
+        .sex("men")
+        .build();
+    
+    System.out.println("lombok : " + lmb);
+    System.out.println("lombok : " + lmb.toString());
+    System.out.println("lombok : " + lmb.hashCode());
+  }
