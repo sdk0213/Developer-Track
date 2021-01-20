@@ -1,4 +1,4 @@
-Oauth
+OAuth
 ===
 * 사용자가 소유한 정보가 필요할때(ex: google calender, gmail.. naver email) 해당 리소스 서버에어 인증하는 방식
 * 과거에는 직접 리소스 서버에서 아이디와 비밀번호르 가져와서 처리르 하였으나 심각한 보안문제를 일으킬 가능성이 있기 때문에 Oauth가 등장했다.
@@ -18,5 +18,10 @@ Oauth
     ![](img/refreshtoken.png)
     * RefreshToken 을 사용해서 Access Token을 다시 발급받는다.
     * 이때, RefreshToken을 다시 받는 경우도 있고 아닌 경우도 있다.
-* 구글 캘린더 API 사용
-  * 
+* [구글에서 OAuth는 모든 플랫폼에 사용되는 Google APIs Client Library 안드로이드에서 사용 가능한 GoogleAuthUtil 로 나뉜다.](https://stackoverflow.com/questions/22142641/access-to-google-api-googleaccountcredential-usingoauth2-vs-googleauthutil-get)
+  * |Google APIs Client Library|GoogleAuthUtil|
+    |:--:|:--:|
+    |If you are developing for some other platform than Android you can not use GoogleAuthUtil as it is an Android specific library.|Using this requires no other libraries or external dependencies than the Google Play Services|
+    |If you are developing a cross platform application you can use the Google APIs Client Library in your shared code for for both Android and other platforms.|Your app's footprint should be smaller since you don't have to include additional libraries.|
+    |If you interact a lot with many of Google's services this library may make things easier for you.|If your interaction with Google is limited it might be easier to just use the GoogleAuthUtil directly instead of going trough another library.|
+    |If you are already using this and it works as wanted there isn't really any drawback to continue using it as it is a wrapper for GoogleAuthUtil so you get all the advantages of GoogleAuthUtil compared to using the AccountManager or some other library based on the AccountManager.|GoogleAuthUtil shouldn't be that hard to use as it is, so using a library that wraps around it to simplify it might not be that much easier to use.|
