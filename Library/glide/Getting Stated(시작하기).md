@@ -2,7 +2,7 @@ Getting Stated - [glide document](https://bumptech.github.io/glide/doc/getting-s
 ===
 Basic Usage
 ---
-* Glide와 함께 이미지를 로딩하는 것은 매우 쉽고 많은 경우에 간단히 한개의 라인만 있으면 된다.
+* Glide와 함께 이미지를 로딩하는 것은 매우 쉽고 많은 경우에는 간단히 한개의 라인만 코딩하면된다.
   * ```java
     Glide.with(fragment)
         .load(myUrl)
