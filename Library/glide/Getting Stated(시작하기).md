@@ -43,7 +43,7 @@ Customizing requests
       .apply(sharedOptions)
       .into(imageView_2) 
 * Glide의 API 는 더 진보된 사용 또는 고급 사용을 위해 (advanced use cases) 경우를 위해 Glide의 generate API를 사용하는 Custom options을 포함하도록 더 확장할수있다.
-  * **그러니까 더 많은 옵션이 필요한 사람을 위해서 Glide에서 커스텀 옵션(custom options)이라는 것을 제공해준다는것**
+  * **그러니까 더 많은 옵션 또는 고급옵션이 필요한 사람은 위해서 코드를 작성해서 사용할수있게 Glide에서 커스텀 옵션(custom options)이라는 것을 제공해주니 사용하라는것**
 
 ListView and RecyclerView
 ---
