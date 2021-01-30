@@ -33,6 +33,7 @@ TransitionOptions
 
 RequestBuilder
 ---
+* 편하게 Glide.with().load() 또는 glide.with().asDrawable() 코드라고 생각하면됨
 * RequestBuilder는 Glide에서 요청하는것의 뼈대를 맡는다.
 * **요청한 url,모델과 함께 옵션을 가져오는 역할을 함**
 * 다음과 같은것을 지정할수있다.
@@ -47,7 +48,73 @@ RequestBuilder
   RequestBuilder<Drawable> requestBuilder = Gilde.with(fragment).asDrawable();
   // 또는 load 사용
   RequestBuilder<Drawable> requestBuilder = Glide.with(fragment).load(url);
+* RequestBuilders는로드 할 리소스 유형에 따라 다르다.
+* 기본적으로 Drawable RequestBuilder를 얻는다.
+* as ... 메소드를 사용하면 요청 된 유형을 변경할 수 있다.
+  * 예를 들어 asBitmap ()을 호출하면 대신 Bitmap RequestBuilder를 얻게됩니다.
 
-Picking a resource type
+Applying RequestOptions
 ---
-* 
+* apply () 메서드를 사용후 RequestOptions를 적용하고 transition () 메서드를 사용하여 TransitionOptions를 적용을 하는데 다음과 같다.
+  ```java
+  RequestBuilder<Drawable> requestBuilder = Glide.with(fragment).asDrawable();
+  requestBuilder.apply(requestOptions);
+  requestBuilder.transition(transitionOptions);
+* 재사용가능하다.
+  ```java
+  RequestBuilder<Drawable> requestBuilder =
+    Glide.with(fragment)
+      .asDrawable()
+      .apply(requestOptions);
+
+  for (int i = 0; i < numViews; i++) {
+     ImageView view = viewGroup.getChildAt(i);
+     String url = urls.get(i);
+     requestBuilder.load(url).into(view);
+  }
+  
+Thumbnail reqeust
+---
+* 로드되는 동안 보여줄 이미지
+* [자세한 내용은 공식 문서 참고](https://bumptech.github.io/glide/doc/options.html)
+
+Starting a new request on failure
+---
+* 4.3.0 버전부터는 로드에 실패할경우 새로드를 시작하는데 이를 지정할수있다. 다음과 같다.
+* ```java
+  Glide.with(fragment)
+    .load(primaryUrl)
+    .error(
+        Glide.with(fragment)
+          .load(fallbackUrl))
+    .into(imageView);
+    requestBuilder.transition(transitionOptions)
+* 기본 요청이 성공하면 RequestBuilder는 실행안됨
+  * 기본적으로 썸네일도 요청에 성공해도 기본 요청이 실패하면 에러 RequestBuilder가 실행이됨
+
+Component Options
+---
+* Glide의 구성요소들은 다음과 같이 있다.
+  * ModelLoaders
+  * ResourceDecoders
+  * ResourceEncoders
+  * Encoders
+  * etc..
+* Options 클래스는 Glide의 구성 요소에 매개변수를 추가하는 방법이다.
+* 기본 제공 요소에는 Options 가 포함되어있고 사용자의 구성 요소에 옵션을 추가 가능하다.
+* ```java
+  Glide.with(context)
+    .load(url)
+    .option(MyCustomModelLoader.TIMEOUT_MS, 1000L)
+    .into(imageView);
+* 또한 ReqeustOptions 오브젝트를 새롭게 만들수 있다.
+  ```java
+  RequestOptions options = 
+    new RequestOptions()
+      .set(MyCustomModelLoader.TIMEOUT_MS, 1000L);
+  
+  Glide.with(context)
+    .load(url)
+    .apply(options)
+    .into(imageView);
+
