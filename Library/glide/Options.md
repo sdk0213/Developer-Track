@@ -51,4 +51,3 @@ RequestBuilder
 Picking a resource type
 ---
 * 
-
