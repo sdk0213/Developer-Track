@@ -58,20 +58,20 @@ ListView and RecyclerView
   }
 * **url의 null 체크를 할필요없다**
   * 만약에 url이 nul이라면 Glide 뷰를 지울것이고 placeholder로 설정하거나 fallback으로 설정한 Drwable(안드로이드 이미지 객체)을 view에다가 붙혀준다.
-* Glide 를 사용할때 **신경쓸것은** 단순히 이미 전의 position에서 로드한 이미지를 또 다시 로드(load())를 하거나 지우거나(clear()) 둘중 하나만 하면되고 **만약 둘다 사용을 안하면 해당 이미지는 따로 바꾸기전까지는 유지된다.** 그니까 한번 로드하고 수정안하면 해당 이미지가 계속 유지된다는것이다. 이 사항은 listview 나 RecyclerView 둘다 해당된다.
+* Glide 를 사용할때 **신경쓸것은** 단순히 이미 전의 position에서 로드한 이미지를 또 다시 로드(load())를 하거나 지우거나(clear()) 둘중 하나만 하면되고 **만약 둘다 사용을 안하면 해당 이미지는 따로 바꾸기전까지는 유지된다.** 그니까 한번 로드하고 수정안하면 해당 이미지가 계속 유지된다는것이다. 이 사항은 listview 나 RecyclerView 둘다 해당된다. 물론 이 말이 RecycleView에서 한번만 load를 하면 그 다음번에 onBindViewHolder에서 load를 수행하지 않아도 된다는 말은 아니다. 테스트를 해보면 로드는 반드시 다시 해줘야한다. 아래 코드는 아마도 이미지를 넣는 뷰의 포지션이 따로 정해져있고 이에 해당할경우메만 이미지를 넣는 코드로 예상된다.
   * ```java
-  @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
-      if (isImagePosition(position)) {
-          String url = urls.get(position);
-           Glide.with(fragment)
-              .load(url)
-              .into(holder.imageView);
-      } else {
-          Glide.with(fragment).clear(holder.imageView);
-          holder.imageView.setImageDrawable(specialDrawable);
-      }
-  }
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        if (isImagePosition(position)) {
+            String url = urls.get(position);
+             Glide.with(fragment)
+                .load(url)
+                .into(holder.imageView);
+        } else {
+            Glide.with(fragment).clear(holder.imageView);
+            holder.imageView.setImageDrawable(specialDrawable);
+        }
+    }
 
 Non-View Targets
 ---
