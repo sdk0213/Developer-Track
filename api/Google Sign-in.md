@@ -4,6 +4,7 @@
 * https://developers.google.com/identity/sign-in/android/start-integrating 사이트로 이동한뒤 중간에 Configure a project 를 클릭한다.
   * 이곳에서 생성할경우 그냥 구글 관리자 콘솔에서 만들어지는것과 다르게 안드로이드를 선택했을때 구글 로그인용 웹 어플리케이션 사용자 인증 정보도 추가로 만들어진다.
   아마도 구글 안드로이드도 로그인시에는 무조건 웹 어플리케이션으로 사용해야 하는것같다.
+* **안드로이드에서느 절대로 안드로이드 클라이언트 ID 를 사용하지 않는다. 문서상에서 얘네들이 설명을 이상하게 하는것도 있고 여하튼 쓰지 않는다.** [관려 스텍오버플로](https://stackoverflow.com/questions/33583326/new-google-sign-in-android)
 
 
 로그인
