@@ -23,6 +23,8 @@ OAuth
   9. 만일 Access Token이 만료됐거나 위조되었다면, Client는 Authorization Server에 Refresh Token을 보내 Access Token을 재발급 받습니다. 
   10. 그 후 다시 Resource Server에 자원을 요청합니다.
   11. 만일 Refresh token도 만료되었을 경우, Resource Owner는 새로운 Authorization Grant를 Client에게 넘겨야합니다. (이는 다시 사용자가 다시 로그인 하라는 말입니다.)
+* 흐름
+  * ![](img/oauthstream.png)
 * Access token
   * 수명이 존재한다. 
   * 그래서 다시 지난번의 과정을 해야 하는데 이는 번거로우니까 RefreshToken을 사용한다.
