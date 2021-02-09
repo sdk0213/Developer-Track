@@ -7,6 +7,7 @@ Volley
   * 직접 쓰레드를 구현해야함
   * 코드가 많아짐
   * 여간 귀찮은 작업이 아닐수 없다.
+  * 스레디, 동기화, 병렬 처리등 많으 시간으 투자해야한다. -> 이런것을 쉽게 처리할수 있는 인터페이스를 제공해준다.
 * 장점
   1. 네트워크 요청의 자동 예약.
   2. 여러 개의 동시 네트워크 연결
@@ -83,7 +84,48 @@ Volley
       }
   }
     
+추가(2021.02.09)(RxJava 프로그래밍, 리엑티브 프로그래밍 기초부터 안드로이드까지 한 번에)
+===
+* Volley 사용법
+ * ReqeustQueue 생성
+ * RequestObject 생성
+ * Request Object 를 ReqeustQueue에 추가
+ * 설정한 Callback으로 응답 수신
+* RequestQueue
+  * ```java
+    public class LocalVolley {
+        private static RequestQueue sRequestQueue;
+        private LocalVolley() { }
+        
+        public static void init(Context context) {
+            sRequestQueue = Volley.newRequestQueue(context);
+        }
+        
+        public static RequestQueue getRequestQueue() {
+            if (sRequestQueue != null) {
+                return sRequestQueue;
+            } else {
+                throw new IllegalStateException("Not inited");
+            }
+        }
+    }
     
-  }, new Response.ErrorListener() {ㅣ
-  }, new Response.ErrorListener() {ㅅㅗ
-  }, new Response.ErrorListener() {
+    ...
+    ..
+    .
+    
+    
+    // LocalVolley 초기화
+    public class RxAndroid extends Application {
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            
+            LocalVolley.init(getApplicationContext());
+        }
+    }
+   
+            
+ 
+
+  
