@@ -141,25 +141,6 @@ Volley
   * Future<T> <-- 지연 완료(Pending completion) 객체
     * 자바에서 사용하는 비동기 계산 결과를 얻는 객체
     * 자바8 이후에는 Observable과 비슷한CompletableFuture<T> 도 제공한다.
- 
-* 시간정보 얻기
-  * ```java
-    private Observable<JSONObject> getObservable() {
-        return Observable.defer(() -> {
-            try {
-                return Observable.just(getData());
-            } catch (InterruptedExcpetion e) {
-                log("error : " + e.getMessage());
-                return Observable.error(e);
-            } catch (ExecutionException e) {
-                log("error : " + e.getCause());
-                return Observable.error(e.getCause());
-            }
-        });
-    }
-  * defer()
-    * 비동기 함수
-    * supplier(() -> T) 를 매개변수로 사용하고 T의 데이터 타입은 Callable<? extends OBservableSource<? extends T>>
     
  
     
