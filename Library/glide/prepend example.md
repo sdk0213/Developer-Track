@@ -1,7 +1,7 @@
 [참고 github](https://github.com/TempoDiValse/GlidePDF)
 [참고 블로그](https://blog.naver.com/jiwow34)
 
-GlideModule
+GlideModule(선언)
 ---
 * ```java
   @com.bumptech.glide.annotation.GlideModule
@@ -22,7 +22,7 @@ GlideModule
   }
   
 
-CustomModelLoader
+CustomModelLoader(모델로더)
 ---
 * ```java
   public class CustomModelLoader implements com.bumptech.glide.load.model.ModelLoader<File, ByteBuffer> {
@@ -45,7 +45,7 @@ CustomModelLoader
     }
   }
   
-CustomModelFactory
+CustomModelFactory(모델로더 처리)
 ---
 * ```java
   public class CustomModelFactory implements ModelLoaderFactory<File, ByteBuffer> {
@@ -65,7 +65,7 @@ CustomModelFactory
     }
   }
   
-CustomDataFetcher
+CustomDataFetcher(데이터 처리)
 ---
 * ```java
   public class CustomDataFetcher implements com.bumptech.glide.load.data.DataFetcher<ByteBuffer> {
