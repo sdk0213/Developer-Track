@@ -10,6 +10,20 @@ retrofit
 * 서버 연동과 응답 전체를 관리하는 라이브러리
   * retofit = OkHttp + 응답관리 라고 생각하면된다.
   * OkHttp에 의존적이다.
-* 
-  
-  
+* 정의
+ * ```java
+   public interface GitHubService {
+       @GET("users/{user}/repos")
+       Call<List<Repo>> listRepos(@Path("user") String user);
+   }
+ 
+ 
+   ...
+   ..
+   
+   Retrofit retrofit = new Retrofit.Builder()
+    .baseUrl("https://api.github.com/")
+    .build();
+
+   GitHubService service = retrofit.create(GitHubService.class);
+   // 정의된 service 부터 retrofit을 사용함
