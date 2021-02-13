@@ -10,6 +10,18 @@ retrofit
 * 서버 연동과 응답 전체를 관리하는 라이브러리
   * retofit = OkHttp + 응답관리 라고 생각하면된다.
   * OkHttp에 의존적이다.
+* 장점
+  * 빠른 성능 - Asynctask 를 사용하지 않고 자체적인 비동기 실행 및 스레드 관리를 통해 3~10배정도 빠르다고함
+  * 간단한 구현 - 반복된 작업은 라이브러리에 처리
+  * 가독성 - annotation 사용
+  * 동기/비동기 구현
+* 구성요소
+  * DTO
+    * 모델/JSON 타입변화에 사용
+  * Interface
+    * 사용하 HTTP CRUD등을 정의해놓은 인터페이스
+  * Retrofit.Builder
+    * interface를 사용할 인스턴스, baseUrl, Converter 설정
 * 정의
  * ```java
    public interface GitHubService {
