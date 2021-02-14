@@ -38,4 +38,17 @@ retrofit
     .build();
 
    GitHubService service = retrofit.create(GitHubService.class);
+   Call<JsonArray> request = service.listRepos("sudeky");
+   request.enqueue(new Callback<JsonArray>() {
+       @Override
+       public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
+           // 성공시...
+       }
+       @Override
+       public void onFailure(Call<JsonArray> call, Throwable t) {
+           // 실패시... 
+       }
+   });
+ 
    // 정의된 service 부터 retrofit을 사용함
+   
