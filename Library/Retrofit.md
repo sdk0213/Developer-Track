@@ -22,11 +22,16 @@ retrofit
     * 사용하 HTTP CRUD등을 정의해놓은 인터페이스
   * Retrofit.Builder
     * interface를 사용할 인스턴스, baseUrl, Converter 설정
-* 정의
+* 정의 - [문서 참고](http://devflow.github.io/retrofit-kr/)
  * ```java
    public interface GitHubService {
        @GET("users/{user}/repos")
        Call<List<Repo>> listRepos(@Path("user") String user);
+       // getSomething() {
+       //     @Header("X-Naver-Client-id") String clientId;
+       //     @Header("X-Naver-Client-secret") String clientPw;
+       //     @Path("type") String type;  // Path는 일부경로를 필요에 따라 동적바인딩이 필요할때
+       //     @Query("query") String query;
    }
  
  
