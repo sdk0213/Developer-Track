@@ -57,3 +57,65 @@ retrofit
  
    // 정의된 service 부터 retrofit을 사용함
    
+   
+retrofit(Rxjava 프로그래밍)
+---
+* retrofit의 장점은 애너테이션을 지원하는것이라 스프링처럼 애너테이션으로 API를 설계핤 있다.
+* ```java
+  public interface GithubServiceApi {
+      @GET("repos/{owner}/{repo}/contributors")
+      Call<List<Contributor>> getCallContributors(
+          @Path("owner") String owner, @Path("repo") String repo);
+      @GET("repos/{owner}/{repo}/contributors")
+      Observable<List<Contributor>> getObContributors(
+          @Path("owner") String owner, @Path("repo") String repo);
+      @Headers({"Accept: application/vnd.gihub.v3.full+json"})
+      @GET("repos/{owner}/{repo}/contributors")
+      Call<List<Contributors>> getCallContributorsWithHeader(
+          @Path("owner") String owner, @Path("repo") String repo);
+  }
+* getCallContributors() 메서드를 호출할면 기본 URI와 결합하여 URL 을 생성한다.
+  * 각각 owner/repo -> android/Rxjava 을 전달할경우 https://api.github.com/repos/android/RxJava/contributors 로 해석
+ 
+* ```java 
+  public class RestfulAdapter {
+      private static final String BASE_URI = "https://api.github.com/";
+      
+      public GithubServiceApi getSimpleApi() {
+          Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl(BASE_URI)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+          return retrofit.create(GithubServiceApi.class);
+      }
+      
+      public GithubServiceApi getServiceApi() {
+          HttpLoggingInterceptor logInterceptor = new HttpLoggingInterceptor();
+          logInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+          
+          OkHttpClient client = new OkHttpClient.Builder()
+            .addInterceptor(logInterceptor)
+            .build();
+          
+          Retrofit retrofit = new Retofit.Builder()
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client)
+            .baseUrl(BASE_URI)
+            .build();
+            
+          return retrofit.create(GithubServiceApi.class);
+          
+      }
+      
+      private RestfulAdpater() { }
+      
+      private static class Singleton {
+          private static final RestfulAdapter instance = new RestfulAdapter();
+      }
+      
+      public static RestfulAdapter getInstance() {
+          return Singleton.instance;
+      }
+   }
+
