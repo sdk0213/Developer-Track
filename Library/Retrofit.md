@@ -119,3 +119,22 @@ retrofit(Rxjava 프로그래밍)
       }
    }
 
+* getSimpleApi() 와 getServiceApi() 는 REST API 스택의 디버깅 가능여부에 따른 차이이다.
+  * getSimpleApi()
+     * Retrofit에 포함된 OkHttpClient 클래스를 사용
+  * getServiceApi()
+     * OkHttpClient.Builder() 객체를 생성하여 로그를 위한 인터셉터를 설정해줘야함
+
+* JSON 응답에서 필요한 데이터 추출
+  * ```java
+    public class Contributor {
+        String login;
+        String url;
+        int id;
+      
+        @Override public class toString() {
+            return "login : " + login + "id : " + id + "url : " + url;
+        }
+    }
+
+* GSON 에서 디코딩하고 원하는값(login, url, ir) 만 추출
