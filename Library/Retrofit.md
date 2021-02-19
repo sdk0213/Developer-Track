@@ -124,6 +124,7 @@ retrofit(Rxjava 프로그래밍)
      * Retrofit에 포함된 OkHttpClient 클래스를 사용
   * getServiceApi()
      * OkHttpClient.Builder() 객체를 생성하여 로그를 위한 인터셉터를 설정해줘야함
+     * **하지만 인터셉터르 설정해줄경우 네트워크를 통해 이동하느 데이터나 에러 메시지를 실시간으로 확인할 수 있다.**
 
 * JSON 응답에서 필요한 데이터 추출
   * ```java
