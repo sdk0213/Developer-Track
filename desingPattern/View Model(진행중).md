@@ -81,5 +81,8 @@
   }
 * ![](img/viewmodel_fragment.png)
 
-> ViewModel로 로더 대체하기
+> ViewModel로 로더 전체과정
+* room과 livedata를 사용
+  * 데이터베이스가 변경되면 Room에서 LiveData에 변경을 알리고, 알림을 받은 LiveData는 수정된 데이터로 UI를 업데이트
+* ![](img/viewmodel_dataload.png)
 * 
