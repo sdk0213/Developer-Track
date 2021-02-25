@@ -2,6 +2,7 @@
 ===
 * mvvm(Model — View — ViewModel)의 view model에서 파생되었음
   * View가 필요로 하는 데이터만을 소유
+* ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
 * Android Architecture ViewModel의 약자인 AAC ViewModel이라고 부르기도 한다.
 * ```java 
   public class MyViewModel extends ViewModel {
@@ -85,4 +86,7 @@
 * room과 livedata를 사용
   * 데이터베이스가 변경되면 Room에서 LiveData에 변경을 알리고, 알림을 받은 LiveData는 수정된 데이터로 UI를 업데이트
 * ![](img/viewmodel_dataload.png)
-* 
+
+* 데이터가 더 복잡해지면 데이터 로드만을 위한 별도의 클래스를 사용
+  * 구성 변경 시 데이터를 로드, 유지 및 관리하는 방법에 관한 자세한 내용은 UI 상태 저장을 참고하세요.
+  * Android 앱 아키텍처 가이드에서는 이러한 함수를 처리하는 저장소 클래스 빌드를 제안
