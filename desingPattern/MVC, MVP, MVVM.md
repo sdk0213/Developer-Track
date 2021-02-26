@@ -6,6 +6,7 @@
 * MVP(Model-View-Presenter)
 * MVVM(Model-View-View Model)
 * 역사적으로 본다면 MVC -> MVP -> MVVM 으로 등장했다.
+* [유튜브 영상](https://youtu.be/bjVAVm3t5cQ)
 
 # 예제코드 GitHUB -> [https://github.com/ericmaxwell2003/ticTacToe](https://github.com/ericmaxwell2003/ticTacToe)
 MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
