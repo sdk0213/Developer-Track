@@ -2,6 +2,8 @@
 ===
 * mvvm(Model — View — ViewModel)의 view model에서 파생되었음
   * View가 필요로 하는 데이터만을 소유
+* HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
+  * 그러므로 ViewModelProvider를 사용해서 객체를 만들어야만 HolderFragment에 의해 관리된다.
 * ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
 * Android Architecture ViewModel의 약자인 AAC ViewModel이라고 부르기도 한다.
 * ViewModel은 ViewModelStore에서 내부적으로 HashMap<String, ViewModel> mMap = new HashMap<>() 으로 ViewModel들을 관리한다.
@@ -46,6 +48,7 @@
   * ViewModel을 다루는 테스트를 더 쉽게 작성 가능
   * 수명 주기를 인식하는 Observable의 변경사항을 관찰해서는 안됨
   * Application Context가 필요할경우 AndroidViewModel 클래스를 확장하고 생성자에 Application을 받는 생성자를 포함
+    * 구글측에서는 컨텍스트 최대한 사용하지 말라고 권함 왜냐하면 컨텍스트는 날라가기 떄문에
 
 > viewmodel 수명주기
 * lifecycle
