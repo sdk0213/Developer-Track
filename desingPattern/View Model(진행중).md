@@ -4,6 +4,14 @@
   * View가 필요로 하는 데이터만을 소유
 * ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
 * Android Architecture ViewModel의 약자인 AAC ViewModel이라고 부르기도 한다.
+* ViewModel은 ViewModelStore에서 내부적으로 HashMap<String, ViewModel> mMap = new HashMap<>() 으로 ViewModel들을 관리한다.
+  * ViewModelStore는 다음과 같이 생겼다
+  ![](img/viewModelStore.png)
+  * 이를 ViewModelOwner 가 관리한다 코드는 다음과 같다.
+    * ![](img/viewModelStoreOwner.png)
+  * 이를 Fragment와 ComponentAcitivty에서 implementr 한다.
+    * ![](img/ComponetActivityViewModelStore.png)
+    * ![](img/fragmentViewModelStore.png)
 * ```java 
   public class MyViewModel extends ViewModel {
     private MutableLiveData<List<User>> users;
