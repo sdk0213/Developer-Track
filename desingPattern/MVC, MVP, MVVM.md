@@ -52,6 +52,7 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
   
 MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
+* [찰스의 안드로이드 유튜브 영사 앞부분 참고](https://www.youtube.com/watch?v=07ES0ne-_U8)
 * ![](/img/MVVM.png)
 * **뷰결합(데이터바인딩) : https://developer.android.com/topic/libraries/data-binding/index.html#java 을 사용하여서 하는것이 가장 큰 특징**
   * 아래는 tictactoe.xml 코드이다.
@@ -99,10 +100,14 @@ MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/
    * 이러한것을 도와주는 도구로 AAC ViewModel과 LifeCycle을 잘 활용하여야 한다고함 - [[활용](https://thdev.tech/androiddev/2018/08/05/Android-Architecture-Components-ViewModel-Inject/)]
 * 구성
   * Model
+    * 데이터 저장, 수저, 삭제, 관리
+    * 네트워크 통신 기타 등등
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함 
   * View
+    * UI 조작
     * 뷰모델에 의해 보여지는 Observable Variable , Action에 바인딩됨
   * ViewModel
+    * View에 표현될 데이터를 Model 로 부터 가져와 가공하고 관리한ㄷ.
     * 뷰에 필요한 Observable Data를 준비
     * 모델을 래핑
     * 뷰가 모델에 이벤트를 전달할 수 있도록 hook(훅)을 준비
