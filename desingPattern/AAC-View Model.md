@@ -1,13 +1,22 @@
-[View Model(뷰 모델)](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ko#java)
+[AAC-View Model(뷰 모델)](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ko#java)
 ===
-* MVVM의 ViewModel 과의 관계 - [출처](https://wooooooak.github.io/android/2019/05/07/aac_viewmodel/)
-  * MVVM 의 viewmodel은 view와 1:n 의 관계를 가지지만 AAC-viewmodel은 activity 하나당 1개를 가지기 때문에 1:1의 관계이다.
-  * 액티비티 한 개 내에서만 유효한 싱글톤이다.
-  * MVVM 패턴의 ViewModel 을 사용해서 구현할수도 있지마 생명주기에 영향을 받기 때문에 ui가 시스템에 영향을 받아 재 생성되거나 제거될경우 데이터를 보관하는것에서 굉장히 복잡해진다.
+> 특징
+* ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
+* 이를 활용해서 mvvm 패턴으로 구성이 가능하다.
+* ViewModel 객체는 뷰 또는 **LifecycleOwners의 특정 인스턴스화보다 오래 지속**되도록 설계
+* ViewModel을 다루는 테스트를 더 쉽게 작성 가능
+* 수명 주기를 인식하는 Observable의 변경사항을 관찰해서는 안됨
+* Application Context가 필요할경우 AndroidViewModel 클래스를 확장하고 생성자에 Application을 받는 생성자를 포함
+ * 구글측에서는 컨텍스트 최대한 사용하지 말라고 권함 왜냐하면 컨텍스트는 날라가기 떄문에
+> MVVM의 ViewModel 과의 관계 - [출처](https://wooooooak.github.io/android/2019/05/07/aac_viewmodel/)
+* MVVM 의 viewmodel은 view와 1:n 의 관계를 가지지만 AAC-viewmodel은 activity 하나당 1개를 가지기 때문에 1:1의 관계이다.
+* 액티비티 한 개 내에서만 유효한 싱글톤이다.
+* MVVM 패턴의 ViewModel 을 사용해서 구현할수도 있지마 생명주기에 영향을 받기 때문에 ui가 시스템에 영향을 받아 재 생성되거나 제거될경우 데이터를 보관하는것에서 굉장히 복잡해진다.
+> ViewModelProvier의 역할
+* Viewmodel을 onCreate() 에서 초기화 해주는데 이것이 중복으로 객체가 생성되는것을 방지하기위해서, 즉 싱글톤과 같이 관리하기 위한 수단으로 ViewModelProvider를 사용한다.
+> 원리
 * HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
   * 그러므로 ViewModelProvider를 사용해서 객체를 만들어야만 HolderFragment에 의해 관리된다.
-* ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
-* Android Architecture ViewModel의 약자인 AAC ViewModel이라고 부르기도 한다.
 * ViewModel은 ViewModelStore에서 내부적으로 HashMap<String, ViewModel> mMap = new HashMap<>() 으로 ViewModel들을 관리한다.
   * ViewModelStore는 다음과 같이 생겼다
   ![](img/viewModelStore.png)
@@ -45,12 +54,6 @@
         });
     }
   }
-* 특징
-  * ViewModel 객체는 뷰 또는 **LifecycleOwners의 특정 인스턴스화보다 오래 지속**되도록 설계
-  * ViewModel을 다루는 테스트를 더 쉽게 작성 가능
-  * 수명 주기를 인식하는 Observable의 변경사항을 관찰해서는 안됨
-  * Application Context가 필요할경우 AndroidViewModel 클래스를 확장하고 생성자에 Application을 받는 생성자를 포함
-    * 구글측에서는 컨텍스트 최대한 사용하지 말라고 권함 왜냐하면 컨텍스트는 날라가기 떄문에
 
 > viewmodel 수명주기
 * lifecycle
