@@ -1,7 +1,9 @@
 [View Model(뷰 모델)](https://developer.android.com/topic/libraries/architecture/viewmodel?hl=ko#java)
 ===
-* mvvm(Model — View — ViewModel)의 view model에서 파생되었음
-  * View가 필요로 하는 데이터만을 소유
+* MVVM의 ViewModel 과의 관계 - [출처](https://wooooooak.github.io/android/2019/05/07/aac_viewmodel/)
+  * MVVM 의 viewmodel은 view와 1:n 의 관계를 가지지만 AAC-viewmodel은 activity 하나당 1개를 가지기 때문에 1:1의 관계이다.
+  * 액티비티 한 개 내에서만 유효한 싱글톤이다.
+  * MVVM 패턴의 ViewModel 을 사용해서 구현할수도 있지마 생명주기에 영향을 받기 때문에 ui가 시스템에 영향을 받아 재 생성되거나 제거될경우 데이터를 보관하는것에서 굉장히 복잡해진다.
 * HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
   * 그러므로 ViewModelProvider를 사용해서 객체를 만들어야만 HolderFragment에 의해 관리된다.
 * ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
