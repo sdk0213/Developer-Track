@@ -16,6 +16,13 @@
 * MVVM 패턴의 ViewModel 을 사용해서 구현할수도 있지마 생명주기에 영향을 받기 때문에 ui가 시스템에 영향을 받아 재 생성되거나 제거될경우 데이터를 보관하는것에서 굉장히 복잡해진다.
 > ViewModelProvier의 역할
 * Viewmodel을 onCreate() 에서 초기화 해주는데 이것이 중복으로 객체가 생성되는것을 방지하기위해서, 즉 싱글톤과 같이 관리하기 위한 수단으로 ViewModelProvider를 사용한다.
+* ViewModelProvider를 이용해서 ViewModelProvider의 Factory 인터페이스르 구현된 것을 초기화 할때 넣어줘야함
+  * KeyedFactory
+    * 함수상에서 존재하는데 Exception 처리된것을 보니 사용안하는것같음
+  * NewInstanceFactory
+    * 일반적인 사용 방법인것같음
+  * AndroidViewModelFactory
+    * NewInstanceFactory를 상속받고 Application 클래스로 구현됨. 아마도 context가 필요한 경우를 위해 구글이 제공해주는것같다.
 > 원리
 * HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
   * 그러므로 ViewModelProvider를 사용해서 객체를 만들어야만 HolderFragment에 의해 관리된다.
