@@ -11,7 +11,7 @@
 # 예제코드 GitHUB -> [https://github.com/ericmaxwell2003/ticTacToe](https://github.com/ericmaxwell2003/ticTacToe)
 MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
-* ![](/img/MVC.png)
+* ![](img/MVC.png)
 * 구성
   * Model
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함
@@ -33,7 +33,7 @@ MVC(★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-m
       
 MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
-* ![](/img/MVP.png)
+* ![](img/MVP.png)
 * 구성
   * Model
     * MVC,MVP,MVVM 전부 동일한 의미에서 데이터 + 상태 + 비즈니스 로직을 말하며 앱의 두뇌 역할을 뜻함
@@ -44,7 +44,7 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
     * 뷰에 직접연결하는것이 아니라 인터페이스로 구성된다 => 테스트 가능성 + 모듈화 + 유연성 해결
     * MVP가 극단적으로 갈경우 어떤 안드로이드 API도 참고하면 안된다는 의견도 있음
 * 코드 분석
-  * ![](/img/MVPCODE.png)
+  * ![](img/MVPCODE.png)
 * 장점
   * API연결이 안되어있어 테스트 용이
 * 단점
@@ -53,7 +53,7 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
 MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
 * [찰스의 안드로이드 유튜브 영사 앞부분 참고](https://www.youtube.com/watch?v=07ES0ne-_U8)
-* ![](/img/MVVM.png)
+* ![](img/MVVM.png)
 * **뷰결합(데이터바인딩) : https://developer.android.com/topic/libraries/data-binding/index.html#java 을 사용하여서 하는것이 가장 큰 특징**
   * 아래는 tictactoe.xml 코드이다.
   * ```xml
