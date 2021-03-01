@@ -397,6 +397,8 @@ NHN(2년)
 * [함수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/함수.md)
 * [First-class citizen(일급 객체).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/First-class%20citizen(일급%20객체).md)
 * [Scope Function.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/Scope%20Function.md)
+* [Companion Object 는 static 과 같을까?.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Companion%20Object%20는%20static%20과%20같을까%3F.md)
+* [싱글톤 구현.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/싱글톤%20구현.md)
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
 ## kotlin with safe Programming
