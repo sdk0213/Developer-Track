@@ -229,6 +229,7 @@ NHN(2년)
  
 # :seedling: 책갈피
 ## Book Mark
+#### 클릭시 해당 내용으로 바로 이동됩니다.
 * [자바 관련](#java-basic)
 * [안드로이드 API 관련](#android-api)
 * [안드로이드 OS 관련](#android-os)
