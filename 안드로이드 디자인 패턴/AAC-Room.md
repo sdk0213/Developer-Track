@@ -1,4 +1,4 @@
-Room - [출처 - 안드로이드 공식문서](https://developer.android.com/training/data-storage/room?hl=ko), [출처 - 슬기로운-개발생활](https://medium.com/슬기로운-개발생활/안드로이드-room-사용법-1b7bd07b4ce)
+Room - [출처 - 안드로이드 공식문서](https://developer.android.com/training/data-storage/room?hl=ko), [출처 - 슬기로운-개발생활](https://medium.com/슬기로운-개발생활/안드로이드-room-사용법-1b7bd07b4ce), [출처 - jamie-dev](https://jamie-dev.tistory.com/49)
 ---
 * 구글에서 사용을 권장하는 Jetpack 에서 제공하는 DB 아키텍쳐로 db의 객체를 자바 또는 코틀린 객체로 매핑해준다.
 * RoomDatabase 인스턴스는 리소스를 상당히 많이 소비하기에 디자인패턴을 따라야한다.
@@ -95,5 +95,7 @@ Room - [출처 - 안드로이드 공식문서](https://developer.android.com/tra
               applicationContext,
               AppDatabase::class.java, "database-name"
           ).build()
-* 
+          
+  // get in sigletone 
+  val AppDatabase = AppDatabase.getInstance(this)
 
