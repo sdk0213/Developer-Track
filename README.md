@@ -1,4 +1,4 @@
-# :seedling: 개발 지식 저장소 - 나의 개발자 성장 일기 :seedling:
+# :blush::blush::blush:  개발 지식 저장소 :blush::blush::blush:
 
 <details>
 <summary>코드 작성 마인드 Set (펼치기/접기)</summary>
