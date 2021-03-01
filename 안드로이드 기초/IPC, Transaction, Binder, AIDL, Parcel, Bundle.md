@@ -116,7 +116,7 @@ Proxy,stub - [출처](https://powere.tistory.com/79)
 * 프로젝트를 빌드하면 .aidl이 ServerStub과 client Proxy를 자동으로 생성한다.
 * 그렇게 해서 전체적인 그림은 다음과 같다.
 * ![Alt text](https://t1.daumcdn.net/cfile/tistory/260AE550579959E02B)
-* ![](/img/aidl.png)
+* ![](img/aidl.png)
 
 RPC - [출처](https://androidyongyong.tistory.com/8)
 ---

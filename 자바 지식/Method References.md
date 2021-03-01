@@ -38,7 +38,7 @@ Method References
   * 객체::인스턴스메소드 (new)
     * ```java
       System.out::println은 x -> System.out.println(x)
-  * ![](/img/mehtodreference.png)
+  * ![](img/mehtodreference.png)
   
 파라미터는 어디로??
 ---

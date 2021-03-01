@@ -12,7 +12,7 @@ GC알고리즘 - [출처 - @joongwon](https://medium.com/@joongwon/android-memor
         * **하지만 만약에 activity에 대한 참조가 남아있다면? --> 메모리 누수**
 * Java의 일반적인 객체는 Strong reference이다.
 * 다음과 같은 상황에서는 GC가 작동하지 않는다.
-* ![](/img/GCException.png)
+* ![](img/GCException.png)
 * inner Class는 Non-static Nested Class 라고도 불리며 OuterClass가 까지 참조
 * 여기서는 OuterClass를 참조한 상태에서 main thread에서 생성하였기 때문에 루퍼와 메시지큐가 메인스레드에 바인드된다.
 * non-static inner class의 경우 outer class에 대한 reference를 가지게 된다. non-static inner class로 선언된 Handler는 LeakActivity에 대한 reference를 가지고 main thread에서 생성하였기 때문에 main thread의 Looper 및 Message Queue에 바인딩 된다. 

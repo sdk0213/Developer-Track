@@ -54,7 +54,7 @@ Runnable - [출처](https://aileen93.tistory.com/105)
 Handler - [출처](https://itmining.tistory.com/5)
 ---
 * 핸들러는 쓰레드가 작업할 내용을 순차적으로 대기시켜주는 역할
-* ![](/img/handlerThread.png)
+* ![](img/handlerThread.png)
 * Message는 handleMessage()메서드를 이용해 처리하는데 위의 그림처럼 handler가 handlemessage | sendMessage()를 통해 처리한다.
   * handleMessage()
     * Looper에서 받은 Message 처리
@@ -145,7 +145,7 @@ Looper - [반드시봐야 하는 출처](https://recipes4dev.tistory.com/166), [
   * onDestory()
     * **Activity에서 handler.getLooper().quit()를 이용해 꼭 종료 시켜야 된다.**
   * 코드 흐름
-    * ![](/img/Looper.png)
+    * ![](img/Looper.png)
     
 * **메인스레드는 MainLooper가 있기 때문에 루퍼를 따로 생성하지 않아도된다.**
 * 다음 코드를 보면 알수있다. Looper클래스에 의해 guarded 되고있다.
