@@ -25,3 +25,29 @@ git설정 - [출처 - ZeddiOS님의 티스토리](https://zeddios.tistory.com/4)
     // 브랜치 기본값은 보통 master
   
 * gitflow - [출처 : gmlwd9405](https://gmlwjd9405.github.io/2018/05/11/types-of-git-branch.html)
+
+# 새로운 프로젝트 생성
+* git 의 master branch 가 main 으로 변경되었으나 안드로이드 스튜디오 하단에서 main으로 변경
+* git에서 먼저 생성하지 말고 android studio 에서 생성하고 share Project on Github 설정
+* public key... 어쩌구 오류가 날 경우 git Push 실패시 아래와 같이 설정
+## SSH 설정
+#### 여러 SSH 키 사용시
+* terminal 열고 .ssh 에 ssh 키를 만들고 만들어진 키에 공개키를 github ssh 에 추가한다.
+* .ssh/config 파일을 열고 아래와 같이 설정. 위에는 걔인계정, 아래는 회사 계정
+  ```code
+  Host github.com-private
+        HostName github.com
+        User sdk0213
+        IdentityFile ~/.ssh/private_id_rsa
+
+  Host gitlab.com-company
+        HostName gitlab.com
+        User git
+        IdentityFile ~/.ssh/is_rsa
+* 생성한 프로젝트 터미널에서 보면 숨겨진 파일로 .git 이 있을텐데 들어가서 config 파일을 찾고 아래와 같이 설정
+  * ```code
+    [remote "origin"]
+    url = git@github.com-private:/sdk0213/Amatda.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+  * 여기서 git@github-com 뒤쪽에 이름이 위에 Host로 설정한 이름이 되어야한다.
+
