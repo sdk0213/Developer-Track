@@ -1,7 +1,7 @@
-# :octocat: 개발 지식 저장소 - 나의 개발자 성장 일기
+# :seedling: 개발 지식 저장소 - 나의 개발자 성장 일기 :seedling:
 
 <details>
-<summary> 코드 작성 마인드 Set (펼치기/접기)</summary>
+<summary>코드 작성 마인드 Set (펼치기/접기)</summary>
 <div markdown="1">
  
 코드 작성 마인드 Set
@@ -18,7 +18,7 @@
 </details>
 
 <details>
-<summary> 발전하는 나를 위해서 (펼치기/접기)</summary>
+<summary>발전하는 나를 위해서 (펼치기/접기)</summary>
 <div markdown="1">
  
 더 발전하는 나를 위해서
@@ -224,7 +224,7 @@ NHN(2년)
 </details>
 
 <details>
-<summary> 지식 정리 한번에 보기 (펼치기/접기)</summary>
+<summary>지식 정리 한번에 보기 (펼치기/접기)</summary>
 <div markdown="1">
  
 # :seedling: 책갈피
