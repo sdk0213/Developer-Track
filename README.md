@@ -1,5 +1,9 @@
 # :octocat: 개발 지식 저장소(공부한것정리)
 
+<details>
+<summary> 지식 정리 한번에 보기 (펼치기/접기)</summary>
+<div markdown="1">
+ 
 # :seedling: 책갈피
 ## Book Mark
 * [자바 관련](#java-basic)
@@ -16,10 +20,6 @@
 * [안드로이드 테스트](#android-test)
 * [안드로이드 컨퍼런스 영상 정리](#android-conference)
 * [프로그래머 기초](#programmer-basic)
-
-<details>
-<summary> 자바 관련(펼치기/접기)</summary>
-<div markdown="1">
  
 # :bulb: 자바 관련
 ## Java Basic
@@ -41,9 +41,6 @@
 * [리플렉션(reflection).md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/리플렉션(reflection).md)
 * [애노테이션(Annotaion).md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/애노테이션(Annotaion).md)
 * [이중클론(::) .md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/이중클론(::)%20.md)
-
-</div>
-</details>
 
 # :bulb: 안드로이드 API 관련
 ## Android API
@@ -309,7 +306,8 @@
 * [암호학 - 전자서명.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/암호학/전자서명.md)
 * [단위테스트.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/테스트주도개발/단위테스트.md)
 
-
+ </div>
+</details>
 
 
 코드 작성 마인드 Set
