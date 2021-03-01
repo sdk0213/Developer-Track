@@ -1,7 +1,7 @@
 # :octocat: 개발 지식 저장소(공부한것정리)
 
 # :seedling: 책갈피
-## 클릭 바로라기
+## Book Mark
 * [자바 관련](#java-basic)
 * [안드로이드 API 관련](#android-api)
 * [안드로이드 OS 관련](#android-os)
@@ -19,6 +19,7 @@
 
 # :bulb: 자바 관련
 ## Java Basic
+* [맨 위로 가기](#book-mark)
 * [Generic.md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Generic.md)
 * [Map (HashMap) .md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Map%20(HashMap)%20.md)
 * [Method References.md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Method%20References.md)
@@ -39,6 +40,7 @@
 
 # :bulb: 안드로이드 API 관련
 ## Android API
+* [맨 위로 가기](#book-mark)
 * [Gmail API 사용절차.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/Gmail%20API%20사용절차.md)
 * [Google Sign-in.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/Google%20Sign-in.md)
 * [OAuth 인증.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/OAuth%20인증.md)
@@ -51,6 +53,7 @@
 
 # :bulb: 안드로이드 OS 관련
 ## Android OS
+* [맨 위로 가기](#book-mark)
 * [OS 6.0 - OS_6.0_Marshmallow.md]()
 * [OS 8.0 - OS 8.0_Oreo.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20OS/OS%208.0_Oreo.md)
 * [OS 8.0 - implicit Broadcast Exceptions.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20OS/OS%208.0_Oreo/Implicit%20Broadcast%20Exceptions.md)
@@ -63,6 +66,7 @@
 
 # :bulb:안드로이드 기초
 ## Android Basic
+* [맨 위로 가기](#book-mark)
 * [APK에 서명된키 정보 확인.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/APK에%20서명된키%20정보%20확인.md)
 * [AlarmManager,JobScheduler.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/AlarmManager%2CJobScheduler.md)
 * [Android .com 의 의미.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/Android%20.com%20의%20의미.md)
@@ -108,10 +112,12 @@
 
 # :bulb: 안드로이드 고급
 ## Android Advanced
+* [맨 위로 가기](#book-mark)
 * [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20고급/분리된%20뷰들%20실시간%20동기화.md)
 
 # :bulb: 안드로이드 디자인 패턴
 ## Android Design Pattern
+* [맨 위로 가기](#book-mark)
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
 * [AAC-LiveData.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-LiveData.md)
 * [AAC-View Model.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-View%20Model.md)
@@ -124,6 +130,7 @@
 
 # :bulb:  안드로이드 라이브러리(Library)
 ## Android Library
+* [맨 위로 가기](#book-mark)
 * [glide - glide.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/glide.md)
 * [glide - Generated API.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Generated%20API.md)
 * [glide - Getting Stated(시작하기).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Getting%20Stated(시작하기).md)
@@ -141,6 +148,7 @@
 
 # :bulb: 안드로이드 레이아웃(layout)
 ## Android Layout
+* [맨 위로 가기](#book-mark)
 * [Shape 요소.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/Shape%20요소.md)
 * [ripple(물결효과).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/ripple(물결효과).md)
 * [selector.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/selector.md)
@@ -148,6 +156,7 @@
 
 # :bulb: 코틀린
 ## Android Kotlin
+* [맨 위로 가기](#book-mark)
 * [basic.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/basic.md)
 * [is, as, smartcast, 동일성체크.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/is%2C%20as%2C%20smartcast%2C%20동일성체크.md)
 * [kotlin 이중클론 (::).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20이중클론%20(::).md)
@@ -162,6 +171,7 @@
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
 ## kotlin with safe Programming
+* [맨 위로 가기](#book-mark)
 * [1. 안전한 프로그래밍.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/1.%20안전한%20프로그래밍.md)
 * [2.0.1 필드와 변수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.1%20필드와%20변수.md)
 * [2.0.2 클래스와 인터페이스.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.2%20클래스와%20인터페이스.md)
@@ -192,6 +202,7 @@
 
 # :bulb: RxJava2
 ## Android Rxjava2
+* [맨 위로 가기](#book-mark)
 * [0. RxAndroid 도입해야되는 이유.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(RxJava2)/0.%20RxAndroid%20도입해야되는%20이유.md)
 * [1. RxJava란.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(RxJava2)/1.%20RxJava란.md)
 * [1.5 Marble Diagram.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(RxJava2)/1.5%20Marble%20Diagram.md)
@@ -264,6 +275,7 @@
 
 # :bulb: 안드로이드 테스트주도개발(TDD)
 ## Android Test
+* [맨 위로 가기](#book-mark)
 * [UI Automator 기본 개요.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20테스트주도개발(TDD)/UIAutomator/UI%20Automator%20기본%20개요.md)
 * [espresso 기본사항.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20테스트주도개발(TDD)/espresso/espresso%20기본사항.md)
 * [espresso 레시피(테스트설정).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20테스트주도개발(TDD)/espresso/espresso%20레시피(테스트설정).md)
@@ -272,11 +284,13 @@
 
 # :bulb: 안드로이드 컨퍼런스 영상 정리
 ## Android Conference
+* [맨 위로 가기](#book-mark)
 * [(Naver D2 옥수환) 앱 속도 올리기.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20옥수환)%20앱%20속도%20올리기.md)
 * [(Naver D2 임원석)디버깅, 분석 꿀팁.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20임원석)디버깅%2C%20분석%20꿀팁.md)
 
 # :bulb: 프로그래머 기초
 ## Programmer Basic
+* [맨 위로 가기](#book-mark)
 * [C언어 기초 - inline.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/C언어%20기초/inline.md)
 * [IT 용어.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/IT%20용어/IT%20용어.md)
 * [MAC - git설정.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/Mac/git설정.md)
