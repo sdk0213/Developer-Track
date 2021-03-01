@@ -17,6 +17,10 @@
 * [안드로이드 컨퍼런스 영상 정리](#android-conference)
 * [프로그래머 기초](#programmer-basic)
 
+<details>
+<summary> 자바 관련(펼치기/접기)</summary>
+<div markdown="1">
+ 
 # :bulb: 자바 관련
 ## Java Basic
 * [맨 위로 가기](#book-mark)
@@ -37,6 +41,9 @@
 * [리플렉션(reflection).md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/리플렉션(reflection).md)
 * [애노테이션(Annotaion).md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/애노테이션(Annotaion).md)
 * [이중클론(::) .md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/이중클론(::)%20.md)
+
+</div>
+</details>
 
 # :bulb: 안드로이드 API 관련
 ## Android API
