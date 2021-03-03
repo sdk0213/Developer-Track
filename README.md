@@ -134,6 +134,7 @@
 * [factoryPattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/factoryPattern.md)
 * [관심사 분리(Separation of concerns).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/관심사%20분리(Separation%20of%20concerns).md)
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
+* [Decorator Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Decorator%20Pattern.md)
 
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
