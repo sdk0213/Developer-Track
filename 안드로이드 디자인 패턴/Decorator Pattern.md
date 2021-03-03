@@ -37,6 +37,7 @@
       public double cost() { return 0.89; }
   }
 * 모카첨가물
+  ```java
   class Mocha extends CondimentDecorator {
       Beverage beverage;
 
