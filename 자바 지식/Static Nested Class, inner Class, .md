@@ -33,6 +33,6 @@ Non-static Nested Class, Inner Class
   }
   ```
 * **외부에서 OuterClass.new InnerClass로 생성불가**
-* ![inner out 차이](/img/innerout.png)
+* ![inner out 차이](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/img/innerout.png)
 *  InnerClass 내부에서 OuterClass의 내부변수에 접근이 가능하다
   * 즉 OuterClass를 참조할수있음을 뜻하며 이는 메모리누수의 원인이 될수있다.
