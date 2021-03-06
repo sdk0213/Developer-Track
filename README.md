@@ -338,7 +338,7 @@
 </details>
 
 <details>
-<summary>발전하는 나를 위해서 (펼치기/접기)</summary>
+<summary>스택 쌓기 (펼치기/접기)</summary>
 <div markdown="1">
  
 더 발전하는 나를 위해서
