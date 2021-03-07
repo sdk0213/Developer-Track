@@ -1,4 +1,4 @@
-# fun 파라미터, 리턴 전달
+# 함수 파라미터 다양한 설정
 ### Default Arguments
 * ```kotlin
   fun checkCustomer(name: String, phone: String = "NA", age: Int = 30){
