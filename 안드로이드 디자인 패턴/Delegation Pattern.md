@@ -9,16 +9,20 @@
   }
   
   class Printer{
-      RealPrinter p = new Printer();
+      private RealPrinter rp = null;
+      public Printer(RealPrinter rp){
+          this.rp = rp;
+      }
+      
       void print(){
-        p.print();
+        rp.print()
       }
   }
   
   public class Main {
       
       public static void main(String args[]){
-          Printer printer = new Printer();
+          Printer printer = new Printer(new RealPrinter());
           printer.print();
       }
   }
