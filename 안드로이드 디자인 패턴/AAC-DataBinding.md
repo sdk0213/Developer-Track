@@ -78,3 +78,20 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
 
 * textview 의 글자를 변경할때 settext함수를 사용해서 변경하는것과 ui 변경 일련의 과정들이 viewDataBinding 으로 들어가져있다. 만약에 내부에 정의되지 않는 view를 조작하는 메서드가 필요하면 binding adapter 메서드를 선언해서 이것을 xml 레이아웃에서 참조시키면 그것이 다 viewDataBinding 코드로 들어가서 사용되는것을 볼수있다.
 * activity, fragment에 작성되는 코드량이 줄어든다.
+
+### Fragment DataBinding
+* 자바
+  ```java
+  private FragmentDictBinding binding;
+ 
+  public View onCreateView(@NonNull LayoutInfalter inflater, ViewGroup containter, Bundle savedInstance) {
+         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_dict, container, false);
+         View root = binding.getRoot();
+         ...
+         
+         return root;
+  }
+* 코틀린
+  ```kotlin
+  val binding = FragmentGalleryBinding.inflate(inflater, container, false)
+  context ?: return binding.root
