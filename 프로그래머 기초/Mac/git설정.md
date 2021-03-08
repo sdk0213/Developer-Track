@@ -8,6 +8,10 @@ git설정 - [출처 - ZeddiOS님의 티스토리](https://zeddios.tistory.com/4)
     // 초기한번 설정해야함
     git config --global user.name "Your Name Here"
     git confgit config --global user.email "your_email@youremail.com"
+  * 확인
+    ```git
+    git config user.name
+    git config user.email
   * 터미널에서 git을 올릴 프로젝트나 폴더로 이동 (cd 사용)
   * 전체 파일올리기
     ```git
