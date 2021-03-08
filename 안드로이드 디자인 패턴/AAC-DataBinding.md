@@ -95,3 +95,11 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
   ```kotlin
   val binding = FragmentGalleryBinding.inflate(inflater, container, false)
   context ?: return binding.root
+         
+### Difference between DataBindingUtil and layoutBinding
+##### DataBindingUtil
+* If you want dynamic binding class then you can use DataBindingUtil
+* layoutId를 미리 알 수없는 경우에만이 버전을 사용
+##### layoutBinding
+* 나머지 경우에는 무조건 layoutBinding 을 사용하라고 구글에서 권장한다.
+    
