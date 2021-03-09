@@ -117,6 +117,8 @@
 * [메모리 누수(Memory leak) Weak, Strong.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/메모리%20누수(Memory%20leak)%20Weak%2C%20Strong.md)
 * [모바일 관리 솔루션.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/모바일%20관리%20솔루션.md)
 * [자바, 안드로이드 코딩 규칙.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/자바%2C%20안드로이드%20코딩%20규칙.md)
+* [RecyclerView-adapter-DiffUItil.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/RecyclerView-adapter-DiffUItil.md)
+
 
 # :bulb: 안드로이드 고급
 ## [Android Advanced](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20고급)
