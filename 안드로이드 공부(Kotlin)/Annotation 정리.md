@@ -1,4 +1,4 @@
-# Kotlin 에서 자주 쓰이는 Annotation 정리
+# Kotlin 에서 자주 쓰이는 Annotation 정리 - [출처](https://codechacha.com/ko/kotlin-annotations/)
 ---
 ### @JvmName
 ##### 역할
@@ -79,7 +79,49 @@
         }
      }
   }
-
+### @JvmField
+* get/set 생성 없애기
+##### 기존
+* ```kotlin
+	class Bar {
+	    var barSize = 0
+	}
+* ```java
+	public final class Bar {
+	   private int barSize;
+	   public final int getBarSize() {
+	      return this.barSize;
+	   }
+	   public final void setBarSize(int var1) {
+	      this.barSize = var1;
+	   }
+	}
+##### @JvmField
+* ```kotlin
+	class Bar {
+	    @JvmField
+	    var barSize = 0
+	}
+* ```java
+	public final class Bar {
+	   @JvmField
+	   public int barSize;
+	}
+### @Throws
+* Exception throw
+* ```kotlin
+	@Throws(NumberFormatException::class)
+	fun convertStringToInt(str: String) {
+	  ....
+	}
+* ```java
+	public static final void convertStringToInt(@NotNull String str) throws NumberFormatException {
+  	....
+	}
+### @JvmOverloads
+* 코틀린 함수의 오버로딩 메소드들을 생성해주는 annotation
+* 자바랑 섞어서 사용하지 않으며 필요없는 어노테션
+##### [자세한 설명](https://codechacha.com/ko/kotlin-annotations/)
 	
 	
 	
