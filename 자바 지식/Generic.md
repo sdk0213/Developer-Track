@@ -116,9 +116,9 @@ Generic
     
 * 물음표 - Bounded wildcard type - [@joongwon medium - 자세한 내용](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)
   * <T super Man>
-    * Man 보다 작은 객체만
-  * <T extends Man> 
     * Man 보다 큰 객체만
+  * <T extends Man> 
+    * Man 보다 작은 객체만
   * 와일드카드(Wildcard)
     * 와일드 카드란 "파일을 지정할 때, 구체적인 이름 대신에 **여러 파일을 동시에 지정**할 목적으로 사용하는 특수 기호" 로 **자바에서는 '?(물음표)'로 나타낸다.**
   * 종류
