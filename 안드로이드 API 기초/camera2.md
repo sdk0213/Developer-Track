@@ -1,4 +1,4 @@
-# camera2
+# camera2 - [소스코드 - Camera2 Basic Of Google](https://github.com/googlearchive/android-Camera2Basic)
 
 ### 용어
 * CameraManager
