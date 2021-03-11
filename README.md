@@ -135,6 +135,7 @@
 * [AAC-View Model.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-View%20Model.md)
 * [AAC-Room.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Room.md)
 * [AAC-Navigation Component.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Navigation%20Component.md)
+* [(AAC)Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(AAC)Repository%20pattern.md)
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
 * [Observer.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Observer.md)
 * [Singletone.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Singletone.md)
