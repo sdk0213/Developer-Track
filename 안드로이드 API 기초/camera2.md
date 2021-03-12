@@ -15,6 +15,11 @@
   * 카메라로부터 어떻게 이미지를 얻을지 결정
 * CaptureResult
   * 카메라로부터 캡쳐한 결과
+* AE
+  * AutoExposure(자동 노출)
+* AF
+  * AutoFocus(자동 초점)
+
 ##### 카메라 등급
 * isHardwareLevelSupported
 * 카메라의 하드웨어 지원수준 어느정도인지 제공
