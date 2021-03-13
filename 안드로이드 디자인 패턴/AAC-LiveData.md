@@ -23,6 +23,8 @@
 ### 코드 작성
 * **컴포넌트의 onCreate() 메소드 내에 위치하는 것이 바람직**
 * **하지마 LiveData를 통해서 UI를 업데이트 하고 싶을때는 ViewModel에 선언하는것이 데이터 간 결합도와 MVVM 지향이기에 바람직**
+* onActivityCreated()안에서 LiveData를 observe 할 때, getVIewLifecycleOwner() 를 사용
+* 만약 onCreate()에서 LiveData를 observe 하고 싶으면 Fragment가 recreate 될 때 view와 value를 수동으로 업데이트 해줘야한다.
 ##### ViewModel
 * ```kotlin
   class ItemViewModel : ViewModel() {
