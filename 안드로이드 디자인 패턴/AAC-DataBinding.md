@@ -95,7 +95,31 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
   ```kotlin
   val binding = FragmentGalleryBinding.inflate(inflater, container, false)
   context ?: return binding.root
-         
+##### root 뜻
+* 바인딩과 관련된 레이아웃 파일의 가장 바깥 쪽 뷰
+* 이 메서드는 레이아웃 파일의 루트 뷰에 관한 직접 참조
+* 위 코드에서 return 으로 root을 가져오는데 이를 따라가보면 해당 코드이다.
+* https://developer.android.com/topic/libraries/view-binding?hl=ko 에서 getRoot 검색
+* ```java
+  @NonNull
+  @Override
+  public View getRoot() {
+      return mRoot;
+  }
+* 그리고 mRoot는 다음과 같이 View이다.
+* ```java
+  private final View mRoot;
+* mRoot가 설정되는곳의 코드를 보면 ViewDataBinding에서 설정되는것을 볼수 있다.
+* ```java
+  protected ViewDataBinding(DataBindingComponent bindingComponent, View root, int localFieldCount) {
+      mBindingComponent = bindingComponent;
+      mLocalFieldObservers = new WeakListener[localFieldCount];
+      this.mRoot = root;
+      ...
+      ..
+      .
+  }
+---
 ### Difference between DataBindingUtil and layoutBinding
 ##### DataBindingUtil
 * If you want dynamic binding class then you can use DataBindingUtil
@@ -103,3 +127,4 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
 ##### layoutBinding
 * 나머지 경우에는 무조건 layoutBinding 을 사용하라고 구글에서 권장한다.
     
+         
