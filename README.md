@@ -144,7 +144,7 @@
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [Decorator Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Decorator%20Pattern.md)
 * [Delegation Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Delegation%20Pattern.md)
-* [종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/종속%20항목%20삽입.md)
+* [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
