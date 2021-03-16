@@ -1,4 +1,4 @@
-# 종속 항목 삽입 - [출처는 안드로이드 공식문서](https://developer.android.com/training/dependency-injection?hl=ko)
+# DI(Dependency Injection)(의존성주입) = 종속 항목 삽입 - [출처는 안드로이드 공식문서](https://developer.android.com/training/dependency-injection?hl=ko)
 ### 종속 항목 삽입이란?
 * 클래스를 만들고 사용할때는 거의 원 헌드래드 퍼센트까지는 아니여도 많은경우에 다른 클래스가 필요하다. 이는 잘못 설계된 코드이거나 아키텍쳐가 개판일경우 더욱 심해진다. 
 **여하튼 이런 많은경우에 다른클래스에 종속되는 다른 클래스를 삽입하는것을 종속 항목 삽입이라고 한다.**
