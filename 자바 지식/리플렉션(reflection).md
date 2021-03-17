@@ -69,4 +69,120 @@
     ..
     .
 * private도 Field.setAccessible() 사용으로 접근이 가능하기 때문에 주의해야한다.
-    
+---   
+# 내용추가 (21/03/17)
+### Reflection - [출처는 codechacha](https://codechacha.com/ko/reflection/)
+* 자바의 reflection은 클래스, 인터페이스, 메서드들을 찾을 수 있고, 객체를 생성하고 변경 그리고 메서드를 호출할수 있다.
+* 자바에서 기본으로 제공해주는 API 이다.
+* Hidden Method(숨겨진 함수)를 호출할 때 Reflection을 사용할 수 있다.
+---
+### 예제코드
+* ```java
+  package test;
+
+  public class Parent {
+      private String str1 = "1";
+      public String str2 = "2";
+
+      public Parent() {
+      }
+  
+      private void method1() {
+          System.out.println("method1");
+      }
+
+      public void method2(int n) {
+          System.out.println("method2: " + n);
+      }
+
+      private void method3() {
+          System.out.println("method3");
+      }
+  }
+* ```java
+  package test;
+
+  public class Child extends Parent {
+      public String cstr1 = "1";
+      private String cstr2 = "2";
+
+      public Child() {
+      }
+
+      private Child(String str) {
+          cstr1 = str;
+      }
+
+      public int method4(int n) {
+          System.out.println("method4: " + n);
+          return n;
+      }
+
+      private int method5(int n) {
+        System.out.println("method5: " + n);
+          return n;
+      }
+  }
+---
+### Class(클래스) 찾기
+* ```java
+  Class clazz = Child.class;
+  Sytem.out.println("Class name: " + clazz.getName());
+  // 출력결과:
+  // Class name: test.Child
+  
+  // 만약에 클래스를 참조할수 없다면??? 다음과 같이 사용
+  Class clazz2 = Class.forName("test.Child"); // 참고로 Child 클래스는 test패키지에 있음
+  System.out.println("Class name: " + clazz2.getName());
+  
+  // 출력결과:
+  // Class name: test.Child
+---
+### Constructor(생성자) 찾기
+##### .getDeclaredConstructor()
+* 인자 없는 생성자 가져오기
+* ```java
+  Class clazz = Class.forName("test.Child");
+  Constructor constructor = clazz.getDeclaredConstructor();
+  System.out.println("Constructor: " + constructor.getName()); 
+  
+  // result:
+  // Constructor: test.Child
+##### .getDeclaredConstructor(Param)
+* Param의 타입과 일치하는 생성자를 찾는다.
+* ```java
+  Class clazz = Class.forName("test.Child");
+  Constructor constructor2 = clazz.getDeclaredConstructor(String.class);
+  System.out.println("Constructor(String): " + constructor2.getName());
+  
+  // result:
+  // Constructor(String): test.Child
+##### .getDeclaredConstructors()
+* 모든 생성자를 가져오기
+* ```java
+  Class clazz = Class.forName("test.Child");
+  Constructor constructors[] = clazz.getDeclaredConstructors();
+  for (Constructor cons : constructors) {
+      System.out.println("Get constructors in Child: " + cons);
+  }
+  
+  // result:
+  // Get constructors in Child: private test.Child(java.lang.String)
+  // Get constructors in Child: public test.Child()
+##### .getConstructors()
+* public 생성자만 리턴
+* ```java
+  Constructor constructors2[] = clazz.getConstructors();
+  for (Constructor cons : constructors2) {
+      System.out.println("Get public constructors in Child: " + cons);
+  }
+  
+  // result:
+  // Get public constructors in both Parent and Child: public test.Child()
+---
+# [(클릭)reflection에서 더 알고싶은 아래 정보는 codechacha님의 블로그를 들어가서 추가적으로 확인하기(클릭)](https://codechacha.com/ko/reflection/)
+### Method(메서드) 찾기
+### Filed(변수) 찾기
+### Method 호출
+### Filed(변수) 변경
+### Static Method 호출 또는 필드 변경
