@@ -19,14 +19,44 @@
   * 설정에 따라 의존성을 재활용할건지 새로만들것인지 결정할수있다.
   * 특정기능을 위한 Cotainer를 사용후 메모리에서 해제할수 있다.
 ---
-### 기능
-* 내부적으로 dagger 그래프로 객체를 공급하는 참조를 가지는 지도와 같은것을 가지고 있다.
-* 
+### HelloWorld 예제
+* ```java
+  @Module // 의존성을 제공하는 클래스에 붙인다
+  public class MyModule {
+      @Provides // 의존성 주입에 필요한 파일들을 생성
+      String provideHelloWorld() {
+          return "Hello World!";
+      }
+  }
+
+  // 위의 코드만으로는 클래스 파일이 생성하지 않는다. Component가 있어야 한다.
+  @Component(modules = MyModule.class) // 참조된 Module 클래스로부터 의존성을 제공받는다
+  public interface MyComponent {
+      String getString(); // 컴포넌트의 메서드의 반환형을 보고 모듈과 관계를 맺으므로 해당 반환형을 갖는 메서드
+  }
+* Dagger는 컴파일 타임에 @Component를 구현한 클래스를 생성한다. 이때 Dagger라는 접두사가 붙는다.
+  * MyComponent --> DaggerMyComponent
+##### 테스트코드 작성 및 결과
+* ```java 
+  pulbic class ExampleUnitTest {
+      @Test
+      public void testHelloWorld(){
+          MyComponent mycomponent = DaggerMyComponent.create();
+          System.out.println("result = " + mycomponent.getString());
+      }
+  }
+  
+  // result = Hello World
+---
+### Module
 ##### Inject @Inject
 * 의존성 주입을 요청한다.
-##### Module
+##### @Provides
+* 의존성을 제공하는 메서드에 붙인다
+##### @Module
+* 의존성을 제공하는 클래스에 붙인다.
 * Component에 연결되어 의존성 객체를 생성합니다. 생성 후 Scope에 따라 관리
-##### Component
+##### @Component
 * 연결된 Module을 이용하여 의존성 객체를 생성하고 Inject로 요청받은 인스턴스에 생성한 객체를 주입한다.
 ##### SubComponent
 * Component는 계층관계를 만든다. Dagger의 중요한 컨셉인 그래프를 형상한다. 의존성을 검색후에 없으면 부모로 올라가면서 검색하는 방식으로 작동한다.
