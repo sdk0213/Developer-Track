@@ -17,6 +17,22 @@
           ...
       }
     }
+* 다른 예로 Computer 클래스안에 CPU 클래스가 필요할때 CPU 클래스를 Computer 클래스 내부가 아닌 외부에서 생성 및 관리를 하도록 위임하는것을 제어의 역전이라고 한다.
+  * ```kotlin
+    class Computer(private val cpu: CPU){
+        fun setCpu(cpu: CPU){
+            this.cpu = cpu
+        }
+    }
+    
+    ... main(){
+       var cpu = I_CPU()
+       var computer1 = Computer(cpu)
+       var computer2 = Computer()
+       computer2.setCpu(cpu)
+    }
+      
+      
 ---
 ### 의존성 문제
 ##### A -> B <- C
