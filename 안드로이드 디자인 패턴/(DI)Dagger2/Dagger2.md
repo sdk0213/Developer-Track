@@ -47,24 +47,3 @@
   }
   
   // result = Hello World
----
-### Module
-##### Inject @Inject
-* 의존성 주입을 요청한다.
-##### @Provides
-* 의존성을 제공하는 메서드에 붙인다
-##### @Module
-* 의존성을 제공하는 클래스에 붙인다.
-* Component에 연결되어 의존성 객체를 생성합니다. 생성 후 Scope에 따라 관리
-##### @Component
-* 연결된 Module을 이용하여 의존성 객체를 생성하고 Inject로 요청받은 인스턴스에 생성한 객체를 주입한다.
-##### SubComponent
-* Component는 계층관계를 만든다. Dagger의 중요한 컨셉인 그래프를 형상한다. 의존성을 검색후에 없으면 부모로 올라가면서 검색하는 방식으로 작동한다.
-##### Scope
-* 객체의 LifeCycle 범위이다. 안드로이드의 Activitiy, Fragment와 맞추어 사용한다.
-* Module은 이 Scope를 보고 객체를 관리한다.
----
-### Flow
-##### @Inject -> SubComponet -> Module -> Scope에 있으면 return
-##### Subcomponet에서 Module에서 맞는 타입을 못찾을경우는 상위 Componet -> Module -> Scope에 있으면 return
----
