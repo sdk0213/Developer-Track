@@ -136,6 +136,9 @@
 * [AAC-Room.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Room.md)
 * [AAC-Navigation Component.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Navigation%20Component.md)
 * [(AAC)Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(AAC)Repository%20pattern.md)
+* [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
+* [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
+##### 디자인 패턴의 기본
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
 * [Observer.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Observer.md)
 * [Singletone.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Singletone.md)
@@ -144,8 +147,7 @@
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [Decorator Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Decorator%20Pattern.md)
 * [Delegation Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Delegation%20Pattern.md)
-* [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
-* [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
+* [Builder Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Builder%20Pattern.md)
 
 ## [(DI)Dagger2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [(DI)Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2.md)
