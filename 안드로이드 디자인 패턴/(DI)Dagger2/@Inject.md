@@ -74,7 +74,7 @@
 * injectPerspnB 에서 PersonB_MemberInjector 의 injectName에서 집어넣은 PersonB객체에 모듈에서 제공받은 이름을 집어넣는것을 확인가능하다.
 * private에 @Inject는 Exception 이 떨어지며 컴파일이 안된다.
 ### Inject 에 따른 변화
-* 단순히 메서드에서 get을 할때는 아무 효과가 없는듯싶다.
+* 단순히 메서드에서 get을 할때는 아무 효과가 없는듯싶다. 그래서 그냥 필드에다가 Inject를 하는가 추측이된다.
 * set으로 값을 넣어주는 형태일경우는 모듈이 주입되어 작동한다.
 * ```java
   public class PersonB {
