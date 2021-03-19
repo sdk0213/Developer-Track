@@ -19,6 +19,120 @@
   * 설정에 따라 의존성을 재활용할건지 새로만들것인지 결정할수있다.
   * 특정기능을 위한 Cotainer를 사용후 메모리에서 해제할수 있다.
 ---
+### Dagger2가 의존성 주입을 해준다는것의 의미
+* 컴포넌트
+  ```java
+  @Component(modules = PersonModule.class)
+  public interface PersonComponent {
+
+      int a();
+      String b();
+      PersonA c();
+  }
+* 모듈
+  ```java
+  @Module
+  public class PersonModule {
+
+      @Provides
+      String provideName() {
+          return "Charles";
+      }
+
+      @Provides
+      int provideAge() {
+          return 100;
+      }
+
+      @Provides
+      PersonA getPersonA(){
+          return new PersonA("sudeky",3174);
+      }
+  }
+* 이를 컴파일 할경우 DaggerPersonComponent가 생성이 되는데 이를 확인해보면 Dagger가 의존성을 자동으로 주입해주었다는것을 알수 있다.
+  * ```java
+    public final class DaggerPersonComponent implements PersonComponent {
+        private final PersonModule personModule;
+
+        private DaggerPersonComponent(PersonModule personModuleParam) {
+          this.personModule = personModuleParam;
+        }
+
+        public static Builder builder() {
+          return new Builder();
+        }
+
+        public static PersonComponent create() {
+          return new Builder().build();
+        }
+
+        @Override
+        public int a() {
+          return personModule.provideAge();}
+
+        @Override
+        public String b() {
+          return PersonModule_ProvideNameFactory.provideName(personModule);}
+
+        @Override
+        public PersonA c() {
+          return PersonModule_GetPersonAFactory.getPersonA(personModule);}
+
+        public static final class Builder {
+          private PersonModule personModule;
+
+          private Builder() {
+          }
+
+          public Builder personModule(PersonModule personModule) {
+            this.personModule = Preconditions.checkNotNull(personModule);
+            return this;
+          }
+
+          public PersonComponent build() {
+            if (personModule == null) {
+              this.personModule = new PersonModule();
+            }
+            return new DaggerPersonComponent(personModule);
+          }
+        }
+    }
+* 위 코드를 확인해보면은 a()에서 module에 들어있는 객체를 사용하고 b(),c() 또한 같은 타입을 가진 객체를 사용하는것을 확인할수가 있다.
+* 만약 위를 Dagger2 라는것 없이 자기가 직접 클래스를 만들고 의존성을 주입하고 어떤 경우는 팩토리 패턴을 사용해 위와 같이 코드를 직접 작성해야한다.
+* 하지만 Dagger2를 사용하고 어노테션 프로세서로 @Component와 @Module를 지정해주며 타입을 설정해준것만으로 내가 직접 작성했어야할 코드를 자동으로 작성주고 관리해주는것이다.
+* 추가적으로 Dagger2는 객체의 생성은 펙토리 패턴으로 관리되는것을 확인할수있다.
+  * ```java
+    // 위 코드에서 c() 를 확인해보면은 다음과 같이 코드가 작성되어있다.
+    @Override
+    public PersonA c() {
+      return PersonModule_GetPersonAFactory.getPersonA(personModule);}
+    ....
+    ..
+    .
+    // 그리고 위의 코드중 GetPersonAFactory의 클래스이다.(펙토리 패턴)(Dagger2가 자동으로 작성함)
+    public final class PersonModule_GetPersonAFactory implements Factory<PersonA> {
+        private final PersonModule module;
+
+        public PersonModule_GetPersonAFactory(PersonModule module) {
+          this.module = module;
+        }
+
+        @Override
+        public PersonA get() {
+          return getPersonA(module);
+        }
+
+        public static PersonModule_GetPersonAFactory create(PersonModule module) {
+          return new PersonModule_GetPersonAFactory(module);
+        }
+
+        public static PersonA getPersonA(PersonModule instance) {
+           return Preconditions.checkNotNull(instance.getPersonA(), "Cannot return null from a non-@Nullable @Provides method");
+        }
+    }
+     
+* Dagger2 가 코드를 작성해주기때문에 우리는 단지 의존성이 필요한것이 있을때 컴포넌트와 모듈로 구분해주고 형식만 맞추어주면 된다. 이는 엉청난 보일러코드를 줄여주며 개발자가 직접 작성해야할 코드량 또한 매우 줄어드므로 당연히 필요한 도구임에 틀림없다.
+---
 ### HelloWorld 예제
 * ```java
   @Module // 의존성을 제공하는 클래스에 붙인다
