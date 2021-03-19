@@ -66,3 +66,27 @@
       @Nullable // <----------- 없다면 에러 발생
       Integer getInteger();
   }
+---
+### 상속
+##### includes
+* ModuleB 가 ModuleA 를 상속하는 코드
+  * ModuleB를 참조할 경우 ModuleA까지 상속해 A타입의 객체도 바인딩된다.
+* 마찬가지로 중복되는 타입이 존재하며 안된다.
+* ```java
+  @Module
+  public class ModuleA {
+      @Provides
+      A ProvideA() {
+          return new A();
+      }
+  }
+  
+  @Module(includes = ModuleA.class)
+  public class ModuleB {
+      @Provides
+      B ProvideB() {
+          return new B();
+      }
+  }
+  
+
