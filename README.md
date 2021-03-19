@@ -130,6 +130,7 @@
 # :bulb: 안드로이드 디자인 패턴
 ## [Android Design Pattern](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [맨 위로 가기](#book-mark)
+* [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
 * [AAC-LiveData.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-LiveData.md)
 * [AAC-View Model.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-View%20Model.md)
@@ -138,20 +139,19 @@
 * [(AAC)Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(AAC)Repository%20pattern.md)
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
+##### Android DI(Dagger2)
+* [(DI)Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2.md)
+* [@Module.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Module.md)
+
 ##### 디자인 패턴의 기본
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
-* [Observer.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Observer.md)
-* [Singletone.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Singletone.md)
-* [factoryPattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/factoryPattern.md)
 * [관심사 분리(Separation of concerns).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/관심사%20분리(Separation%20of%20concerns).md)
-* [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
+* [Observer Pattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Observer.md)
+* [Singletone Pattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Singletone.md)
+* [Factory Pattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/factoryPattern.md)
 * [Decorator Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Decorator%20Pattern.md)
 * [Delegation Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Delegation%20Pattern.md)
 * [Builder Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Builder%20Pattern.md)
-
-## [(DI)Dagger2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
-* [(DI)Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2.md)
-* [@Module.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Module.md)
 
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
