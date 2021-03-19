@@ -1,4 +1,4 @@
-# Dagger - [출처는 maryangmin님의 medium](https://medium.com/@maryangmin/di-기본개념부터-사용법까지-dagger2-시작하기-3332bb93b4b9)
+# Dagger - [참고는 maryangmin님의 medium](https://medium.com/@maryangmin/di-기본개념부터-사용법까지-dagger2-시작하기-3332bb93b4b9)
 ### Dagger 란?
 * Dagger1 -> Sqaure 에서 제작
 * Dagger2 -> Google 에서 관리
@@ -99,6 +99,7 @@
     }
 * 위 코드를 확인해보면은 a()에서 module에 들어있는 객체를 사용하고 b(),c() 또한 같은 타입을 가진 객체를 사용하는것을 확인할수가 있다.
 * 만약 위를 Dagger2 라는것 없이 자기가 직접 클래스를 만들고 의존성을 주입하고 어떤 경우는 팩토리 패턴을 사용해 위와 같이 코드를 직접 작성해야한다.
+  * 내가 어떤 객체를 만들고 해다 객체에서 다른 객체가 필요할경우 즉, 의존성이 필요한경우 위와 같은 코드를 작성해야 하는경우가 많다. 이를 자동으로 작성해준다? 그게 바로 Dagger 이다.
 * 하지만 Dagger2를 사용하고 어노테션 프로세서로 @Component와 @Module를 지정해주며 타입을 설정해준것만으로 내가 직접 작성했어야할 코드를 자동으로 작성주고 관리해주는것이다.
 * 추가적으로 Dagger2는 객체의 생성은 펙토리 패턴으로 관리되는것을 확인할수있다.
   * ```java
