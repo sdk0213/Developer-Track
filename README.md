@@ -142,6 +142,7 @@
 ##### Android DI(Dagger2)
 * [(DI)Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2.md)
 * [@Module.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Module.md)
+* [@Component.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Component.md)
 
 ##### 디자인 패턴의 기본
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
