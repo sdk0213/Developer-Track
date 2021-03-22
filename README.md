@@ -147,6 +147,7 @@
 * [@Inject.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Inject.md)
 * [의존성주입하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/의존성%20주입하기.md)
 * [범위 지정하기(Scope).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/범위%20지정하기(Scope).md)
+* [바인딩(@Bind...).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/바인딩(%40Bind...).md))
 
 ##### 디자인 패턴의 기본
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
