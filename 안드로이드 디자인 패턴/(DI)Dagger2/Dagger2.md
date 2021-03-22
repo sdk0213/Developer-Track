@@ -19,6 +19,54 @@
   * 설정에 따라 의존성을 재활용할건지 새로만들것인지 결정할수있다.
   * 특정기능을 위한 Cotainer를 사용후 메모리에서 해제할수 있다.
 ---
+### Dagger2 에서 컴포넌트와 모듈
+* ```java
+  interface Factory { // Factory
+     <T> create()
+  } 
+  public final class BClassFactory implements Factory{ // --> BClass Factory
+      private BClass bclass;
+      BClassFactory(BClass bclass){
+          this.bclass = bclass;
+      }
+ 
+      public static BClassFactory create(BClass bclass) {
+          return new BClassFactory(bclass);
+      }
+ 
+      public static void print(BClass bclass){
+          bclass.print();
+      }
+  }
+
+  interface AInterface { // ---> Component
+     void print();
+  }
+  
+  class AClass implements AInterface{ // --> DaggerPersonComponent
+  
+     private BClass bclass;
+     AClass(BClass bclass){
+         bclass = BClassFactory,create(bclass);
+     }
+    
+     @Override
+     void print(){
+         bclass.print();     
+     }
+  }
+  
+  class BClass { // -> Module
+  
+     void print(){
+         System.out.println("Hello world");
+     }
+  }
+  
+  ..main..{
+      AClass aClass = new AClass(new BClass()); // Module 넣기
+      aclass.print();
+   }
 ### Dagger2가 의존성 주입을 해준다는것의 의미
 * 컴포넌트
   ```java
