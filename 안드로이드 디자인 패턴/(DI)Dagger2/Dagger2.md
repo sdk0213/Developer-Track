@@ -67,6 +67,11 @@
       AClass aClass = new AClass(new BClass()); // Module 넣기
       aclass.print();
    }
+* 더 쉽게말해서 아래와 같이 표현 가능하다.
+  ```java
+  Componet로부터 Override된 함수 {
+       모듈에 선언된 기능
+  }
 ### Dagger2가 의존성 주입을 해준다는것의 의미
 * 컴포넌트
   ```java
