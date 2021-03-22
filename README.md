@@ -152,6 +152,7 @@
 
 ##### 디자인 패턴의 기본
 * [SOLID 원칙](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SOLID%20원칙.md)
+* [SRP.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SRP.md)
 * [MVC, MVP, MVVM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/MVC%2C%20MVP%2C%20MVVM.md)
 * [관심사 분리(Separation of concerns).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/관심사%20분리(Separation%20of%20concerns).md)
 * [Observer Pattern.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/Observer.md)
