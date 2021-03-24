@@ -65,7 +65,7 @@
   // false
   // java.util.NoSuchElementException: No Value present
 ---
-### BindsInstance - [이해 잘 안감]
+### BindsInstance - [이해 잘 안감][아마도 매개변수를 추가해줄수 있게끔 해주는것같음]
 * Component Builder Setter 또는 Factory 매개변수에 붙일수 있다.
 * @Inject가 붙은 필드, 생성자, 메서드에 주입될 수 있다.
 * **모듈말고 외부로부터 생성된 인스턴스를 빌더 또느 팩토리를 통해 넘겨줘 해당 인스턴스를 바인딩하게 한다.**
