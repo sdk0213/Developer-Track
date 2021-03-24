@@ -145,11 +145,11 @@
 * [@Module.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Module.md)
 * [@Component.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Component.md)
 * [@Inject.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Inject.md)
-* [의존성주입하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/의존성%20주입하기.md)
-* [범위 지정하기(Scope).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/범위%20지정하기(Scope).md)
-* [바인딩(@Bind...).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/바인딩(%40Bind...).md))
-* [안드로이드와 Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드와%20Dagger2.md)
+* [@Inject_2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Inject_2.md)
+* [@Scope,@Singleton,@Reusable.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Scope%2C%40Singleton%2C%40Reusable.md)
+* [@Binds, @BindsOptionalOf, @BindsInstance.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Binds%2C%20%40BindsOptionalOf%2C%20%40BindsInstance.md)
 * [@Named.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Named.md)
+* [안드로이드와 Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드와%20Dagger2.md)
 
 ##### 디자인 패턴의 기본
 * [SOLID 원칙](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SOLID%20원칙.md)
