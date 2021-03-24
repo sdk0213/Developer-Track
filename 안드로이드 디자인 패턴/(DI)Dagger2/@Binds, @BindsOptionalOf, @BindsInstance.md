@@ -123,6 +123,26 @@
         this.age = age;
     }
   }
+##### 실제 Dagger 클래스
+* setAge로 인자를 넣어주는것을 확인할수 있다.
+* DaggerComponent_A.class
+  ```java
+  ..
+  ...
+  @Override
+  public PersonA callPerson() {
+    return Module_A_Module_Provides_PersonA_PersonFactory.module_Provides_PersonA_Person(module_A, Module_A_Module_Provides_String_NameFactory.module_Provides_String_Name(module_A), setAge);}
+
+  private static final class Builder implements Component_A.Builder {
+    private Integer setAge;
+
+    @Override
+    public Builder setAge(int age) {
+      this.setAge = Preconditions.checkNotNull(age);
+      return this;
+  }
+  ..
+  .
 ##### @Test
 * ```java
   @Test
