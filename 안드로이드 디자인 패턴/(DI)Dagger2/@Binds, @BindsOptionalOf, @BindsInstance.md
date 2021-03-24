@@ -65,8 +65,68 @@
   // false
   // java.util.NoSuchElementException: No Value present
 ---
-### BindsInstance - [이해 잘 안감][아마도 매개변수를 추가해줄수 있게끔 해주는것같음]
+### BindsInstance
+* Module을 작성하다 보면 객체 생성시 param으로 입력되는 인자를 외부에서 전달받아야 하는 경우
 * Component Builder Setter 또는 Factory 매개변수에 붙일수 있다.
 * @Inject가 붙은 필드, 생성자, 메서드에 주입될 수 있다.
 * **모듈말고 외부로부터 생성된 인스턴스를 빌더 또느 팩토리를 통해 넘겨줘 해당 인스턴스를 바인딩하게 한다.**
-* 66~67 page
+##### Component
+* ```java
+  @Component(modules = {Module_A.class})
+  interface Component_A {
+
+      @Named("Person_Master")
+      PersonA callPerson();
+
+      @Component.Builder
+      interface Builder {
+          @BindsInstance
+          Builder setAge(int age);
+          Component_A build();
+      }
+  }
+##### Module
+* 외부에서 받을 값은 @Named 와 같은 annotation을 설정해주지 않는다.
+* ```java
+  @Module
+  public class Module_A {
+
+      @Provides
+      @Named("Name")
+      String module_Provides_String_Name(){
+          return "sudeky";
+      }
+
+      @Provides
+      @Named("Age")
+      int module_Provides_Int_Age(){
+        r eturn 29;
+      }
+
+      @Provides
+      @Named("Person_Master")
+      PersonA module_Provides_PersonA_Person(@Named("Name") String name, int age){ // name은 annotation 설정 안함
+          return new PersonA(name, age);
+      }
+
+  }
+##### PersonA
+* ```java
+  public class PersonA {
+
+    String name;
+    int age;
+
+    @Inject
+    public PersonA(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+  }
+##### @Test
+* ```java
+  @Test
+  ...
+  Component_A component = DaggerComponent_A.builder()
+                .setAge(30)
+                .build();
