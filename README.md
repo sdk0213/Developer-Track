@@ -221,7 +221,7 @@
 * [2.0.1 필드와 변수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.1%20필드와%20변수.md)
 * [2.0.2 클래스와 인터페이스.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.2%20클래스와%20인터페이스.md)
 * [2.0.3 원시타입 없음.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.3%20원시타입%20없음.md)
-* [2.0.4 컬렉션의 두 유형.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.4%20컬렉션의%20두%20유형.md)
+* [2.0.4 컬렉션의 두 유형(listOf, MutableListOf).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.4%20컬렉션의%20두%20유형.md)
 * [2.0.5 패키지.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.5%20패키지.md)
 * [2.0.6 가시성.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.6%20가시성.md)
 * [2.0.7 함수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/2.0.7%20함수.md)
