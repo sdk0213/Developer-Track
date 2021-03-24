@@ -4,6 +4,8 @@
   * 안드로이드에서 어플리케이션, 액티비티, 프래그먼트 인스턴스에 대한 범위 지정을 다르게 관리해 오브젝트 그래프의 생성 및 소멸을 각자 관리 가능
 ---
 ### @Singleton
+* Dagger에서 제공하는 @Singleton은 java에서의 singleton 개념과는 다르다. 즉 단일객체를 제공하기는 하지만 그 생명주기는 해당 Component에 의존합니다.
+* Component에 붙여서 Component와 생명주기를 같이하도록 할때 사용
 * ```java
   @Singleton
   @Component(modules = MyModule.class)
