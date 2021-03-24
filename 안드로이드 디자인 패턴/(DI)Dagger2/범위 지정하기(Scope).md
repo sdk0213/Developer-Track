@@ -5,7 +5,23 @@
 ---
 ### @Singleton
 * Dagger에서 제공하는 @Singleton은 java에서의 singleton 개념과는 다르다. 즉 단일객체를 제공하기는 하지만 그 생명주기는 해당 Component에 의존합니다.
-* Component에 붙여서 Component와 생명주기를 같이하도록 할때 사용
+  * 예를들어서 다음과 같은 차이가 있다.
+    ```java
+    Component_A component = DaggerComponent_A.create(); // Non-Singleton
+
+    Component_B component_b = DaggerComponent_B.create(); // Singleton
+    Log.i("sudeky",""+System.identityHashCode(component.hello())); // 174949475
+    Log.i("sudeky",""+System.identityHashCode(component.hello())); // 109688928
+    Log.i("sudeky",""+System.identityHashCode(component_b.hello())); // 152105241
+    Log.i("sudeky",""+System.identityHashCode(component_b.hello())); // 152105241
+    
+    // 하지만 다른 차이점이 있다면 단일객체를 제공하기는 하지만 그 생명주기는 해당 Component에 의존한다.
+    Component_B component_b2 = DaggerComponent_B.create(); // 
+    Log.i("sudeky",""+System.identityHashCode(component_b2.hello())); // 173464346
+    
+    // 싱글톤인데도 불구하고 해당 Component를 생성하면 다른 객체로 취급된다. 기본적으로 Singleton의 생명주기가 Component에 의존한다는것을 확인할수있다.
+    // 그러니까 싱글톤이지만 객체 생성과 같은것을 보장하는 범위는 컴포넌트내에서만 가능하다.
+    
 * ```java
   @Singleton
   @Component(modules = MyModule.class)
