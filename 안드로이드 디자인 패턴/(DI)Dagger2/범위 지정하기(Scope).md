@@ -51,6 +51,9 @@
   // 326549596
   // 326549596
   // true
+* [Component와 Module 에 붙은 Singleton의 의미는 다른것인가?](https://stackoverflow.com/questions/35295947/difference-between-scope-in-modules-and-components)
+  * Annotating the @Provides method (or the class with an @Inject constructor) tells Dagger to implement the actual scoping functionality whereas annotating the component (which is necessary) doesn't have any functionality, but tells Dagger "I allow this component to contain bindings of this scope". Note that you can still have unscoped bindings in a scoped component, but not the other way around.
+  * Component 내부에서 스코프를 사용한다면 붙여주는것이고 만약에 스코프를 사용하는데 안붙히면 에러 나타남. 그거말고는 아무의미 없고 특별한 기능을 하는것은 아님
 ---
 ### @Reusable
 * 이전객체를 사용가능하다면 재사용하고 아니며 새로 생성한다.
