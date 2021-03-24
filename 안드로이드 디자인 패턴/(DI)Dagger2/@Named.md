@@ -57,4 +57,12 @@
       fun callCaptainAmerica(): Hero 
       
   }
-
+##### filed inject 사용한다면
+* ```kotlin
+  class Hero { 
+      @Inject @Named("ironMan") lateinit var person: Person 
+      @Inject @Named("suit") lateinit var weapon: Weapon 
+      fun info() { 
+          Log.d("doo", "name: ${person.name()} skill: ${person.skill()} | weapon:${weapon.type()}") 
+      } 
+  }
