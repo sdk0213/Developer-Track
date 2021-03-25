@@ -1,13 +1,13 @@
-### @Binds
-* 모듈 내 추상 메서드 + 하나의 매개변수에만 붙일 수 있다.
+### @Binds(모듈 내 추상 메서드 + 하나의 매개변수)
+* 모듈 내 **추상 메서드 + 하나의 매개변수**에만 붙일 수 있다.
 * 이미 바인드된 SecureRandom을 Random 타입으로 한 번 더 바인드할 수 있다.
 * @Provides 메서드보단 좀 더 효율적으로 사용할수 있다.
 * ```java
   @Binds
   abstract Random bindRandom(SecureRandom secureRandom)
   
-### BindsOptionalOf
-* 모듈 내 추상메서드 + 매개변수 X
+### BindsOptionalOf(모듈 내 추상메서드 + 매개변수 X)
+* 모듈 내 **추상메서드 + 매개변수 X**
 * 반환타입필요(void는 안됨)
 * 예외사항 못 던짐
 * ```java
