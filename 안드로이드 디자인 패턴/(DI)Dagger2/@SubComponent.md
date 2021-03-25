@@ -1,4 +1,4 @@
-# @Subcomponent - [출처는 투덜이님의 리얼블로그](https://tourspace.tistory.com/330?category=797357#recentComments)
+# @Subcomponent - [참고는 투덜이님의 리얼블로그](https://tourspace.tistory.com/330?category=797357#recentComments)
 ### 특징
 * Component간의 부모-자식 관계로 처리해줄수 있게 해주는 어노테션
 * 상위 Component 내에 구현이 된다.
