@@ -1,4 +1,3 @@
-&#60;
 # Generic(in, out) - [출처](https://thdev.tech/kotlin/androiddev/2017/10/03/Kotlin-Generics/)
 ---
 ### 임시 코드
