@@ -17,7 +17,7 @@
 
   public void addAll(List<Number> list) { /* ... */ }
 ##### 이를 해결하기 위해서는 다음과 같이 와일드카드 선언
-* List<Integer>, List<Float>, List<Double> 를 허용해준ㄷ.
+* List<Integer>, List<Float>, List<Double> 를 허용해준다.
 * ```java
   List<Integer> list1 = new ArrayList<>();
   List<Float> list2 = new ArrayList<>();
