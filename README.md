@@ -26,6 +26,7 @@
 ## [Java Basic](https://github.com/sdk0213/Developer-Track/tree/master/자바%20지식)
 * [맨 위로 가기](#book-mark)
 * [Generic.md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Generic.md)
+* [Generic_wildcard.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Generic_wildcard.md)
 * [Map (HashMap) .md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Map%20(HashMap)%20.md)
 * [Method References.md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Method%20References.md)
 * [Spring Constant Pool(상수풀),literal.md](https://github.com/sdk0213/RememberDevelop/blob/master/자바%20지식/Spring%20Constant%20Pool(상수풀)%2Cliteral.md)
