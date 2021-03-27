@@ -154,6 +154,7 @@
 * [Lazy<T>, Provider<T>.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Lazy%3CT%3E%2C%20Provider%3CT%3E.md)
 * [@Named.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Named.md)
 * [안드로이드와 Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드와%20Dagger2.md)
+* [SetMultiBinding(@IntoSet, @ElementsIntoSet).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/SetMultiBinding(%40IntoSet%2C%20%40ElementsIntoSet).md)
 
 ##### 디자인 패턴의 기본
 * [SOLID 원칙](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SOLID%20원칙.md)
