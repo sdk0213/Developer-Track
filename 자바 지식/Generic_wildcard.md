@@ -1,7 +1,7 @@
 # Generic_wildcard - [출처는 joongwon님의 medium](https://medium.com/@joongwon/java-java의-generics-604b562530b3)
 ---
 ### 용어 설명
-* 무공변(invariant) <T>
+* 무공변(invariant) &#60;T>
   * 나
 * 공변 (covariant) <? extends T>
   * 나 + 자식 [구체적 방향 허용]
@@ -27,8 +27,8 @@
   public void addAll(List<? extends Number> list) { /* ... */ }
 ---
 ### PECS : Producer(생산자)-extends, Consumer(소비자)-super (중요!!!)
-##### extends => 읽기전용
-##### super => 쓰기 전용
+##### ? extends => 읽기전용
+##### ? super => 쓰기 전용
 * 올바른 케이스
   ```java
   // ? extends => 읽기 전용
