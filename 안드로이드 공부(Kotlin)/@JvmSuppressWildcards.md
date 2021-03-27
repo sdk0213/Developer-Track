@@ -1,4 +1,4 @@
-### @JvmSuppressWildcards - [출처는 jaejong님의 tistory](https://jaejong.tistory.com/148)
+### @JvmSuppressWildcards
 * 코틀린은 기본적으로 Generic을 선언하고 **자바에서 이 클래스를 상속하면 extends T 로 변환**한다.(? extends를 명시하지 않더라도)
 * 이를 방지하기 위해서 나온 annotation 이다.
 * ```kotlin
