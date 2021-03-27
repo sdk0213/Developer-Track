@@ -47,7 +47,7 @@
 * [final 과 const의 차이점.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/final%20과%20const의%20차이점.md)
 * [class -> interface 형변환.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/class%20-%3E%20interface%20형변환.md)
 * [Optional.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Optional.md)
-* [Set( HashSet, TreeSet, LinkedHashSet).md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Set(%20HashSet%2C%20TreeSet%2C%20LinkedHashSet).md)
+* [Set(HashSet, TreeSet, LinkedHashSet).md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Set(HashSet%2C%20TreeSet%2C%20LinkedHashSet).md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
