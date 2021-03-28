@@ -64,6 +64,23 @@
 ---
 ### @ElementsIntoSet
 * 객체를 하나씨 Set에 추가하지 않고 Set<T>의 일부분을 한꺼번에 추가할때 사용
+* 일반적인 타입을 맞추는 것과는 무슨차이가 있을까?
+  * ```java
+    @Provides
+    Set<Person> person(){
+        return new HashSet<>(Arrays.asList(new Person("sung dae kyoung",29), new Person("jung sun yae",54)));
+    }
+  
+    @Provides
+    @ElementsIntoSet
+    Set<Person> person(){
+        return new HashSet<>(Arrays.asList(new Person("sung dae kyoung",29), new Person("jung sun yae",54)));
+    }
+  * 위 코드를 보면은 별로 차이가 없어보이지만 다음과같은 차이가 있다.
+  * 일반적인 Provides는 해당 Set<Person>을 반환하는 컴포넌트에 항시 저 값만 반환을하는것이고 @ElementsIntoSet은 해당 값을 추가적으로 넣어주는것의 차이가 있다.
+  * 즉 @ElementIntoSet은 IntoSet으로 일일이 넣어줘야 하는 번거로움을 극복해주는 어노테션인것이다.
+  * 중요한것은 Set에 다가 추가적으로 넣는다는것의 의미가 있다.
+  
 ##### Component
 * ```java
   @Singleton
