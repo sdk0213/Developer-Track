@@ -18,7 +18,7 @@
 
       Map<String, Dog> callMyDog();
 
-      Map<Class<?>, Family> callMyNewFamily();
+      Map<Class<?>, Family> callMyNewFamily(); // Class 안 '?' 은 wildcard 이다.
 
   }
 ##### Module
