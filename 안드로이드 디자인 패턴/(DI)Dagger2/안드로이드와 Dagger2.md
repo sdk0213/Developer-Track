@@ -137,6 +137,71 @@
       }
       
   }
+---
+### MainFragmentComponent
+* ```java
+  @FragmentScope
+  @Subcomponent(modules = MainFragmentModule.class)
+  public interface MainFragmentComponent {
+
+      void inject(MainFragment fragment);
+      
+      @Subcomponent.Builder
+      interface Builder {
+          MainFragmentComponent.Builder setModule(MainFragmentModule module);
+          @BindsInstance
+          MainFragmentComponent.Builder setFragment(MainFragment fragment);
+          MainFragmentComponent build();
+      }
+  }
+---
+### MainFragmentModule
+* ```java
+  @Module
+  public class MainFragmentModule {
+
+      @Named("fragment")
+      @Provides
+      @FragmentScope
+      String provideInt() {
+          return new Random().nextInt();
+      }
+
+  }
+---
+### Fragment
+* ```java
+  public class MainFragment extends Fragment {
+      
+      @Inject
+      SharedPreferences sharedPreferences;
+      
+      @Inject
+      String activityName;
+      
+      @Inject
+      Integer randomNumber;
+      
+      @Override
+      public void onAttach(Context context) {
+          super.onAttach(context);
+          if (getActivity() instanceof MainActivity) {
+              ((MainActivity) getActivitiy()).getComponent()
+                      .mainFragmentComponentBuilder()
+                      .setModule(new MainFragmentModule())
+                      .setFragment(this)
+                      .build()
+                      .inject(this);
+          }
+          
+          Log.d("MainFragment", activityName);
+          Log.d("MainFragment", "randomNumber = " + randomNumber);
+      }
+  }
+  
+  // result
+  // MainFragment: MainActivity
+  // MainFragment: randomNumber = 1541652
           
     
     
