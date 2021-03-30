@@ -18,6 +18,11 @@
 * Dagger Component(Sub) -> Application Component(Main)
 * Fragment(Sub) -> Actitivty(Main)
 ---
+### 전체적인 구조
+---
+* <img width="512" alt="AndroidDaggerᅳ" src="https://user-images.githubusercontent.com/51182964/113000320-ac881780-91aa-11eb-8e4f-a4f0d4010ae5.png">
+
+---
 ### Application Code
 ##### AppComponent
 * App = Application 이고 시스템에 의해서 생성되기 때문에 Factory @BindsInstance 메서드를 통해 오브젝트 그래프를 바인딩
