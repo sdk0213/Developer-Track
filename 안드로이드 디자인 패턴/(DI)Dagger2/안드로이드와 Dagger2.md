@@ -12,8 +12,15 @@
                   }
               }
         }
- }
+  }
+---
+### 구성하기
+* Dagger Component(Sub) -> Application Component(Main)
+* Fragment(Sub) -> Actitivty(Main)
+---
+### Application Code
 ##### AppComponent
+* App = Application 이고 시스템에 의해서 생성되기 때문에 Factory @BindsInstance 메서드를 통해 오브젝트 그래프를 바인딩
 * ```java
   @Component(modules = AppModule.class)
   @Singleton
@@ -43,4 +50,93 @@
         );
       }
   }
-* 
+##### : Application
+* ```java
+  public class App extends Application {
+    
+      private AppComponent appComponent;
+      
+      @Override
+      public void onCreate() {
+          super.onCreate();
+          appComponent = DaggerAppComponent.factory();
+              .create(this, new AppModule());
+      }
+      
+      public AppComponent getAppComponent(){
+          return appComponent;
+      }
+  }
+---
+### Main Code
+* @ActivityScope
+  * 액티비티 생명 주기 동안 동일한 인스턴스 제공을 보장해준다.
+* @BindsInstance를 통해 시스템에 의해 생성되는 Acitivity 바인딩
+##### MainSubComponent
+* ```java
+  @Subcomponent(modules = MainAcitivityModule.class)
+  @ActivityScope
+  public interface MainAcitivtyComponent {
+      MainFragmentComponent.Builder mainFragmentComponentBuilder();
+      
+      void inject(MainAcitivity activitiy);
+      
+      @Subcomponent.Builder
+      interface Builder {
+          Builder setModule(MainActivityModule module);
+          @BindsInstance
+          Builder setActivity(MainActivity activity);
+          MainActivityComponent build();
+      }
+  }
+##### MainModule
+* ```java
+  @Module(subcomponents = MainFragmentCOmponent.class)
+  public class MainActivityModule {
+      @Provides
+      @AcitivtyScope
+      String priovideActivityName() {
+          return MainAcitivty.class.getSimpleName();
+      }
+  }
+---
+### MainAcitivty Code
+* ```java
+  public class MainActivity extends AppCompatActivity {
+
+      @Inject
+      SharedPreferences sharedPreferences;
+      
+      @Inject
+      String activityName;
+      
+      MainActivityComponent component;
+      
+      @Override
+      protected void onCretae(Bundle savedInstanceState) {
+          super.onCreate(savedInstance);
+          setContentView(R.layout.activity_main);
+          
+          component = ((App)getApplication()).getAppComponent()
+                  .mainAcitivitYcomponentBuilder()
+                  .setModule(new MainActivityModule())
+                  .setActivity(this)
+                  .build();
+          component.inject(this);
+          
+          
+          getSupportFragemntManager().beginTransaction()
+                  .replace(R.id.container, new MainFragment())
+                  .commit();
+                 
+                 
+      }
+      
+      public MainActivityComponent getComponent() {
+          return component;
+      }
+      
+  }
+          
+    
+    
