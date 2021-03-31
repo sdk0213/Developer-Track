@@ -15,8 +15,13 @@
   }
 ---
 ### 구성하기
-* Dagger Component(Sub) -> Application Component(Main)
-* Fragment(Sub) -> Actitivty(Main)
+* 생명주기 순서와 상하관계에 맞춰서 컴포넌트는 다음과 같이 구성한다.
+  * application(activity(fragemnt))
+  * application은 앱에서 가장 먼저 생성된다.
+* 모듈은 전부 BindsInstance로 외부에서 주입한다 => 이유는 모르겠다 -> 아마도 모듈에서 사용하는 안드로이드 관련 객체는 생명주기가 시작되었을때만 사용할수있기 때문이라고 추정한다.
+* application에서 생성한 component를 mainactivity에서 다시 가져와 추가적으로 build를 진행하고 fragment는 mainactivity에서 component를 가져와 추가적으로 빌드를 진행한다.
+이게 가능한 이유는 component-subcomponent의 관계를 맺고 있기 때문이다.
+* 마지막 fragment 에서 mainactivity 의 class name을 가져오는 모듈을 사용하는것을 보면 subcomponent에서 상위 component를 사용할수 있는것을확인가능하다.
 ---
 ### 전체적인 구조
 ---
