@@ -19,8 +19,11 @@
   /                      /
   ////////////////////////
 ---
+##### 메서드의 이름은 상관없지만, 반드시 메서드 매개 변수와 반환형은 규칙을 엄격하게 따라야한다.
 ### Provision methods(프로비저 메서드)
-* **매개변수가 없는** 반환형은 모듈로부터 제공되건 주입되는 메서드
+* 특징
+  * 매개변수가 없다. 
+  * 반환형은 첫째로 모듈로부터 주입된것 아니면 주입받은 객체를 반환
 * **getSomeType() 메서드를 호출하면 SomeModule로부터 제공받거나 주입된 객체를 반환**
 * ```java
   @Component(modules = SomeModules.class)
@@ -36,7 +39,7 @@
     @Component(modules = SomeModule.class)
     public interface SomeComponent {
         void injectSomeType(SomeType someType);
-        SomeType inejctAndReturnSomeType(SomeType someType);
+        SomeType injectAndReturnSomeType(SomeType someType);
     }
 ##### Hello World 예제
 * <img width="458" alt="의존성 주입" src="https://user-images.githubusercontent.com/51182964/111732480-ea3a9580-88b8-11eb-818d-1ed1b813e8b1.png">
