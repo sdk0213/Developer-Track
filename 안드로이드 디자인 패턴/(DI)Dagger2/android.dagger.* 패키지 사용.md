@@ -62,7 +62,7 @@
           return dispatchingAndroidInjector;
       }
   }
-##### Activitiy SubComponent
+##### MainActivitiy SubComponent
 * ```java
   @ActivityScope
   @SubComponent(modules = {MainActivityModule.class})
@@ -73,7 +73,7 @@
       
       }
   }
-##### Activitiy Module
+##### MainActivitiy Module
 * ```java
   @Module(Subcomponents = MainFragmentSubcomponent.class)
   public abstract class MainActivityModule {
@@ -91,7 +91,7 @@
       abstract AndroidInjector.Factory<?> bindInjectorFactory(MainFragmentSubcomponent.Factory factory);
   }
   
-##### Activitiy
+##### MainActivitiy
 * ```java
   public class MainActivity extends AppCompatActivity implements HasAndroidInjector {
       @Inject
