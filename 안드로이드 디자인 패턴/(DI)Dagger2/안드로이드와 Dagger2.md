@@ -46,7 +46,7 @@
           );
       }
   }
-##### Module
+##### Module 
 * ```java
   @Module(subcomponents = MainActivityComponent.class)
   public class AppModule {
