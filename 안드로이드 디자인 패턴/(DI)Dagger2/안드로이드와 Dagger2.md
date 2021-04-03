@@ -18,9 +18,7 @@
 * 생명주기 순서와 상하관계에 맞춰서 컴포넌트는 다음과 같이 구성한다.
   * application(activity(fragemnt))
   * application은 앱에서 가장 먼저 생성된다.
-* 모듈은 전부 BindsInstance로 외부에서 주입한다 => 이유는 모르겠다 -> 아마도 모듈에서 사용하는 안드로이드 관련 객체는 생명주기가 시작되었을때만 사용할수있기 때문이라고 추정한다.
-* application에서 생성한 component를 mainactivity에서 다시 가져와 추가적으로 build를 진행하고 fragment는 mainactivity에서 component를 가져와 추가적으로 빌드를 진행한다.
-이게 가능한 이유는 component-subcomponent의 관계를 맺고 있기 때문이다.
+* application -> mainactivity -> fragment 순서대로 component 를 가져오고 factory를 생성해야 한다.
 * 마지막 fragment 에서 mainactivity 의 class name을 가져오는 모듈을 사용하는것을 보면 subcomponent에서 상위 component를 사용할수 있는것을확인가능하다.
 ---
 ### 전체적인 구조
@@ -35,15 +33,12 @@
   @Component(modules = AppModule.class)
   @Singleton
   public interface AppComponent {
+  
       MainActivityComponent.Builder mainActivityComponentBuilder();
-      void inject(App app);
       
       @Component.Factory
       interface Factory {
-          AppComponent create(
-                  @BindsInstance 
-                  App app, AppModule appModule
-          );
+          AppComponent create(@BindsInstance App app);
       }
   }
 ##### Module 
@@ -53,11 +48,15 @@
     
       @Provides
       @Singleton
-      SharedPrefereces provideSharedPreferences(App app){
-        return app.getSharedPreferences(
-                "default",
-                Context.MODE_PRIVATE
-        );
+      SharedPreferences provideSharedPreferences(App app) {
+          return app.getSharedPreferences("default", Context.MODE_PRIVATE);
+      }
+
+      @Provides
+      @Singleton
+      @Named("app")
+      String provideAppString(){
+          return "String from AppModule";
       }
   }
 ##### : Application
@@ -89,14 +88,11 @@
   public interface MainAcitivtyComponent {
       MainFragmentComponent.Builder mainFragmentComponentBuilder();
       
-      void inject(MainAcitivity activitiy);
-      
-      @Subcomponent.Builder
-      interface Builder {
-          Builder setModule(MainActivityModule module);
-          @BindsInstance
-          Builder setActivity(MainActivity activity);
-          MainActivityComponent build();
+      void inject(MainActivity activity);
+
+      @Subcomponent.Factory
+      interface Factory {
+          MainActivityComponent create();
       }
   }
 ##### MainModule
@@ -104,9 +100,16 @@
   @Module(subcomponents = MainFragmentCOmponent.class)
   public class MainActivityModule {
       @Provides
-      @AcitivtyScope
-      String priovideActivityName() {
-          return MainAcitivty.class.getSimpleName();
+      @ActivityScope
+      @Named("activity")
+      String provideActivityString(){
+          return "String from MainActivityModule";
+      }
+
+      @Provides
+      @ActivityScope
+      String provideActivityName() {
+          return MainActivity.class.getSimpleName();
       }
   }
 ---
@@ -127,18 +130,14 @@
           super.onCreate(savedInstance);
           setContentView(R.layout.activity_main);
           
-          component = ((App)getApplication()).getAppComponent()
-                  .mainAcitivitYcomponentBuilder()
-                  .setModule(new MainActivityModule())
-                  .setActivity(this)
-                  .build();
+          component = ((App) getApplication()).getAppComponent().mainActivityComponentFactory()
+                .create();
           component.inject(this);
           
           
           getSupportFragemntManager().beginTransaction()
                   .replace(R.id.container, new MainFragment())
                   .commit();
-                 
                  
       }
       
@@ -155,13 +154,10 @@
   public interface MainFragmentComponent {
 
       void inject(MainFragment fragment);
-      
-      @Subcomponent.Builder
-      interface Builder {
-          MainFragmentComponent.Builder setModule(MainFragmentModule module);
-          @BindsInstance
-          MainFragmentComponent.Builder setFragment(MainFragment fragment);
-          MainFragmentComponent build();
+
+      @Subcomponent.Factory
+      interface Factory {
+          MainFragmentComponent create();
       }
   }
 ---
@@ -169,49 +165,41 @@
 * ```java
   @Module
   public class MainFragmentModule {
-
-      @Named("fragment")
-      @Provides
-      @FragmentScope
-      String provideInt() {
-          return new Random().nextInt();
-      }
+  
+    @Named("fragment")
+    @Provides
+    @FragmentScope
+    String provideString() {
+        return "String from fragment";
+    }
 
   }
 ---
 ### Fragment
 * ```java
   public class MainFragment extends Fragment {
-      
       @Inject
-      SharedPreferences sharedPreferences;
-      
+      @Named("app")
+      String appString;
       @Inject
-      String activityName;
-      
+      @Named("activity")
+      String activityString;
       @Inject
-      Integer randomNumber;
-      
+      @Named("fragment")
+      String fragmentString;
+
       @Override
       public void onAttach(Context context) {
+          ((MainActivity)getActivity()).getComponent().
+                  mainFragmentComponentFactory().create().inject(this);
+          Log.e("MainFragment", appString);
+          Log.e("MainFragment", activityString);
+          Log.e("MainFragment", fragmentString);
           super.onAttach(context);
-          if (getActivity() instanceof MainActivity) {
-              ((MainActivity) getActivitiy()).getComponent()
-                      .mainFragmentComponentBuilder()
-                      .setModule(new MainFragmentModule())
-                      .setFragment(this)
-                      .build()
-                      .inject(this);
-          }
-          
-          Log.d("MainFragment", activityName);
-          Log.d("MainFragment", "randomNumber = " + randomNumber);
       }
   }
   
-  // result
-  // MainFragment: MainActivity
-  // MainFragment: randomNumber = 1541652
-          
-    
-    
+  // result(출력결과)
+  // MainFragment: String from AppModule
+  // MainFragment: String from MainActivityModule
+  // MainFragment: String from fragment
