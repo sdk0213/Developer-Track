@@ -39,7 +39,27 @@
 ---
 ### @Component.Factory
 * [Builder 와의 차이점 - 출처](https://proandroiddev.com/dagger-and-the-shiny-new-component-factory-c2234fcae6b1)
-  * 코드가 더 깔끔하다.
+  * 코드가 더 깔끔하다. 즉, 메서드 체이닝을 구현하지 않아도 Component에 @BindsInstance가 달린 요소를 등록할수 있다. Builder에 비해서 코드를 사용하기 편하다. 실제 코드를 보면 쉽게 이해 가능하다.
+    * ```java
+      interface AppComponent...
+      ...
+      @Component.Factory
+      interface Factory {
+    
+          fun create(
+              @BindsInstance context: Context,
+              @BindsInstance age: Int,
+              @BindsInstance name: String
+          ): AppComponent
+      }
+      ..
+      ...
+      
+      main...{
+        DaggerAppComponent
+            .factory()
+            .create(this, 29, "성대경")
+      }
   * 반드시 의존성을 넣어줘야 하는것에 대해서 까먹지 않을수 있다.(it’s not possible anymore to forget to provide a mandatory dependency to the component)
     * 그러므로 컴파일로부터 Builder보다 더 안전하다.(compile time safety)
 * ```java
