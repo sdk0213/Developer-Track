@@ -143,13 +143,13 @@
 ##### Fragment Module
 * ```java
   @Module
-  public class MainFragemntModule {
+  public class MainFragmentModule {
   
       @Named("fragment")
       @Provides
-      @FragemntScope
+      @FragmentScope
       String provideString() {
-          return "String from fragemnt";
+          return "String from fragment";
       }
   }
 ##### Fragment
@@ -173,7 +173,7 @@
           AndroidSupportInjection.inject(this);
           Log.e("MainFragment", appString);
           Log.e("MainFragment", activityString);
-          Log.e("MainFragemnt", fragmentString);
+          Log.e("MainFragment", fragmentString);
           super.onAttach(context);
       }
    }
