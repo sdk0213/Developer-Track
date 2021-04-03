@@ -62,6 +62,7 @@
       }
   * 반드시 의존성을 넣어줘야 하는것에 대해서 까먹지 않을수 있다.(it’s not possible anymore to forget to provide a mandatory dependency to the component)
     * 그러므로 컴파일로부터 Builder보다 더 안전하다.(compile time safety)
+    * Builder를 사용할경우에는 런타임에서 오류가 발생하기 때문에 Factory를 사용시 컴파일시간에 에러가 발생하는것에 비해서 오류를 뒤 늦게 파악할수 있다는 점에서 Factory를 사용하는것이 더 개발자 입장에서 오류를 빨리 파악할수 있다는 장점이 있다.
 * ```java
   @Component(modules = {BackendModule.class, FrontendModule.class})
   interface MyComponent {
