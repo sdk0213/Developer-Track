@@ -159,6 +159,7 @@
 * [안드로이드와 Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드와%20Dagger2.md)
 * [android.dagger.* 패키지 사용.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/android.dagger.*%20패키지%20사용.md)
 * [@ContributesAndroidInjector, Dagger base Class.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40ContributesAndroidInjector%2C%20Dagger%20base%20Class.md)
+* [Dagger2 Hilt(작성중단).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2%20Hilt(작성중단).md)
 
 ##### 디자인 패턴의 기본
 * [SOLID 원칙](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SOLID%20원칙.md)
