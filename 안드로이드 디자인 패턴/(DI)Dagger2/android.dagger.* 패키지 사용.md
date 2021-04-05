@@ -8,10 +8,67 @@
 ---
 ### AndroidInjector<?>
 * 안드로이드 프레임워크(Application, Activitiy, Fragment, Service, BroadCastReceiver, ContentProvider) 를 주입시켜주는 클래스
+  * 코드상 주석 설명을 보면 다음과같이 적혀있다.
+  * "Performs members-injection for a concrete subtype of a Android Component"
 * Inject() 메서드가 포함되어있음
+* 실제 AndroidInjector 인터페이스 코드
+  * ```java
+    public interface AndroidInjector<T> {
+
+      /** Injects the members of {@code instance}. */
+      void inject(T instance);
+
+      /**
+       * Creates {@link AndroidInjector}s for a concrete subtype of a core Android type.
+       *
+       * @param <T> the concrete type to be injected
+       */
+      interface Factory<T> {
+        /**
+         * Creates an {@link AndroidInjector} for {@code instance}. This should be the same instance
+         * that will be passed to {@link #inject(Object)}.
+         */
+        AndroidInjector<T> create(@BindsInstance T instance);
+      }
+ 
+      // builder도 있으나 현재 Deprecated 처리되어있다.
+      @Deprecated
+      abstract class Builder<T> implements AndroidInjector.Factory<T>
+      ..
+      
+      ...
+      
+    }
 ---
 ### AndroidInjectionModule
-* AndroidInjector<?>의 팩토리를 멀티 바인딩으로 관리한다.
+* AndroidInjector<?>의 팩토리를 멀티 바인딩으로 관리한다. 아래 코드는 AndroidInjectionModule의 실제코드인데 이를 살펴보면 Map형태로 Factory를 관리한다는것을 확인가능하다.
+* ```java
+  @Module
+  public abstract class AndroidInjectionModule {
+    @Multibinds
+    abstract Map<Class<?>, AndroidInjector.Factory<?>> classKeyedInjectorFactories();
+
+    @Multibinds
+    abstract Map<String, AndroidInjector.Factory<?>> stringKeyedInjectorFactories();
+
+    private AndroidInjectionModule() {}
+  }
+---
+### HasAndroidInjector
+* ```java
+  /** Provides an {@link AndroidInjector}. */
+  @Beta
+  public interface HasAndroidInjector {
+    /** Returns an {@link AndroidInjector}. */
+    AndroidInjector<Object> androidInjector();
+  }
+---
+### DispatchingAndroidInjector<Object>
+* AndroidInjection.inject()를 호출 하면 애플리케이션으로부터 DispatchingAndroidInjector<Object>를 얻게되고 해당 액티비티를 인자로 메소드 인젝션 하게 됩니다. inject(YourActivity);
+---
+### 전체적인 흐름
+* ![androidDagger사용구조](https://user-images.githubusercontent.com/51182964/113390078-00257b80-93cc-11eb-8bbb-c1eee30416b9.png)
+---
 ##### Application Component
 * ```java
   @Singleton
@@ -23,11 +80,6 @@
       
       }
   }
-### 전체적인 흐름
-* ![androidDagger사용구조](https://user-images.githubusercontent.com/51182964/113390078-00257b80-93cc-11eb-8bbb-c1eee30416b9.png)
----
-### bindAndroidInjectorFactory
-* AndroidInjectionModule 내부에 있는 Map에 AndroidInjector.Factory를 멀티 바인딩한다.
 ##### Application Module
 * ```java
   @Module(subcomponents = MainActivitySubcomponent.class)
