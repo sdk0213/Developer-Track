@@ -63,12 +63,11 @@
     AndroidInjector<Object> androidInjector();
   }
 ---
-### DispatchingAndroidInjector<Object>
-* AndroidInjection.inject()를 호출 하면 애플리케이션으로부터 DispatchingAndroidInjector<Object>를 얻게되고 해당 액티비티를 인자로 메소드 인젝션 하게 됩니다. inject(YourActivity);
+### DispatchingAndroidInjector
+* AndroidInjection.inject()를 호출 하면 애플리케이션으로부터 DispatchingAndroidInjector<Object>를 얻게되고 해당 액티비티를 인자로 메소드 인젝션 하게 됩니다.
 ---
 ### 전체적인 흐름
 * ![androidDagger사용구조](https://user-images.githubusercontent.com/51182964/113390078-00257b80-93cc-11eb-8bbb-c1eee30416b9.png)
----
 ##### Application Component
 * ```java
   @Singleton
