@@ -24,13 +24,82 @@
   * AndroidViewModelFactory
     * NewInstanceFactory를 상속받고 Application 클래스로 구현됨. 아마도 context가 필요한 경우를 위해 구글이 제공해주는것같다.
 ---
-### ViewModel 생성
+### ViewModel의 생성 방법 - [출처 - readystory님의 tistory](https://readystory.tistory.com/176)
 * ```kotlin
   var viewmodel = ViewModelProvier(this).get(MyViewModel::class.java)
 * 여기서 get 함수를 살펴보면은 다음과 같이 설명되어있다.
 ##### get
 * Returns an existing ViewModel or creates a new one in the scope (usually, a fragment or an activity), associated with this {@code ViewModelProvider}.
 * 해당 ViewModelProvider랑 관련되어있는 ViewModel이 있으면 있는것 반환 없으면 새로운 Scope에서 생성한다.
+##### Lifecycle Extensions
+* 기본
+* ```gradle
+  implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+* ```java
+  noParamViewModel = ViewModelProvider(this).get(NoParamViewModel::class.java)
+##### ViewModelProvider.NewInstanceFactory
+* 기본 Factory 클래스 사용
+* ```java
+  noParamViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(NoParamViewModel::class.java)
+##### ViewModelProvider.Factory
+* ViewModelProvider.Factory 인터페이스를 직접 구현 하는방법
+* 커스텀가능
+* ```java
+  class NoParamViewModelFactory : ViewModelProvider.Factory {
+      override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+          return if (modelClass.isAssignableFrom(NoParamViewModel::class.java)) {
+              NoParamViewModel() as T
+          } else {
+              throw IllegalArgumentException()
+          }
+      }
+  }
+##### ViewModelProvider.Factory(파라미터 구현)
+* ```java
+  class HasParamViewModelFactory(private val param: String) : ViewModelProvider.Factory {
+      override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+          return if (modelClass.isAssignableFrom(HasParamViewModel::class.java)) {
+              HasParamViewModel(param) as T
+          } else {
+              throw IllegalArgumentException()
+          }
+      }
+  }
+ 
+  ...
+  ..
+  .
+  // 사용 in Activity or fragment
+  hasParamViewModel = ViewModelProvider(this, HasParamViewModelFactory(sampleParam)).get(HasParamViewModel::class.java)
+##### AndroidViewModelFactory
+* Context필요할때 사용
+* ```java
+  noParamAndroidViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(NoParamAndroidViewModel::class.java)
+##### AndroidViewModelFactory(파라미터 구현)
+* 구현은 ViewModelProvider.NewInstanceFactory 또는 ViewModelProvider.Factory 둘중 하나로 구현하면 된다.
+* ```java
+  class HasParamAndroidViewModel(application: Application, val param: String): AndroidViewModel(application)
+* ```java
+  class HasParamAndroidViewModelFactory(private val application: Application, private val param: String): ViewModelProvider.NewInstanceFactory() {
+ 
+      override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+          if (AndroidViewModel::class.java.isAssignableFrom(modelClass)) {
+              try {
+                  return modelClass.getConstructor(Application::class.java, String::class.java)
+                      .newInstance(application, param)
+              } catch (e: NoSuchMethodException) {
+                  throw RuntimeException("Cannot create an instance of $modelClass", e)
+              } catch (e: IllegalAccessException) {
+                  throw RuntimeException("Cannot create an instance of $modelClass", e)
+              } catch (e: InstantiationException) {
+                  throw RuntimeException("Cannot create an instance of $modelClass", e)
+              } catch (e: InvocationTargetException) {
+                  throw RuntimeException("Cannot create an instance of $modelClass", e)
+              }
+          }
+          return super.create(modelClass)
+      }
+  }
 ---
 > 원리
 * HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
