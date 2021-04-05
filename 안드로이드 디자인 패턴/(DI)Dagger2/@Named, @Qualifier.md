@@ -66,3 +66,20 @@
           Log.d("doo", "name: ${person.name()} skill: ${person.skill()} | weapon:${weapon.type()}") 
       } 
   }
+  
+# @Qualifier
+* Named로 설정하기보다는 Annotation으로 하고싶다면 다음과 같이 설정하고 @Named 대신 해당 Qualifier를 사용하면 된다.
+* Named랑 다른거 없다. 그냥 Annotation 명시의 차이다.
+* ```java
+  @Qualifier
+  @Retention(RetentionPolicy.RUNTIME)
+  public @interface ActivityContext {
+  }
+  
+  ...
+  ..
+  
+  @Qualifier
+  @Retention(RetentionPolicy.RUNTIME)
+  public @interface ApplicationContext {
+  }
