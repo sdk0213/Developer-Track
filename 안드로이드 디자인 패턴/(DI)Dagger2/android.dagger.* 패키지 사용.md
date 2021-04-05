@@ -213,24 +213,3 @@
   // ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
   
   AndroidSupportInjection.inject(this);
-  
----
-### ContributesAndroidInjector Annotation
-* Subcomponent의 Factory가 다른 메서드나 클래스를 상속하지 않을때 Subcomponent를 정의하는 코드를 줄여준다.
-* ```java
-  @Singleton
-  @Component(modules = {AndroidInjectionModule.class, AppModule.class})
-  public inteface AppComponent extends AndroidInjector<App> {
- 
-    @Component.Factory
-    interface Factory extends AndroidInjector.Factory<App>{
- 
-    }
-  }
-  
-  
-        
-        
-        
-
-   
