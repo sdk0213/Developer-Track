@@ -23,6 +23,15 @@
     * 일반적인 사용 방법인것같음
   * AndroidViewModelFactory
     * NewInstanceFactory를 상속받고 Application 클래스로 구현됨. 아마도 context가 필요한 경우를 위해 구글이 제공해주는것같다.
+---
+### ViewModel 생성
+* ```kotlin
+  var viewmodel = ViewModelProvier(this).get(MyViewModel::class.java)
+* 여기서 get 함수를 살펴보면은 다음과 같이 설명되어있다.
+##### get
+* Returns an existing ViewModel or creates a new one in the scope (usually, a fragment or an activity), associated with this {@code ViewModelProvider}.
+* 해당 ViewModelProvider랑 관련되어있는 ViewModel이 있으면 있는것 반환 없으면 새로운 Scope에서 생성한다.
+---
 > 원리
 * HolderFragment 라고 명명된 fragment 를 생성해서 엑티비티에 추가하고 HolderFragment가 viewmodel 맴버 변수들을 관리하는데 setRetainInstance(true) 를 사용해서 메모리에 프레그먼트를 남기는 기법을 사용하는 기법으로 만들어졌으니까 사실은 fragment이다.
   * 그러므로 ViewModelProvider를 사용해서 객체를 만들어야만 HolderFragment에 의해 관리된다.
