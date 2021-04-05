@@ -31,17 +31,17 @@
 ##### get
 * Returns an existing ViewModel or creates a new one in the scope (usually, a fragment or an activity), associated with this {@code ViewModelProvider}.
 * 해당 ViewModelProvider랑 관련되어있는 ViewModel이 있으면 있는것 반환 없으면 새로운 Scope에서 생성한다.
-##### Lifecycle Extensions
+##### 1. Lifecycle Extensions
 * 기본
 * ```gradle
   implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
 * ```java
   noParamViewModel = ViewModelProvider(this).get(NoParamViewModel::class.java)
-##### ViewModelProvider.NewInstanceFactory
+##### 2. ViewModelProvider.NewInstanceFactory
 * 기본 Factory 클래스 사용
 * ```java
   noParamViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(NoParamViewModel::class.java)
-##### ViewModelProvider.Factory
+##### 3. ViewModelProvider.Factory
 * ViewModelProvider.Factory 인터페이스를 직접 구현 하는방법
 * 커스텀가능
 * ```java
@@ -54,7 +54,7 @@
           }
       }
   }
-##### ViewModelProvider.Factory(파라미터 구현)
+##### 4. ViewModelProvider.Factory(파라미터 구현)
 * ```java
   class HasParamViewModelFactory(private val param: String) : ViewModelProvider.Factory {
       override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -71,11 +71,11 @@
   .
   // 사용 in Activity or fragment
   hasParamViewModel = ViewModelProvider(this, HasParamViewModelFactory(sampleParam)).get(HasParamViewModel::class.java)
-##### AndroidViewModelFactory
+##### 5. AndroidViewModelFactory
 * Context필요할때 사용
 * ```java
   noParamAndroidViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(NoParamAndroidViewModel::class.java)
-##### AndroidViewModelFactory(파라미터 구현)
+##### 6. AndroidViewModelFactory(파라미터 구현)
 * 구현은 ViewModelProvider.NewInstanceFactory 또는 ViewModelProvider.Factory 둘중 하나로 구현하면 된다.
 * ```java
   class HasParamAndroidViewModel(application: Application, val param: String): AndroidViewModel(application)
