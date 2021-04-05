@@ -5,6 +5,18 @@
 * ```java
   @Binds
   abstract Random bindRandom(SecureRandom secureRandom)
+* **사용이유는 코드를 간단하게 해준다.**
+  * ```java
+    @Provides
+    public LoginContract.Presenter 
+        provideLoginPresenter(LoginPresenter loginPresenter) {
+            return loginPresenter;
+    }
+  * @Provides를 사용했을때보다 더 코드가 간단해진다.
+  * ```java
+    @Binds
+    public abstract LoginContract.Presenter
+        provideLoginPresenter(LoginPresenter loginPresenter);
   
 ### BindsOptionalOf(모듈 내 추상메서드 + 매개변수 X)
 * 모듈 내 **추상메서드 + 매개변수 X**
