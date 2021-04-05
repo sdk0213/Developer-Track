@@ -1,8 +1,26 @@
 ### ContributesAndroidInjector Annotation
+* ```java
+  @Documented
+  @Retention(RUNTIME)
+  @Target(METHOD)
+  public @interface ContributesAndroidInjector {
+      /** Modules to be installed in the generated {@link dagger.Subcomponent}. */
+      Class<?>[] modules() default {};
+  }
 * dagger-android의 기본 구현을 사용해서 코드를 구성한다면 상용구 코드(보일러 코드)를 사용해야된다. 초기에는 문제가 없지만 리펙토리를 한다거나 개발이 많이 진행될수록 dagger-android로 전환할떄 현재 앱에 가장 번거로운 것은 각각의 활동, 프래그먼트, 서비스 등에 대해 별도의 하위 구성 요소를 만들고이를 
 DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet 사용)
 * activity를 만들 때마다 build() 하고 inject() 해주는 보기 안 좋은 boilerplate들이 많아진다.
 * Subcomponent의 Factory가 다른 메서드나 클래스를 상속하지 않을때 Subcomponent를 정의하는 코드를 줄여준다.
+---
+### DaggerApplication
+* 매번 HasAndroidInjector 를 구현하고 AndroidInjection.inject()를 호출하는 보일러 플레이트 코드를 줄여준다.
+* 어플리케이션 컴포넌트를 반환시키는 코드를 작성하기만 하면 기존의 모든 코드를 대체 가능하다.
+* ```java
+  @Override
+  protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+      return DaggerAppComponent.factory().create(this);
+  }
+---
 ##### Application
 * ```java
   public class App extends DaggerApplication {
@@ -40,8 +58,8 @@ DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet
           return "String from AppModule";
       }
 
-      @ContributesAndroidInjector(modules = MainActivityModule.class)
       @ActivityScope
+      @ContributesAndroidInjector(modules = MainActivityModule.class)
       abstract MainActivity bindsMainActivity();
   
   }
