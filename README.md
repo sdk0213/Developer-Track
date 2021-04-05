@@ -153,7 +153,7 @@
 * [@Scope,@Singleton,@Reusable.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Scope%2C%40Singleton%2C%40Reusable.md)
 * [@Binds, @BindsOptionalOf, @BindsInstance.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Binds%2C%20%40BindsOptionalOf%2C%20%40BindsInstance.md)
 * [Lazy<T>, Provider<T>.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Lazy%3CT%3E%2C%20Provider%3CT%3E.md)
-* [@Named.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Named.md)
+* [@Named, @Qualifier.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Named%2C%20%40Qualifier.md)
 * [SetMultiBinding(@IntoSet, @ElementsIntoSet).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/SetMultiBinding(%40IntoSet%2C%20%40ElementsIntoSet).md)
 * [MapMultiBinding(@IntoMap, @StringKey, @ClassKey).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/MapMultiBinding(%40IntoMap%2C%20%40StringKey%2C%20%40ClassKey).md)
 * [안드로이드와 Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드와%20Dagger2.md)
