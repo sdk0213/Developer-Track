@@ -7,10 +7,138 @@
       /** Modules to be installed in the generated {@link dagger.Subcomponent}. */
       Class<?>[] modules() default {};
   }
-* dagger-android의 기본 구현을 사용해서 코드를 구성한다면 상용구 코드(보일러 코드)를 사용해야된다. 초기에는 문제가 없지만 리펙토리를 한다거나 개발이 많이 진행될수록 dagger-android로 전환할떄 현재 앱에 가장 번거로운 것은 각각의 활동, 프래그먼트, 서비스 등에 대해 별도의 하위 구성 요소를 만들고이를 
-DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet 사용)
+* 반환 타입을 통해 AndroidInjector 를 생성시켜주는 인터페이스
+* dagger-android의 기본 구현을 사용해서 코드를 구성한다면 상용구 코드(보일러 코드)를 사용해야된다. 초기에는 문제가 없지만 리펙토리를 한다거나 개발이 많이 진행될수록 dagger-android로 전환할떄 현재 앱에 가장 번거로운 것은 각각의 활동, 프래그먼트, 서비스 등에 대해 별도의 하위 구성 요소를 만들고이를 DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet 사용)
 * activity를 만들 때마다 build() 하고 inject() 해주는 보기 안 좋은 boilerplate들이 많아진다.
 * Subcomponent의 Factory가 다른 메서드나 클래스를 상속하지 않을때 Subcomponent를 정의하는 코드를 줄여준다.
+---
+#### ContributesAndroidInjector 예제 코드 [black-jin0427 님(정상에서 IT를 외치다) 출처](https://black-jin0427.tistory.com/104)
+##### 기존 코드로 작성
+* ```java
+  @Module
+  public class BurgerModule {
+
+      @Provides
+      Burger provideBurger(WheatBun bun, BeefPatty patty) {
+          return new Burger(bun, patty);
+      }
+
+      @Provides
+      WheatBun provideBun() {
+          return new WheatBun();
+      }
+
+      @Provides
+      BeefPatty providePatty() {
+          return new BeefPatty();
+      }
+  }
+* ```java
+  @Component(modules = BurgerModule.class)
+  public interface BurgerComponent {
+
+      void inject(MainActivity activity);
+  }
+* ```java
+  public class MainActivity extends AppCompatActivity {
+
+     @Inject
+     Burger burger;
+     ..
+     .
+     
+     onCreate....{
+     
+           DaggerBurgerComponent.builder()
+                .build().inject(this);
+                
+     }
+                
+  }
+##### 만약에 DetailActivity 에서 Burger 가 필요하다면 아래와 같이 코드를 또 추가/변경해야한다.
+* ```java
+  @Component(modules = BurgerModule.class)
+  public interface BurgerComponent {
+
+      void inject(MainActivity activity);
+
+      //새로 주입할 곳(DetailActivity)을 추가해 주었습니다.
+      void inject(DetailActivity activity);
+  }
+  
+  // 컴포넌트 변경 + Activity에 또다시 빌드 코드 삽입
+  
+  public class DetailActivity extends AppCompatActivity {
+
+      @Inject
+      Burger burger;
+
+  
+      onCreate...{
+
+          DaggerBurgerComponent.builder()
+                  .build().inject(this);
+        
+      }
+  }
+##### 위 코드의 문제점
+* activity를 만들 때마다 build() 하고 inject() 해주는 보기 안 좋은 boilerplate들이 많아진다. 
+* 리펙토링중이라면? 전부다 inject가 필요하고 이를 개발자가 전부 신경쓰기란 여간 귀찮은것이 아니다.
+##### ContributesAndroidInjector 사용
+* 사용할 Activity를 모듈을 사용해서 처리
+* ```java
+  @Module
+  abstract public class ActivityBinder {
+
+      @ContributesAndroidInjector
+      abstract MainActivity bindMainActivity();
+
+      @ContributesAndroidInjector
+      abstract DetailActivity bindDetailActivity();
+  }
+* ```java
+  @Singleton
+  @Component(
+          modules = {
+                  BurgerModule.class,
+                  ActivityBinder.class,
+                  AndroidSupportInjectionModule.class
+          }
+  )
+* DaggerApplication과 DaggerAppCompatActivity를 상속해준다.
+  ```java
+  public class MyApplication extends DaggerApplication {
+
+      @Override
+      protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
+          return DaggerAppComponent.builder().build();
+      }
+  }
+  
+  ...
+  ..
+  .
+  
+  public class DetailActivity extends DaggerAppCompatActivity {
+
+      @Inject
+      Burger burger;
+
+      @Override
+      protected void onCreate(@Nullable Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.activity_main);
+          setTitle("DetailActivity");
+
+          // DaggerBurgerComponent 함수는 필요 없습니다.
+          /* DaggerBurgerComponent.builder()
+                  .build().inject(this);*/
+
+          Log.d("MyTag","DetailActivity burger bun : "
+                  + burger.bun.getBun() + " , patty : " + burger.patty.getPatty());
+  
+      }
+  }
 ---
 ### DaggerApplication
 * 매번 HasAndroidInjector 를 구현하고 AndroidInjection.inject()를 호출하는 보일러 플레이트 코드를 줄여준다.
@@ -20,6 +148,7 @@ DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet
   protected AndroidInjector<? extends DaggerApplication> applicationInjector() {
       return DaggerAppComponent.factory().create(this);
   }
+public interface AppComponent extends AndroidInjector<MyApplication> {
 ---
 ##### Application
 * ```java
