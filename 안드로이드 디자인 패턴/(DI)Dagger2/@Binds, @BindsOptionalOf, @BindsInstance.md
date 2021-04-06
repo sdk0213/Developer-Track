@@ -4,6 +4,7 @@
   * Random이란 객체를 SecureRandom이란 객체에 바인딩
 * @Provides 메서드보단 좀 더 효율적으로 사용할수 있다.
   * 코드상으로는 별 다른 차이가 없어보이지만 dagger 내부적으로 code를 생성할때는 @Binds를 사용하는 편이 훨씬 적은 코드를 생산해내고 효율성도 좋다 
+  * 그렇지만 하나의 매개변수를 필요할기 때문에 무조건적으로 @Binds를 사용할수는 없다.
 * ```java
   @Binds
   abstract Random bindRandom(SecureRandom secureRandom)
