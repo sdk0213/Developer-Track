@@ -9,7 +9,7 @@
   BaseAdapter.class.isAssignableFrom(AppListAdapter.class) // true
   BaseAdapter.class.isAssignableFrom(Filterable.class) // false
   Filterable.class.isAssignableFrom(AppListAdapter.class) // true
-  
+---
 ### instanceOf
 * 자식/부모 관계를 체크 가능하다.
 * ```java
