@@ -1,4 +1,5 @@
 ### isAssignableFrom
+* 특정 Class가 어떤 클래스/인터페이스를 상속/구현했는지 확인한다.
 * ```java
   public class AppListAdapter extends BaseAdapter implements Filterable
 ##### @Test
