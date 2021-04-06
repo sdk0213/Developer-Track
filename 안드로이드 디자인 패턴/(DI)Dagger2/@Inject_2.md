@@ -1,4 +1,13 @@
 # 의존성 주입
+* 의존성 주입은 어느 곳에서나 가능하다. @Inject만 붙이면 된다.
+  * 다음과 같이 두가지 경우가 있을때 위의 코드는 PersonA를 객체를 안에 @Inject 되어있다면 그냥 그거 그대로 돌려준다는것이고 아래 코드는 내가 생성한 PersonB객체를 Inject시켜서 주입시킨다는것의 차이가 있다.
+    * ```java
+      @Component... {
+        PersonA getPersonA();
+        
+        void inject(PersonB personB)
+      }
+    
 * 의존성 주입의 세가지
   * 필드 -> 주로 실무에서 사용
   * 생성자 -> 주로 실무에서 사용
