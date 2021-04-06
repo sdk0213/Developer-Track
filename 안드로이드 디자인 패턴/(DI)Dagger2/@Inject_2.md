@@ -184,6 +184,22 @@
     return instance;
   }
 * @Inject 들어가있는것만 작동한다.
+* ```java
+  public class PersonC {
+      @Inject
+      String C;
+  }
+ 
+  public class PersonD extends PersonC {
+      @Inject
+      String D;
+  }
+
+  public class PersonE extends PersonD{
+     @Inject
+     String E;
+  }
+* 위와 같은 경우일때 만약 PersonE를 멤버-인젝션 메서드의 매개변수로 참조한다면 PersonD와 PersonC만 Inject가 작동한다.
 ---
 ### 커스텀 컴포넌트 빌더 또느 팩토리 만들기 ....추가내용은 51Page 참고
 * 컴포넌트 빌더
