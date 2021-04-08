@@ -143,7 +143,9 @@
 * [(AAC)Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(AAC)Repository%20pattern.md)
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
+
 ##### [Android DI(Dagger2)](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/(DI)Dagger2)
+* [안드로이드에서 의존성을 주입하는것의 의미.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드에서%20의존성을%20주입하는것의%20의미.md)
 * [(DI)Dagger2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Dagger2.md)
 * [@Module.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Module.md)
 * [@Component.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40Component.md)
