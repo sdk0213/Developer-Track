@@ -14,6 +14,59 @@
 * 단일의 ViewModelProvider.Factory로 모든 ViewModel 서브 클래스를 생성해야 하므로, **리플렉션과 멀티 바인딩으로 모든 ViewModel 타입을 생성하고 관리해야 한다.**
 
 ---
+### [의존성이 있는 ViewModel을 만들기위해서는 어떻게 해야되는가? - 출처](https://velog.io/@ptm0304/ViewModel에-의존성-주입하기-Dagger-2-Java)
+* ViewModel의 생성자를 주입할려면 반드시!! ViewModelProvider를 상속받아서 Custom 클래스를 구현해야 한다.
+  * [왜 반드시 ViewModelProvider Factory를 통해 구현해야 하는가에 대한 링크 - 한로니님의 블로그](https://medium.com/@jungil.han/아키텍처-컴포넌트-viewmodel-이해하기-2e4d136d28d2)
+  * [ViewModel을 생성하는 6가지 방법에 링크](https://readystory.tistory.com/176)
+##### 첫번쨰 방법
+* ViewModel이 5개 또는 그 이상 필요할때
+* ```java
+  public class ViewModelFactory implements ViewModelProvider.Factory {
+    private final MyViewModel mMyViewModel;
+    private final MyViewModel mMyViewModel2;
+    private final MyViewModel mMyViewModel3;
+    private final MyViewModel mMyViewModel4;
+    private final MyViewModel mMyViewModel5;
+    ...
+    ..
+    @Inject
+    public ViewModelFactory(
+            MyViewModel myViewModel, 
+            MyViewModel2 myViewModel2, 
+            MyViewModel3 myViewModel3, 
+            MyViewModel4 myViewModel4, 
+            MyViewModel5 myViewModel5, 
+    ) {
+        mMyViewModel = myViewModel;
+    }
+    
+    ...
+   
+    public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+    ViewModel viewModel;
+    if (modelClass == MyViewModel.class) {
+        viewModel = mMyViewModel;
+    } else if( modelClass == MyViewModel2.class) {
+        viewModel = mMyViewModel2;
+    } ...
+ 
+    ...
+        return (T) viewModel;
+  }
+* 5개 정도까지는 이해해준다고 치자. 하지만 어플리케이션이 커지고 ViewModel이 10개.. 아니 20개가 넘어간다면? 이는 엉청난 보일러플레이트 코드를 생산한다.
+* 그리고 무엇보다 SOLID 의 원칙중 LSP 원칙(상속관계를 똑바로 처리하지 못한것)을 꺤다.
+  * 왜냐하면 Factory의 create는 본래 무조건 새로운 객체를 생성해야 하지만 위처럼 create를 처리할경우는 이미 생성된 객체가 있을경우 해당 객체를 반환해주기 떄문이다.
+  * 이 말은 본래 create가 무조건 새로운 객체를 생성해야 하는 상위클래스에서 상속받아서(여기서는 implement(구현)) 처리할때는 항상 새로운 객체를 생성하지 않기 떄문에 이는 부모와 자식관계가 정확히 기능되지 못해서 LSP 원칙을 위반한다고 볼수있다.
+* 그렇기 때문에 다음과 같이 새로운 뷰모델을 생성할때 같은 ViewModel로 반환될수있다.
+  * ```java
+    ...
+    mMyViewModel = ViewModelProviders.of(this, mViewModelFactory).get(MyViewModel.class);
+    mMyViewModelActivity = ViewModelProviders.of(requireActivity(), mViewModelFactory).get(MyViewModel.class);
+    ...
+    
+    // mMyViewModel과 mMyViewModelActivity 는 같아져 버린다.
+##### 조금 더 나은 방법
+* 
 ### Factory 구현
 * ```java
   public class AppViewModelFactory implements ViewModelProvider.Factory {
