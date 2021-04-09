@@ -38,21 +38,87 @@ F, H, Z 클래스에서도 사용하고 있었다. A, F, H, Z 클래스가 직�
 보통은 Application() 영역을 프로그래밍의 시작점인 main()으로 잡고 Activity 그리고 Fragment 순으로 의존성을 주입해준다. 근데 이게 또 복잡하다. 안드로이드는 생명주기도 있어서 클래스가 있었다가 생명주기가 꺼지면 
 없어져버린다. 그래서 안드로이드 개발자면 반드시 지켜야하는 몇가지 규칙들도 있다. 근데 Dagger가 안드로이드를 위한 DI 라이브러리인 만큼 이를 잘 극복하며 DI를 시켜준다.
 ---
+### Dagger를 사용할때의 코드 변화는?
+* 우선 일반적인 생성자 주입을 해보면 다음과 같을것이다. 아주간단하게 테스트를하기위해 대충 코드를 작성해보자. 아이디를 서버로 전송하고 이름을 받아와서 해당 이름으로 사람 객체를 생성하는 코드이다.
+이해를 돕기위해 아주 대충 작성한 코드이므로 너무 코드 자체에 신경쓰지 말자
+##### 적용 전
+* Person
+  ```java
+  class Person{
+   
+      private getNameFromNetWorkDB gnfdb;
+      
+      Person(String gnfdb){
+        this.gnfdb = gnfdb;
+      }
+      
+      getName(){
+          gnfdb.getName();
+      }
+  }
+* 네트워크로부터 이름을 가져오는 코드
+  class getNameFromNetWorkDB(){
 
+      private id;
+      
+      getNameFromNetWorkDB(String id){
+      
+      }
+      
+      String getName(){
+          // 서버통신을 통해 원격으로 Id를 전송하고 그 아이디 주인의 이름을 가져오는 코드가 안에 들어있다고 가정
+      }
+  }
+* Main
+  ```java
+  //생성자 주입
+  main()
+      getNameFromNetWorkDB gnfdb = new getNameFromNetWorkDB("sdk0213");
+      Person person = new Person(gnfdb)
+  }
+* Person은 getNameFromNetWorkDB에 의존성한다고 볼수있다. 
+##### 적용 후
+* getNameFromNetWorkDB 을 모듈에 넣기
+  ```java
+  @Module
+  class TestModule {
 
-
---- 작성중...(2021/04/08)
-### 다시 Main으로 돌아가보자
-* Main에서 모든것이 시작되어서 수맣은 클래스가 생성된다. 근데 여기서 꽤나 중요한 개념이있다. 바로 클린 아키텍쳐이다. 클린 아키텍쳐의 중요 개념이 중속성이 외부로부터 내부로 의존하는것이다. 위에서 의존성을 주입한다는것은
-클래스를 밖에서 안으로 넣어주는것이다. 그러면 안쪽에서 클래스를 받는놈은 밖에서 어떻게 줬는지 신경을 쓰지 않아도된다. 이런식으로 계속 가다보면 맨 끝에는 어떤 클래스가 있을까? 프로그래밍의 시작점인 main에서는 무엇을할려고
-여러 클래스를 만들었을까? 확실히는 모르지만 여하튼 사용자한테 뭔가를 표현해주기 위해서 만들어졌을것이다. 그러면 아마도 이런식으로 진행이되지 않을까?
-1. 무언가를 표현하는 클래스
-2. 자동차를 스케치하는 클래스
-3. 자동차의 구성품을 넣어주는 클래스
-4. 부품(바퀴, 엔진)를 생성하는 클래스
-5. 부품의 성능을 생성하는 클래스
-* 잘 보면은 1번은 그냥 대충 생각해서 너무 추상적이고 점점 올라갈수록 자세해진다. 이것을 원으로 생각해본다면 안쪽에서 밖으로 뻗어나가는 것을 상상해볼수있다. 구글에 클린 아키텍쳐 라고 치면 나오는 원이 바로 그 그림이다.
-근데 생각해보면은 1번은 2번이 필요하고 2번은 3번이 필요하고 ... 4번은 5번의 클래스가 필요하다. 즉 5번에서 부품의 성능을 받아서 4번 부품을 만들어서 3번 자동차의 구성품으로 넣어서 2번 자동차를 그려서 1번에서 표현해줘야한다.
-그런데 의존성은 main에서부터 넣어줘야 된다고 했다. 이거 뭐 의존성을 꺼꾸로 주입하라는것인가?
----
-### 
+      @Provides
+      getNameFromNetWorkDB provideGetNameFromNetWorkDB(){
+          return getNameFromNetWorkDB("sdk0213");
+      }
+  }
+* Compoennt에 Person 넣기
+  ```java
+  @Component(modules = [TestModule::class])
+  interface TestComponent {
+      Person InjectedPerson();
+  }
+* Person
+  ```java
+  class Person{
+   
+      private getNameFromNetWorkDB gnfdb;
+      
+      @Inject
+      Person(String gnfdb){
+        this.gnfdb = gnfdb;
+      }
+      
+      getName(){
+          gnfdb.getName();
+      }
+  }
+* Main
+  ```java
+  //생성자 주입
+  main()
+      // getNameFromNetWorkDB gnfdb = new getNameFromNetWorkDB("sdk0213");
+      // Person person = new Person(gnfdb)
+      // 위의 코드가 아래와 같이 변경 되었다. 내가 객체 생성에 필요한 의존성을 직접 삽입할필요도 없다.
+      Person person = DaggerTestComponent.create().InjectedPerson();
+  }
+### 적용전과 적용후의 코드를 보자.
+* Main에서 내가 객체를 생성하고 넣어주는 코드가 없어졌다. 이 모든것들은 Dagger가 알아서 찾아서 삽입해준다. DaggerTestComponent는 규칙에 따라서 Dagger가 생성하는 코드인데 코드를 들여다보면은 결국은
+모듈이랑 @Inject한것을 이어주는 코드이다. 대신 의존성을 넣어주는것이다. 어떤 원리로 어떤식으로 처리되는지는 나도 정확히는 파악이 불가능하지만 코드를 따라가다보면은 결국은 저 둘을 이어주기 위한 코드일뿐이라는것을
+파악할수 있다. 그리고 이런 Dagger를 사용하기위해서는 몇가지 규칙이 있다. 그거는 Dagger를 공부해야한다. Dagger를 사용함으로써 이제 개발자는 의존성 떄문에 머리 복잡할일이 사라졌고 로직에 더 집중할수있게되는것이다. 이것이 바로 Dagger라이브러리를 사용하는 진짜 이유이다. 나도 지금 Dagger를 공부한지 2주밖에 안되고 사실 아직까지도 이해가 안가는부분이 많다. 하지만 Dagger를 공부함으로써 얻는 이익이 더 많은것을 느낀다.
