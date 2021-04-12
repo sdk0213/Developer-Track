@@ -84,6 +84,8 @@
 ##### 위 코드의 문제점
 * activity를 만들 때마다 build() 하고 inject() 해주는 보기 안 좋은 boilerplate들이 많아진다. 
 * 리펙토링중이라면? 전부다 inject가 필요하고 이를 개발자가 전부 신경쓰기란 여간 귀찮은것이 아니다.
+##### AndroirdSupportInjectionModule
+* If you want to use injection in v4.fragment then you should add AndroidSupportInjectionModule.class to your AppComponent modules.
 ##### ContributesAndroidInjector 사용
 * 사용할 Activity를 모듈을 사용해서 처리
 * ```java
