@@ -109,3 +109,22 @@
        this.$$delegate_0.printX();
     }
   }
+---
+### by map
+* Json파싱시 사용하면 유용
+* ```kotlin
+  class Person(map: MutableMap<String, Any>) {
+      var name: String by map
+      var age: Int by map
+  }
+
+  fun main() {
+      val person = Person(mutableMapOf())
+      person.name = "jin"
+      person.age = 31
+  
+      println("person name is ${person.name} and age is ${person.age}") 
+      
+      // result:
+      // person name is jin and age is 31
+  }
