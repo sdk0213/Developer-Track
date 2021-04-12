@@ -65,6 +65,7 @@
 ---
 ### DispatchingAndroidInjector
 * AndroidInjection.inject()를 호출 하면 애플리케이션으로부터 DispatchingAndroidInjector<Object>를 얻게되고 해당 액티비티를 인자로 메소드 인젝션 하게 됩니다.
+* If you don’t have child fragment and don’t inject anything in your fragments, then you don’t need to implement HasSupportFragmentInjector. 
 ---
 ### 전체적인 흐름
 * ![androidDagger사용구조](https://user-images.githubusercontent.com/51182964/113390078-00257b80-93cc-11eb-8bbb-c1eee30416b9.png)
