@@ -128,5 +128,6 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
 * 나머지 경우에는 무조건 layoutBinding 을 사용하라고 구글에서 권장한다.
 ---
 ### binding.lifecycleOwner = this 
+* binding에 LifeCycleOwner을 지정해줘야 LiveData가 실시간으로 변화
 * LiveData를 Databinding으로 쓸경우 꼭 작성해야한다. Observable 대신 LiveData를 사용하여 DataBinding 가능하다.
          
