@@ -198,3 +198,15 @@
 * 절대로 Context를 참조해서는 안된다.
   * 화면이 회전되거나 엑티비티가 파괴될때 ViewModel이 Context를 참고하며 GC로부터 수거되지 못해서 메모리 누수가 발생한다.
   * 하지만 Context를 참고해야되는 부분이 생기기 때문에 안드로이드 ViewModel을 사용해서 싱글톤처럼 사용할수있다고 함
+---
+### by viewModels()
+* ViewModelProvider를 사용하지 않고 viewmodel을 지연 생성 가능하다.
+##### 적용 전
+* ```kotlin
+  private lateinit var viewModel: MyViewModel
+  
+  ...
+  viewModel = VIewModelProvider(this).get(MyViewModel::class.java)
+##### 적용 후
+* ```kotlin
+  private val viewModel: MyViewModel by viewModels()
