@@ -167,3 +167,19 @@
   Component_A component = DaggerComponent_A.builder()
                 .setAge(30)
                 .build();
+---             
+### @Multibinds
+* @IntoSet, @ElementsIntoSet 또는 @IntoMap 바인딩이 하나 이상있는 세트 또는 맵이 있으면 상관없지만 만약 비어있을경우 @Multibinds를 사용해야 한다.
+  * ```kotlin
+    @Module
+    abstract class MyModule {
+        @Multibinds abstract Set<Foo> aSet();
+        @Multibinds @MyQualifier abstract Set<Foo> aQualifiedSet();
+        @Multibinds abstract Map<String, Foo> aMap();
+        @Multibinds @MyQualifier abstract Map<String, Foo> aQualifiedMap();
+    }
+* 추상적 멀티바인딩에 사용
+* 반환형이 Map 혹은 Set이어야 사용 가능(예 : abstract fun strings() :Set<String>)
+* ```kotlin
+  @Multibinds
+  abstract fun bindsViewModels(): Map<Class<out ViewModel>, @JvmSuppressWildcards ViewModel>
