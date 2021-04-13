@@ -1,4 +1,5 @@
 ### @Binds(모듈 내 추상 메서드 + 하나의 매개변수)
+* only it is used to provide interfaces, abstract classes or in your case classes that are extended. 
 * 모듈 내 **추상 메서드 + 하나의 매개변수**에만 붙일 수 있다.
 * 이미 바인드된 SecureRandom을 Random 타입으로 한 번 더 바인드할 수 있다.
   * Random이란 객체를 SecureRandom이란 객체에 바인딩
