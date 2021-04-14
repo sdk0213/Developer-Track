@@ -11,6 +11,30 @@
 * dagger-android의 기본 구현을 사용해서 코드를 구성한다면 상용구 코드(보일러 코드)를 사용해야된다. 초기에는 문제가 없지만 리펙토리를 한다거나 개발이 많이 진행될수록 dagger-android로 전환할떄 현재 앱에 가장 번거로운 것은 각각의 활동, 프래그먼트, 서비스 등에 대해 별도의 하위 구성 요소를 만들고이를 DispatchingAndroidInjector의 injectorFactories에 추가해야한다. (@IntoSet 사용)
 * activity를 만들 때마다 build() 하고 inject() 해주는 보기 안 좋은 boilerplate들이 많아진다.
 * Subcomponent의 Factory가 다른 메서드나 클래스를 상속하지 않을때 Subcomponent를 정의하는 코드를 줄여준다.
+* 쉽게말해서 아래 따위의 코드를 대신 Dagger가 작성한다.
+  * ```java
+    @ActivityScope
+    @SubComponent(modules = {MainActivityModule.class})
+    public interface MainActivitySubcomponent extends AndroidInjector<MainActivity> {
+  
+        @Subcomponent.Factory
+        interface Factory extends AndroidInjector.Factory<MainActivitiy> {
+    
+        }
+    }
+    
+    ...
+    
+    @FragmentScope
+    @SubCompoennt(modules = MainFragmentModule.class)
+    public interface MainFragmentSubcomponent extends AndroidInjector<MainFragment> {
+
+        @Subcomponent.Factory
+        interface Factory extends AndroidInjector.Factory<MainFragment> {
+     
+        }
+    }
+  * 솔직히 개발자 입장에서는 그냥 완전 Dagger를 사용하기위해서 만든코드이고 반드시 작성해야하는것인데 굳이 이거 따로 class로 만들어서 작성할바에 ContributesAndroidInjector 를 사용하고 해당 모듈만 알려주면 자동으로 작성되니 정말 편할수없다.
 ---
 #### ContributesAndroidInjector 예제 코드 [black-jin0427 님(정상에서 IT를 외치다) 출처](https://black-jin0427.tistory.com/104)
 ##### 기존 코드로 작성
