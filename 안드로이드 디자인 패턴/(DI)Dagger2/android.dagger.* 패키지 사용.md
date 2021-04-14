@@ -114,6 +114,7 @@
 * If you don’t have child fragment and don’t inject anything in your fragments, then you don’t need to implement HasSupportFragmentInjector. 
 ---
 ### 전체적인 흐름
+* AndroidSupportInjectionModule 에서 클래스이름과 해당 팩토리를 맵으로 만들고 이를 App과 Activity, Fragment 모듈에서 @IntoMap으로 클래스이름과 해당 컴포넌트의 팩토리르 넣어주면 <클래스, 팩토리>로 구성된 맵이 만들어진다. 그리고 하위 컴포넌트에서 AndroidInjection.inject(this); 를 진행을 하면은 결국에는 상위 컴포넌트의 DispatchingAndroidInjector.inject() 코드로 흐름을 따라가는데 여기서 앞서 만들었던 맵에서 클래스이름으로 팩토리를 찾아서 해당 팩토리(AndroidInjector.Factory<T>) 를 가지고 AndroidInjector<T>를 생성하고 생성하고 생성한 AndroidInjector<T> 의 inject() 를 진행한다. 이는 돌고 돌고 돌아왔지만 결국에는 Component가 implement 받은 AndroidInjector<App>인 AndroidInjector<MainActivity> 의 Inject()를 사용하기위함이다. 이는 곧 우리가 상위 Component를 받아서 하위 컴포넌트에서 Inject(this)를 스스로 작성해야 하느 코드를 Dagger가 대신 작성해준것처럼 작동하는 것이다. 
 * ![androidDagger사용구조](https://user-images.githubusercontent.com/51182964/113390078-00257b80-93cc-11eb-8bbb-c1eee30416b9.png)
 ##### Application Component
 * ```java
