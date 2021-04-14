@@ -42,6 +42,7 @@
 ---
 ### AndroidInjectionModule
 * AndroidInjector<?>의 팩토리를 멀티 바인딩으로 관리한다. 아래 코드는 AndroidInjectionModule의 실제코드인데 이를 살펴보면 Map형태로 Factory를 관리한다는것을 확인가능하다.
+* 이 모듈은 후에 activity나 fragment에서 사용될 DispatchingAndroidInjector 의 생성자에 들어갈 Map을 제공해주는 모듈이다.
 * ```java
   @Module
   public abstract class AndroidInjectionModule {
@@ -62,6 +63,51 @@
     /** Returns an {@link AndroidInjector}. */
     AndroidInjector<Object> androidInjector();
   }
+---
+### Android Injection
+* AndroidInjection(this) 를 하면은 Activity 일경우 Application 에서 HasAndroidInjector 를 구현하여서 Override한 아래 코드를 접근해서 AndroidInjector<Object> 를 반환는데 이느 DispatchingAndroidInjector이다. 그리고 DispatchingAndroidInjector의 .inject()를 하여서 삽입한다. 즉 원래 코드상에서 우리가 해줘야 하는 부분을 AndroidInjection 내부상에서 진행해준다. Fragment르 제외한 나머지 컴포넌트느 전부다 Application의 AndroidInjector<Object>를 반환한다. 내부 코드를 살펴보며 알수있다.
+* ```java
+  @Override
+    public AndroidInjector<Object> androidInjector() {
+        return dispatchingAndroidInjector;
+    }
+* Activity에서 AndroidInjection(this)을 실행시 상위 컴포넌트의 dispatchingAndroidInjector의 Inject(Activity) 함수가 실행되고 이느 다음 함수로 넘어간다.
+* ```java
+  @Override
+  public void inject(T instance) {
+      boolean wasInjected = maybeInject(instance);
+      if (!wasInjected) {
+        throw new IllegalArgumentException(errorMessageSuggestions(instance));
+      }
+  } 
+* maybeInject 는 해당 instance의 factory를 가져와서 Map<String, Provider<AndroidInjector.Factory<?>>> 맵에서 값을 instance의 클래스이름으로 해당 Factory를 찾는데 이는 AndroidInjectionModule 에서 제공받은 것이다.
+* 아래는 maybeInject 클래스이다.
+* ```java
+  public boolean maybeInject(T instance) {
+    Provider<AndroidInjector.Factory<?>> factoryProvider =
+        injectorFactories.get(instance.getClass().getName());
+    if (factoryProvider == null) {
+      return false;
+    }
+
+    @SuppressWarnings("unchecked")
+    AndroidInjector.Factory<T> factory = (AndroidInjector.Factory<T>) factoryProvider.get();
+    try {
+      AndroidInjector<T> injector =
+          checkNotNull(
+              factory.create(instance), "%s.create(I) should not return null.", factory.getClass());
+
+      injector.inject(instance);
+      return true;
+    } catch (ClassCastException e) {
+      throw new InvalidInjectorBindingException(
+          String.format(
+              "%s does not implement AndroidInjector.Factory<%s>",
+              factory.getClass().getCanonicalName(), instance.getClass().getCanonicalName()),
+          e);
+    }
+  }
+ 
 ---
 ### DispatchingAndroidInjector
 * AndroidInjection.inject()를 호출 하면 애플리케이션으로부터 DispatchingAndroidInjector<Object>를 얻게되고 해당 액티비티를 인자로 메소드 인젝션 하게 됩니다.
