@@ -52,6 +52,11 @@ MVP(★★) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-an
   
 MVVM(★★★ - 매우 중요!!!) - [출처](https://academy.realm.io/kr/posts/eric-maxwell-mvc-mvp-and-mvvm-on-android/)
 ---
+* 역할
+  * view
+    * 왕따이다. viewModel이랑 model이 신경조차 쓰지않는다. 아니.. 얘네들은 view가 존재하는지도 모른다. 하지만 view는 viewmodel 꼬랑지만 졸졸 따라댕기며 뭐 바뀌는거없나 계속 체크한다.
+  * model, viewmodel
+    * 서로 엉청나게 친하다. model은 값바뀌면 viewmodel한테 알려주고 viewmodel은 그에따라서 비즈니스로직을 수행한다. 이 둘은 서로의 존재만 알지 자기네들값을 view가 슬쩍 보는것도 모른다.
 * [찰스의 안드로이드 유튜브 영사 앞부분 참고](https://www.youtube.com/watch?v=07ES0ne-_U8)
 * ![](img/MVVM.png)
 * **뷰결합(데이터바인딩) : https://developer.android.com/topic/libraries/data-binding/index.html#java 을 사용하여서 하는것이 가장 큰 특징**
