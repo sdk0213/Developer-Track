@@ -373,15 +373,13 @@
 <summary>코드 작성 마인드 Set (펼치기/접기)</summary>
 <div markdown="1">
  
-코드 작성 마인드 Set
+Coding Mindset
 ---
-* 단순히 돈을 벌기위해 코드를 작성하지 말자
-* 내가 작성하는 코드는 모두 논리가 있어야 한다. 변수의 이름을 정하는것부터 로직의 결과를 return 하고 사용자에게 보여지는 부분까지 전부!!!
-  * 그런 의미에서 내가 작성하는 코드는 "왜?" 라는 질문에 답할수 있어야 한다.
-* 잘 안될땐 "이 코드를 작성하지 못하는 이유와 그 원인이 무엇일까?" 라고 질문하며 돌아보자
-* 내가 작성하는 코드가 항상 누군가가 보아도 잘 알수있듯이 작성하자
-* 코드를 한번 대충 작성하기 시작하면 두 번은 쉽다. 절대 그러지 말자
-* 내가 작성하는 코드가 돌아가는 플랫폼이 어디고 무슨 특징이 있는지 염두하고 작성하자
+* 코드의 시작은 재미로, 코드의 작성은 논리로
+* 논리는 "why?" 와 함꼐
+* 작성이 힘들면 그 이유 찾기
+* 내 코드는 남이 이해갈수있게 작성
+* 대충작성하다 습관된다.
 
  </div>
 </details>
@@ -390,29 +388,34 @@
 <summary>스택 쌓기 (펼치기/접기)</summary>
 <div markdown="1">
  
-더 발전하는 나를 위해서
+Ready
 ---
-* [이력 준비 - 원티드](https://www.wanted.co.kr)
-* [면접 준비 - Interview_Question_for_Beginner](https://github.com/sdk0213/Interview_Question_for_Beginner)
-* [코딩 테스트 준비 - programmers](https://programmers.co.kr)
-* 실무 경험
-   * 앱 개발
-   * 디자인패턴 공부
-   * 라이브러리 사용경험
+* [resume - wanted](https://www.wanted.co.kr)
+* [interview - Interview_Question_for_Beginner](https://github.com/sdk0213/Interview_Question_for_Beginner)
+* [coding test - programmers](https://programmers.co.kr)
    
-반드시 공부해야 하는것
+Skill Stack
 ---
-* 0 순위: 알고리즈 공부
-* 0 순위: 실제 서비스 개발 필요 -> 대충 만들어도 괜찮으니 아래 경험을 살릴수 있는 테스트정도로의 개발필요
-* 1 순위: Rxjava (알고보니 더 중요)
-* 2 순위: MVP, MVVM 디자인 패턴 적용 경험 (경험이 중요)
-* 3 순위: Kotlin (제일 중요) - 보류
-* 4 순위: 대중적인 라이브러리 사용 경험 (일단 뭐라도 만들어봐야 알수있음)
-* 5 순위: TDD 개발경험 (은근히 중요)
-
-코딩테스트 준비
+* Need
+  * develop service android application
+* language
+  * kotlin
+  * java - advanced
+* AAC
+  * mvvm
+  * dagger
+  * jetpack
+  * workmanager
+  * rxjava
+* TDD
+  * mockito (..studying)
+* popular library 
+  * glide 
+  * picasson (..studying)
+  
+Coding Test
 ---
-  * 기초
+  * basic
     * Recursion
     * Queue
     * Stack
@@ -420,15 +423,15 @@
     * Hash Map
     * String
     * Graph
-  * 중급
+  * intermediate
     * DFS
     * BFS
     * DP
     * 완전탐색
-  * 심화
+  * advanced
     * Priority Queue
     * Binary search
-* 프로그래머스(내가 결정한곳), 백준, SW Expert Academy
+* studying site : programmers dot com, 백준, SW Expert Academy
 * 제조업 SW
   * 한달정도 하면 무난
 * IT 대기업
@@ -446,7 +449,7 @@
  
 회사별 요구 기능사항(2021/02/16)(코테필요)(sdk 개발자 기준 계열사별 다를수있음)(복사 붙혀넣기 한것입니다.)
 ===
-카카오
+kakao
 ---
 > 카카오톡(신입/경력 무관)
 * Java, Kotlin
@@ -476,7 +479,7 @@
    * Unit test 경험이 있으신 분
    * 핀테크 서비스에 대한 경험 및 이해도를 보유하신 분
 
-네이버(2년)
+naver(2년)
 ---
 * 신규 서비스 개발 및 운영 경험을 보유하신 분
 * 오픈소스 컨트리뷰션 경험을 보유하신 분
@@ -497,7 +500,7 @@ NHN(2년)
 * Clean Architecture, Clean Code 구현에 깊이 고민하고 개선해 보신 분
 * 3명 이상 규모의 앱 개발 프로젝트를 리드해보신 분
 
-요기요(3년)
+yogiyo(3년)
 ---
 * Kotlin 언어 사용이 익숙하신 분
 * Git으로 협업하며 Android 앱을 개발하여 구글플레이에 서비스 해 본 경험
@@ -512,7 +515,7 @@ NHN(2년)
    * Unit test 및 UI test 작성 경험
    * 함수형 프로그래밍에 대한 관심
    
-배달의민족(3년)
+beamin(3년)
 ---
 * Java 또는 Kotlin 개발 언어에 능숙한 분
 * 상용 서비스 및 제품 개발 참여해본 경험 보유
@@ -534,7 +537,7 @@ NHN(2년)
    * Jenkins와 Firebase App Distribution을 이용한 빌드, 배포, 테스트 자동화
    * 클린아키텍처 구조에 프리젠테이션 레이어는 MVP 패턴으로 구성
    
-쿠팡(3년)(5년)
+coupang(3년)(5년)
 ---
 > AD TECH
 * Computer Science/Engineering 또는 관련 분야의 BA/BS 학위 
@@ -555,7 +558,7 @@ NHN(2년)
    * 아마존 웹 서비스, 분산 시스템, 서비스/메시지 지향 아키텍처 
    
    
-당근마켓(2년)
+carrot(2년)
 ---
 * 안드로이드 플랫폼에 대한 이해도를 가지신 분
 * 코틀린으로 작성된 코드를 이해하고 작성이 가능하신 분
@@ -573,7 +576,7 @@ NHN(2년)
    * 오픈소스 Contribution 경험이 있으신 분
    
    
-토스
+toss
 ---
 > 토스코어
 * 상용 서비스 개발 경험이 있는 분을 찾습니다.
