@@ -3,6 +3,7 @@ WeakRefrence, SoftReference
 접근성 - [출처 - itmining.tistory](https://itmining.tistory.com/10)
 ---
 * GC는 Reference 강약에 따라 쓰레기로 처리할지 말지 판단을 한다.
+
 Strong Reference
 ---
 * **GC에서 제외됨**
