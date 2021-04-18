@@ -5,6 +5,25 @@
 * 사진과 같이 workmanager 가 sdk 버전에 따라서 알아서 처리해준다.
 * ![](https://developer.android.com/images/topic/libraries/architecture/workmanager/overview-criteria.png?hl=ko)
 ---
+### 안드로이드에서 백그라운드 제약사항
+* 안드로이드에서 백그라운드 작업시에는 다음과 같은 제약사항이 존재한다.
+  * 1. Android 6.0 DozeMode, 앱 대기
+  * 2. Android 7.0 암시적 브로드 캐스트 제한, 이동 중 잠자기 모드도입
+  * 3. Android 8.0 위치, wakelock을 해제
+  * 4. Android 9.0 시스템이 앱의 리소스 요청 우선순위에 따라서 지정하도록 변경
+  * 5. Android 10.0 앱이 백그라운드 실행될때 Activity 시작 시점 제한
+---
+### Workmanager를 사용할수 없는 경우
+* 긴 다운로드 작업
+* 즉시 실행되어야 하는경우
+* 알람 앱처럼 정확한 시간에 작업 수행이 필요 -> 이 경우는 AlarmManager 사용
+* 알고리즘
+  * Loop-running HTTP Downloads -> DownloadManager
+  * non - Deferrablework -> Foreground service
+  * Triggered by system condition -> workmanager
+  * run at precise time -> alarmmanager
+  * etc... -> workmanager
+---
 ### [작업이 실행되는 최적의 조건을 선언적으로 정의](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work?hl=ko#constraints)
 * **자세한 설명 및 코드는 위 링크 참고**
 * 예를들면 다음과 같은 상황에서 작업이 실행되도록 조건을 정의할수있다.
@@ -14,9 +33,11 @@
   * 재시도 및 백오프 전략 설정
   * 작업에 입력 데이터 전달
   * 태그를 사용하여 관련 작업 그룹화
+##### 시스템에 작업 전달하기
 * ```kotlin
   val myWorkRequest = ...
   WorkManager.getInstance(myContext).enqueue(myWorkRequest)
+* 이때 작업자가 실행될 정확한 시간은 WorkRequest에 사용되는 제약 조건과 시스템 최적화에 따라 달라진다.
 ##### 일회성 및 반복 작업 예약
 * ```kotlin
   val myWorkRequest = OneTimeWorkRequest.from(MyWork::class.java)
@@ -94,6 +115,23 @@
          "IMAGE_URI" to "http://..."
      ))
      .build()
+---
+### 작업 상태
+##### BLOCKED
+* 실행될수 있는 전제조건 아직 미달성되서 차단된 상태
+##### CANCELLED
+* WorkRequest가 취소됨 -> 종속작업 전부 CANCELLED
+##### ENQUEUED
+* Constraints 충족 및 대기 큐에 들어감 -> 실행가능상태
+##### FAILED
+* WorkRequest가 실패된 상태로 완료 -> 종속작업 전부 FAILED
+##### RUNNING
+* 말그대로 현재 작업 진행중
+##### SUCCEEDED
+* WorkRequest 성공적으로 완료
+* PeriodicWorkRequests는 이 상태 없음
+##### 작업상태를 관찰하는 법
+* ID, 태크, 고유 이름으로 찾는다.
 ---
 ### [작업 관리](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko)
 * 기본
