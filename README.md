@@ -414,6 +414,11 @@ Skill Stack
 * popular library 
   * glide 
   * picasson (..studying)
+* etc
+  * CI/CD
+  * versioning
+  * lint
+    * ktlint와 detekt 
   
 Coding Test
 ---
