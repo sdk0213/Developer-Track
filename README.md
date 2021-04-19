@@ -12,7 +12,7 @@
 * [안드로이드 OS 관련](#android-os)
 * [안드로이드 기초](#android-basic)
 * [안드로이드 고급](#android-advanced)
-* [안드로이드 디자인 패턴](#android-design-pattern)
+* [안드로이드 아키텍쳐](#android-architecture)
 * [안드로이드 라이브러리](#android-library)
 * [안드로이드 레이아웃](#android-layout)
 * [안드로이드 코틀린 - kotlin](#android-kotlin)
@@ -131,8 +131,8 @@
 * [맨 위로 가기](#book-mark)
 * [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20고급/분리된%20뷰들%20실시간%20동기화.md)
 
-# :bulb: 안드로이드 디자인 패턴
-## [Android Design Pattern](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
+# :bulb: 안드로이드 아키텍쳐
+## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [맨 위로 가기](#book-mark)
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
@@ -144,6 +144,7 @@
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
 * [WorkManager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/WorkManager.md)
+* [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Coroutine(코루틴).md)
 
 
 ##### [Android DI(Dagger2)](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/(DI)Dagger2)
@@ -224,7 +225,6 @@
 * [Scope Function.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/Scope%20Function.md)
 * [Companion Object 는 static 과 같을까?.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Companion%20Object%20는%20static%20과%20같을까%3F.md)
 * [싱글톤 구현.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/싱글톤%20구현.md)
-* [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Coroutine(코루틴).md)
 * [get(),set() + custom.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/get(),set()%20+%20custom.md)
 * [익명의 객체 생성.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/익명의%20객체%20생성.md)
 * [by 키워드.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/by%20키워드.md)
