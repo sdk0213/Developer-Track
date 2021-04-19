@@ -133,14 +133,67 @@
 ##### 작업상태를 관찰하는 법
 * ID, 태크, 고유 이름으로 찾는다.
 ---
-### [작업 관리](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko)
-* 기본
-  * ```kotlin
-    val myWork: WorkRequest = // ... OneTime or PeriodicWork
-    WorkManager.getInstance(requireContext()).enqueue(myWork)
-* 고유 작업은 특정 이름의 작업 인스턴스가 한 번에 하나만 있도록 보장하는 강력한 개념
-* [충돌 해결 정책](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#conflict-resolution)
-* [작업 관찰](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#observing)
-* [실행 중인 작업자 중지](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#stop-worker)
+### 작업 체이닝 - [코드 출처](https://jeongupark-study-house.tistory.com/36)
+* 작업을 연속적으로 진행할수 있게끔 지원
+##### beginWith
+* 진행할 목록
+##### then
+* 진행이 끝나고 진행할 다음것
+##### enqueue
+* 큐에 넣기
+##### 예제코드
+* ```kotlin
+  class MyWorker_A_1 (appContext : Context, workerParams: WorkerParameters) : 
+     Worker(appContext,workerParams){ 
+         override fun doWork(): Result {
+         // 대충 카운트를 출력 하는코드
+     }
+  }
+   
+  ... 
+  
+  class MyWorker_A_2 : Worker... // 이하생략
+  ...
+  class MyWorker_A_3 : Worker... // 이하생략
+  ...
+  class MyWorker_A_4 : Worker... // 이하생략
+  ...
+  class MyWorker_A_5 : Worker... // 이하생략
+  
+  // dowork
+  val A_1 = OneTimeWorkRequestBuilder<MyWorker_A_1>().build() 
+  val A_2 = OneTimeWorkRequestBuilder<MyWorker_A_2>().build()
+  val A_3 = ...
+  val B = ...
+  val C = ...
+  
+  WorkManager.getInstance(context!!).beginWith(listOf(A_1,A_2,A_3)).then(B).then(C).enqueue()
+##### Input Mergers
+* 상위 OneTimeWorkRequests에서 값을 하위 항목에 전달
+* workmanager에서 제공해주는 두가지 유형의 InputMergers
+  * OverwritingInputMerger
+    * 전부 다 가져옴
+  * ArrayCreatingInputMerger
+    * 병합해서 가져옴
+  * [자세한 차이점은 여기 블로그 참고](https://medium.com/@limgyumin/workmanager-잘-써보기-1643a999776b)
+* ```kotlin
+  val A_4 = OneTimeWorkRequestBuilder<MyWorker_A_4>().setInputMerger(ArrayCreatingInputMerger::class).build()
+
+  MyWorker_A_1 : Worker...{
+      val outputData = workDataOf(Pair("outputData", "outputData from doWork"))
+  }
+  MyWorker_A_2 : Worker... // 코드 동일
+  MyWorker_A_3 : Worker... // 코드 동일
+
+  MyWorker_A_4 : Worker(...
+  
+    val list = inputData.getStringArray("outputData") list?.let { Log.d("TEST","MyWorker_B outputData list : ${list[0]}, ${list[1]}, ${list[2]}") }
+
+  }
+ 
 ---
-### 기타 정보는 공식문서 참고
+### [기타 정보는 공식문서 참고](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko)
+### 충돌 해결 정책
+* https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#conflict-resolution
+### 작업 취소
+* https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#stop-worker
