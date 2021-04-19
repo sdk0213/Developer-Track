@@ -14,6 +14,8 @@
   * 5. Android 10.0 앱이 백그라운드 실행될때 Activity 시작 시점 제한
 ---
 ### Workmanager를 사용할수 없는 경우
+* 물건 구입 과정에서의 결제 진행 등 즉시 처리해야 하는 작업
+* UI를 빠르게 변경해야 하는 작업
 * 긴 다운로드 작업
 * 즉시 실행되어야 하는경우
 * 알람 앱처럼 정확한 시간에 작업 수행이 필요 -> 이 경우는 AlarmManager 사용
@@ -23,6 +25,11 @@
   * Triggered by system condition -> workmanager
   * run at precise time -> alarmmanager
   * etc... -> workmanager
+##### 이럴때 사용
+* 앱이 종료되거나 기기가 재시작되어도 실행되시에 비동기 작업으로 구현하는 것들
+* 이미지를 서버에 업로드
+* 데이터를 분석하고 이를 데이터베이스에 저장
+
 ---
 ### [작업이 실행되는 최적의 조건을 선언적으로 정의](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work?hl=ko#constraints)
 * **자세한 설명 및 코드는 위 링크 참고**
