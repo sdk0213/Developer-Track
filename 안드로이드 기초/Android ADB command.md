@@ -1,5 +1,17 @@
 Android adb command - [출처 - superfelix님의 tistory](https://superfelix.tistory.com/89)
 ===
+### 연결된 디바이스 전부 명령
+* 추가하기
+* zshrc
+   ```zshrc
+   function adball()
+    {
+        adb devices | egrep '\t(device|emulator)' | cut -f 1 | xargs -t -J% -n1 -P5 \
+              adb -s % "$@"
+    }
+* 명령은 기존과 똑같이 진행 + function 으로 조합해서 한번에 실행하기
+    
+---
 > adb 도움말
 * adb -h
 패키지관련
