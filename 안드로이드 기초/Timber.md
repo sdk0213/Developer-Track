@@ -2,9 +2,9 @@
 ---
 ### Timber란
 * 개발을 할때는 로그를 남기고 아닐때는 릴리즈 시점에서는 Log를 출력 하고 싶지 않을때 사용
-##### 사용
+##### 사용 [github 공홈 - JakeWharton's timber](https://github.com/JakeWharton/timber)
 * ```gradle
-  implementation "com.jakewharton.timber:timber:version
+  implementation "com.jakewharton.timber:timber:version 
 * ```kotlin
   Log.d("tagging","log is required for the string format $message")
 * ```kotlin
