@@ -29,6 +29,9 @@
 * 앱이 종료되거나 기기가 재시작되어도 실행되시에 비동기 작업으로 구현하는 것들
 * 이미지를 서버에 업로드
 * 데이터를 분석하고 이를 데이터베이스에 저장
+* Executing long running background tasks like uploading media
+* Parsing and storing data in database.
+* Critical Tasks which needs to survive process deaths
 
 ---
 ### [작업이 실행되는 최적의 조건을 선언적으로 정의](https://developer.android.com/topic/libraries/architecture/workmanager/how-to/define-work?hl=ko#constraints)
