@@ -11,7 +11,7 @@
 * [안드로이드 API 관련](#android-api)
 * [안드로이드 OS 관련](#android-os)
 * [안드로이드 기초](#android-basic)
-* [안드로이드 고급](#android-advanced)
+* [안드로이드 중급](#android-intermediate)
 * [안드로이드 아키텍쳐](#android-architecture)
 * [안드로이드 라이브러리](#android-library)
 * [안드로이드 레이아웃](#android-layout)
@@ -127,10 +127,11 @@
 * [Timber.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/Timber.md)
 
 
-# :bulb: 안드로이드 고급
-## [Android Advanced](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20고급)
+# :bulb: 안드로이드 중급
+## [Android Intermediate](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20고급)
 * [맨 위로 가기](#book-mark)
-* [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20고급/분리된%20뷰들%20실시간%20동기화.md)
+* [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/분리된%20뷰들%20실시간%20동기화.md)
+* [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Coroutine(코루틴).md)
 
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
@@ -145,8 +146,6 @@
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
 * [WorkManager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/WorkManager.md)
-* [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Coroutine(코루틴).md)
-
 
 ##### [Android DI(Dagger2)](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/(DI)Dagger2)
 * [안드로이드에서 의존성을 주입하는것의 의미.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드에서%20의존성을%20주입하는것의%20의미.md)
