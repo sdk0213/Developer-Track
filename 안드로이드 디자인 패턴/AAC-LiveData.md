@@ -36,21 +36,21 @@
   }
 ##### View - Activity Or Fragment 
 * ```kotlin
- class ItemActivity : AppCompatActivity() {
+  class ItemActivity : AppCompatActivity() {
     
-    private lateinit var model : ItemViewModel
+     private lateinit var model : ItemViewModel
     
-    override fun onCreate(savedInstanceState : Bundle?)
-        super.onCreate(savedInstanceState)
+     override fun onCreate(savedInstanceState : Bundle?)
+         super.onCreate(savedInstanceState)
         
-        model = ViewModelProvider(this).get(ItemViewModel::class.java)
+         model = ViewModelProvider(this).get(ItemViewModel::class.java)
         
-        val itemObserver = Observer<String> { newItem ->
-            itemTextView.text = newItem
-        }
+         val itemObserver = Observer<String> { newItem ->
+             itemTextView.text = newItem
+         }
         
-        model.currentName.observer(this, itemObserver)
- }
+         model.currentName.observer(this, itemObserver)
+  }
 ##### LiveData()
 * 변경할 수 없고 오로지 데이터의 변경값만을 소비
 ##### MutableLiveData()
@@ -59,3 +59,25 @@
   * background Thread
 * postValue()
   * ui Thread 에서 처리
+---
+### ProgressBar 추적하기
+* ```kotlin
+  // ui
+  viewModel.getIsLoading().observe(this, new Observer<Boolean>() {
+      @Override
+      public void onChanged(@Nullable Boolean aBoolean) {
+          aBoolean ? pds.show() : pd.dismiss();
+      }
+  }
+
+  // viewmodel
+  pirvate final MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
+  public LiveData<Boolean> getIsLoading() {
+      LiveData<Boolean> isLoading = yourRepository.getIsLoading();
+      return isLoading;
+  }
+  
+  public LiveData<Boolean> getIsLoading(){
+    LiveData<Boolean> isLoading=yourRepository.getIsLoading();
+    return isLoading;
+  }
