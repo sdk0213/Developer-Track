@@ -128,9 +128,11 @@
 
 
 # :bulb: 안드로이드 중급
-## [Android Intermediate](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20고급)
+## [Android Intermediate](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20중급)
 * [맨 위로 가기](#book-mark)
 * [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/분리된%20뷰들%20실시간%20동기화.md)
+* [WorkManager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/WorkManager.md)
+* [WorkManager Threading.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/WorkManager%20Threading.md)
 * [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Coroutine(코루틴).md)
 
 # :bulb: 안드로이드 아키텍쳐
@@ -145,7 +147,6 @@
 * [(AAC)Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(AAC)Repository%20pattern.md)
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
-* [WorkManager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/WorkManager.md)
 
 ##### [Android DI(Dagger2)](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/(DI)Dagger2)
 * [안드로이드에서 의존성을 주입하는것의 의미.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/안드로이드에서%20의존성을%20주입하는것의%20의미.md)
