@@ -109,6 +109,16 @@
 * 앱이 실행될 때부터 앱이 종료될 때까지 Coroutine을 실행시킬 수 있는 Scope이지만 최대한 사용자제
 ##### withTimeoutOrNull
 * 네트워크 타임아웃 처리는 withTimeoutOrNull(timeMillis) 를 이용하면 손쉽게 처리할 수 있다
+##### runblocking - [추가정보:  runblocking의 위험성](https://thdev.tech/kotlin/2020/12/15/kotlin_effective_15/)
+* 사용하는 runBlocking의 위치가 UI라면 UI를 Blocking 시키고 Coroutines이 끝나길 대기한다.
+  * **그러므로** 정기적인 블로킹 코드를 일시중단 스타일로 작성된 라이브러리에 연결하여 ‘main’ 함수와 테스트에 사용하도록 설계
+* runblcok은 main에서 사용할경우 runBlocking(Dispatchers.IO) 와같이 쓰레드를 변경해서 ANR이 발생한다.
+* 굳이 사용해야한다면?
+  * IO 스케쥴러로 들어오는 데이터를 Flow를 활용해 데이터를 처리하고 싶을 때
+  * Unit test 코드를 작성
+  * 위 두가지 경우를 제외하면 절대로 쓰지말고 필요도없다~~
+
+
 ---
 ### Activity, ViewModel Scope 만들기
 * ```kotlin
