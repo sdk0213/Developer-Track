@@ -235,6 +235,7 @@
 * [@JvmSuppressWildcards.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/%40JvmSuppressWildcards.md)
 * [Generic(in, out).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Generic(in%2C%20out).md)
 * [lazy vs lateinit.md](https://github.com/sdk0213/Developer-Track/blob/master/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EA%B3%B5%EB%B6%80(Kotlin)/lazy%20vs%20lateinit.md)
+* [Sequence.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Sequence.md)
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
 ## [kotlin with safe Programming](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming)
