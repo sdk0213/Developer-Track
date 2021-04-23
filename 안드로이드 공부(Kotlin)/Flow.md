@@ -9,7 +9,10 @@
 * sequence 처럼 cold stream의 형태를 가져가기에 flow operators가 실행되기 전까지는 수행되지 않는다.
 * 여러개의 중간 operator로 조합된 경우 코틀린에서의 sequence처럼 순차적으로 진행된다.
 ##### Room Flow
+* 클린 아키텍쳐의 일환으로서 repository는 flow 흐름으로 두고 Livedata는 android viewmodel의 수준으로 나누어서 관리하는것이 좋다고 한다. 정확히 왜? 인지는 클린아키텍처가 더 공부가 필요
 * 기본 데이터가 변경될 때 UI가 자동으로 업데이트되도록 하려면 Flow 객체를 반환하는 쿼리 메서드를 작성하세요.
+* https://stackoverflow.com/questions/58890105/kotlin-flow-vs-livedata
+  * So its recommended to keep flow in the repository level , and make the livedata a bridge between the UI and the repository !
 * https://developer.android.com/training/data-storage/room/accessing-data?hl=ko#query-flow
 ---
 ### [중요한것만 적어놓음 나머지 필요한 연산 정보는 전부 투덜이님의 coroutine 정리를 참고](https://tourspace.tistory.com/260?category=797357)
