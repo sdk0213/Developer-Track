@@ -14,6 +14,7 @@
 * https://stackoverflow.com/questions/58890105/kotlin-flow-vs-livedata
   * So its recommended to keep flow in the repository level , and make the livedata a bridge between the UI and the repository !
 * https://developer.android.com/training/data-storage/room/accessing-data?hl=ko#query-flow
+* https://stanleykou.tistory.com/entry/httpsproandroiddevcomshould-we-choose-kotlins-stateflow-or-sharedflow-to-substitute-for-android-s-livedata-2d69f2bd6fa5
 ---
 ### [중요한것만 적어놓음 나머지 필요한 연산 정보는 전부 투덜이님의 coroutine 정리를 참고](https://tourspace.tistory.com/260?category=797357)
 ##### builder
@@ -89,3 +90,6 @@
    
   fun log(msg: String) = println("[${Thread.currentThread().name}] $msg") // result
 
+---
+### StateFlow
+* 현재 상태와 새로운 상태 업데이트를 수집기에 내보내는 식별 가능한 상태 홀더 흐름
