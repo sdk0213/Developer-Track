@@ -140,6 +140,7 @@
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [맨 위로 가기](#book-mark)
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
+* [안드로이드 클린 아키텍쳐.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/안드로이드%20클린%20아키텍쳐.md)
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
 * [AAC-LiveData.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-LiveData.md)
 * [AAC-View Model.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-View%20Model.md)
