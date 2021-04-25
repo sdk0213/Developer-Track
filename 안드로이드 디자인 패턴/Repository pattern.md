@@ -1,4 +1,5 @@
 # Repository Pattern - [출처는 4z7l님의 github 블로그](https://4z7l.github.io/2020/11/24/repository-pattern.html)
+### [도움이 되는 정보](https://devming.medium.com/repository-pattern에-대해서-255731577927)
 ---
 ### 사용하게된 배경
 * 비즈니스 로직이 db에 접근하는 과정에서 다음과 같은 문제가 발생
@@ -13,6 +14,7 @@
 ### 특징
 * Data soruce <-> repository <-> business
   * 이 과정에서 Mapper 클래스를 사용한다.
+* Repository는 데이터 소스에 접근하기 위해 캡슐화된 구성요소입니다. 데이터에 접근하는 기능을 한군데에 집중시켜서, 유지보수에 용이하고, 데이터 구조에 대한 의존성 낮추게 됩니다. 이로써 앱이 데이터를 다루는 곳과 이 데이터를 표현하는 곳으로 명확하게 나뉘게 되는 것입니다.
 * 중앙집중처리방식
 * 비즈니스 로직에만 집중하면 된다.
   * ViewModel에서는 데이터가 로컬 DB에서 오는지, 서버에서 API 응답을 통해 오는 것인지 출처를 몰라도 된다.
