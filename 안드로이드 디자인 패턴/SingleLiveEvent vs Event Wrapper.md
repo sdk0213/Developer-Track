@@ -104,3 +104,15 @@
   viewModel.eventToast.observe(this, { event: Event<String> ->
       Toast.makeText(this, event.peekContent(), Toast.LENGTH_SHORT).show()
   })
+##### 선택적으로 사용자의 의도로 지정가능하다.
+* 사용자가 getContentIfNotHandled() 또는 peekContent()을 사용하여 의도를 지정할 수 있다.
+* 기본 Livedata처럼 사용할때는 peekContent()
+* 한번 만 사용할때는 getContentIfNotHandled()
+* 위와 같이 유동적으로 쓰일수 있기에 SingleLiveEvent보다 낫다고 볼수있다.
+* ```kotlin
+  viewModel.hideKeyboard.observe(this, Observer {
+      it.getContentIfNotHandled()?.let { // Only proceed if the event has never been handled
+         hideKeyboard()
+      }
+  })
+  
