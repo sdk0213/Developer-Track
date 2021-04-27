@@ -1,4 +1,4 @@
-# multi part
+# multi part - [출처](https://privatedevelopnote.tistory.com/18)
 ---
 ### 정의
 * **form data가 여러 부분으로 나뉘어 서버로 전송**되는 것을 의미합니다.
