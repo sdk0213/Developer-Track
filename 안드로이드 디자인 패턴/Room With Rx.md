@@ -1,4 +1,4 @@
-# Room With Rx.md
+# Room With Rx.md - [출처 - androiddevelopers - medium](https://medium.com/androiddevelopers/room-rxjava-acb0cd4f3757)
 ---
 #### 사전지식
   * Single : 1개 데이터 발행후 완료 / Maybe : 0 or 1 개 데이터 발행후 완료 = Maybe Single 의 의미
