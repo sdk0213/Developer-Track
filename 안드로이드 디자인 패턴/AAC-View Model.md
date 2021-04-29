@@ -210,3 +210,8 @@
 ##### 적용 후
 * ```kotlin
   private val viewModel: MyViewModel by viewModels()
+
+  // custom viewModelFactory 있을시
+  private val viewModel: MyViewModel by viewModels{
+      viewModelFactory
+  }
