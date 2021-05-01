@@ -6,6 +6,7 @@
 * View가 ViewModel에 의존적인데 여기서 View는 ViewDataBinding을 상속한 Binding 클래스로 표현이 된다. Binding 클래스가 ViewModel에 의존하게 되는것이다.
 View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 결합도가 느슨하게 된다. (디커플링)
 * 특징
+  * 앱의 퍼포먼스가 향상된다. - [Udemy 강의중]
   * 코드 간단해진다.
   * rebuild 르 해줘야해서 귀찮다.
   * 생각보다 쉽지 않다.
