@@ -11,6 +11,16 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
   * rebuild 르 해줘야해서 귀찮다.
   * 생각보다 쉽지 않다.
   * 바인딩시 null처리를 알아서 해준다
+* benefits of Data binding
+  * Update the values automatically.(doesn’t have to keep track of all the ways a value can be updated)
+  * Very effective for UI Testing.
+  * More readable code.
+  * More maintainable code.
+  * Faster development times.
+  * Faster execution times.
+  * Well suited for MVVM and MVI architectures.
+  * Errors can be found during the compile time.
+  * No limitations comparing with Kotlin synthetic(Such as everything exists In a global namespace, typing Isn’t guaranteed,  nullability will not be exposed, ....)
 * implementation X
   * ```gradle
     android {
