@@ -92,6 +92,11 @@
     NavHostFragment.findNavController(fragment)
     Navigation.findNavController(Activity, @IdRes int viewId)
     Navigation.findNavController(View)
+##### 백스택
+* popUpToInclusive : true 
+  * popUpTo으로 설정한 fragment까지 백스택에서 제거를 하고, popUpTo으로 설정한 fragment의 이전 fragment로 이동을한다.
+* popUpToInclusive : false 
+  * popUpTo으로 설정한 fragment 이전까지만 백스택에서 제거를 하고, popUpTo으로 설정한 fragment로 이동한다.
 ---
 ### 목적지간 데이터 전달은 Safe Args 사용
 * Safe Args는 목적지 간 이동시 안전하게 인자를 전달하도록 객체 및 빌더 클래스를 제공한다.
