@@ -1,8 +1,18 @@
 # ViewModel - SavedState
-### SavedStateHandle
-##### 사용하는이유
+### 사전지식
+##### onSavedInstance의 한계점
+* Bundle limit
+  * This research was performed in 2014, newer versions of Android may crash with bundles over 500kb
+##### ViewModel의 한계점
+* ViewModel을 사용하더라도 프로세스에 의해 중단된 경우에는 복원이 불가능하다.
 * ViewModel은 메모리 내에서 존재하기때문에 activity 생명주기보다는 길지만 프로세스 종료까지는 안전하지 않다.
 * https://www.charlezz.com/wordpress/wp-content/uploads/2020/06/ViewModel-Basic.mp4
+---
+### SavedStateHandle
+* **SavedStateHandle 객체는 Ke
+y-Value 형태인 Map 구조이며 SavedStateHandle은 프로세스가 시스템에 의해 종료되더라도 유지된다.**
+* 예상치못하 시스템에 의한 종료로부터 살아남을수있다.
+* <img width="907" alt="스크린샷 2021-05-04 오후 5 10 15" src="https://user-images.githubusercontent.com/51182964/116976244-d974a080-acfb-11eb-9572-d895b052be67.png">
 ##### 특징
 * 시스템이 프로세스를 종료하더라도 동일한 정보를 유지
 ##### 주의점 - [charlezz님](https://charlezz.medium.com/ui-상태-저장-및-복원의-필요성-a00297e7a20b)
