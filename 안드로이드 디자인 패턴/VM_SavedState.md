@@ -46,5 +46,5 @@ y-Value 형태인 Map 구조이며 SavedStateHandle은 프로세스가 시스템
     handle.getLiveData("HELLO")   
     
   // 데이터를 다른 값으로 갱신하는 경우에는 LiveData가 이를 Observe하고 있기 때문에 새로운데이턱 흘러간다.
-* 
+* [다른 추가코드느 여기 블로그에서 확인](http://pluu.github.io/blog/android/2020/02/10/saved-state/)
     
