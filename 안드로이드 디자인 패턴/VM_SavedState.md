@@ -46,5 +46,55 @@ y-Value 형태인 Map 구조이며 SavedStateHandle은 프로세스가 시스템
     handle.getLiveData("HELLO")   
     
   // 데이터를 다른 값으로 갱신하는 경우에는 LiveData가 이를 Observe하고 있기 때문에 새로운데이턱 흘러간다.
-* [다른 추가코드느 여기 블로그에서 확인](http://pluu.github.io/blog/android/2020/02/10/saved-state/)
-    
+* [SampleCode](http://pluu.github.io/blog/android/2020/02/10/saved-state/)
+  * ```kotlin
+    class SavedStateViewModelCounterActivity : AppCompatActivity() {
+
+      private lateinit var counterViewModel: SavedStateCounterViewModel
+
+      override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val binding = ActivityCounterBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        counterViewModel = ViewModelProvider(
+          this,
+          SavedStateViewModelFactory(application, this)
+        ).get(SavedStateCounterViewModel::class.java)
+
+        Timber.d("ViewModel = ${counterViewModel.hashCode()}")
+
+        counterViewModel.countState.observe(this, Observer {
+          binding.counter.text = it.toString()
+        })
+
+        binding.fab.setOnClickListener {
+          counterViewModel.incCounter()
+        }
+      }
+    }
+  * ```kotlin
+    class SavedStateCounterViewModel(
+      private val handle: SavedStateHandle
+    ) : ViewModel() {
+
+      // Get value of SavedStateHandle
+      private var counter = handle.get<Int>("counter") ?: 0
+        set(value) {
+          // Set value of SavedStateHandle
+          handle.set("counter", value)
+          field = value
+        }
+
+      private val _countForm = MutableLiveData<Int>(counter)
+      val countState: LiveData<Int> = _countForm
+
+      // Get LiveData of SavedStateHandle
+      val countLiveData: LiveData<Int> = handle.getLiveData("count", 0)
+
+      fun incCounter() {
+        ++counter
+        Timber.d("Inc Counter => $counter")
+        _countForm.value = counter
+      }
+    }
