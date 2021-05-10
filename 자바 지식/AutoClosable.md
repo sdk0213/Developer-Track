@@ -1,5 +1,7 @@
 # AutoClosable - [출처 - @sa1341님의 velog](https://velog.io/@sa1341/AutoCloseable-클래스)
 ### AutoClosable 란?
+* 자동적으로 자원을 해제해주는것
+* 코틀린에서는 간단히 .use 를 사용하여서 구현가능하다.
 ##### AutoClosable 사용안함
 * 자원을 사용하고 해제할때 명시적으로 작성해야하는 close를 대시 처리해준다.
 * ```java
