@@ -49,6 +49,7 @@
 * [Optional.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Optional.md)
 * [Set(HashSet, TreeSet, LinkedHashSet).md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Set(HashSet%2C%20TreeSet%2C%20LinkedHashSet).md)
 * [isAssignableFrom, instanceOf.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/isAssignableFrom%2C%20instanceOf.md)
+* [AutoClosable.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/AutoClosable.md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
