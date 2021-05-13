@@ -207,3 +207,37 @@
 * https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#conflict-resolution
 ### 작업 취소
 * https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#stop-worker
+
+### 외부에서 데이터 넣어주기
+* Pass params as follow
+* ```java
+  Data.Builder data = new Data.Builder();
+  data.putString("SyncMaster", syncModuleName);
+
+  OneTimeWorkRequest syncWorkRequest =
+          new OneTimeWorkRequest.Builder(SyncWorker.class)
+                  .addTag("Sync")
+                  .setInputData(data.build())   // <-------- INPUT TO WORKER
+                  .setConstraints(builder.build()) 
+                  .build();
+                  
+                  
+  // WorkManager
+  
+  public class SyncWorker extends Worker {
+
+    private static final String TAG = "MyWorker";
+
+    public SyncWorker(@NonNull Context context, @NonNull WorkerParameters workerParams) {
+        super(context, workerParams);
+        mContext = context;
+    }
+
+    @NonNull
+    @Override
+    public Result doWork() {
+        Log.d(TAG, "doWork for Sync");
+        String syncTable = getInputData().getString("SyncMaster");  // <-------- GET FROM OUT
+        return Result.success();
+    }
+  }
