@@ -157,5 +157,8 @@
       // setup
   }
 * 이렇게하면 예상되로 잘 작동한다.
+
+### 대안적인 방법
+* 전에 이 문제가 있을때 많은 의논이 있었다. 요약하자면 여기는 두가지 가능한 해결책이 있는데 모두 기대된대로 작동하고 성능적으로 차이점을 `
 ### 왜이렇게 생성자주입을 어렵게 굳이 해야하는가?
 * So what is my setup’s advantage? why do we need to spend such an effort on this huge setup? The answer, my friend, is TESTING. Since everything is injected through the constructor, we can easily mock our dependence to test the Worker implementation.
