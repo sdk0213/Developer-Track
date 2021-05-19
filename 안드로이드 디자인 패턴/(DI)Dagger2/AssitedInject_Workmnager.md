@@ -120,6 +120,12 @@
   }
 * **이런식으로더블 팩토리 패턴) 하면 잘작동함에도 불구하고 가장 나쁜 부분은 우리는 항상 ChildWorkerFactory를 손수 구현해야한다는것이다. 이 예제는 Foo하나밖에 없지만 만약에 10개개 그 이상이 있다면 우리는 10Worker가 필요하다. 기술적으로 가능하지만 이것은 크게 도움이 되지 않는 방법이다.**
 ### AssitedInjection 사용
+* 전체적인 흐름
+  * WorkerBindingModule 등록
+  * HelloWorldWorker 클래스 만들기
+  * HelloWorldWorker 클래스 내부에 ChildWorkerFactory @AssistedInject.Factory 로 선언
+  * ChildWorkerFactory 인터페이스 만들기
+  * OneTimeWorkRequestBuilder<HelloWorldWorker>().build() 로 사용
 * AssistedInject가 작동하는 곳입니다. Dagger 2와 호환되는 Square의 라이브러리입니다. 2 개의 작업이 있다.
   * 모든 ChildWorkerFactory 구현을 생성한다.
   * 모듈을 통해 이러한 구현을 종속성 그래프에 바인딩 (자세한 내용은 나중에 참조)
