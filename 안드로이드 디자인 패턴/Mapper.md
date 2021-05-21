@@ -4,7 +4,7 @@
 * DB <-> Mapper <-> model
 * <img width="191" alt="스크린샷 2021-05-02 오전 9 28 23" src="https://user-images.githubusercontent.com/51182964/116798307-294f3e00-ab29-11eb-8805-dec97ee7f737.png">
 * 장점
-  * data model과 결합도가 낮아지기 때문에 변경에 대해서 유연해진다.
+  * data model과 결합도가 낮아지기 때문에 변경에 대해서 유연해진다
 ##### Mapper Interface
 * ```kotlin
   interface Mapper<E, D> {
