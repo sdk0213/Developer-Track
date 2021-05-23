@@ -8,8 +8,7 @@
     // 또는 주기적 작업 예약
     val request = PeriodicWorkRequestBuilder<SeedDatabaseWorker>().build()
   * RequestBuilder에 의해 생성되기 때문이다.
-### WorkManager
-   
+### WorkManager   
 --- 
 ### WorkManager를 통한 생정자 주입에 대한 미디엄 - 번역이 미흡합니다.
 ### [전문은 여기를 참고하세요](https://proandroiddev.com/dagger-2-setup-with-workmanager-a-complete-step-by-step-guild-bb9f474bde37)
@@ -41,6 +40,7 @@
 * alpha 9 가 릴리즈되었고 안드로읻드 팀은 WorkerFactory라는 새로운 추상 클래스를 소개했다.
   * "A factory object that creates ListenableWorker instances. The facotry is invoked every time a work runs"
 * 쉽게 말하면 WorkManager에 custom Factory를 등록하면 아무때나 호출이 될때 WorkManager가 Custom Facotry에 새로운 WorkerManager를 생성해달라고 요청한다. 이 점은 굉장한 이점이다 왜냐하면 우리는 Worker를 어떻게 생성할것인지에 대해서 결정할수 있기 때문이다. 기본 생성자에 더 이상 방해 받지 않는다.
+* 매개변수이름에 주의를 기울어야한다.(바꾸면 안된다.)
 
 #### Step by step
 * Custom Factory(이하 SaampleWorkerFactory)에 대해서는 후에 알아보고 우선 어떻게 구현되는지에 대해 집중해보자.
