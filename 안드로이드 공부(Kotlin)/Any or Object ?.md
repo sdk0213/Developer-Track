@@ -1,7 +1,7 @@
-### object
+### Object
 * java의 최상위 클래스는 Object 클래스
 * kotlin 에서도 object 사용가능 하지만 Any는 Object의 슈퍼 클래스
-### any
+### Any
 * kotlin 최상위 클래스는 Any 클래스
 * any --> non-null
 * any? --> nullable
