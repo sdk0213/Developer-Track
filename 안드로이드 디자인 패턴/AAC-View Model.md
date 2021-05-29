@@ -4,6 +4,7 @@
 * ViewModel의 목적은 UI 컨트롤러의 데이터를 캡슐화하여 구성이 변경되어도 데이터를 유지하는것
 * 이를 활용해서 mvvm 패턴으로 구성이 가능하다.
 * ViewModel 객체는 뷰 또는 **LifecycleOwners의 특정 인스턴스화보다 오래 지속**되도록 설계
+  * ViewModel은 Activity class의 어떠한 것도 참조해서는 안된다. Activity class보다 오래 지속되는 ViewModel의 톡성상 ViewModel이 Activity class를 참조하게 된다면 가비지 컬렉터에 의해 메모리가 해제되지 않아 메모리 누수가 발생할 수 있다.
 * ViewModel을 다루는 테스트를 더 쉽게 작성 가능
 * 수명 주기를 인식하는 Observable의 변경사항을 관찰해서는 안됨
 * Application Context가 필요할경우 AndroidViewModel 클래스를 확장하고 생성자에 Application을 받는 생성자를 포함
