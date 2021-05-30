@@ -254,6 +254,7 @@
 * [Operator fun.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Operator%20fun.md)
 * [object vs class.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/object%20vs%20class.md)
 * [invoke.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/invoke.md)
+* [<*> (Star-projections).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/%3C*%3E%20(Star-projections).md)
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
 ## [kotlin with safe Programming](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming)
