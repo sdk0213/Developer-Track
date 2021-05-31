@@ -19,8 +19,8 @@
           })
       }
   }
-### out : ? extends T (java)
-* readonly
+### out T(kotlin) == ? extends T (java)
+* output의 약자로 readonly
 * ```kotlin
   private fun printAll(items: ArrayList<out Output<String>>) {
       // 컴파일 에러 왜냐하면 readonly 이기 때문에 write 불가능
@@ -36,7 +36,8 @@
       // items.get(0) // Success - print
       // items.get(1) // Success - not print (false라서 filter에서 걸러지기 때문에 출력이 안된다.)
   }
-### in : ? super T (java)
+### in T(kotlin) == ? super T (java)
+* input의 약자로 writeonly
 * ```kotlin
   private fun addItem(items: ArrayList<in Output<String>>) {
        items.add(object : Output<String> {
