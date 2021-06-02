@@ -69,7 +69,7 @@
 * **noinline은 파라메터로 제3의 함수에 전달할 때 붙인다**
   * 출처 참고
 ---
-### crossline
+### [crossline](https://thdev.tech/kotlin/2020/09/29/kotlin_effective_04/)
 * 파라미터를 block {} 형태로 전달해줄때 사용 
   * 출처 참고
 ---
