@@ -1,4 +1,4 @@
-# Void vs Unit vs Nothing - [출처는 kumgo1d님](https://kumgo1d.tistory.com/61)
+# Void vs Unit vs Nothing - [출처는 [kumgo1d님]](https://kumgo1d.tistory.com/61)[[readystory님]](https://readystory.tistory.com/143)
 ---
 ### Void
 * 반환 값 생략
