@@ -6,7 +6,7 @@
 모든 ViewModel을 수정하는 경우가 생긴다
 * application에서 network 통신 처리, database CRUD 처리와 같은 각각의 flow를 캡슐화하여 세부구현을 Controller에서 분리할 수 있다.
 ---
-### 전체적인 흐름
+### 전체적인 흐름 - [iosched 예제](https://github.com/google/iosched)
 * coroutine 이나 Rxjava에 따라 달리지겠지만 UseCase마다 데이터를 처리하는 추상 클래스를 두고 해당 클래스를 상속받는 형태로 작성한다.
 * 추상 클래스에는 데이터의 상태를 처리하는 클래스인 sealed class Result<T> 클래스를 만든다. 그리고 해당 클래스는 MutableLiveData<Result<R>> 로 만들고 변경을 콜백받도록 한다.  
 * 흐름
