@@ -10,7 +10,9 @@
 * coroutine 이나 Rxjava에 따라 달리지겠지만 UseCase마다 데이터를 처리하는 추상 클래스를 두고 해당 클래스를 상속받는 형태로 작성한다.
 * 추상 클래스에는 데이터의 상태를 처리하는 클래스인 sealed class Result<T> 클래스를 만든다. 그리고 해당 클래스는 MutableLiveData<Result<R>> 로 만들고 변경을 콜백받도록 한다.  
 * 흐름
-  * UseCase사용하는곳에서 ReservationActionUseCase 사용후 반환되는 값으로 Result 에 대한 처리를 해준다.  
+  * usecase -> 데이터 요청 -> repository -> data 변화 또는 결과값 반환 -> usecase 에서 이를 구독하고 해당 결겨괎에 따라 Result.Success OR Error 로 결과값 받기
+  * repository 를 통해서 결과값을 rx 또는 coroutine으로 받아서 이를 구독하는 형태
+  * UseCase 사용하는곳에서 ReservationActionUseCase 사용후 반환되는 값으로 Result 에 대한 처리를 해준다.  
   * ReservationActionUseCase : UseCase
     * UseCase
       * invoke (Rx Or Coroutine)
