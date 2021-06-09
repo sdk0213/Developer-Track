@@ -13,25 +13,25 @@
   * Nothing -> 모든 타입의 **자식
 * Nothing을 반환시 호출한 코드로 반환도 하지 않음
 * 리턴 -> 안함
-##### TODO
+##### 1. TODO
 * ```kotlin
   fun shouldReturnSomething() {
       TODO("make your code")
       println("hello") // --> Unreachable Code 에러
   }
-##### infinite Loop
+##### 2. infinite Loop
 * ```kotlin
   fun infiniteLoop(): Nothing {
        while (true) {
           println("Hi there!")
       }
   }
-##### Throw Exception
+##### 3. Throw Exception
 * ```kotlin
   fun throwException(): Nothing {
       throw IllegalStateException()
   }
-##### Nothing + ? -> can return Null
+##### 4. Nothing + ? -> can return Null
 * ```kotlin
   fun mayThrowAnException(throwException: Boolean): Nothing? {
       return if (throwException) {
@@ -41,7 +41,7 @@
           null
       }
   }
-##### 모든 타입의 자식
+##### 5. 모든 타입의 자식
 * nullableString -> String 타입
 * throw IllegalStateException() -> Nothing 타입
 * nullableValue가 Null 이기에 throw IllegalStateException() 의 반환값인 Nothing이 nullableString으로 들어가는데 
