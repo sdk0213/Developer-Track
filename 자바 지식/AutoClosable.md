@@ -23,6 +23,9 @@
       }
   }
 ##### AutoClosable 사용
+* try의 () 부분에서 resource 객체 구문이 들어간다.
+* 해당 객체 구문은 반드시 java.lang.AutoClosable 인터페이스를 구현해야한다.
+  * FileInputStream, BufferedInputStream 내부에는 AutoClosable이 구현되어 있다.
 * ```java
   try (
         FileInputStream is = new FileInputStream("/Users/limjun-young/test.txt");
