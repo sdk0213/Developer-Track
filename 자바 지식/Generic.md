@@ -7,12 +7,13 @@ Generic
 * 위와 같은코드에서 <> 안에 들어가는것은 타입인데 어떤 타입이 들어와도 같은식으로 코드를 처리하고 싶을때 사용하는것이 Generic이다. 여기서 ArrayList는 Generic타입으로 ArrayList<T>로 선언되어있다.
 * 즉, 유연한 클래스 및 인터페이스를 설계하기 위함이다.
 * Generic Type
-  * 종류
-    * E - Element
+  * [종류 - 출처[stackoverflow]](https://stackoverflow.com/questions/2900881/generic-type-parameter-naming-convention-for-java-with-multiple-chars)
+    * E - Element (used extensively by the Java Collections Framework)
     * K - Key
     * N - Number
     * T - Type
     * V - Value
+    * S,U,V etc. - 2nd, 3rd, 4th types
   * 인스턴스화 불가능
   * static불가능
 * interface
