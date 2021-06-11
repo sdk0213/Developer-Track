@@ -19,7 +19,7 @@
           })
       }
   }
-### out T(kotlin) == ? extends T (java)
+### out T(kotlin) == ? extends T (java) (? <= T)
 * **output의 약자로 readonly**
 * ```kotlin
   private fun printAll(items: ArrayList<out Output<String>>) {
@@ -36,7 +36,7 @@
       // items.get(0) // Success - print
       // items.get(1) // Success - not print (false라서 filter에서 걸러지기 때문에 출력이 안된다.)
   }
-### in T(kotlin) == ? super T (java)
+### in T(kotlin) == ? super T (java) (? >= T)
 * **input의 약자로 writeonly**
 * ```kotlin
   private fun addItem(items: ArrayList<in Output<String>>) {
