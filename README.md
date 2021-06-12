@@ -20,6 +20,7 @@
 * [안드로이드 리엑티브자바 - RxJava2](#android-rxjava2)
 * [안드로이드 테스트](#android-test)
 * [안드로이드 컨퍼런스 영상 정리](#android-conference)
+* [Git](#git)
 * [프로그래머 기초](#programmer-basic)
  
 # :bulb: 자바 관련
@@ -387,12 +388,17 @@
 * [(Naver D2 옥수환) 앱 속도 올리기.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20옥수환)%20앱%20속도%20올리기.md)
 * [(Naver D2 임원석)디버깅, 분석 꿀팁.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20임원석)디버깅%2C%20분석%20꿀팁.md)
 
+# 💡 Git
+## [Git](https://github.com/sdk0213/Developer-Track/tree/master/Git)
+* [맨 위로 가기](#book-mark)
+* [기초설정.md](https://github.com/sdk0213/Developer-Track/blob/master/Git/기본설정.md)
+* [메시지 작성 규칙.md](https://github.com/sdk0213/Developer-Track/blob/master/Git/메시지%20작성%20규칙.md)
+
 # :bulb: 프로그래머 기초
 ## [Programmer Basic](https://github.com/sdk0213/Developer-Track/tree/master/프로그래머%20기초)
 * [맨 위로 가기](#book-mark)
 * [C언어 기초 - inline.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/C언어%20기초/inline.md)
 * [IT 용어.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/IT%20용어/IT%20용어.md)
-* [MAC - git설정.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/Mac/git설정.md)
 * [MAC - svn 명령어.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/Mac/svn%20명령어.md)
 * [MAC - 터미널 명령, 환경변수.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/Mac/터미널%20명령%2C%20환경변수.md)
 * [통신 - HTTP 메서드 기초.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/서버통신/HTTP%20메서드%20기초.md)
