@@ -3,7 +3,7 @@
 ---
 ### 사용했을때의 장점
 * fragment transaction 불필요
-* 목적지 간 이동 미 복귀를 올바르게 수행
+* 목적지 간 이동 시 복귀를 올바르게 수행
 * 기본적으로 화면 전환 애니메이션 제공해준다.
 * 딥 링크 구현 및 처리 제공
 * 최소한의 추가작업으로 서랍, 보텀 같은 UI 패턴을 구현
@@ -20,7 +20,7 @@
 ---
 ### Navigation Graph
 * **모든 탐색 경로 시각화**
-* 목적지들과 액션 몯 포함하는 리소스 파일
+* 목적지/액션 모두를 포함하는 리소스 파일
 * google sunflower example
   ```xml
   <navigation xmlns:android="http://schemas.android.com/apk/res/android"
@@ -55,7 +55,6 @@
 ### NavHost
 * 사용자가 앱을 탐색할 때 목적지가 전환되는 빈 컨테이너이다.
 * 그러니까 그냥 activity내의 navigation Component를 위한 공간이라고 생각하면된다.
-* 
 * google sunflower example
   * ```xml
     <layout
