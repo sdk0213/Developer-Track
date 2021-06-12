@@ -395,8 +395,8 @@
 # 💡 Git
 ## [Git](https://github.com/sdk0213/Developer-Track/tree/master/Git)
 * [맨 위로 가기 ⬆️](#book-mark)
-* [기초설정.md](https://github.com/sdk0213/Developer-Track/blob/master/Git/기본설정.md)
-* [메시지 작성 규칙.md](https://github.com/sdk0213/Developer-Track/blob/master/Git/메시지%20작성%20규칙.md)
+* [기초설정.md](https://github.com/sdk0213/Developer-Track/blob/master/협업/Git/기본설정.md)
+* [메시지 작성 규칙.md](https://github.com/sdk0213/Developer-Track/blob/master/협업/Git/메시지%20작성%20규칙.md)
 
 # :bulb: 프로그래머 기초
 ## [Programmer Basic](https://github.com/sdk0213/Developer-Track/tree/master/프로그래머%20기초)
