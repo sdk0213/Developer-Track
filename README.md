@@ -4,14 +4,14 @@
 <summary>지식 정리 한번에 보기 (펼치기/접기)</summary>
 <div markdown="1">
  
-# 📑 책갈피
+# 🔖 책갈피
 ## Book Mark
 #### 클릭시 해당 내용으로 바로 이동됩니다.
-* [언어]
+* 🔤 언어
   * [자바 관련](#java-basic)
   * [코틀린 - kotlin](#android-kotlin)
     * [kotlin with safe Programming](#kotlin-with-safe-programming)
-* [안드로이드]
+* 📱 안드로이드
   * [API 관련](#android-api)
   * [OS 관련](#android-os)
   * [기초](#android-basic)
@@ -22,9 +22,9 @@
   * [리엑티브자바 - RxJava2](#android-rxjava2)
   * [테스트](#android-test)
   * [안드로이드 관련 컨퍼런스 영상 정리](#android-conference)
-* [협업]
+* 🧑‍🏭 협업
   * [Git](#git)
-* [기타]
+* 💻 기타
   * [프로그래머 기초](#programmer-basic)
  
 # :bulb: 자바 관련
