@@ -1,11 +1,11 @@
-# :blush::blush::blush:  개발 지식 저장소 :blush::blush::blush:
+# 📝 개발 지식 저장소
 
 <details>
 <summary>지식 정리 한번에 보기 (펼치기/접기)</summary>
 <div markdown="1">
  
-# :seedling: 책갈피
-## 📑 Book Mark 📑
+# 📑 책갈피
+## Book Mark
 #### 클릭시 해당 내용으로 바로 이동됩니다.
 * [언어]
   * [자바 관련](#java-basic)
