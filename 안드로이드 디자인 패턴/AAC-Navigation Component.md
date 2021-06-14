@@ -91,11 +91,25 @@
     NavHostFragment.findNavController(fragment)
     Navigation.findNavController(Activity, @IdRes int viewId)
     Navigation.findNavController(View)
-##### 백스택
-* popUpToInclusive : true 
-  * popUpTo으로 설정한 fragment까지 백스택에서 제거를 하고, popUpTo으로 설정한 fragment의 이전 fragment로 이동을한다.
-* popUpToInclusive : false 
-  * popUpTo으로 설정한 fragment 이전까지만 백스택에서 제거를 하고, popUpTo으로 설정한 fragment로 이동한다.
+##### 백스택 관리
+* ```xml
+  <action 
+        android:id="@+id/next_action"
+        app:popUpTo="@id/login1"
+        app:popUpToInclusive="true"
+        app:destination="@id/home"/>
+* Z -> A -> B -> C -> A 의 상태에서 백스텍을 할경우
+* popUpTo 없을경우 흐름
+  * backstack -> C -> backstack -> B -> backstack -> A
+  * 로그인이 완료되었음에도 불구하고 종료되었지마 백스텍 개념에 의해 다시 로그인을 하는과정으로 돌아간다.
+* popUpTo + popUpToInclusive 있을경우 흐름
+  * backstack -> Z 
+  * 로그인이 완료되었기 떄문에 그 전까지의 스택들으 제거한ㄷ.
+* popUpToInclusive 
+  * true
+    * (자기자신 + popUpTo으로 설정한 fragment) 백스택에서 제거
+  * false (default)
+    * (popUpTo으로 설정한 fragment) 백스텍에서 제거
 ---
 ### 목적지간 데이터 전달은 Safe Args 사용
 * Safe Args는 목적지 간 이동시 안전하게 인자를 전달하도록 객체 및 빌더 클래스를 제공한다.
