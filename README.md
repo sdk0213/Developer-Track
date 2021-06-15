@@ -95,6 +95,7 @@
 * [확장 함수.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/확장%20함수.md)
 * [Void vs Unit vs Nothing.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Void%20vs%20Unit%20vs%20Nothing.md)
 * [init.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/init.md)
+* [nested, open, inner.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/nested%2C%20open%2C%20inner.md)
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
 ## [kotlin with safe Programming](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming)
