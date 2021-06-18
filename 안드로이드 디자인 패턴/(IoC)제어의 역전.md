@@ -1,5 +1,6 @@
 # (IOC)Inversion Of Control = 제어의 역전 - [출처는 develogs님의 티스토리입니다.](https://develogs.tistory.com/19)
-* Don't call us, we'll call you "연락하지마, 내가 연락할게"
+* Don't call us, we'll call you "연락하지마, 내가 연락할게" 
+  * callback이랑 다른점은???
 * 라이브러리는 내 코드가 라이브러리를 이용한다. 즉, 제어권이 내 코드에 있다. 반면 프레임 워크는 프레임 워크가 나의 코드를 실행하는 IOC이다.
 * 클래스의 생성자를 직접 호출해 인스턴스를 생성하는것을 프레임워크에 맡기는것
 * 이해가 잘안가면 출처의 그림 14참고
