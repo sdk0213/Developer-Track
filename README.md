@@ -4,7 +4,8 @@
 <summary>지식 정리 한번에 보기 (펼치기/접기)</summary>
 <div markdown="1">
  
-## 🔖 Book Mark
+# 🔖 북마크
+## Book Mark
 #### 클릭시 해당 내용으로 바로 이동됩니다.
 * 🔤 언어
   * [자바 관련](#java-basic)
