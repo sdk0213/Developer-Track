@@ -7,4 +7,4 @@
 ---
 ### flatmap
 * 하나의 item에 대해 새로운 스트림을 만들어서 여러개의 변형된 item을 발행할 수 있게 된다.
-* 모든 value를 받아서 하나의 흐름(평평하게) 으로 만든다
+* 하나의 value를 받아서 observable을 생성하고 모든 value에 대해서 observable이 생성되면 이를 하나로 묶어 하나의 Observable로 (흐름(평평하게)) 으로 만든다
