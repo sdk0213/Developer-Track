@@ -2,9 +2,9 @@
 # svn -> git 이력 이관하기 - [출처는 https://pjs21s.github.io/svn-to-git/](https://pjs21s.github.io/svn-to-git/)
 ### 환경 : 윈도우 10 (맥에서는 여러번 해봤는데 진행이 안됩니다.)
 * 1. 준비물
- - git
- - svn
- - git bash
+  * git
+  * svn
+  * git bash
 * 2. 위 블로그의 순서대로 작업을 진행합니다.
   * 2-1. 블로그 내용과 다르게 git clone 부분은 생성한 폴더에서 svn 폴더를 입력하여 진행하면 됩니다.
   * 2-2. svn 이력에 참여한 아이디는 전부 users.txt 파일에 입력해야합니다.
