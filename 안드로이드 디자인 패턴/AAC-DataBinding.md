@@ -11,6 +11,11 @@ View대신에 ViewDataBinding을 사용함으로써 UI 컴포넌트와 View의 �
   * rebuild 르 해줘야해서 귀찮다.
   * 생각보다 쉽지 않다.
   * 바인딩시 null처리를 알아서 해준다
+  * [다음 구문은 사용 불가능 [android 공식문서 관련 내용 링크느 여기]](https://developer.android.com/topic/libraries/data-binding/expressions#missing_operations)
+    * this
+    * super
+    * new
+    * 명시적 제네릭(Generic) 호출
 * benefits of Data binding
   * Update the values automatically.(doesn’t have to keep track of all the ways a value can be updated)
   * Very effective for UI Testing.
