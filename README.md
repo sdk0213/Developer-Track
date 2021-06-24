@@ -397,7 +397,7 @@
 * [(Naver D2 임원석)디버깅, 분석 꿀팁.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20임원석)디버깅%2C%20분석%20꿀팁.md)
 
 # 💡 Git
-## [Git](https://github.com/sdk0213/Developer-Track/tree/master/Git)
+## [Git](https://github.com/sdk0213/Developer-Track/tree/master/협업/Git)
 * [맨 위로 가기 ⬆️](#book-mark)
 * [기초설정.md](https://github.com/sdk0213/Developer-Track/blob/master/협업/Git/기본설정.md)
 * [메시지 작성 규칙.md](https://github.com/sdk0213/Developer-Track/blob/master/협업/Git/메시지%20작성%20규칙.md)
