@@ -91,6 +91,18 @@
     NavHostFragment.findNavController(fragment)
     Navigation.findNavController(Activity, @IdRes int viewId)
     Navigation.findNavController(View)
+##### [전역 작업 - Global Action](https://developer.android.com/guide/navigation/navigation-global-action?hl=ko)
+* 모든 곳에서 접근할 수 있도록 하는 전역 액션이다.
+  * 어떤 화면에서든 현재 화면으로 이동
+* <img width="417" alt="global action" src="https://user-images.githubusercontent.com/51182964/123506011-f3e44e00-d69c-11eb-8614-5147c437d9ce.png">
+  * 위 작업을 진행할경우 다음과 같이 Global Action 으로 Action 코드가 추가된ㄷ.
+    ```xml
+    <action android:id="@+id/action_global_view_fragment" app:destination="@id/view_fragment" />
+* 사용 
+  * ```kotlin
+    viewTransactionButton.setOnClickListener { view ->
+        view.findNavController().navigate(R.id.action_global_mainFragment)
+    }
 ##### 백스택 관리
 * ```xml
   <action 
