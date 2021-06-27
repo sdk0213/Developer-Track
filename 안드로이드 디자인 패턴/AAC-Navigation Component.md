@@ -192,6 +192,13 @@
   
   // 또는 다음과 같으 형태의 코드로 사용
   var args = GameWonFragmentArgs.fromBundle(arguments!!)
+ 
+---
+### 애니메이션
+* enterAnim : action을 수행할 때 이동할 화면(destination)에 대한 애니메이션입니다.
+* exitAnim : action을 수행할 때 현재 화면에 대한 애니메이션입니다.
+* popExitAnim : 지난 화면으로 돌아갈 때(pop) 종료되는 화면에 대한 애니메이션입니다.
+* popEnterAnim : 지난 화면으로 돌아갈 때 이동할 화면에 대한 애니메이션입니다.
 
 
   
