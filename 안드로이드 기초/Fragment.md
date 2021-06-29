@@ -19,8 +19,27 @@
         mTransaction.addToBackStack(null);
      }
   }
-  
-* ```java
+### event 처리방식
+* Fragment 에 전달되는 event 들은 사실 activity 가 먼저 받고, 그 다음에 fragment 에 전달이 되는 형태이다. 물론 activity 에서 다 처리하고, fragment 로 전달하지 않도록 하는 방법도 있다.
+### xml 로 정의가능
+--- 
+* ```xml
+  <fragment>
+      ...
+  </fragment>
+---
+### commit, commitAllowingStateLoss
+* commit
+  * commit은 다음 번 스레드가 준비될 때 메인 스레드에 대한 작업으로 예약된다
+  * 기다리기 싫다면 ??
+    * commitNow()
+* 상태를 잃어버릴수 있는 경우
+  * onSaveInstanceState() 이후의 FragmentManager 의 상태, 추가하거나 제거된 fragment의 상태
+* commit는 항상 activity의 onSaveInstanceState()가 호출 되기 전에 수행되어야한다
+  * 위 과정을 따르지 않을경우 Illegal..Exception 발생
+  * 위 과정을 따르기 싫다면 commitAllowingStateLoss 를 사용
+  * 참고사항
+    * onPause() -> **onSavedInstance()** -> onStop() -> maybe call onDestory()
   
 ---
 ### 애니메이션
