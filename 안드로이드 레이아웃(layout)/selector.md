@@ -15,7 +15,7 @@ selector
             android:drawable="@drawable/switch_track_on" />
 
     </selector>
-* ex) switch_track_off
+* ex) switch_track_on And off
  ```xml
   <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/material_50" />
