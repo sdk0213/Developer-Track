@@ -26,7 +26,7 @@
   |subList()|범위 반환|list.subList(1,3)|
 * 확장
   |Extention Function|return|기능|ex|
-  |:--:|:--:|:--:|:--:|
+  |:--:|:--:|:--|:--:|
   |all|Boolean|모든 항목이 지정되 조건에 만족|list.all { it.startsWith("T") }|
   |any|Boolean|하나이상의 항목이 지정된 조건에 만족|list.any { it.startsWith("T") }|
   |asReversed|List|리스트의 역순 리스트 반환|list.asReversed()|
@@ -54,7 +54,7 @@
   |take|List<T>|첫 항목부터 n개의 항목을 반환|list.take(2)  // [One, Two]|
 * \+ Mutable
   |Mutable Function|return|기능|ex|
-  |:--:|:--:|:--:|:--:|
+  |:--:|:--:|:--|:--:|
   |add|Boolean|리스트에 항목을 추가한다|list.add("Six")|
   |clear()||모든 항목 제거|list.clear()|
   |remove|Boolean|하나의 항목을 제거한다|list.remove("Four")|
