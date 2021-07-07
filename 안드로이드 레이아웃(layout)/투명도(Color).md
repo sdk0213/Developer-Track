@@ -25,3 +25,8 @@
   |10%|1A|
   |5%|0D|
   |0%|00|
+
+* [코드로 투명도 조절](https://stackoverflow.com/questions/1492554/set-transparent-background-of-an-imageview-on-android)
+  ```java
+  yourView.getBackground().setAlpha(127); // 여기서 127은 50%가 아니다. 위의 출처 참고
+  
