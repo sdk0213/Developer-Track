@@ -305,6 +305,7 @@
 * [toolbar,actionbar.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/toolbar%2Cactionbar.md)
 * [tools attribute(미리보기 활용).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/tools%20attribute(미리보기%20활용).md)
 * [동적 레이아웃.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/동적%20레이아웃.md)
+* [투명도(Color).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/투명도(Color).md)
 
 # :bulb: RxJava2
 ## [Android Rxjava2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(RxJava2))
