@@ -12,6 +12,7 @@
   * [코틀린 - kotlin](#android-kotlin)
     * [kotlin with safe Programming](#kotlin-with-safe-programming)
 * 📱 안드로이드
+  * [안드로이드 스튜디오](#android-studio)
   * [API 관련](#android-api)
   * [OS 관련](#android-os)
   * [기초](#android-basic)
@@ -129,6 +130,11 @@
 * [3.2.7 함수 참조 사용하기.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/3.2.7%20함수%20참조%20사용하기.md)
 * [3.2.9 함수 재사용하기.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/3.2.9%20함수%20재사용하기.md)
 * [3.3.0 고급 함수 기능.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/3.3.0%20고급%20함수%20기능.md)
+
+
+# :bulb: 안드로이드 스튜디오
+## [Android Studio](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20스튜디오)
+* [디버깅.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/디버깅.md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
