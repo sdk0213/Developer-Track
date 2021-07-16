@@ -1,6 +1,6 @@
 # Fragment
 ---
-### 생성 및 사용. 
+### 생성 및 사용
 * ```java
   private FragmentManager mFragmentManager;
   private FragmentA fragmentA;
