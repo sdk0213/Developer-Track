@@ -1,5 +1,5 @@
 # camera2 - [소스코드 - Camera2 Basic Of Google](https://github.com/googlearchive/android-Camera2Basic)
-
+### 실 개발 참고하며 좋은 소스는 openCaerma2 참고 - SourceForge에 공개되어있다.
 ### 용어
 * CameraManager
   * 카메라 가져오기
