@@ -21,7 +21,7 @@
   }
 ### event 처리방식
 * Fragment 에 전달되는 event 들은 사실 activity 가 먼저 받고, 그 다음에 fragment 에 전달이 되는 형태이다. 물론 activity 에서 다 처리하고, fragment 로 전달하지 않도록 하는 방법도 있다.
-### xml 로 정의가능
+### xml 로 정의가 가능하다.
 --- 
 * ```xml
   <fragment>
