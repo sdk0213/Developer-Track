@@ -18,6 +18,10 @@
   * [기초](#android-basic)
   * [중급](#android-intermediate)
   * [아키텍쳐](#android-architecture)
+    * 기본
+    * Android DI(Dagger2)
+    * 디자인 패턴의 기본
+    * 객체 지향 프로그래밍
   * [라이브러리](#android-library)
   * [레이아웃](#android-layout)
   * [리엑티브자바 - RxJava2](#android-rxjava2)
@@ -227,9 +231,7 @@
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [맨 위로 가기 ⬆️](#book-mark)
-* [객체 지향 프로그래밍 - 인프런(최범균) 강의정리](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn))
-  * [1. 비용과 변화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/1.%20비용과%20변화.md)
-  * [2. 객체](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/2.%20객체.md)
+##### 기본
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [안드로이드 클린 아키텍쳐.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/안드로이드%20클린%20아키텍쳐.md)
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
@@ -283,6 +285,12 @@
 * [Builder Pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Builder%20Pattern.md)
 * [Repository pattern.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Repository%20pattern.md)
 
+##### 객체 지향 프로그래밍 
+* [객체 지향 프로그래밍 - 인프런(최범균) 강의정리](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn))
+  * [1. 비용과 변화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/1.%20비용과%20변화.md)
+  * [2. 객체](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/2.%20객체.md) 
+ 
+ 
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
 * [맨 위로 가기 ⬆️](#book-mark)
