@@ -104,7 +104,7 @@
 * [this@.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/this%40.md)
 * [collection.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/collection.md)
 
-# :bulb: kotlin with safe Programming - 내용이 너무 깊어서 현재 중단
+# :bulb: kotlin with safe Programming - 내용이 너무 깊어서 코틀린 활용 가능한 정도만 공부
 ## [kotlin with safe Programming](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming)
 * [맨 위로 가기 ⬆️](#book-mark)
 * [1. 안전한 프로그래밍.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/kotlin%20with%20safe%20Programming/1.%20안전한%20프로그래밍.md)
