@@ -1,0 +1,91 @@
+# 캡슐화(Encapsulation)
+### 캡슐화란
+* 데이터 + 관련 기능 묶기
+* 객체가 기능을 어떻게 구현했는지 외부에 감추는 것
+* 예전에는 정보 은닉의
+##### 하는 이유
+* 외부에 영향 없이 객체 내부 구현이 가능하기 때문
+---
+### 캠슐화를 안한다면?
+* ```java
+  if (acc.getMembership() == REGULAR && acc,getExoDate().isAfter(now())) {
+      .. 정회원 가능
+  }
+  
+  // 5년 이상 사용자 일부 기능 정회원 혜택 1개월 무상 제공으로 변경된다면???
+  
+  if (acc.getMembership() == REGULAR &&
+    (
+    (acc.getServiceDate().isAfter(fiveYearAgo) && acc.getExpDate().isAfte...
+    ....
+    )
+  )
+* 위 와 같이 요구사항의 변경으로 코드가 복잡해지고 위의 코드를 사용하는 곳은 전부다 변경해야됨
+* 요구사항의 변화 -> 데이터 구조/사용 변화 발새 -> 수정 -> 매우 여러곳을 수정해야함
+* 캡슐화하지 않으면 이런식으로 바뀜
+---
+### 캡슐화를 사용한다면?
+* 기능을 제공하고 구현 상세를 감추
+* ```java
+  if (acc.hasRegularPermission()) {
+    ...정회권 기능
+  }
+  
+  public class Account {
+    private Membership membership;
+    private DAte expDate;
+    
+    public boolean hasRegularPermission() {
+      return membership == REGULAR &&
+             expDate.isAfter(now))
+    }
+    ...
+    
+  }
+  
+  // 위 상태에서 요구사항이 바뀌었을때?
+  
+  ..Account.. {
+    public boolean hasRegularPermission() {
+      return membership == REGULAR &&
+             expDate.isAfter(now)) && 조건 추가 
+    }
+  }
+* 요구사항이 변경되었을때 연쇄적으로 변경이 전파되는것을 최소화할수 있다.
+* 요구사항의 변화 -> 데이터 구조/사용 변화 발새 -> 수정 -> 한곳마 수정하면됨
+##### 장점
+* 기능에 대한 (의도) 이해를 높임 -> 코드 가독성 증가
+
+---
+### 두 가지 규칙
+##### Tell, Don't Ask
+* 데이터 달라 하지 말고 해달라고 하기
+* ```java
+  if (acc.getMembership() == REGULAR) {
+      ...정회원 기능
+  }
+    
+  // 아래처럼 그냥 해달라고 하기
+    
+  if (acc.hasRegularPermission()) {
+      ...정회원 기능
+  }
+##### Demeter's Law (데미태르의 법칙)
+* 메서드에서 생성한 객체의 메서드만 호출
+* 파라미터로 받은 객체의 메서드만 호출
+* 필드로 참조하는 객체의 메서드만 호출
+* 메서드 하나만 호출하라는 방식으로 바꾸라는 뜻으로 이런 식으로 작성할경우 캡슐화가 될 가능성이 높아짐
+* ```java
+  // 호출하고 또 호출하고
+  acc.getExpDate().isAfter(now)
+  
+  Date date = acc.getExpDate();
+  date.isAfter(now);
+* ```java
+  acc.isExpired();
+  acc.isValid(now);
+---
+### 정리
+* 캡슐화: 기능의 구현을 외부에 감춤
+* 캡슐화를 통해 기능을 사용하는 코드에 영향을 주지 않고 (또는 최소화) 내부 구현을 변경할 수 있는 유연함
+* 캡슐화를 잘할수록 수정하는 비용이 낮아질 가능성이 높아진다.
