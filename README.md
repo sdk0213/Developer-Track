@@ -290,6 +290,7 @@
   * [1. 비용과 변화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/1.%20비용과%20변화.md)
   * [2. 객체](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/2.%20객체.md) 
   * [3. 캡슐화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/3.%20캡슐화.md) 
+  * [4. 캡슐화 심화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/4.%20캡슐화%20심화.md) 
  
  
 # :bulb:  안드로이드 라이브러리(Library)
