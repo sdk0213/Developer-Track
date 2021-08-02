@@ -1,4 +1,6 @@
 # 투명도
+* 쉽게는 xml/coloR 파일에서 확인가능
+  * <img width="407" alt="스크린샷 2021-08-02 오후 1 22 30" src="https://user-images.githubusercontent.com/51182964/127803994-344078a1-fc2a-4d17-b459-a794529870ca.png">
 * ex)
   ```xml
   <color name="tranparent_material_50">#D9EDE7F6</color>
