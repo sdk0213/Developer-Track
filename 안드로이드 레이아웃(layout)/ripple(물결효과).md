@@ -1,5 +1,6 @@
 ripple
 ---
+* ![60Byk](https://user-images.githubusercontent.com/51182964/128011953-3ec6cac3-89e3-48a9-b509-87d309c3bfd0.gif)
 * 사전적 의미
  * 잔물결 모양으로 오글쪼글하게 짠 얇은 바탕의 평직물
 * 일반적으로 버튼을 눌렀을때 순식간에 색이 변하는 selector 보다 조금더 자연스러운 ripple 의 형태가 깔끔해보임
