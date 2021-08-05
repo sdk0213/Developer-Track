@@ -329,6 +329,7 @@
 * [동적 레이아웃.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/동적%20레이아웃.md)
 * [투명도(Color).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/투명도(Color).md)
 * [ActionBar vs Toolbar.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/ActionBar%20vs%20Toolbar.md)
+* [레아아웃 Id 동적생성.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/레아아웃%20Id%20동적생성.md)
 
 # :bulb: RxJava2
 ## [Android Rxjava2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(RxJava2))
