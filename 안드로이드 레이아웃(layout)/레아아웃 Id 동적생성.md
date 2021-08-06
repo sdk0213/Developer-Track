@@ -13,3 +13,5 @@
   for (i : Int in 1..3) {
     resources.getIdentifier("layout" + i,"id", mContext.packageName)
   }
+##### 아주 간단하게는 View.generateViewId() 를 사용하여서 생성
+* View.generateViewId()
