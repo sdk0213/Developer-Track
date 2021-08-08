@@ -72,7 +72,7 @@
 * [type.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/type.md)
 * [고차함수, 일급함수, 익명함수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/고차함수%2C%20일급함수%2C%20익명함수.md)
 * [고차함수와 람다함수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/고차함수와%20람다함수.md)
-* [물음표(?).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/물음표(%3F).md)
+* [물음표(?)(null-check).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/물음표(%3F)(null-check).md)
 * [익명객체와 옵저버 패턴.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/익명객체와%20옵저버%20패턴.md)
 * [함수.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/함수.md)
 * [First-class citizen(일급 객체).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20공부(Kotlin)/First-class%20citizen(일급%20객체).md)
