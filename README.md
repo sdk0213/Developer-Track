@@ -293,6 +293,7 @@
   * [4. 캡슐화 심화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/4.%20캡슐화%20심화.md) 
   * [5. 다형성과 추상화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/5.%20다형성과%20추상화.md)
   * [6. 추상화 예제.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/6.%20추상화%20예제.md) **(매우 중요)**
+  * [7. 상속보단 조립.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/7.%20상속보단%20조립.md)
  
  
 # :bulb:  안드로이드 라이브러리(Library)
