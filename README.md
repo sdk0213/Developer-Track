@@ -292,10 +292,12 @@
   * [3. 캡슐화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/3.%20캡슐화.md) 
   * [4. 캡슐화 심화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/4.%20캡슐화%20심화.md) 
   * [5. 다형성과 추상화](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/5.%20다형성과%20추상화.md)
-  * [6. 추상화 예제.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/6.%20추상화%20예제.md) **(매우 중요)**
-  * [7. 상속보단 조립.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/7.%20상속보단%20조립.md) 
-  * [8. 기능의 책임 분리.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/8.%20기능의%20책임%20분리.md)  **(매우 중요)**
- 
+  * [6. 추상화 예제](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/6.%20추상화%20예제.md) **(매우 중요)**
+  * [7. 상속보단 조립](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/7.%20상속보단%20조립.md) 
+  * [8. 기능의 책임 분리](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/8.%20기능의%20책임%20분리.md)  **(매우 중요)**
+  * [9. 의존과 DI](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/9.%20의존과%20DI.md)
+  * [10. 정리](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/10.%20정리.md)
+  * [11. DIP(의존역전원칙)](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/객체%20지향%20프로그래밍(최범균-inflearn)/11.%20DIP.md)
  
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
@@ -498,7 +500,8 @@ Skill Stack
   * CI/CD
   * versioning
   * lint
-    * ktlint와 detekt 
+    * ktlint와 detekt
+* <img src="https://user-images.githubusercontent.com/51182964/129470535-23ab469b-95d3-4d2a-8b5a-42e7a53c915b.png" width="50%" height="50%">
   
 Coding Test
 ---
