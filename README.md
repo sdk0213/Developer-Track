@@ -158,7 +158,7 @@
 # :bulb: 안드로이드 OS 관련
 ## [Android OS](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20OS)
 * [맨 위로 가기 ⬆️](#book-mark)
-* [OS 6.0 - OS_6.0_Marshmallow.md]()
+* [OS 6.0 - OS_6.0_Marshmallow.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20OS/OS_6.0_Marshmallow.md)
 * [OS 8.0 - OS 8.0_Oreo.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20OS/OS%208.0_Oreo.md)
 * [OS 8.0 - implicit Broadcast Exceptions.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20OS/OS%208.0_Oreo/Implicit%20Broadcast%20Exceptions.md)
 * [OS 8.0 - Notification.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20OS/OS%208.0_Oreo/Notification.md)
@@ -302,18 +302,21 @@
 # :bulb:  안드로이드 라이브러리(Library)
 ## [Android Library](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20라이브러리(Library))
 * [맨 위로 가기 ⬆️](#book-mark)
-* Basic
-  * [Json.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Json.md)
-  * [Gson.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Gson.md)
-* Glide
-  * [glide - glide.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/glide.md)
-  * [glide - Generated API.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Generated%20API.md)
-  * [glide - Getting Stated(시작하기).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Getting%20Stated(시작하기).md)
-  * [glide - Module classes and annotations.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Module%20classes%20and%20annotations.md)
-  * [glide - Options.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Options.md)
-  * [glide - Registering Components.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Registering%20Components.md)
-  * [glide - example code.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/example%20code.md)
-  * [glide - prepend example.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/prepend%20example.md)
+##### Basic
+* [Json.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Json.md)
+* [Gson.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Gson.md)
+##### Glide
+* [glide - glide.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/glide.md)
+* [glide - Generated API.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Generated%20API.md)
+* [glide - Getting Stated(시작하기).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Getting%20Stated(시작하기).md)
+* [glide - Module classes and annotations.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Module%20classes%20and%20annotations.md)
+* [glide - Options.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Options.md)
+* [glide - Registering Components.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Registering%20Components.md)
+* [glide - example code.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/example%20code.md)
+* [glide - prepend example.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/prepend%20example.md)
+##### Retrofit
+* [Retrofit.md - 기본](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Retrofit.md)
+* [Retrofit HTTP 전체 응답 확인하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Retrofit%20HTTP%20전체%20응답%20확인하기.md)
 * [OkHttp.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/OkHttp.md)
 * [Volley.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Volley.md)
 * [butterKnife.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/butterKnife.md)
@@ -321,8 +324,6 @@
 * [timber.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/timber.md)
 * [찰스 paging.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/찰스%20paging.md)
 ##### Retrofit
-* [Retrofit.md - 기본](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Retrofit.md)
-* [Retrofit HTTP 전체 응답 확인하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Retrofit%20HTTP%20전체%20응답%20확인하기.md)
 
 # :bulb: 안드로이드 레이아웃(layout)
 ## [Android Layout](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20레이아웃(layout))
