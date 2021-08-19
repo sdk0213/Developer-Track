@@ -19,10 +19,13 @@
   * [중급](#android-intermediate)
   * [아키텍쳐](#android-architecture)
     * 기본
-    * Android DI(Dagger2)
+    * 의존성 주입 - Dagger2
     * 디자인 패턴의 기본
     * 객체 지향 프로그래밍
   * [라이브러리](#android-library)
+    * 기본
+    * Glide
+    * Retrofit
   * [레이아웃](#android-layout)
   * [리엑티브자바 - RxJava2](#android-rxjava2)
   * [테스트](#android-test)
@@ -305,6 +308,12 @@
 ##### Basic
 * [Json.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Json.md)
 * [Gson.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Gson.md)
+* [OkHttp.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/OkHttp.md)
+* [Volley.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Volley.md)
+* [butterKnife.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/butterKnife.md)
+* [lombok.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/lombok.md)
+* [timber.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/timber.md)
+* [찰스 paging.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/찰스%20paging.md)
 ##### Glide
 * [glide - glide.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/glide.md)
 * [glide - Generated API.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/glide/Generated%20API.md)
@@ -317,13 +326,6 @@
 ##### Retrofit
 * [Retrofit.md - 기본](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Retrofit.md)
 * [Retrofit HTTP 전체 응답 확인하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/Retrofit%20HTTP%20전체%20응답%20확인하기.md)
-* [OkHttp.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/OkHttp.md)
-* [Volley.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/Volley.md)
-* [butterKnife.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/butterKnife.md)
-* [lombok.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/lombok.md)
-* [timber.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20라이브러리(Library)/timber.md)
-* [찰스 paging.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20라이브러리(Library)/찰스%20paging.md)
-##### Retrofit
 
 # :bulb: 안드로이드 레이아웃(layout)
 ## [Android Layout](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20레이아웃(layout))
