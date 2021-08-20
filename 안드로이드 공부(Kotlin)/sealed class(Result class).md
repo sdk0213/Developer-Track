@@ -46,7 +46,7 @@
     class Delivered(val trackingId: String, val receiversName : String) : DeliveryStatus()
 ##### Functions
 * 여러개의 Function 을 사용가능하다.
-* ```koltin
+* ```kotlin
   // ENUM 은 하나의 cancelOrder라는 함수만 사용가능하다.
   enum class DeliveryStatus {
     PREPARING {
