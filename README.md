@@ -342,6 +342,7 @@
 * [ActionBar vs Toolbar.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/ActionBar%20vs%20Toolbar.md)
 * [레아아웃 Id 동적생성.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/레아아웃%20Id%20동적생성.md)
 * [statusbar.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/statusbar.md)
+* [GridLayout View 맞추기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/GridLayout%20View%20맞추기.md)
 
 # :bulb: RxJava2
 ## [Android Rxjava2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(RxJava2))
