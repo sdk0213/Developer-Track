@@ -56,6 +56,22 @@
 * ```kotlin
   val action = {person: Person, message: String -> sendMail(person, message)}
   val action = ::sendMail
+* FusedLocation을 사용하여 Location 을 성공하였을때 처리
+  ```kotlin
+  // 1차 변환
+  fusedLocationClient.lastLocation.addOnSuccessListener(object: OnSuccessListener<Location>{
+            override fun onSuccess(location: Location?) {
+                setLocation(location!!)
+            }
+
+        })
+        
+  // 2차 변환
+  fusedLocationClient.lastLocation.addOnSuccessListener { location -> setLocation(location!!) }
+  
+  // 3차 변환
+  fusedLocationClient.lastLocation.addOnSuccessListener(::setLocation)
+  
 > ::클래스
 * ```kotlin
   data class Person(val name: String, val age: Int)
