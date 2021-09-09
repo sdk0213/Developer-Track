@@ -4,7 +4,7 @@
 * 예)
   ```java
   Observable<Integer> source = Observable.just(1)
-      .subscribeOn( () -> System.out.println("doOnSubscrbie"));
+      .doOnUnsubscribe( () -> System.out.println("doOnSubscrbie"));
       
   source.subscrbie(
     { i -> System.out.println("Next " + i)   },
@@ -17,5 +17,20 @@
   Next: 0
   Completed
 ---
-### doOnSubscribe
+##### doOnSubscribe
 * 옵저버들이 구독할때 상태 처리 
+##### doOnUnscribe
+* 옵저버들이 구독 해제할때 상태 처리
+##### doOnNext
+* 아이템을 발행할때 상태 처리
+##### doOnComplete
+* 아이템 발행 완료되었을때 상태 처리
+##### doOnError
+* 아이템 발행중 에러가 발생했을때 상태 처리
+##### doOnEach
+* onNext, onError, onComplete 에서 상태 처리
+##### doOnTerminate
+* onError, onComplete 에서 상태 처리
+##### doAfterTerminate
+* onNext, onError 에서 상태 처리
+
