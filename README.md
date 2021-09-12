@@ -193,6 +193,7 @@
 * [FCM GCM.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/FCM%20GCM.md)
 * [Garbage Collector.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/Garbage%20Collector.md)
 * [IPC, Transaction, Binder, AIDL, Parcel, Bundle.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/IPC%2C%20Transaction%2C%20Binder%2C%20AIDL%2C%20Parcel%2C%20Bundle.md)
+* [aidl 심화(with 'to jar')](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/aidl%20심화(with%20'to%20jar').md)
 * [Launchmode(activity stack).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/Launchmode(activity%20stack).md)
 * [Library 배포.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/Library%20배포.md)
 * [LifeCycle(생명주기).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/LifeCycle(생명주기).md)
