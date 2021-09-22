@@ -6,3 +6,4 @@
 
 ### Serializable
 * Serializable의 목적은 자바 Object를 byte array로 변경
+* 자바에서 지원해주는 직렬화해주는 클래스라고 생각하면 된다
