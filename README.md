@@ -66,6 +66,7 @@
 * [Executor.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Executor.md)
 * [Callable and Future.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/Callable%20and%20Future.md)
 * [POJO 와 Java Beans.md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/POJO%20와%20Java%20Beans.md)
+* [직렬화(Serializable).md](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/직렬화(Serializable).md)
 
 # :bulb: 코틀린
 ## [Android Kotlin](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(Kotlin))
