@@ -2,6 +2,7 @@
 * Deprecated 되어서 사용하지 않는다.</strike>
 ---
 ### TikXML - [출처는 블랙빈님의 티스토리](https://bb-library.tistory.com/177)
+* [Tickaroo의 tikxml 라이브러리](https://github.com/Tickaroo/tikxml)
 * Retrofit 사용시 XML 타입을 파싱하고 싶을때 사용하는 라이브러리
 * ```kotlin
   Retrofit.Builder()
