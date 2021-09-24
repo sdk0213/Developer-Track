@@ -56,7 +56,7 @@
       val totalCount: String
   )
 
-  @Xml(name="header")
+  @Xml
   data class AreaXmlItems(
       @Element(name = "item")
       val item: List<AreaEntity>
