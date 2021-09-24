@@ -14,7 +14,7 @@
   ```kotlin 
   TikXml.Builder().exceptionOnUnreadXml(false).build()
   
-##### data class 형식 - [코드 출처는 블랜빈님 블로그 코드](https://bb-library.tistory.com/177)
+##### data class 형식
 * ```kotlin
   package com.turtle.amatda.data.model
 
