@@ -16,38 +16,64 @@
   
 ##### data class 형식 - [코드 출처는 블랜빈님 블로그 코드](https://bb-library.tistory.com/177)
 * ```kotlin
-  @Xml(name="response")
-  data class Tour(
-        @Element
-        val header: Header,
-        @Element
-        val body: Body,
-  ){
+  package com.turtle.amatda.data.model
 
+  import com.tickaroo.tikxml.annotation.Element
+  import com.tickaroo.tikxml.annotation.PropertyElement
+  import com.tickaroo.tikxml.annotation.Xml
+
+  @Xml(name="")
+  data class AreaXml(
+      @Element
+      val response: AreaXmlResponse
+  )
+
+  @Xml(name="response")
+  data class AreaXmlResponse(
+      @Element
+      val header: AreaXmlHeader,
+      @Element
+      val body: AreaXmlBody
+  )
+
+  @Xml(name="header")
+  data class AreaXmlHeader(
+      @PropertyElement
+      val resultCode: Int,
+      @PropertyElement
+      val resultMsg: String
+  )
+
+  @Xml(name="body")
+  data class AreaXmlBody(
+      @Element
+      val items: AreaXmlItems,
+      @PropertyElement
+      val numOfRows: String,
+      @PropertyElement
+      val pageNo: String,
+      @PropertyElement
+      val totalCount: String
+  )
+
+  @Xml(name="header")
+  data class AreaXmlItems(
+      @Element(name = "item")
+      val item: List<AreaEntity>
+  )
+  
+  @Xml
+  data class AreaEntity (
+      @PropertyElement(name="code")
+      val code: String?,
+      @PropertyElement(name="name")
+      val name: String?,
+      @PropertyElement(name="rnum")
+      val rnum : String?
+  ){
+      constructor() : this(null,null,null)
   }
 
-  @Xml(name = "header")
-  data class Header(
-        @PropertyElement
-        val resultCode: Int,
-        @PropertyElement
-        val resultMsg: String,
-  )
-
-  @Xml(name = "body")
-  data class Body(
-        @Element
-        val items: Items,
-        @PropertyElement
-        val numOfRows: Int,
-        @PropertyElement
-        val pageNo: Int,
-        @PropertyElement
-        val totalCount: Int,
-  )
-  ...
-  ..
-  .
 ##### @Xml
 * 하위 Element 들의 상위 개념
 ##### @Element
