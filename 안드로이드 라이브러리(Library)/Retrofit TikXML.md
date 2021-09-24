@@ -48,6 +48,12 @@
   ...
   ..
   .
+##### @Xml
+* 하위 Element 들의 상위 개념
+##### @Element
+* 하위 ProportyElement 들의 상위 개념
+##### @PropertyElement
+* 데이터 그 자체
 ##### nullable 로 해주기
 * POJO 에서 받은 데이터가 없을수도 있기 때문이다.
   * 만약 XML에서 받으려고 했던 일부 프로퍼티가 존재하지 않을 경우 null로 받을 수 있도록 처리
