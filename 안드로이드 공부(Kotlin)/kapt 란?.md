@@ -7,6 +7,7 @@
 ##### 주의사항
 * annotationProcessor를 kapt로 바꾼다고 모든 라이브러리가 정상적으로 동작을 보장하지는 않는다 우선 해당 라이브러리가 kapt를 지원하는지 알아봐야한다
 ##### 설정
-* 
-apply plugin: 'kotlin-kapt'
-annotation processor -> kapt
+* ```gradle
+  apply plugin: 'kotlin-kapt'
+  
+  annotation processor -> kapt 로 변경하기
