@@ -1,6 +1,6 @@
 # Generic 런타임중 구별하기
 #### is 사용
-* kotlin
+* ```kotlin
   fun <T> printWhatAmI(t: T) {
         if (t is String) {
             println("i'm String")
@@ -10,7 +10,7 @@
   }
  
 #### type 사용
-* kotlin
+* ```kotlin
   fun <T> printWhatAmI(t: T, type: Class<T>) {
         when (type) {
             String::class -> {
@@ -22,8 +22,8 @@
         }
   }
 
-#### reified 사용
-* kotlin
+#### reified 사용 - 추천
+* ```kotlin
   inline fun <reified T> printWhatAmI() {
         when (T::class) {
             String::class -> {
