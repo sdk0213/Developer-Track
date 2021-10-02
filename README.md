@@ -109,6 +109,7 @@
 * [this@.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/this%40.md)
 * [collection.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/collection.md)
 * [kapt 란?.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/kapt%20란%3F.md)
+* [Generic 런타임중 구별하기.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/Generic%20런타임중%20구별하기.md)
 
 
 # :bulb: kotlin with safe Programming - 내용이 너무 깊어서 코틀린 활용 가능한 정도만 공부
