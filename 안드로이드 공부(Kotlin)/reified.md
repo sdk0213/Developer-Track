@@ -1,11 +1,14 @@
 # reified - [출처는 [boilerplate님]](https://boilerplate.tistory.com/57)[[sungjk님]](https://sungjk.github.io/2019/09/07/kotlin-reified.html)
-### reified 사전적의미 : 구체화 된 -> 개념을 구체화하다.
-### 무엇을 할까?
+### reified ?
+* 구체화 된 -> 개념을 구체화하다.
+### 언제사용?
+* Runtime에 타입 정보를 알고 싶을 때 사용합니다
+  * 런타임에 타입 T에 접근가능 -> 인스턴스 체크 가능(someVar is T)
 * |시간|Compile|Runtime|
   |:--:|:--:|:--:|
   |Genric Type T 접근|불가능|가능|
-* 런타임에 타입 T에 접근가능 -> 인스턴스 체크 가능(someVar is T)
-### 주의 : reified 타입 파라미터로 작성된 인라인 함수는 자바 코드 불가능
+### 주의사항
+* reified 타입 파라미터로 작성된 인라인 함수는 자바 코드 불가능
 ### reified 가 없다면?? 
 * ```kotlin
   // 컴파일 에러  
