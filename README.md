@@ -148,6 +148,8 @@
 ## [Android Studio](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20스튜디오)
 * [맨 위로 가기 ⬆️](#book-mark)
 * [디버깅.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/디버깅.md)
+* [모듈(Module).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/모듈(Module).md)
+* [gradle.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/gradle.md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
