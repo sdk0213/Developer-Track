@@ -1,4 +1,4 @@
-RecyclerView.Aadapter
+RecyclerView-Aadapter
 ===
 출처 : https://recipes4dev.tistory.com/m/154
 출처 : <https://ppizil.tistory.com/25>
