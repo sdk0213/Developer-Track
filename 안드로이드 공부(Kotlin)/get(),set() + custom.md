@@ -2,6 +2,7 @@
 ### 자동생성
 * 코틀린에서 게터와 세터는 별도의 작업없이 자동으로 생성되어 "." 를 통해 사용
 ### 커스텀 getter, setter 생성
+* get() 을 사용할경우 계속 새로운 객체로 생성된다.
 * ```kotlin
   class Person {
     var name: String
