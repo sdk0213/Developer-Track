@@ -8,7 +8,8 @@
        )
       // 위 코드와 동일한 동작
       .flatMapIterable(numberList -> numberList)
-* ```kotlin
+* 방법1
+  ```kotlin
   Observable<List<SourceObject>> source = ...
   source.flatMap(list ->
         Observable.fromIterable(list)
@@ -17,3 +18,14 @@
             .toObservable() // Required for RxJava 2.x
     )
   .subscribe(resultsList -> ...);
+* 방법2
+  ```kotlin
+  Observable.from(Arrays.asList(new String[] {"1", "2", "3", }))
+    .map(s -> Integer.valueOf(s))
+    .reduce(new ArrayList<Integer>, (list, s) -> {
+        list.add(s);
+        return list;
+    }) // 또는 toList() 사용
+    .subscribe(i -> {
+        // Do some thing with 'i', it's a list of Integer.
+    });
