@@ -10,6 +10,7 @@
       .flatMapIterable(numberList -> numberList)
 * 방법1
   ```kotlin
+  // 예제 코드 1
   Observable<List<SourceObject>> source = ...
   source.flatMap(list ->
         Observable.fromIterable(list)
@@ -18,6 +19,21 @@
             .toObservable() // Required for RxJava 2.x
     )
   .subscribe(resultsList -> ...);
+  
+  // 예제 코드 2
+  return factory.getTripAll().flatMapIterable { it }.map { tripMapper.entityToMap(it) }
+            .toList()
+            .toFlowable()
+ 
+  // 위 코드와 아래코드는 동작상 같다.
+  return factory.getTripAll().flatMap { list ->
+      Flowable.fromIterable(list)
+              .map { tripMapper.entityToMap(it) }
+              .toList()
+              .toFlowable()
+  }
+        
+  
 * 방법2
   ```kotlin
   Observable.from(Arrays.asList(new String[] {"1", "2", "3", }))
