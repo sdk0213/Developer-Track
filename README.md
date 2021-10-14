@@ -439,7 +439,7 @@
 * [변환 (compose).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(RxJava2)/Android%20실전/변환%20(compose).md)
 * [doOn..(상태대응).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(RxJava2)/Android%20실전/doOn..(상태대응).md)
 * [합치기 (concat(순서), merge(병합), zip(조건병합)).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(RxJava2)/Android%20실전/합치기%20(concat(순서),%20merge(병합),%20zip(조건병합)).md)
-* [List<T> to List<R> in Rx.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(RxJava2)/Android%20실전/List%3CT%3E%20to%20List%3CR%3E%20in%20Rx.md)
+* [List&#60;T&#62; to List&#60;R&#62; in Rx.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(RxJava2)/Android%20실전/List%3CT%3E%20to%20List%3CR%3E%20in%20Rx.md)
 
 # :bulb: 안드로이드 테스트주도개발(TDD)
 ## [Android Test](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20테스트주도개발(TDD))
