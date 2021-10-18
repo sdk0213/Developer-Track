@@ -250,6 +250,7 @@
 * [AAC-DataBinding.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-DataBinding.md)
 * [AAC-LiveData.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-LiveData.md)
   * [MediatorLiveData.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/MediatorLiveData.md)
+  * [단일 이벤트 처리.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/단일%20이벤트%20처리.md)
 * [AAC-View Model.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/AAC-View%20Model.md)
   * [VM_SavedState.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/VM_SavedState.md) 
 * [AAC-Room.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Room.md)
