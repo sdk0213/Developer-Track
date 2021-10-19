@@ -150,6 +150,7 @@
 * [디버깅.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/디버깅.md)
 * [모듈(Module).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/모듈(Module).md)
 * [gradle.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/gradle.md)
+* [flavor 에 따른 의존성 주입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/flavor%20에%20따른%20의존성%20주입.md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
