@@ -236,7 +236,6 @@
 * [맨 위로 가기 ⬆️](#book-mark)
 * [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/분리된%20뷰들%20실시간%20동기화.md)
 * [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Coroutine(코루틴).md)
-* [JsonReader.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/JsonReader.md)
 * [onSavedInstance(상태저장).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/onSavedInstance(상태저장).md)
 
 # :bulb: 안드로이드 아키텍쳐
