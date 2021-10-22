@@ -237,6 +237,7 @@
 * [분리된 뷰들 실시간 동기화.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/분리된%20뷰들%20실시간%20동기화.md)
 * [Coroutine(코루틴).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Coroutine(코루틴).md)
 * [onSavedInstance(상태저장).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/onSavedInstance(상태저장).md)
+* [BroadCastReceiver 관련 제한 정책.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/BroadCastReceiver%20관련%20제한%20정책.md)
 
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
