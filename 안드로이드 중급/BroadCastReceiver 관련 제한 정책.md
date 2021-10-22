@@ -10,4 +10,4 @@
   * JobService 또는 Workmanager 사용
   * [goAsync() 호출](https://developer.android.com/guide/components/broadcasts?hl=ko#effects-process-state)
 ### 지오펜싱과 브로드캐스트
-  * 지오펜싱은 백그라운드 제한이걸려도 브로드캐스트를 정상적으로 수신한다. 왜 이게 가능한것일까?
+  * 백그라운드 제한이 걸리며 브로드캐스트가 작동하지 않는다.
