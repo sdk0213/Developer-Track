@@ -16,6 +16,7 @@
       }
    }
 ##### 오직 읽기만 가능하게 하고싶을경우
+* 단순 private 일 경우 외부에서 가져오는것도 불가능하지만 외부에서는 읽을수 있게하면서 수정은 내부에서 하고싶을때
 * ```kotlin
   var setterVisibility: String = "abc" 
     private set // 수정은 오직 private 설정이기에 내부에서만 가능하다.
