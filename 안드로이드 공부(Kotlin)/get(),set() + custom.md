@@ -15,6 +15,19 @@
         field = value
       }
    }
+##### 오직 읽기만 가능하게 하고싶을경우
+* ```kotlin
+  var setterVisibility: String = "abc" 
+    private set // 수정은 오직 private 설정이기에 내부에서만 가능하다.
+    
+  // 위 코드는 아래 코드와 동일하다
+  
+  var setterVisibility: String = "abc" 
+    get() = field
+    private set(value) { 
+        field = value 
+    }
+   
 ### 주의점
 * ```kotlin
   var age: Int
