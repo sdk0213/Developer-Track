@@ -242,6 +242,10 @@
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
 * [맨 위로 가기 ⬆️](#book-mark)
+##### 클린 아키텍쳐 (자주 보기)
+* <img width="275" height="250" alt="스크린샷 2021-10-23 오후 1 42 38" src="https://user-images.githubusercontent.com/51182964/138542745-110b95ae-18e9-4c30-84ea-7df6a8d6faab.png"> <img width="275" height="250" alt="스크린샷 2021-10-23 오후 1 42 30" src="https://user-images.githubusercontent.com/51182964/138542750-8eb70f70-2cc6-4ce3-b80d-3bdfe42bae09.png">
+* <img width="800" alt="스크린샷 2021-10-23 오후 1 36 52" src="https://user-images.githubusercontent.com/51182964/138542753-853d5c4b-074f-4595-b43a-22465a848979.png">
+
 ##### 기본
 * [안드로이드 아키텍쳐 가이드.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20디자인%20패턴/안드로이드%20아키텍쳐%20가이드.md)
 * [안드로이드 클린 아키텍쳐.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/안드로이드%20클린%20아키텍쳐.md)
