@@ -71,7 +71,7 @@
   override val coroutineContext: CoroutineContext
     get() = Dispatchers.Main + job
 * 단순히 = 으로 초기화를 할경우에는 job이 변했을경우의 값을 가져오지 못한다.
-* 변화되는 값에 대해서 val 로 선언했을때 위와 같이 get()으로 초기화를 해준다. 
+* 변화되는 값에 대해서 val 로 선언했을때 위와 같이 get()으로 초기화를 해준다.  ->  왜냐하며 get()은 항상 새로운객체를 생성해서 가져오기 때문에 가져올당시의 job을 새롭게 가져온다.
   
   
   
