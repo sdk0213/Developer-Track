@@ -151,6 +151,7 @@
 * [모듈(Module).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/모듈(Module).md)
 * [gradle.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/gradle.md)
 * [flavor 에 따른 의존성 주입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/flavor%20에%20따른%20의존성%20주입.md)
+* [java, groovy plugin not compatible with android plugin (동시 지원 불가).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/java,%20groovy%20plugin%20not%20compatible%20with%20android%20plugin%20(동시%20지원%20불가).md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
