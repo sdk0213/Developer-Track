@@ -291,6 +291,7 @@
 * [ViewModel과의 상호운용.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/ViewModel과의%20상호운용.md)
 * [Assisted Inject.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Assisted%20Inject.md)
 * [Assisted Inject_Workmnager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/Assisted%20Inject_Workmnager.md)
+* [@module in abstract class and interface.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)Dagger2/%40module%20in%20abstract%20class%20and%20interface.md)
 
 ##### 디자인 패턴의 기본
 * [SOLID 원칙](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/SOLID%20원칙.md)
