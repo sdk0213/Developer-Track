@@ -7,6 +7,12 @@
   |List|O|O|O|
   |Set|X|X|X|
   |Map|X|X|O|
+##### Set 의 대표적인 세가지
+* |종류|데이터 관리|
+  |:--:|:--:|
+  |HashSet|순서 보장안됨|
+  |TreeSet|오름차순으로 보장|
+  |LinkedHashSet|입력한 순서대로 보장|
 ---
 ### Type
 * |Collection|Immutable|Mutable|
