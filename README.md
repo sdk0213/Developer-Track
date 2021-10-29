@@ -228,7 +228,6 @@
 * [자바, 안드로이드 코딩 규칙.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20기초/자바%2C%20안드로이드%20코딩%20규칙.md)
 * [RecyclerView-adapter-DiffUItil.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/RecyclerView-adapter-DiffUItil.md)
 * [ListAdapter.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/ListAdapter.md)
-* [Timber.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/Timber.md)
 * [Fragment](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/Fragment.md)
 
 
