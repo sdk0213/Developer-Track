@@ -1,6 +1,6 @@
 AlarmManager,JobScheduler
 ===
-AlarmManager - [출처](https://doraeul.tistory.com/73)
+AlarmManager - [출처 superwony님의 블로그](https://superwony.tistory.com/99), [출처](https://doraeul.tistory.com/73)
 ---
 * 모든 버젼에서 사용가능하다.
 * 배터리 최적화 예외를 사용설정할때 Jobshceduler보다 매우 매우 정확하게 작동한다. - **[**출처**](https://wooyeol.github.io/2019/03/19/Android-Repeat-Background-Service/)**
@@ -92,14 +92,21 @@ AlarmManager - [출처](https://doraeul.tistory.com/73)
   * requestCode는 나중에 Alarm을 해제 할때 어떤 Alarm을 해제할지를 식별하는 코드이다.
   * set() 메소드
     * 한번만 실행
+    * set() 은 API 19 이전에만 정확한 동작 보장
     * ```java
       manager.set(AlarmManager.ELAPSED_REALTIME, triggerTime, sender);
       ```
+    * setExact()
+      * API 19 이상에서 set() 처럼 정확한 시간에 동작 (중요알림에만 사용하도록 권장)
+    * setExactAndAllowWhileIdle()
+      * API 23 이상에서 Doze 모드일경우에도 setExact() 처럼 정확한 시간에 동작
+      * 9분에 1번
   * setRepeat() 메소드 
     * 반복적으로 실행되며 위의 설명처럼 OS의 생명주기를 따름
     * ```java
       manager.setRepeating(AlarmManager.ELAPSED_REALTIME, time, 1000*60, sender);
       ```
+    * doze 모드에도 동작을 보장하지 않기 때문에 재등록하는방법으로 setExactAndAllowWhileIdle() 을 반복적으로 편법적으로 사용  
   * service/broadcast/intent action/pendingIntent 등은 의도에 따라서 각자 정해서 넣으면된다.
   
 JobScheduler
