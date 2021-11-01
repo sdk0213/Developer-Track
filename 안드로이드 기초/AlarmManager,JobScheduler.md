@@ -60,9 +60,9 @@ AlarmManager - [출처 superwony님의 블로그](https://superwony.tistory.com/
   |:---:|:---:|:---:|
   |RTC|RTC|RTC_WAKEUP|
   |ELAPSED|ELAPSED_REALTIME|ELAPSED_REALTIME_WAKEUP
-  * RTC : UTC표준시간을 기준으로 하는 명시적인 시간에 intent를 발생
+  * RTC : 일반 표준시간을 기준으로 설정
   * RTC_WAKEUP : UTC 표준시간을 기준으로 하는 명시적인 시간에 intent를 발생, 장치를 깨움
-  * ELAPSED_REALTIME : 부팅 후 시간을 기준으로 지정된 시간에 intent를 발생
+  * ELAPSED_REALTIME : 안드로이드가 부팅된 후 시간을 기준으로 설정
   * ELAPSED_REALTIME_WAKEUP : 부팅 후 시간을 기준으로 지정된 시간에 intent를 발생, 장치를 깨움
 * Alarm 등록 - [출처](https://doraeul.tistory.com/73#recentEntries)
   * 예제 - [출처 doraeul.tistory](https://doraeul.tistory.com/73#recentEntries)
