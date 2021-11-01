@@ -4,7 +4,11 @@
   * onComplete
   * onError
 * Complete 또는 Error 후에는 자동으로 dispose 된다. 
----
+### Flowable
+* Observable 처럼 대량의 데이터를 다루나 1000개이상의 데이터를 다룰때 사용
+* 배압이라는 개념이 포함되어있음
+--
+### 아래는 Observable, Flowable 과 다르게 데이터를 최대 1건만 발행하는 생산자들이다.
 ### Single
 * 1개 데이터
 * 두 가지 상태를 구독자에게 전달
