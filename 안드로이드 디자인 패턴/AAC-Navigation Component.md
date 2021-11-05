@@ -116,7 +116,7 @@
   * 로그인이 완료되었음에도 불구하고 종료되었지마 백스텍 개념에 의해 다시 로그인을 하는과정으로 돌아간다.
 * popUpTo + popUpToInclusive 있을경우 흐름
   * backstack -> Z 
-  * 로그인이 완료되었기 떄문에 그 전까지의 스택들으 제거한ㄷ.
+  * 로그인이 완료되었기 떄문에 그 전까지의 스택들은 제거한다.
 * popUpToInclusive 
   * true
     * (자기자신 + popUpTo으로 설정한 fragment) 백스택에서 제거
