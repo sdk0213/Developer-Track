@@ -3,6 +3,10 @@
 * Room 컴파일러를 주입하지 않을경우 에러가 나는 증상이있음(원인모름)
   * ```gradle
     kapt "androidx.room:room-compiler:2.3.0"
+* AndroidManifest 이름 필요
+  * ```xml
+    <application
+        android:name="com.turtle.amatda.presentation.android.App"  // <------ 어플리케이션 이름 필수로 적기
 ### 안드로이드의 제약사항
 * 엑티비티, 서비스 같은 생명주기를 갖는 컴포넌트로 구성된다.
 * 프래그먼트는 엑티비티에 소속되어서 존재
