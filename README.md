@@ -240,6 +240,7 @@
 * [BroadCastReceiver 관련 제한 정책.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/BroadCastReceiver%20관련%20제한%20정책.md)
 * [DialogFragment 여백 설정 안됨.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/DialogFragment%20여백%20설정%20안됨.md)
 * [Navigation Component 에서 DialogFragment 결과값 수신.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Navigation%20Component%20에서%20DialogFragment%20결과값%20수신.md)
+* [ViewPager2 에서 횡스크롤.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/ViewPager2%20에서%20횡스크롤.md)
 
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
