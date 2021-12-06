@@ -267,6 +267,7 @@
 * [AAC-Repository pattern with AAC.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-Repository%20pattern%20with%20AAC.md)
 * [AAC-WorkManager.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-WorkManager.md)
 * [AAC-WorkManager Threading.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC-WorkManager%20Threading.md)
+* [AAC - Paging(v3).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/AAC%20-%20Paging(v3).md)
 * [(DI)종속 항목 삽입.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(DI)종속%20항목%20삽입.md)
 * [(IoC)제어의 역전.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/(IoC)제어의%20역전.md)
 * [Mapper.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20디자인%20패턴/Mapper.md)
