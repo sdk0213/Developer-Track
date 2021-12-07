@@ -545,7 +545,7 @@ Skill Stack
     * ktlint와 detekt
 * <img src="https://user-images.githubusercontent.com/51182964/129470535-23ab469b-95d3-4d2a-8b5a-42e7a53c915b.png" width="50%" height="50%">
   
-Coding Test
+Algorithm
 ---
   * basic
     * Recursion
@@ -564,13 +564,6 @@ Coding Test
     * Priority Queue
     * Binary search
 * studying site : programmers dot com, 백준, SW Expert Academy
-* 제조업 SW
-  * 한달정도 하면 무난
-* IT 대기업
-  * 대체로 문제가 어려움
-* 중견 + 스타트업
-  * 대부분 쉽지만 실무능력을 더 많이 본다고 함
-
  </div>
 </details>
 
