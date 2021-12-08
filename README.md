@@ -491,6 +491,7 @@
 * [암호학 - 전자서명.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/암호학/전자서명.md)
 * [단위테스트.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/테스트주도개발/단위테스트.md)
 * [multi part.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/multi%20part.md)
+* [Agile vs DevOps.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/Agile%20vs%20DevOps.md)
 
  </div>
 </details>
