@@ -11,7 +11,7 @@
 ### DevOps
 * ![DevOps](https://user-images.githubusercontent.com/51182964/145141535-d9412888-3556-4c9d-bd58-70912d52c0ee.jpg)
 ---
-차이점 - [출처는 skby(도리)님의 블로그](http://blog.skby.net/데브옵스-devops/)
+### 차이점 - [출처는 skby(도리)님의 블로그](http://blog.skby.net/데브옵스-devops/)
 * ||Agile|DevOps|
   |:--:|:--:|:--:|
   |목적|고객 요구 적극 수용(고객과 협력)|개발팀과 운영팀의 원활한 Co-work(의사소통)|
