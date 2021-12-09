@@ -55,8 +55,8 @@
   |minus|List<T>|지정된 항목이 제외된 리스트를 반환. remove()  메서드와 달리 새로운 리스트를 만들어 반환한다는 것에 유의. 항목 대신 배열, 컬렉션, 범위 등이 들어갈 수 있음|list.minus("Five")  // [One, Two, Three, Four]|
   |plus|List<T>|지정된 항목이 추가된 리스트를 반환. add() 메서드와 달리 새로운 리스트를 만들어 반환한다는 것에 유의. 항목 대신 배열, 컬렉션, 범위 등이 들어갈 수 있음|list.plus(listOf("Six", "Seven"))  // [One, Two, Three, Four, Five, Six, Seven]|
   |shuffled|List<T>|순서가 랜덤하게 섞인 새로운 리스트를 반환|list.shuffled()  // [Two, Four, Five, One, Three]|
-  |sorted|List<T>|Comparable 인터페이스에 구현된 순서대로 정렬된 리스트를 반환. sort() 메서드와 달리 새로운 리스트를 반환한다는 것에 유의|list.sorted()  // [Five, Four, One, Three, Two]|
-  |sortedBy|List<T>|지정한 람다 식에 의한 순서대로 정렬된 리스트를 반환. sortBy() 메서드와 달리 새로운 리스트를 반환한다는 것에 유의|list.sortedBy { it }  // [Five, Four, One, Three, Two]|
+  |sort (list일경우 = sorted)|List<T>|Comparable 인터페이스에 구현된 순서대로 정렬된 리스트를 반환. sort() 메서드와 달리 새로운 리스트를 반환한다는 것에 유의|list.sorted()  // [Five, Four, One, Three, Two]|
+  |sortBy (list일경우 = sortedBy)|List<T>|지정한 람다 식에 의한 순서대로 정렬된 리스트를 반환. sortBy() 메서드와 달리 새로운 리스트를 반환한다는 것에 유의|list.sortedBy { it }  // [Five, Four, One, Three, Two]|
   |take|List<T>|첫 항목부터 n개의 항목을 반환|list.take(2)  // [One, Two]|
 * \+ Mutable
   |Mutable Function|return|기능|ex|
