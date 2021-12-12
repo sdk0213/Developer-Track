@@ -12,7 +12,7 @@
 * recycler 와 호환
 ---
 ### 라이브러리 아키텍처
-* ![](https://developer.android.com/topic/libraries/architecture/images/paging3-library-architecture.svg
+* ![](https://developer.android.com/topic/libraries/architecture/images/paging3-library-architecture.svg)
 * PagingSource
   * 데이터 소스와 이 소스에서 데이터를 검색하는 방법을 정의
 * RemoteMediator
