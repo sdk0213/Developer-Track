@@ -2,7 +2,9 @@
 ---
 ### Paging 이란?
 * 데이터를 가져올 때 한번에 불러오지 않고 나누어서 가져오는 방법
-* [메모리 관리 기법의 페이징과 다른의미이다.](https://ko.wikipedia.org/wiki/페이징)
+* 페이징은 서버에서 대량의 데이터를 제공하는 보편적인 방법이다.
+* [반드시 보기](https://www.youtube.com/watch?v=fnzTtC5vLqE&t=625s)
+* [반드시 보기2](https://medium.com/@jungil.han/paging-library-그것이-쓰고싶다-bc2ab4d27b87)
 ---
 ### 기능 (v3 기준)
 * 중복된 요청 제거
