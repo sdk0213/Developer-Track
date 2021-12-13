@@ -14,7 +14,7 @@
 ### 라이브러리 아키텍처
 * ![](https://developer.android.com/topic/libraries/architecture/images/paging3-library-architecture.svg)
 * PagingSource
-  * 데이터 소스와 이 소스에서 데이터를 검색하는 방법을 정의
+  * 로컬 또는 Backend의 데이터를 가져오는 역할
 * RemoteMediator
   * 페이징 처리
 * Pager
@@ -25,6 +25,8 @@
   * 페이지로 나눈 데이터를 처리
 * AsyncPagingDataDiffer 
   * 고유한 맞춤 어댑터를 빌드
+* anchorPosition
+  * 가장 최근에 접근한 인덱스
 ---
 ### [샘플 Git](https://github.com/android/architecture-components-samples/tree/main/PagingSample)
 * room 사용
