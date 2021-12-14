@@ -1,4 +1,5 @@
 # Kotlin 에서 자주 쓰이는 Annotation 정리 - [출처](https://codechacha.com/ko/kotlin-annotations/)
+# [안드로이드에서 자주쓰이는 어노테션은 여기로 이동](https://medium.com/hongbeomi-dev/android-annotation-정리-8d0b5b6845c3)
 ---
 ### @JvmName
 ##### 역할
@@ -122,8 +123,14 @@
 * 코틀린 함수의 오버로딩 메소드들을 생성해주는 annotation
 * 자바랑 섞어서 사용하지 않으며 필요없는 어노테션
 ##### [자세한 설명](https://codechacha.com/ko/kotlin-annotations/)
-	
-	
+---
+###  @OptIn / @RequiresOptIn
+* 사전적 설명
+  * @OptIn
+    * 어노테이션이 연결된 파일, 선언, 식에서 opt-in API를 사용할 수 있습니다.
+	* @RequiresOptIn
+		* 해당 어노테이션이 연결된 요소가 OptIn API의 마커임을 나타냅니다. 불안정하거나 비표준 API의 일부로 간주되며 해당 요소를 호출하려면 OptIn을 사용하거나 @OptIn 어노테이션을 달아야합니다.
+* 쉽게말해서 해당 API 가 실험적으로 사용될수있다는것을 사용자에게 알려주기 위해서 어노테이션을 붙히는것이다. 즉 OptIn 을 사용함으로써 라이브러리 개발자가 사용자한테 명시적 동의르 받는셈이다. 그렇게 함으로써 해당 API 는 현재 실험적이며 향후에 사라질수있다는것을 사용자가 알 필요가있을때 붙혀준다. 보통 실험적인 API 를 추가하고 이를 공개할때 해당 어노테션을 사용할것으로 추측한다.
 	
 	
 	
