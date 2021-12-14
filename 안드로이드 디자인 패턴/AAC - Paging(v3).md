@@ -15,22 +15,123 @@
 ---
 ### 라이브러리 아키텍처
 * ![](https://developer.android.com/topic/libraries/architecture/images/paging3-library-architecture.svg)
-* PagingSource
-  * 로컬 또는 Backend의 데이터를 가져오는 역할
+* PagingSource (구버전: DataSource)
+  * 원래는 [DataSource](https://brunch.co.kr/@oemilk/211) 였고 다음 세 가지 기능중 하나를 선택했으나 Paging3 에서 PagingSource API로 결합
+    * PageKeyedDataSource (Deprecated)
+    * ItemKeyedDataSource (Deprecated)
+    * PositionalDataSource (Deprecated)
+  * 로컬 또는 Backend의 데이터를 가져오는 역할이다.
+  * getRefreshKey
+    * 로드된 페이지 데이터의 중간에서 새로고침을 다시 시작하는 방법을 정의하며 구현해야한다
+    * ```kotlin
+      override fun getRefreshKey(state: PagingState): Int? {
+          return state.anchorPosition
+      }
+  * LoadParams
+    * 실행할 로드 작업에 관한 정보가 포함
+    * 로드할 키
+    * 로드할 항목 수
+    * 로드 작업의 결과
+      * 성공
+        * LoadResult.Page
+      * 실패
+        * LoadResult.Error
+  * PagingState
+    * 지금까지 로드한 페이지, 가장 최근에 액세스한 색인, 페이징 스트림을 초기화하는 데 사용한 PagingConfig 객체에 관한 정보를 포함
+  * LoadType
+    * 로드의 유형
+    * LoadType.APPEND
+      * 로드한 데이터의 끝 부분
+    * LoadType.PREPEND
+      * 시작 부분
+    * LoadType.REFRESH
+      * 데이터를 처음으로 로드하는지
+* PagingData (구버전 : PagedList)
+  * PagedList는 DataSource에서 데이터 덩어리(chunck)를 로드하는 Collection
+  * 페이지로 나눈 데이터의 스냅샷을 보유하는 컨테이너
 * RemoteMediator
-  * 페이징 처리
+  * 페이징 된 데이터들을 네트워크로부터 가져와 로컬 데이터베이스에 저장하는 것을 관리
 * Pager
   * 공개 API 제공(반응형 스트림에 노출되는 PagingData 인스턴스를 구성하기 위한)
-* PagingData
-  * 페이지로 나눈 데이터의 스냅샷을 보유하는 컨테이너
-* PagingDataAdapter입니다.
-  * 페이지로 나눈 데이터를 처리
-* AsyncPagingDataDiffer 
+  * Pager 코드
+    ```kotlin
+    class Pager<Key : Any, Value : Any>
+    @JvmOverloads constructor(
+        config: PagingConfig,
+        initialKey: Key? = null,
+        @OptIn(ExperimentalPagingApi::class)
+        remoteMediator: RemoteMediator<Key, Value>? = null,
+        pagingSourceFactory: () -> PagingSource<Key, Value>
+    ) {
+        /**
+         * A cold [Flow] of [PagingData], which emits new instances of [PagingData] once they become
+         * invalidated by [PagingSource.invalidate] or calls to [AsyncPagingDataDiffer.refresh] or
+         * [PagingDataAdapter.refresh].
+         */
+        val flow: Flow<PagingData<Value>> = PageFetcher(
+            pagingSourceFactory,
+            initialKey,
+            config,
+            remoteMediator
+        ).flow
+    }
+* PagingDataAdapter 
+  * 페이지로 나눈 데이터를 처리하고 ui 단에 출력하는 adapter
+* AsyncPagingDataDiffer (구버전 : AsyncPagedListDiffer)
   * 고유한 맞춤 어댑터를 빌드
 * anchorPosition
   * 가장 최근에 접근한 인덱스
+* cachedIn(viewModelScope) - ( cachedIn 은 Flow 타입에서 지원하는 함수이다. )
+  * 캐싱지원
+  * 액티비티에서 한번 불러오면 프래그먼트들이 바로 아이템을 사용하는 것이 가능하다.
+* initialize()
+  * 초기화 관리
+  * 메서드를 재정의하여 캐시된 데이터가 오래되었는지 점검하고 원격 새로고침을 트리거할지 결정
+  * 전에 실행되므로 로컬 또는 원격 로드를 트리거하기 전에 데이터베이스를 조작할
+  * ```kotlin
+    override suspend fun initialize(): InitializeAction {
+      val cacheTimeout = TimeUnit.HOURS.convert(1, TimeUnit.MILLISECONDS)
+      return if (System.currentTimeMillis() - db.lastUpdated() >= cacheTimeout)
+      {
+        // Cached data is up-to-date, so there is no need to re-fetch
+        // from the network.
+        InitializeAction.SKIP_INITIAL_REFRESH
+      } else {
+        // Need to refresh cached data from network; returning
+        // LAUNCH_INITIAL_REFRESH here will also block RemoteMediator's
+        // APPEND and PREPEND from running until REFRESH succeeds.
+        InitializeAction.LAUNCH_INITIAL_REFRESH
+      }
+    }
+* Room은 기본적으로 Paging 3도 지원해서 추가 코드 없이 제공된 이전 또는 다음 페이지를 기준으로 데이터를 자동으로 선택한다.
 ---
-### [샘플 Git](https://github.com/android/architecture-components-samples/tree/main/PagingSample)
-* room 사용
-### [샘플 Git](https://github.com/android/architecture-components-samples/tree/main/PagingWithNetworkSample)
-* 네트워크 사용
+### [안드로이드 공식 샘플 Git - 룸 방식](https://github.com/android/architecture-components-samples/tree/main/PagingSample)
+### [안드로이드 공식 샘플 Git - 네트워크 방식](https://github.com/android/architecture-components-samples/tree/main/PagingWithNetworkSample)
+---
+### Paging3 With Rx
+* RxPagingSource
+  * 하나의 source data 만을 가지고 있을 때 사용한다.
+* RxRemoteMediator
+  * 네트워크를 통해 데이터를 로드하고 로컬 스토리지에 저장하고싶을때 사용 (Use this if you want to load data from network and save it to your local storage. RemoteMediator will take care of getting data for you. For example during loading data, it will check the local storage first, if no data found and next page is available, it will get data from network. RemoteMediator is using 1 single source of truth for data source, that is: your local storage.)
+* 간단 코드
+  * ```kotlin
+    class GetMoviesRxRemoteRepositoryImpl(
+        private val database: MovieDatabase,
+        private val remoteMediator: GetMoviesRxRemoteMediator // GetMoviesRxRemoteMediator : RxRemoteMediator
+    ): GetMoviesRxRepository {
+
+        override fun getMovies(): Flowable<PagingData<Movies.Movie>> {
+            return Pager(
+                config = PagingConfig(
+                    pageSize = 20,
+                    enablePlaceholders = true,
+                    maxSize = 30,
+                    prefetchDistance = 5,
+                    initialLoadSize = 40),
+                remoteMediator = remoteMediator,
+                pagingSourceFactory = { database.moviesRxDao().selectAll() } // @Query("SELECT * FROM movies ORDER BY id ASC")
+                                                                             // fun selectAll(): PagingSource<Int, Movies.Movie>
+            ).flowable
+        }
+    }
+   
