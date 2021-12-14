@@ -1,6 +1,5 @@
 # Asynchronous Programming
-* 안드로이드는 최소 60Hz 지원
-* MainThread의 책임
+* 안드로이드는 최소 60Hz 지원하고 이 안에 view 를 그리려면 MainThread 가 다음의 책임을 지님
   * Parse xml code
   * inflate xml
   * Draw the view
