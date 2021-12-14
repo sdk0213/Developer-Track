@@ -7,6 +7,13 @@
 * 자바 소스 코드에 추가 할 수있는 메타 데이터의 한 형태이다.
 * Annotation Processor
   * java 컴파일러 플러그인의 일종으로서 애노테이션에 대한 코드베이스를 검사, 수정 또는 생성하는데 사용
+* 간단한 생성
+  * 자바
+    * ```java
+      public @interface Fancy {}
+  * 코틀린
+    * ```kotlin
+      annotation class Fancy
 * 장점
   * 속도가 빠르다
     * annotation Processo는 javac 컴파일러의 일부이므로 런타임보다는 컴파일시간에 발생하기 때문
