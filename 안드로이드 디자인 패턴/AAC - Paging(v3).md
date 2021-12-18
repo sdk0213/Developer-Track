@@ -75,6 +75,26 @@
             remoteMediator
         ).flow
     }
+  * PagingConfig
+    * enablePlaceholders
+      * Placeholders 사용여부, 데이터가 없을때 null 로 표시 여부
+    * initialLoadSize
+      * 초기에 불러들일 사이즈로 일반적으로 loadsize 보다 크게 설정하는것이 좋다고 권장함
+      * 예를들어서 loadsize 가 30일때 initialLoadSize 는 60 ~ 90 이상으로 설정
+    * jumpThreshold (?)
+      * REFRESH를 트리거하여 사용자 위치로 점프하기 전에 로드된 항목의 경계 외부에서 스크롤된 항목 수에 대한 임계값  (?)
+      * jumpingSupported 에 대한 이해가 필요
+    * **pageSize**
+      * (스크롤을 prefetchDistance 까지내렸을때) 다음번에 로드할 데이터 크기
+    * prefetchDistance
+      * 얼마나 가까워져야 다음것을 로딩할것인지
+      * 남아있는 출력가능한 데이터가 얼마나 있으면 ex) 5개 남아있을때 다음것을 로딩
+    * maxSize
+      * 받은 데이터가 너무 많을경우 최대로 표현할 개수
+      * maxSize 가 30 인데 받아온데이터가 60개 일경우 나머지 30개는 사라진다.
+      * 최솟값
+        * Maximum size must be at least pageSize + 2*prefetchDist
+        * 위 사항을 지키지 않을경우 java.lang.IllegalArgumentException 발생한다.
 * PagingDataAdapter 
   * 페이지로 나눈 데이터를 처리하고 ui 단에 출력하는 adapter
 * AsyncPagingDataDiffer (구버전 : AsyncPagedListDiffer)
