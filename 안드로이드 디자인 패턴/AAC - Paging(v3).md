@@ -129,6 +129,8 @@
 ### [안드로이드 공식 샘플 Git - 네트워크 방식](https://github.com/android/architecture-components-samples/tree/main/PagingWithNetworkSample)
 ---
 ### Paging3 With Rx
+* 흐름
+  * RxSource -> Repository -> viewModel -> adapter.submitDate
 * RxPagingSource
   * 하나의 source data 만을 가지고 있을 때 사용한다.
 * RxRemoteMediator
