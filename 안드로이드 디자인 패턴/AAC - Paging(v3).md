@@ -97,6 +97,11 @@
         * 위 사항을 지키지 않을경우 java.lang.IllegalArgumentException 발생한다.
 * PagingDataAdapter 
   * 페이지로 나눈 데이터를 처리하고 ui 단에 출력하는 adapter
+* LoadStateAdapter
+  * 페이징을 불러오는 와중에 발생하는 에러나 로딩중이라는것의 상태를 사용자에게 전달하는 adapter 
+  * PagingDataAdapter.withLoadStateFooter(
+        footer = LoadStateAdapter()
+    )
 * AsyncPagingDataDiffer (구버전 : AsyncPagedListDiffer)
   * 고유한 맞춤 어댑터를 빌드
 * anchorPosition
@@ -130,7 +135,13 @@
 ---
 ### Paging3 With Rx
 * 흐름
-  * RxSource -> Repository -> viewModel -> adapter.submitDate
+  * API Call || DB Query
+    * -> (RxPagingSource || RxRemoteMediator) 
+      * Create Pager() -> Return to (Rxjava)flowable
+        * -> RepositoryImpl
+          * -> Repository
+            * -> viewModel
+              * -> (PagingDataAdapter) adapter.submitData (= LoadStateAdapter)
 * RxPagingSource
   * 하나의 source data 만을 가지고 있을 때 사용한다.
 * RxRemoteMediator
