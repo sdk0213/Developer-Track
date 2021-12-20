@@ -1,4 +1,3 @@
-
 동일성체크 - [출처 - namget.tistory](https://namget.tistory.com/entry/Kotlin-%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%9E%90%EB%A3%8C-%EC%9E%90%EB%A3%8C%ED%98%95%EC%9D%98-%ED%99%95%EC%9D%B8-%EB%B0%8F-%EB%B3%80%ED%99%98-is-as-%EC%8A%A4%EB%A7%88%ED%8A%B8-%EC%BA%90%EC%8A%A4%ED%8A%B8)
 ---
 * 객체가 동일한지 확인할때 자바에서는 equal()을 사용했었음
@@ -48,6 +47,15 @@ as - [출처 - namget.tistory](https://namget.tistory.com/entry/Kotlin-%EC%BD%94
         val int: Int = number as Int
     }
   }
+* as?
+  * is 연산자를 통해 대상 값이 해당 타입으로 변환 가능한 타입인지 체크후 사용해야하지만 코틀린에서 더욱 간결하게 as? 로 사용가능하다.
+  * 캐스팅 시도 불가능하면 null 반환
+  * ```kotlin
+    // paging3 loadStateAdapter listener 의 예
+    val errorState = loadState.source.append as? LoadState.Error
+    ?: loadState.source.prepend as? LoadState.Error
+    ?: loadState.append as? LoadState.Error
+    ?: loadState.prepend as? LoadState.Error
 
 
 출처: https://namget.tistory.com/entry/Kotlin-코틀린-자료-자료형의-확인-및-변환-is-as-스마트-캐스트 [남갯,YTS의 개발,일상블로그]
