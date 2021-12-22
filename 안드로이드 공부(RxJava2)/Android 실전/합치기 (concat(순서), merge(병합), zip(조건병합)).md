@@ -11,6 +11,13 @@
   disposable.add(Observable.concat(test1, test2).subscribe({
   ..
   }
+##### concatWith
+* ```kotlin
+  Observable<String> mySource1 = Observable.just("a", "b", "c");
+        Observable<String> mySource2 = Observable.just("x", "y", "z");
+        mySource1.subscribeOn(Schedulers.newThread())
+                 .concatWith(mySource2)
+                 .subscribe(System.out::println);
   
 ---
 ### merge
