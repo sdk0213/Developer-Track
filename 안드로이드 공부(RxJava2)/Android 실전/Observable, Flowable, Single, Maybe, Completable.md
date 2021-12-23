@@ -7,6 +7,20 @@
 ### Flowable
 * Observable 처럼 대량의 데이터를 다루나 1000개이상의 데이터를 다룰때 사용
 * 배압이라는 개념이 포함되어있음
+* Reactive Stream 으로 Reactive Stream Interface 를 포함한다.
+  * ```java
+    public abstract class Flowable<T> implements Publisher<T> {
+        ...
+        ..
+    }
+    
+    ...
+    ..
+    package org.reactivestreams;
+    
+    public interface Publisher<T> {
+        public void subscribe(Subscriber<? super T> s);
+    }
 ---
 ### 아래는 Observable, Flowable 과 다르게 데이터를 최대 1건만 발행하는 생산자들이다.
 ### Single
