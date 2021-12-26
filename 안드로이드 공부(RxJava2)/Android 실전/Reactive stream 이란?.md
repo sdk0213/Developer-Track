@@ -38,3 +38,9 @@
       public void request(long n); // Subscriber가 Publisher에게 데이터를 요청하는 갯수
       public void cancel(); // 구독 취소
   }
+---
+### Processor
+* 뜨거운(Hot) 생성자
+* Publisher(생산자) 와 Subscriber(소비자) 를 혼합
+* ![1*l0doX3u-79cHRfQPMn-tJQ](https://user-images.githubusercontent.com/51182964/147403382-26c2b241-b07e-4690-ae5b-46bf270655e1.png)
+* rxjava 의 subject 와의 차이점은 배압 기능의 유뮤이다. processor 는 배압기능이 포함된다.
