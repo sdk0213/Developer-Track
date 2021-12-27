@@ -1,4 +1,4 @@
-# Optional - [출처](https://advenoh.tistory.com/15)
+# Optional - [출처](https://advenoh.tistory.com/15) - kotlin 에서는 더 이상 사용하지 않음
 * Optional 클래스는 null이나 null이 아닌 값을 담을 수 있는 클래스
 * ```java
   @Test
