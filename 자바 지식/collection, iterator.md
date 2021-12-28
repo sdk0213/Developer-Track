@@ -3,8 +3,21 @@
 
 #### Iterator
 * 최상단 인터페이스로 순서대로 값을 가져오는 즉, hasNext(), next(), remove() 등의 메소드를 이용할 수 있다. 용도는 컬렉션클래스의 데이터를 하나씩 읽어올 때 사용한다
-* 코틀린
+* Iterable
+  ```java
+  // 자바 (관계랑 인터페이스만 구분하기바람)
+  public interface Iterable<T> {
+    /**
+     * Returns an iterator over elements of type {@code T}.
+     *
+     * @return an Iterator.
+     */
+    Iterator<T> iterator();
+ 
+  }
+* iterator
   ```kotlin
+  // 코틀린 (관계랑 인터페이스만 구분하기바람)
   public interface Iterator<out T> {
     /**
      * Returns the next element in the iteration.
