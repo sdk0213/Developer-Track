@@ -1,5 +1,7 @@
 # doOn
 ### doOn 으로 시작하는것들에 대하여
+* 중간에 확인하기위함이지 결과적으로 값에 영향을 미치지는 않는다.
+  * 디버깅을 하기위함
 * doOn~~ 은 해당 상태일때 콜백을 등록할수 있다.
 * 예)
   ```java
@@ -23,6 +25,8 @@
 * 옵저버들이 구독 해제할때 상태 처리
 ##### doOnNext
 * 아이템을 발행할때 상태 처리
+* doOnNext is for side-effects (부수효과)
+* doOnNext() allow you to see what is going on into the Observable (often really long) chains 
 ##### doOnComplete
 * 아이템 발행 완료되었을때 상태 처리
 ##### doOnError
