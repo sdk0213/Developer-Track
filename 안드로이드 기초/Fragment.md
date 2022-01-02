@@ -49,6 +49,14 @@
   * commit() 된 transaction 은 바로 실행되지 않고, main thread 에 schedule 되어 처리된다. 
   * Fragment 에 전달되는 event 들은 사실 activity 가 먼저 받고, 그 다음에 fragment 에 전달이 되는 형태이다. 물론 activity 에서 다 처리하고, fragment 로 전달하지 않도록 하는 방법도 있다.
   * fragment 를 UI 가 없는 녀석으로 만들어 background 작업을 하도록 사용할 수도 있다. 이때는 add( Fragment fragment, String tag ) 를 통해 등록을 한다. 이렇게 등록을 하면 onCreateView() 가 호출되지 않는다. 물론 구현할 필요도 없다. 등록시의 tag 는 findFragmentByTag() 를 통해 해당 fragment 에 접근하는데 쓰인다.
+
+---
+### fragmentManager
+* childfragmentManager 는 상위 프레그먼트를 관리한다.
+* parentfragmentManager 는 엑티비티 또는 최상위 프래그먼트를 관리한다.
+* childfragmentMnager 가 필요한 이유는 만약에 엑티비티 -> 프래그먼트 -> 프래그먼트 A, B(Viewpager2) 가 있을경우 프래그먼트 A 에서 B 로 변경할경우 코드를 A 에서 childfragmentManager 를 호출하여서 replace 하면된다.
+  * 하지만 childfragmentManager 가 없을경우 parentfragmentmanager 에 접근하여서 자식 프래그먼트를 가져와서 변경하거나 내 상위 프래그먼트랑 인터페이스를 만들거나 하는 등 우회적인 방법으로 처리하여야한다.
+* ![](http://sunphiz.me/wp/wp-content/uploads/2018/04/FragmentManager.png)
 ---
 ### 애니메이션
 * setCustomAnimations(enter, exit, popEnter, popExit)
