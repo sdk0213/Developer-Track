@@ -51,12 +51,17 @@
   * fragment 를 UI 가 없는 녀석으로 만들어 background 작업을 하도록 사용할 수도 있다. 이때는 add( Fragment fragment, String tag ) 를 통해 등록을 한다. 이렇게 등록을 하면 onCreateView() 가 호출되지 않는다. 물론 구현할 필요도 없다. 등록시의 tag 는 findFragmentByTag() 를 통해 해당 fragment 에 접근하는데 쓰인다.
 
 ---
-### fragmentManager
-* childfragmentManager 는 상위 프레그먼트를 관리한다.
-* parentfragmentManager 는 엑티비티 또는 최상위 프래그먼트를 관리한다.
-* childfragmentMnager 가 필요한 이유는 만약에 엑티비티 -> 프래그먼트 -> 프래그먼트 A, B(Viewpager2) 가 있을경우 프래그먼트 A 에서 B 로 변경할경우 코드를 A 에서 childfragmentManager 를 호출하여서 replace 하면된다.
-  * 하지만 childfragmentManager 가 없을경우 parentfragmentmanager 에 접근하여서 자식 프래그먼트를 가져와서 변경하거나 내 상위 프래그먼트랑 인터페이스를 만들거나 하는 등 우회적인 방법으로 처리하여야한다.
-* ![](http://sunphiz.me/wp/wp-content/uploads/2018/04/FragmentManager.png)
+### fragmentManager - [출처는 selfish-developer 님의 티스토리 블로그 - FragmentManagers Android](https://selfish-developer.com/entry/FragmentManagers-Android)
+* supportFragmentManager (SFM)
+  * Activity랑 상호작용하는(interacting) Fragment를 관리
+* parentFragmentManager (PFM)
+  * 부모 UI 컴포넌트의 manager
+* childFragmentManager (CFM)
+  * Fragment 고유의 FragmentManager
+* ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbB23Hk%2FbtqDeUBILbJ%2FctpsLKfK8oqL0Xf3hSAITk%2Fimg.png)
+* childFragmentManager 가 아닌 parentFragmentManager 로 생성할경우 다음과 같은 경우가 생기기 때문에 fragmentManager 를 잘 선택해야한다.
+  * ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvxWjo%2FbtqDebw9kA9%2F7jpEbOkQuyPxx9LNg041G0%2Fimg.png)
+* 아무 Manager 나 골라써서 만든다고 하여서 문제가되지는(메모리 릭) 않는듯보이나 의도치 못한 버그가 생성될것으로 보이기 때문에 위 사항을 따라서 개발하여야함
 ---
 ### 애니메이션
 * setCustomAnimations(enter, exit, popEnter, popExit)
