@@ -77,3 +77,20 @@ class Solution {
         return Math.abs(lastX - destX) + Math.abs(lastY - destY)
     }
 }
+
+
+// 비교부분 아래와같이 변경하면 코드가 더 요약됨
+var number:Char = ' '
+for(n in numbers){
+    when(n.toChar()){
+        '1','4','7' -> {
+                
+        }
+        '3','6','9' -> {
+            
+        }
+        else -> {
+    
+        }
+    }
+}
