@@ -178,12 +178,17 @@
   
 # queue
 ##### 큐
+* ||예외 발생|값 리턴|
+  |:--:|:--:|:--:|
+  |enqueue|add(e)|offer(e)|
+  |dequeue|remove(e)|poll(e)|
+  |peek|element()|peek()|
 * ```java
   Queue<Integer> queueInteger = new LinkedList<>();
 
   int get = 0;
 
-  queueInteger.add(5);
+  queueInteger.add(5); 
   queueInteger.add(8);
   queueInteger.add(22);
   queueInteger.add(63);
