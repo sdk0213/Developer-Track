@@ -1,8 +1,25 @@
 # 빠른 찾기
 * ```java
-  import java.util.*
-# 아스키
-* 전환
+  // 필수적으로 하기
+  import java.util.* 
+### 색인
+* [아스키](#ascii)
+* [비교](#comparison)
+* [for](#for)
+* [List -> String](#list-to-string)
+* [배열](#array)
+* [stack](#stack)
+* [queue](#queue)
+* [comparator](#comparator)
+* [compareTo](#compareto)
+* [collection - stream](#collection-stream)
+* [string](#string)
+* [수학](#math)
+* [자료구조 전체사진, 컬렉션포함](#data-structure)
+
+# ASCII
+### 아스키
+* char <-> ascii 전환
   * ```java
     int ascii = 65;
     char character = 'A';
@@ -14,104 +31,124 @@
 * Z	<-> 90
 * a	<-> 97
 * z	<-> 122
-* ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkDTO6%2Fbtq1ca8DHu6%2FbRY6sqRipuwtTRsEokfw1K%2Fimg.png)
+<details>
+<summary>아스키 코드 전체 (펼치기/접기)</summary>
+<div markdown="1">
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FkDTO6%2Fbtq1ca8DHu6%2FbRY6sqRipuwtTRsEokfw1K%2Fimg.png">
+</div>
+</details>
+  
 
 ---
+# comparison
 ##### 비교
 * ```java
   String st1 = new String("aaa");
   String st2 = new String("aaa");
  
-  System.out.println(st1==st2);
-  System.out.println(st1.equals(st2));
+  System.out.println(st1==st2);   // false
+  System.out.println(st1.equals(st2)); // true
 * .eqauls() (동등성 (identity)) 비교
   * 값을 비교
   * 두 오브젝트가 같은 정보를 같고 있을 경우를 의미
 * == (동일성 (equality)) 비교
   * 주소르 비교 (즉,객체를 비교)
   * 두 오브젝트가 같은 정보를 같고 있을 경우를 의미  
+# for
 ##### for
 * ```java
+  // int
   int[] array = {5,2,89,423,111};
   for(int number : array){
       System.out.println(number);
   }
+  
+  // String
+  String[] temp = { "aa", "bb", "cc" };
+  for (String el : temp) {
+      System.out.println(el);
+  }
+  
+  // Object
+  Object[] objArray = ...someObject
+  for (Object obj : objArray) {
+      System.out.println(obj.toString());
+  }
+# list to String
+##### 리스트를 스트링(String) 으로 출력
+* ```java  
+    List<Integer> linkedList = new LinkedList<>();
+    linkedList.add(3);
+    linkedList.add(1);
+    linkedList.add(5);
+    linkedList.add(37);
+
+    System.out.println(Arrays.toString(linkedList.toArray()));
+    // [3, 1, 5, 37]
+# array
 ##### 배열
+* [][]
+  * 고정
+* ArrayList
+  * 가변
+    * 기존 + 기존/2 만큼 추가적으로 가변됨
 * 배열 거꾸로 (String)
   ```java
+  // 가장 쉽게
   String[] array = {"5","2","89","423","111"};
-  List<String> list = Arrays.asList(array);
+  Arrays.sort(array, (a, b) -> -1);
+
+  System.out.println(Arrays.toString(array));
+  
+  String[] array = {"5","2","89","423","111"};
+  List<String> list = Arrays.asList(array); // convert to ArrayList
   Collections.reverse(list);
   System.out.println(list);
   // [111, 423, 89, 2, 5]
 * 배열 거꾸로 (int)
   ```java
-List<int[]> list = Collections.singletonList(array);
+  // 가장 쉽게
+  // 원시타입인 경우는 다음과 같은 사용 불가능 int[] 는 원시타입이므로 불가능, 즉 객체만 sort 가능하다.
+  // int[][] 의 경우는 2차원부터 객체로 판단되기 때문에 비교 가능
+  Integer[] array = {"5","2","89","423","111"};
+  Arrays.sort(array, (a, b) -> -1);
+
+  System.out.println(Arrays.toString(array));
+      
+  int[] array = {5, 2, 89, 423, 111};
+  // 단순한게 재일 좋은듯 싶다.
+  int count = 0;
+  for(int i = array.length - 1 ; i >= 0 ; i--){
+      reverse[count] = array[i];
+      count++;
+  }
   
+  // Collection 사용
+  // int[] -> Integer[] -> list -> reverse
+  Integer[] newArray = Arrays.stream(array).boxed().toArray(Integer[]::new);
+  List<Integer> list = Arrays.asList(newArray);
+  Collections.reverse(list);
+  System.out.println(list.toString());  
+  // [111, 423, 89, 2, 5]
+* list -> int[]
+  ```java
+  // list -> Integer[] -> int[]
+  int[] reverseArray = Arrays.stream(list.toArray(new Integer[0])).mapToInt(Integer::intValue).toArray();
+  for(int i: reverseArray){
+      System.out.print(i + " ");
+  }
+* 배열사이즈 구하기
+  ```java
+  int[][][] array = new int[3][4][5];
 
-  * ```kotlin
-    val arr: IntArray = arrayOf(10, 20, 30, 40, 50)
+  int x = array.length;
+  int y = array[0].length;
+  int z = array[0][0].length;
 
-    for(i in arr)
-        print("$i ")    //output : 10, 20, 30, 40, 50
-
-    for(i in arr.reversed())
-        print("$i ")    //output : 50, 40, 30, 20, 10
-           
-    // 5개만 우선 선언
-    val array = Array<Int>(5){0}
+  System.out.println("x: " + x + " / y:" + y + " / z :" + z);
+  // x: 3 / y:4 / z :5
     
-    val arr = IntArray(4) { it }
-    // 내용물을 전체 확인하는 코드
-    print(arr.contentToString()) // 결과 [0, 1, 2, 3]
-    
-    val numbers = IntArray(63){ int -> int*2 }
-    (numbers.indices).forEach { // 순서대로 출력한다. 1,2,3,4,5,6,7, index 순으로 증가 함
-        print("${numbers[it]} ")
-    }
-    
-  * n 차원 배열
-    ```kotlin
-    // int 2차원 (후 선언)
-    val twoDimensionArray = Array<IntArray>(2) { IntArray(3) }
-    
-    // int 3차원 (후 선언)
-    val twoDimensionArray = Array(2) { Array(3){ IntArray(3) } }
-    
-    // String 3차원 (후 선언)
-    val twoDimensionArray = Array(2) { Array(3){ Array(3){""} } }
-   
-    // 숫자 삽입 (선 선언)
-    val xy = arrayOf(arrayOf(1,2,3), arrayOf(4,5,6), arrayOf(7,8,9), arrayOf(10,11,12))
-    // 문자 삽입 (선 선언)
-    val xy = arrayOf(arrayOf("1","2","3"), arrayOf("4","5","6"), arrayOf("7","8","9"), arrayOf("*","0","#"))
-    
-    // 출력 : 방법1
-    for(i in 0..3) {
-        for(j in 0..2) {
-            print(xy[i][j])
-        }
-        println()
-    }
-    
-    // 출력 : 방법2 == 위와 동일함 
-    (1..3).forEach { i ->
-         (1..7).forEach { j ->
-             println(xy[i][j])
-         }
-         println()
-    }
-  * 배열사이즈 구하기
-    ```kotlin
-    val array = arrayOf(arrayOf(0,0,0,0), arrayOf(2,3,4,2))
-
-    println("array: ${array.size}")
-    println("array: ${array[0].size}")
-    
-    array: 2
-    array: 4
-    
-    
+# stack
 ##### 스택
 * ```java
   import java.util.*
@@ -125,123 +162,257 @@ List<int[]> list = Collections.singletonList(array);
   stack.isNotEmpty() // 비어있지 않다면
   stack.size(); // 크기
   
+  // toArrayList
+  Stack<Integer> stack = new Stack<Integer>();
+  stack.push(1);
+  stack.push(3);
+  stack.push(6);
+  stack.push(19);
+
+  ArrayList<Integer> list = new ArrayList<>(stack);
+
+  System.out.println("toString: " + list.toString());
+  System.out.println("toString: " + Arrays.toString(stack.toArray()));
+  // [1, 3, 6, 19]
+  // [1, 3, 6, 19] 
+  
+# queue
 ##### 큐
-* ```kotlin
-  val que = LinkedList<Int>()
-  que.offer(3)
-  que.poll()
-  que.peek()
+* ```java
+  Queue<Integer> queueInteger = new LinkedList<>();
+
+  int get = 0;
+
+  queueInteger.add(5);
+  queueInteger.add(8);
+  queueInteger.add(22);
+  queueInteger.add(63);
+  queueInteger.offer(33);
+  queueInteger.offer(2);
+  queueInteger.offer(1);
+  queueInteger.offer(13);
+
+  System.out.println(queueInteger.toString());
+  // [5, 8, 22, 63, 33, 2, 1, 13]
+  
+  int peek = queueInteger.peek();
+  System.out.println("참조(peek()) : " + peek + "(값 변환없음)\n" + queueInteger.toString());
+  // 참조(peek()) : 5(값 변환없음)
+  // [5, 8, 22, 63, 33, 2, 1, 13]
+  
+  get = queueInteger.poll();
+  System.out.println("꺼냄(poll()): " + get + "\n" + queueInteger.toString());
+  // 꺼냄(poll()): 5
+  // [8, 22, 63, 33, 2, 1, 13]
+  
+  get = queueInteger.poll();
+  System.out.println("꺼냄(poll()): " + get + "\n" + queueInteger.toString());
+  // 꺼냄(poll()): 8
+  // [22, 63, 33, 2, 1, 13]
+  
+  queueInteger.remove();
+  System.out.println("remove()" + "\n" + queueInteger.toString());
+  // remove()
+  // [63, 33, 2, 1, 13]
+  
+  queueInteger.remove();
+  queueInteger.remove();
+  System.out.println("remove() + remove()" + "\n" + queueInteger.toString());
+  // remove() + remove()
+  // [2, 1, 13]
+  
+  queueInteger.clear();
+  System.out.println("clear()" + "\n" + queueInteger.toString());
+  // clear()
+  // []
+  
+  int pollnull = queueInteger.poll(); // NullPointerException 발생 // 만약 String Queue<String> 일경우 발생하지 않음
+  System.out.println("poll()" + "\n" + queueInteger.toString());
+  // java.lang.NullPointerException 발생함
+
+
+  // --------------------------------------
+  // [5, 8, 22, 63, 33, 2, 1, 13]
+  // 참조(peek()) : 5(값 변환없음)
+  // [5, 8, 22, 63, 33, 2, 1, 13]
+  // 꺼냄(poll()): 5
+  // [8, 22, 63, 33, 2, 1, 13]
+  // 꺼냄(poll()): 8
+  // [22, 63, 33, 2, 1, 13]
+  // remove()
+  // [63, 33, 2, 1, 13]
+  // remove() + remove()
+  // [2, 1, 13]
+  // clear()
+  // []
+
+  java.lang.NullPointerException 발생함 // 만약 String Queue<String> 일경우 발생하지 않음
+
+# comparator
 ##### Comparator
-  * ```kotlin
-     var list = listOf("나", "다", "가", "라")
+  * ```java
+    Comparator<Integer> comp = (a, b) ->
+                {
+                    // 오름차순
+                    if(a > b) return 1; // a 가 앞에
+                    else if(a < b) return -1; // a 가 뒤에 
+                    else return 0; // 변화 없음
+                    // 내림차순
+                    // if(a > b) return -1; // a 가 앞에
+                    // else if(a < b) return 1; // a 가 뒤에 
+                    // else return 0; // 변화 없음
+                };
+* 숫자 정렬
+  ```java
+  List<Integer> list = new ArrayList<>();
+  list.add(5);
+  list.add(1);
+  list.add(7);
+  list.add(8);
+  list.add(4);
 
-     list = list.sortedWith(Comparator<String>{ a, b ->
-         when {
-             a > b -> 1 // a 가 앞에 
-             a < b -> -1 //  a 가 뒤에
-             else -> 0 // 변화없음
-         }
-     })
+  // 첫번째 방법
+  list.sort(Integer::compareTo);
+  
+  // 두번째 방법
+  list.sort((a, b) ->
+              {
+                  if(a > b) return -1;
+                  else if(a < b) return 1;
+                  else return 0;
+              }
+  );
+  
+  // 세번째 방법
+  Comparator<Integer> comp = (a, b) ->
+              {
+                  if(a > b) return -1;
+                  else if(a < b) return 1;
+                  else return 0;
+              };
+  Collections.sort(list, comp);
+
+  System.out.println(list.toString());
+  // [1, 4, 5, 7, 8]
+* 문자 정렬
+  ```java
+  List<String> list = new ArrayList<>();
+  list.add("가");
+  list.add("자");
+  list.add("마");
+  list.add("나");
+  list.add("다");
+
+  // 첫번째 방법
+  list.sort((a, b) -> Integer.compare(a.compareTo(b), 0));
+  
+  // 두번째 방법
+  list.sort((a, b) -> {
+      // 오름차순
+      if(a.compareTo(b) > 0) return 1;
+      else if(a.compareTo(b) < 0) return -1;
+      else return 0;
+      // 내림차순
+      if(a.compareTo(b) > 0) return -1;
+      else if(a.compareTo(b) < 0) return 1;
+      else return 0;
+  });
+  
+  // 세번째 방법
+  Comparator<Integer> comp = (a, b) ->
+              {
+                    if(a.compareTo(b) > 0) return 1;
+                    else if(a.compareTo(b) < 0) return -1;
+                    else return 0;
+              };
+  Collections.sort(list, comp);
+  
+  
+  System.out.println(list.toString());
+  // [가, 나, 다, 마, 자]
+  
+# compareTo
 ##### a.compareTo(b)
-  * ```kotlin
-    // 숫자
-    val x = 3; 
-    val y = 4; 
-    val z = 1.0; 
-    println( x.compareTo(y) ); // -1
-    println( x.compareTo(3) ); // 0 
-    println( x.compareTo(2) ); // 1 
-    println( z.compareTo(2.7) ); // -1
-    
-    // 문자 -> 사전순 정렬
-    val list = listOf("나", "다", "가", "라")
-
-    list = list.sortedWith(Comparator<String>{ a, b ->
-        when {
-            a > b -> 1
-            a < b -> -1
-            else -> 0
-        }
-    }) 
-    
-    // result : [가, 나, 다, 라]
-    
-  * 문자열 비교 디테일
-    * ```kotlin
-      // 비교대상 문자열의 각 문자들을 첫번째자리 부터 하나씩 비교하다가 가장 먼저 만나는 상이한 문자들의 ASCII코드 값 차이를 반환하고 끝낸다
-      val numStr1 = "756";
-      val numStr2 = "719";
-      val rtn = numStr1.compareTo(numStr2); // '7'같으니까 비교안함 -> '5' '1' 서로 다르니까 비교 -> 서로의 아스키값 차이는 4임 -> 4 반환 -> 더이상 진행하지않음
-      println(rtn)
+* 문자열 비교시에는 아스키코드 값 차이만큼 반환함
+  * ```java
+    String numStr1 = "756";
+    String numStr2 = "719";
+    int rtn = numStr1.compareTo(numStr2); // '7'같으니까 비교안함 -> '5' '1' 서로 다르니까 비교 -> 서로의 아스키값 차이는 4임 -> 4 반환 -> 더이상 진행하지않음
+    // compareToIgnoreCase(numStr2) -> 대소문자를 무시하고 비교함
+    System.out.println(rtn);
       
-      // 4
-      
-      val numStr1 = "abcd";
-      val numStr2 = "cd";
-      val rtn = numStr1.compareTo(numStr2);
-      println(rtn)
-      // -7
-      
-      val numStr1 = "Zbfk";
-      val numStr2 = "bbmz";
-      val rtn = numStr1.compareTo(numStr2);
-      println(rtn)
-      // -8
-
-
-      val numStr1 = "Zbfk";
-      val numStr2 = "bbmz";
-      val rtn = numStr1.compareToIgnoreCase(numStr2); // 대소문자 무시
-      println(rtn)
-      // 24
+    // 4
       
 ##### sort - [출처 notepad96님의 티스토리](https://notepad96.tistory.com/entry/Kotlin-8)
-  * ```kotlin
-    println("==================1========================")
-    val ml = mutableListOf(5, 4, 1, 2, 3, 6)
-    println(ml)
-    ml.sort()   // 오름차순 정렬
-    println(ml)
+  * ```java
+    // 오름차순, 내림차순 위 쪽 배열 참고
+    int[][] array = { {5,2}, {1,2}, {7,7}, {8, 9}, {1, 9} };
+    Arrays.sort(array, (a, b) -> {
+        // 여기 안에서 전부 조정하면됨
+        // 두 번째를 기준으로 오름차순 정렬
+        if(a[1] > b[1]) return 1;
+        else if(a[1] < b[1]) return -1;
+        else return 0;
+    });
+    // 또는 아래와 같이 간단한 코드로 구현 가능, 하지만 구현상 편의를 위해 위의 방법을 권장함
+    // Arrays.sort(array, Comparator.comparingInt(a -> a[0]));
 
-
-
-    println("===================2=======================")
-    val ml2 = ml.sorted().toMutableList()   // 오름차순으로 정렬된 List 반환
-    println(ml2)
-    ml2.sortDescending()    // 내림차순으로 정렬
-    println(ml2)
-
-    println("====================3======================")
-    val ml3 = mutableListOf(2 to "abc", 4 to "abc", 3 to "qwe", 1 to "zwr")
-    println(ml3)
-    ml3.sortByDescending { it.second }  // second를 기준으로 내림차순
-    println(ml3)
+    for (int[] i : array){
+        for(int j : i){
+            System.out.print(j + " ");
+        }
+        System.out.println();
+    }
     
-    println("====================4======================")
-    val ml4 = ml3.sortedWith( compareBy( {it.second}, {-it.first}) )    // 우선 second 기준으로 오름차순, 만약 second가 동일하다면 first로 내림차순
-    println(ml4)
+# collection-stream
+##### forEach
+* Collecitons - return void
+  ```java
+  list.forEach(a -> {
+            System.out.println(a);
+        }); 
+  // 156 32 20
+##### findFirst() - Optional<T>
+* Stream
+  ```java
+  ArrayList<Integer> list = new ArrayList<>();
+  list.add(156);
+  list.add(32);
+  list.add(20);
 
+  Optional<Integer> data  = list.stream().filter(a -> {
+      return a.equals(20);
+  }).findFirst();
 
-    println("====================5======================")
-    val ml5 = mutableListOf("1", "32", "23", "4", "5")
-    val ml6 = ml5.sortedWith( Comparator { a, b ->  (b+a).compareTo(a+b) })
-    println(ml5)
-    println(ml6)
+  data.ifPresent( a -> System.out.println(a));
 
-    val ml7 = mutableListOf(2, 5, 3, 1, 4)
-    val ml8 = ml7.sortedWith( Comparator { a, b -> b - a })
-    println(ml7)
-    println(ml8)
- * 출력
-   * ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fc0oweh%2FbtqO0TFs1ts%2FZHShFqsMaDmxQ8UKnIdsLK%2Fimg.png)
-### Collection
-* |Collection|Immutable|Mutable|
-  |:--:|:--:|:--:|
-  |List|listOf|mutableListOf, arrayListOf|
-  |Set|setOf|mutableSetOf, hashSetOf, linkedSetOf, sortedSetOf|
-  |Map|mapOf|mutableMapOf, hashMapOf, linkedMapOf, sortedMapOf|
+##### filter - return Stream<T>
+* Stream
+  ```java
+  // 마찬가지로 stream 
+  int[][] array = { {5,2}, {1,2}, {7,7}, {8, 9}, {1, 9} };
+
+  Arrays.stream(array).filter( a -> a[1] == 2).forEach( a-> {
+     System.out.println(Arrays.toString(a));
+  });
+  
+##### removeIf
+* Collections - return boolean
+  ```java
+  ArrayList<Integer> list = new ArrayList<>();
+  list.add(156);
+  list.add(32);
+  list.add(20);
+
+  list.removeIf(a -> {
+      return a == 20;
+  });
+
+  System.out.println(list.toString());
+  // [156, 32]
 ---
-### 문자열 (자바랑 큰차이없음)
+# string
+### 문자열
 * 대문자
   * str.toUpperCase()
 * 소문자
@@ -275,8 +446,36 @@ List<int[]> list = Collections.singletonList(array);
   * ```java
     String s = "hello, my friend. hello kotlin. hello world.";
     boolean start = s.startsWith("hello"); // true
-    boolean end =  s.endsWith("world2"); // false
+    boolean end = s.endsWith("world2"); // false
     boolean contains = s.contains("kotlin"); // ture
     System.out.println(start + " / " + end + " / " + contains);
     // true / false / true
     
+---
+# Math
+### 수학 
+* 최댓값
+  * ```java
+    Math.max(a,b)
+* 최솟값
+  * ```java
+    Math.min(a,b)
+* 제곱
+  * ```java
+    Math.pow(a,b)
+* 절대값
+  * ```java
+    Math.abs(a)
+
+---  
+### 기타
+* Array -> List 변환
+  ```java
+  Arrays.asList() // return List<T>
+  
+  
+---
+# data structure
+### 자료구조 틀
+* ![자료구조](https://user-images.githubusercontent.com/51182964/148328450-99a90057-b30f-4f39-beef-3612abe95be7.png)
+* ![java_collection_3](https://user-images.githubusercontent.com/51182964/148328622-6422f3b6-50b2-4ffe-b1ff-5eb19c806bad.jpg)
