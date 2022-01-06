@@ -471,7 +471,140 @@
 * 절대값
   * ```java
     Math.abs(a)
+* 일반적으로 경우의수
+  * 순열 >= 조합
+* 조합
+  * 3개 중에 2 개를 선택 근데 이미 선택한건 **못 선택함**
+    ```java
+    1 2
+    1 3
+    2 3
+  * <details>
+      <summary>코드 보기</summary>
+  
+      ```java
+      /**
+        * r : 뽑고자 하는 개수
+        * temp : r개를 뽑는 결과값을 저장해놓는 배열
+        * current : 현재 개수를 저장해 놓는 값
+        * start : 그다음 반복문을 시작하는 값
+       **/
+      static int[] arr = { 1, 2, 3, 4, 5 };
+      private void Comb(int r, int[] temp, int current, int start) {
+    		  if (r == current) {
+    		  	  System.out.println(Arrays.toString(temp));
+    		  } else {
+    		  	  for (int i = start; i < arr.length; i++) {
+    		  		    temp[current] = arr[i];
+    		  		    Comb(r, temp, current + 1, i + 1);
+    		  	  }
+    		  }
+    	}
+      ```
+    </details>
+  
+* 중복조합
+  * 3개 중에 2 개를 선택 근데 이미 선택한거 **또 선택됨**
+    ```java
+    1 1 
+    1 2 
+    1 3 
+    2 2 
+    2 3 
+    3 3
+  * <details>
+      <summary>코드 보기</summary>
 
+      ```java
+      /**
+        * r : 뽑고자 하는 개수
+        * temp : r개를 뽑는 결과값을 저장해놓는 배열
+        * current : 현재 개수를 저장해 놓는 값
+        * start : 그다음 반복문을 시작하는 값
+       **/
+      static int[] arr = { 1, 2, 3, 4, 5 };
+      private void CombDup(int r, int[] temp, int current, int start) {
+      		if (r == current) {
+      			System.out.println(Arrays.toString(temp));
+      		} else {
+      			for (int i = start; i < arr.length; i++) {
+      				temp[current] = arr[i];
+      				CombDup(r, temp, current + 1, i);
+      			}
+      		}
+      }
+      ```
+    </details>
+* 순열
+  * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한건 **못 선택함**
+    ```java
+    1 2 
+    1 3 
+    2 1 
+    2 3 
+    3 1 
+    3 2
+  * <details>
+      <summary>코드 보기</summary>
+
+      ```java
+      /**
+        * r : 뽑고자 하는 개수
+        * temp : r개를 뽑는 결과값을 저장해놓는 배열
+        * current : 현재 개수를 저장해 놓는 값
+        * visited : 방문 여부를 확인하는 배열
+       **/
+      static int[] arr = { 1, 2, 3, 4, 5 };
+      private static void Permut(int r, int[] temp, int current, boolean[] visited) {
+      		if (r == current) {
+      			System.out.println(Arrays.toString(temp));
+      		} else {
+      			for (int i = 0; i < arr.length; i++) {
+      				if (!visited[i]) {
+      					visited[i] = true;
+      					temp[current] = arr[i];
+      					Permut(r, temp, current +1, visited);
+      					visited[i] = false;
+      				}
+      			}
+      		}
+      }
+      ```
+    </details>
+* 중복순열
+  * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한거 **또 선택가능**
+    ```java
+    1 1 
+    1 2 
+    1 3 
+    2 1 
+    2 2 
+    2 3 
+    3 1 
+    3 2 
+    3 3
+  * <details>
+      <summary>코드 보기</summary>
+
+      ```java
+      /**
+        * r : 뽑고자 하는 개수
+        * temp : r개를 뽑는 결과값을 저장해놓는 배열
+        * current : 현재 개수를 저장해 놓는 값
+       **/
+      static int[] arr = { 1, 2, 3, 4, 5 };
+      private void PermutDup(int r, int[] temp, int current) {
+      		if (r == current) {
+      			System.out.println(Arrays.toString(temp));
+      		} else {
+      			for (int i = 0; i < arr.length; i++) {
+      				temp[current] = arr[i];
+      				PermutDup(r, temp, current + 1);
+      			}
+      		}
+      }
+      ```
+    </details>
 ---  
 ### 기타
 * Array -> List 변환
