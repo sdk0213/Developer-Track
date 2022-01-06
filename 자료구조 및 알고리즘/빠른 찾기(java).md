@@ -182,7 +182,7 @@
   |:--:|:--:|:--:|
   |enqueue|add(e)|offer(e)|
   |dequeue|remove(e)|poll(e)|
-  |peek|element()|peek()|
+  |peek|element()|peek(), 없을경우 null 반환|
 * ```java
   Queue<Integer> queueInteger = new LinkedList<>();
 
