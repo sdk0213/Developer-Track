@@ -373,6 +373,77 @@
     }
     
 # collection-stream
+##### 합계 - sum
+* Stream
+  * ```java
+    int[] array = new int[]{1,2,5,3,6};
+    int sum = Arrays.stream(array).sum();
+    System.out.println(sum);
+    
+    // 17
+* Collection -> stream()
+  * ```java
+    ArrayList<Long> longArray = new ArrayList<>();
+    ArrayList<Double> doubleArray = new ArrayList<>();
+
+    long longSum = longArray.stream().mapToLong(Long::longValue).sum(); // or average()
+    double doubleSum = doubleArray.stream().mapToDouble(Double::doubleValue).sum(); // or average()
+##### 평균 - average 
+* Stream
+  * ```java
+    int[] array = new int[]{1,2,5,3,6};
+    OptionalDouble avg =  Arrays.stream(array).average();
+    avg.ifPresent(System.out::println);
+    // 3.5
+    
+    int[] array = new int[]{1,2,5,3,6};
+    int avg =  Arrays.stream(array).sum() / array.length;
+    System.out.println(avg);
+    // 3
+
+* Collection -> stream()
+  * ```java
+    ArrayList<Long> longArray = new ArrayList<>();
+    ArrayList<Double> doubleArray = new ArrayList<>();
+
+    long longSum = longArray.stream().mapToLong(Long::longValue).average()
+    double doubleSum = doubleArray.stream().mapToDouble(Double::doubleValue).average();
+
+##### 최대값 - max, min
+* Stream
+  * ```java
+    // max
+    double[] array = new double[]{1,2,5,3,6};
+    OptionalDouble max =  Arrays.stream(array).max(); // int 일경우 OptionalInt
+    max.ifPresent(System.out::println);
+    
+    
+    // min
+    int[] array = new int[]{1,2,5,3,6};
+    OptionalInt min = Arrays.stream(array).min();
+    min.ifPresent(value -> {
+        System.out.println(value);
+    });
+* Collections
+  * ```java
+    ArrayList<Integer> array =new ArrayList<>();
+    array.add(3);
+    array.add(1);
+    array.add(5);
+    array.add(7);
+    array.add(6);
+
+    // 밥법 - 1 
+    // int max = Collections.max(array);
+    // int min = Collections.min(array);
+    // System.out.println("min: " + min + " / max: " + max);
+    // min: 1 / max: 7
+    
+    // 방법 - 2
+    Collections.sort(array);
+    System.out.println("min : " + array.get(0) + " / max: " + array.get(array.size() - 1));
+    // min : 1 / max: 7
+    
 ##### forEach
 * Collecitons - return void
   ```java
