@@ -15,6 +15,9 @@
 * [collection - stream](#collection-stream)
 * [string](#string)
 * [수학](#math)
+  * 조합 + 중복조합
+  * 순열 + 중복순열
+  * 소수
 * [자료구조 전체사진, 컬렉션포함](#data-structure)
 
 # ASCII
@@ -605,6 +608,74 @@
       }
       ```
     </details>
+* 소수 (반댓말 : 합성수 = 소수가 아닌수 (1보다 큰수))
+  * O(N√N) - 소수 판별
+    * <details>
+        <summary>코드 보기</summary>
+         
+        ```java
+        private boolean isPrimeNumber(int number){
+            if(number < 2){
+                return false;
+            }
+            if(number == 2){
+                return true;
+            }
+            if(number % 2 == 0){
+                return false;
+            }
+
+            for(int i = 2; i <= Math.sqrt(number) ; i++ ){
+                if(number % i == 0){
+                    return false;
+                }
+            }
+  
+            return true;
+        }
+  
+        ```
+      </details>
+  * O(Nlog(log N)) - N 이하 소수 구하기 - 에라토스테네스의 체
+    * 2의 배수들 삭제 -> 걸러지지않는수중 2보다 큰수 -> 3의 배수들 삭제 -> 걸러지지않는수중 3보다 큰수 -> 5의 배수들 삭제 ... 7의 배수들 삭제 ..... <= sqrt(N) 까지 진행
+    * <details>
+        <summary>코드 보기</summary>
+         
+        ```java
+        // 체로 거르기
+        private boolean[] getPrime(int number){
+            boolean[] prime = new boolean[number+1];
+            if(number < 2){
+                return new boolean[]{true};
+            }
+            prime[0] = prime[1] = true;
+
+            for(int i = 2 ; i <= Math.sqrt(number) ; i++){
+
+                // 이미 걸렀다면 넘어가기
+                if(prime[i] == true){
+                    continue;
+                }
+
+                for(int j = i*i ; j < prime.length ; j+=i){
+                    prime[j] = true; // 체로 거르기
+                }
+            }
+
+            return prime;
+        }
+  
+        // 사용
+        ... someMethod(){
+            boolean[] prime = getPrime(10000);
+            for(int = 0 ; i < prime.length ; i++){
+                if(prime[i] == false){ // 걸러지지 않았다면 소수
+                    System.out.println(prime[i]);
+                } 
+            }
+        }
+        ```
+      </details>
 ---  
 ### 기타
 * Array -> List 변환
