@@ -14,6 +14,7 @@
 * [compareTo](#compareto)
 * [collection - stream](#collection-stream)
 * [string](#string)
+* [hash](#hash)
 * [수학](#math)
   * 조합 + 중복조합
   * 순열 + 중복순열
@@ -92,6 +93,17 @@
 ##### 배열
 * [][]
   * 고정
+* 얕은 복사
+  * 주소를 복사
+  * ```java
+    int[] a = new int[];
+    int[] b = a;
+    // b는 a의 주소를 가짐
+* 깊은 복사 = .clone()
+  * ```java
+    int[] a = new int[];
+    int[] b = a.clone();
+    // b는 a의 값을 가짐
 * ArrayList
   * 가변
     * 기존 + 기존/2 만큼 추가적으로 가변됨
@@ -412,6 +424,10 @@
 ##### 최대값 - max, min
 * Stream
   * ```java
+    // 왠만해서는 알고리즘 문제에서 ifPresent 로 체크해서 존재하지 않는 경우를 확인하기보다는
+    // 가독성과 편의를 위해 위와 같이 그냥 가져오기 
+    int or double or long max = Arrays.stream(array).max().getAsDouble() // getAsLong(), getAsInt();
+   
     // max
     double[] array = new double[]{1,2,5,3,6};
     OptionalDouble max =  Arrays.stream(array).max(); // int 일경우 OptionalInt
@@ -424,6 +440,7 @@
     min.ifPresent(value -> {
         System.out.println(value);
     });
+   
 * Collections
   * ```java
     ArrayList<Integer> array =new ArrayList<>();
@@ -529,8 +546,54 @@
     boolean contains = s.contains("kotlin"); // ture
     System.out.println(start + " / " + end + " / " + contains);
     // true / false / true
-    
 ---
+# Hash
+### 해쉬
+* 생성
+  * ```java
+    Map<String, Integer> hashMap = new HashMap<>();
+    hashMap.put("A",1);
+    hashMap.put("A",2);
+    hashMap.put("B",2);
+    
+    System.out.println(hashMap.get("A"));
+    System.out.println(hashMap.get("B"));
+    // 2
+    // 2
+* getOrDefault()
+  * 가져왔는데 없다면 기본값으로 적용  
+  * ```java
+    map.getOrDefault("A", "B"); 
+* 데이터 순회 - Map 은 Iterator 가 없기 때문에 entrySet() 을 활용하여 Iterator 를 사용한다.
+  * ```java
+    Map<Integer, String> map = new HashMap<>();
+    map.put(23, "Y");
+    map.put(67, "A");
+    map.put(99, "ZH");
+    map.put(103, "UU");
+    map.put(111, "QT");
+     
+    // 방법 1 - keySet()
+    for(int i : map.keySet()){
+        System.out.println(map.get(i));  // 이런식으로 한번더 순회를 해야하기 때문에 entrySet() 보다 느리다.
+    }
+  
+    // 방법 2 - for(Map.Entry<K, V> entry : map.entrySet()) 
+    for(Map.Entry<Integer, String> entry : map.entrySet()){
+    	  System.out.println("[key]:" + entry.getKey() + ", [value]:" + entry.getValue()); // 이미 값을 가져왔기때문에 keySet() 보다 빠르다.
+    }
+  
+    // 방법 3 - iterator()    
+    Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
+    while(iterator.hasNext()){
+        Map.Entry<Integer, String> entry = iterator.next();
+        System.out.println("entry.getKey(): " + entry.getKey() + " / entry.getValue(): " + entry.getValue());
+    }
+* 이미 데이터 있는지 확인
+  * 키가 있나요? - containsKey(key) == true
+  * 키가 있나요? - Map.get(key) != null
+  * 벨류가 있나요? - containsValue(value) == true
+    
 # Math
 ### 수학 
 * 최댓값
@@ -563,17 +626,20 @@
         * current : 현재 개수를 저장해 놓는 값
         * start : 그다음 반복문을 시작하는 값
        **/
-      static int[] arr = { 1, 2, 3, 4, 5 };
-      private void Comb(int r, int[] temp, int current, int start) {
-    		  if (r == current) {
-    		  	  System.out.println(Arrays.toString(temp));
-    		  } else {
-    		  	  for (int i = start; i < arr.length; i++) {
-    		  		    temp[current] = arr[i];
-    		  		    Comb(r, temp, current + 1, i + 1);
-    		  	  }
-    		  }
-    	}
+      void someMethod() {
+        Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
+      }
+  
+      private void Comp(int r, int[] temp, int current, int start, int[] array){
+          if(r == current){
+              System.out.println(Arrays.toString(temp));
+          } else{
+              for(int i = start ; i < array.length ; i++){
+                  temp[current] = array[i];
+                  Comp(r, temp, current + 1, i + 1, array);
+              }
+          }
+      }
       ```
     </details>
   
@@ -590,22 +656,26 @@
       <summary>코드 보기</summary>
 
       ```java
+      // 조합에서 Comp(... i + 1 ) --> Comp(... i, ) 로 변경하면 끝남
       /**
         * r : 뽑고자 하는 개수
         * temp : r개를 뽑는 결과값을 저장해놓는 배열
         * current : 현재 개수를 저장해 놓는 값
         * start : 그다음 반복문을 시작하는 값
        **/
-      static int[] arr = { 1, 2, 3, 4, 5 };
-      private void CombDup(int r, int[] temp, int current, int start) {
-      		if (r == current) {
-      			System.out.println(Arrays.toString(temp));
-      		} else {
-      			for (int i = start; i < arr.length; i++) {
-      				temp[current] = arr[i];
-      				CombDup(r, temp, current + 1, i);
-      			}
-      		}
+      void someMethod() {
+        Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
+      }
+  
+      private void Comp(int r, int[] temp, int current, int start, int[] array){
+          if(r == current){
+              System.out.println(Arrays.toString(temp));
+          } else{
+              for(int i = start ; i < array.length ; i++){
+                  temp[current] = array[i];
+                  Comp(r, temp, current + 1, i, array);
+              }
+          }
       }
       ```
     </details>
@@ -622,26 +692,30 @@
       <summary>코드 보기</summary>
 
       ```java
+      // 중복순열에서 visited 만 추가
       /**
         * r : 뽑고자 하는 개수
         * temp : r개를 뽑는 결과값을 저장해놓는 배열
         * current : 현재 개수를 저장해 놓는 값
         * visited : 방문 여부를 확인하는 배열
        **/
-      static int[] arr = { 1, 2, 3, 4, 5 };
-      private static void Permut(int r, int[] temp, int current, boolean[] visited) {
-      		if (r == current) {
-      			System.out.println(Arrays.toString(temp));
-      		} else {
-      			for (int i = 0; i < arr.length; i++) {
-      				if (!visited[i]) {
-      					visited[i] = true;
-      					temp[current] = arr[i];
-      					Permut(r, temp, current +1, visited);
-      					visited[i] = false;
-      				}
-      			}
-      		}
+      public void Test() {
+          Comp(3, new int[3], 0, new boolean[5], new int[]{1,2,6,3,3});
+      }
+  
+      private void Comp(int r, int[] temp, int current, boolean[] visited, int[] array){
+          if(r == current){
+              System.out.println(Arrays.toString(temp));
+          } else{
+              for(int i = 0 ; i < array.length ; i++){
+                  if(!visited[i]) {
+                      visited[i] = true;
+                      temp[current] = array[i];
+                      Comp(r, temp, current + 1, visited, array);
+                      visited[i] = false;
+                  }
+              }
+          }
       }
       ```
     </details>
@@ -661,21 +735,25 @@
       <summary>코드 보기</summary>
 
       ```java
+      // 조합에서 start 제거 및 int i = start 가 아닌 0 부터 시작
       /**
         * r : 뽑고자 하는 개수
         * temp : r개를 뽑는 결과값을 저장해놓는 배열
         * current : 현재 개수를 저장해 놓는 값
        **/
-      static int[] arr = { 1, 2, 3, 4, 5 };
-      private void PermutDup(int r, int[] temp, int current) {
-      		if (r == current) {
-      			System.out.println(Arrays.toString(temp));
-      		} else {
-      			for (int i = 0; i < arr.length; i++) {
-      				temp[current] = arr[i];
-      				PermutDup(r, temp, current + 1);
-      			}
-      		}
+      public void Test() {
+          Comp(3, new int[3], 0, new int[]{1,2,6,3,3});
+      }
+  
+      private void PermutDup(int r, int[] temp, int current, int[] array){
+          if(r == current){
+              System.out.println(Arrays.toString(temp));
+          } else{
+              for(int i = 0 ; i < array.length ; i++){
+                  temp[current] = array[i];
+                  Comp(r, temp, current + 1, array);
+              }
+          }
       }
       ```
     </details>
