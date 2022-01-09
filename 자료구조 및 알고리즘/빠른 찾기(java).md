@@ -1101,8 +1101,10 @@
 ### 윤년 계산 (+달의 일 계산법)
 <details>
     <summary>윤년 계산</summary>
-* [달의 일 계산법](https://m.blog.naver.com/deltatech3/220761852623)
-* ```java
+  
+* [달의 일수 계산법](https://m.blog.naver.com/deltatech3/220761852623)
+* 윤년계산
+  ```java
   private boolean isYun(int year){
       if( (year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
           return false;  
@@ -1111,6 +1113,7 @@
   }
   
 </details>
+
 </details>
   
 
