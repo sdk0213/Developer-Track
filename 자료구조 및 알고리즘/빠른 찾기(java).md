@@ -175,7 +175,7 @@
   int[] a = new int[];
   int[] b = a.clone();
   // b는 a의 값을 가짐
-### 배열 거꾸로 (String)
+### 배열(Array) 또는 리스트(List) 거꾸로 (String)
 * ```java
   // 가장 쉽게
   String[] array = {"5","2","89","423","111"};
