@@ -654,7 +654,12 @@
       value /= 10;
   }
   // 6 1 7 4 8
-  
+### 문자열 뒤집기
+* ```java
+  StringBuilder sb = new StringBuilder("ewrwer");
+  sb.reverse();
+  System.out.println(sb.toString());
+ 
 ### 대체
 * ```java
   String s = "hello, my friend. hello kotlin. hello world.";
@@ -1064,9 +1069,20 @@
     <img width="313" alt="스크린샷 2022-01-09 오후 3 36 11" src="https://user-images.githubusercontent.com/51182964/148671948-4c5eb990-9945-4f2b-a335-b39db080c69c.png">
   </details>
 * 10 -> N
-  * TODO: 작성필요      
+  * ```java
+    private String converterBin(int number, int bin){
+        StringBuilder sb = new StringBuilder();
+        while(number > 0){
+            sb.append(number % bin);
+            number /= bin;
+        }
+        return sb.reverse().toString();
+    }
 * N -> 10
-  * TODO: 작성필요      
+  * ```java
+    String third = converterBin(45, 3);
+    System.out.println(third); // 1200
+    System.out.println(Integer.parseInt(third, 3)); // 45
   
   </details>
   
