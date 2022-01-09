@@ -427,9 +427,7 @@
   // 두번째 방법
   list.sort((a, b) -> {
       // 오름차순
-      if(a.compareTo(b) > 0) return 1;
-      else if(a.compareTo(b) < 0) return -1;
-      else return 0;
+      return a.compareTo(b);
       // 내림차순
       if(a.compareTo(b) > 0) return -1;
       else if(a.compareTo(b) < 0) return 1;
