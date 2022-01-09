@@ -734,57 +734,55 @@
 <details>
   <summary>Math (수학)</summary>
  
-### 최댓값
-* ```java
-  Math.max(a,b)
+### 최댓값 / 최솟값 / 제곱값 / 절댓값
+<details>
+    <summary>코드 보기</summary>
   
-### 최솟값
 * ```java
-  Math.min(a,b)
-  
-### 제곱
-* ```java
-  Math.pow(a,b)
-  
-### 절대값
-* ```java
-  Math.abs(a)
+  Math.max(a,b) // 최댓값
+  Math.min(a,b) // 최솟값
+  Math.pow(a,b) // 제곱값 (a의 b 제곱)
+  Math.pow(a,b) // 절댓값
+</details>
   
 ### 일반적으로 경우의수는 순열이 조합보다 많다.
 ### 조합
+<details>
+    <summary>펼치기 + 코드 보기</summary>
+  
 * 3개 중에 2 개를 선택 근데 이미 선택한건 **못 선택함**
   ```java
   1 2
   1 3
   2 3
-* <details>
-    <summary>코드 보기</summary>
+* ```java
+  /**
+    * r : 뽑고자 하는 개수
+    * temp : r개를 뽑는 결과값을 저장해놓는 배열
+    * current : 현재 개수를 저장해 놓는 값
+    * start : 그다음 반복문을 시작하는 값
+   **/
+  void someMethod() {
+    Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
+  }
   
-    ```java
-    /**
-      * r : 뽑고자 하는 개수
-      * temp : r개를 뽑는 결과값을 저장해놓는 배열
-      * current : 현재 개수를 저장해 놓는 값
-      * start : 그다음 반복문을 시작하는 값
-     **/
-    void someMethod() {
-      Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
-    }
-  
-    private void Comp(int r, int[] temp, int current, int start, int[] array){
-        if(r == current){
-            System.out.println(Arrays.toString(temp));
-        } else{
-            for(int i = start ; i < array.length ; i++){
-                temp[current] = array[i];
-                Comp(r, temp, current + 1, i + 1, array);
-            }
-        }
-    }
-    ```
-  </details>
+  private void Comp(int r, int[] temp, int current, int start, int[] array){
+      if(r == current){
+          System.out.println(Arrays.toString(temp));
+      } else{
+          for(int i = start ; i < array.length ; i++){
+              temp[current] = array[i];
+              Comp(r, temp, current + 1, i + 1, array);
+          }
+      }
+  }
+
+</details>
   
 ### 중복조합
+<details>
+    <summary>펼치기 + 코드 보기</summary>
+  
 * 3개 중에 2 개를 선택 근데 이미 선택한거 **또 선택됨**
   ```java
   1 1 
@@ -793,35 +791,35 @@
   2 2 
   2 3 
   3 3
-* <details>
-    <summary>코드 보기</summary>
-
-    ```java
-    // 조합에서 Comp(... i + 1 ) --> Comp(... i, ) 로 변경하면 끝남
-    /**
-      * r : 뽑고자 하는 개수
-      * temp : r개를 뽑는 결과값을 저장해놓는 배열
-      * current : 현재 개수를 저장해 놓는 값
-      * start : 그다음 반복문을 시작하는 값
-     **/
-    void someMethod() {
-      Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
-    }
+* ```java
+  // 조합에서 Comp(... i + 1 ) --> Comp(... i, ) 로 변경하면 끝남
+  /**
+    * r : 뽑고자 하는 개수
+    * temp : r개를 뽑는 결과값을 저장해놓는 배열
+    * current : 현재 개수를 저장해 놓는 값
+    * start : 그다음 반복문을 시작하는 값
+   **/
+  void someMethod() {
+    Comp(3, new int[3], 0, 0, new int[]{1,2,6,3,3});
+  }
   
-    private void Comp(int r, int[] temp, int current, int start, int[] array){
-        if(r == current){
-            System.out.println(Arrays.toString(temp));
-        } else{
-            for(int i = start ; i < array.length ; i++){
-                temp[current] = array[i];
-                Comp(r, temp, current + 1, i, array);
-            }
-        }
-    }
+  private void Comp(int r, int[] temp, int current, int start, int[] array){
+      if(r == current){
+          System.out.println(Arrays.toString(temp));
+      } else{
+          for(int i = start ; i < array.length ; i++){
+              temp[current] = array[i];
+              Comp(r, temp, current + 1, i, array);
+          }
+      }
+  }
     ```
-  </details>
+</details>
 
 ### 순열
+<details>
+    <summary>펼치기 + 코드 보기</summary>
+  
 * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한건 **못 선택함**, 쉽게말해서 뽑는 순서까지 포함해서 내가 1 이라는 값을 첫번째에 뽑고 2 라는값을 두번째에 뽑은거랑 2라는 값을 첫번째에 뽑고 1이라는 값을 두번째에 뽑은것은 다른 경우의수로 취급함
   ```java
   1 2 
@@ -830,39 +828,39 @@
   2 3 
   3 1 
   3 2
-* <details>
-    <summary>코드 보기</summary>
-
-    ```java
-    // 중복순열에서 visited 만 추가
-    /**
-      * r : 뽑고자 하는 개수
-      * temp : r개를 뽑는 결과값을 저장해놓는 배열
-      * current : 현재 개수를 저장해 놓는 값
-      * visited : 방문 여부를 확인하는 배열
-     **/
-    public void Test() {
-        Comp(3, new int[3], 0, new boolean[5], new int[]{1,2,6,3,3});
-    }
+* ```java
+  // 중복순열에서 visited 만 추가
+  /**
+    * r : 뽑고자 하는 개수
+    * temp : r개를 뽑는 결과값을 저장해놓는 배열
+    * current : 현재 개수를 저장해 놓는 값
+    * visited : 방문 여부를 확인하는 배열
+   **/
+  public void Test() {
+      Comp(3, new int[3], 0, new boolean[5], new int[]{1,2,6,3,3});
+  }
   
-    private void Comp(int r, int[] temp, int current, boolean[] visited, int[] array){
-        if(r == current){
-            System.out.println(Arrays.toString(temp));
-        } else{
-            for(int i = 0 ; i < array.length ; i++){
-                if(!visited[i]) {
-                    visited[i] = true;
-                    temp[current] = array[i];
-                    Comp(r, temp, current + 1, visited, array);
-                    visited[i] = false;
-                }
-            }
-        }
-    }
-    ```
-  </details>
+  private void Comp(int r, int[] temp, int current, boolean[] visited, int[] array){
+      if(r == current){
+          System.out.println(Arrays.toString(temp));
+      } else{
+          for(int i = 0 ; i < array.length ; i++){
+              if(!visited[i]) {
+                  visited[i] = true;
+                  temp[current] = array[i];
+                  Comp(r, temp, current + 1, visited, array);
+                  visited[i] = false;
+              }
+          }
+      }
+  }
+  ```
+</details>
   
 ### 중복순열
+<details>
+    <summary>펼치기 + 코드 보기</summary>
+
 * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한거 **또 선택가능**
   ```java
   1 1 
@@ -874,33 +872,34 @@
   3 1 
   3 2 
   3 3
-* <details>
-    <summary>코드 보기</summary>
-
-    ```java
-    // 조합에서 start 제거 및 int i = start 가 아닌 0 부터 시작
-    /**
-      * r : 뽑고자 하는 개수
-      * temp : r개를 뽑는 결과값을 저장해놓는 배열
-      * current : 현재 개수를 저장해 놓는 값
-     **/
-    public void Test() {
-        Comp(3, new int[3], 0, new int[]{1,2,6,3,3});
-    }
+* ```java
+  // 조합에서 start 제거 및 int i = start 가 아닌 0 부터 시작
+  /**
+    * r : 뽑고자 하는 개수
+    * temp : r개를 뽑는 결과값을 저장해놓는 배열
+    * current : 현재 개수를 저장해 놓는 값
+   **/
+  public void Test() {
+      Comp(3, new int[3], 0, new int[]{1,2,6,3,3});
+  }
   
-    private void PermutDup(int r, int[] temp, int current, int[] array){
-        if(r == current){
-            System.out.println(Arrays.toString(temp));
-        } else{
-            for(int i = 0 ; i < array.length ; i++){
-                temp[current] = array[i];
-                Comp(r, temp, current + 1, array);
-            }
-        }
-    }
-    ```
-  </details>
+  private void PermutDup(int r, int[] temp, int current, int[] array){
+      if(r == current){
+          System.out.println(Arrays.toString(temp));
+      } else{
+          for(int i = 0 ; i < array.length ; i++){
+              temp[current] = array[i];
+              Comp(r, temp, current + 1, array);
+          }
+      }
+  }
+  ```
+</details>
+  
 ### 소수 (반댓말 : 합성수 = 소수가 아닌수 (1보다 큰수))
+<details>
+      <summary>펼치기 + 코드 보기</summary>
+  
 * O(N√N) - 소수 판별
   * <details>
       <summary>코드 보기</summary>
@@ -968,6 +967,8 @@
       }
       ```
     </details>
+</details>
+  
 ### 약수 - divisor
 * <details>
     <summary>코드 보기</summary>
@@ -1054,16 +1055,22 @@
     ```                                                                 
   </details>
 ### 진법 변환
+<details>
+    <summary>펼치기</summary>
+  
 * <details>
     <summary>변환 사진</summary>
   
     <img width="313" alt="스크린샷 2022-01-09 오후 3 36 11" src="https://user-images.githubusercontent.com/51182964/148671948-4c5eb990-9945-4f2b-a335-b39db080c69c.png">
   </details>
 * 10 -> N
-      
+  * TODO: 작성필요      
 * N -> 10
+  * TODO: 작성필요      
   
   </details>
+  
+</details>
   
   
   
