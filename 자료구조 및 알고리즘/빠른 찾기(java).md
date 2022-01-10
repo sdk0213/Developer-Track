@@ -582,6 +582,12 @@
             System.out.println(a);
         }); 
   // 156 32 20
+* Stream
+  ```java
+  String[] array = new String[]{"asdf","bsdfg"};
+  Arrays.stream(array).forEach( a -> {
+      System.out.println(a);
+  });
   
 ### findFirst() - Optional<T>
 * Stream
