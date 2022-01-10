@@ -220,11 +220,16 @@
 
 ### Array -> List 변환
 * ```java
-  Arrays.asList() // return List<T>
+  // Immutable
+  Arrays.asList() // return List<T> 
+  
+  // Mutable
+  List<Integer> list = new ArrayList<>(Arrays.asList(array)):
   
 ### List -> Array 변환
 * ```java
   List.stream().mapToInt(Integer::intValue).toArray()
+ 
  
 ### 배열사이즈 구하기
 * ```java
