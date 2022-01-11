@@ -110,7 +110,9 @@
 * 표현식
   |의미|식|
   |:--:|:--:|
-  |뒷쪽의 4자리를 제외하고 * 으로 변경|s.replaceAll(".(?=.{4})", "*")|
+  |뒷쪽의 4자리를 제외하고 * 으로 변경|s.replaceAll(".(?=.{4})", "*");|
+  |공백제거|" a  3people  unFollowed   me  ".replaceAll("\\s{1,}","");|
+  |공백제거해서 첫항이 "" 이 안나오게 분리|Arrays.stream("  a  3people   unFollowed    me   ".split("\\s{1,}")).filter( a -> !a.equals("")).toArray(String[]::new);|
   |숫자|^[0-9]*$|
   |영문자|^[a-zA-Z]*$|
   |한글|^[가-힣]*$|
