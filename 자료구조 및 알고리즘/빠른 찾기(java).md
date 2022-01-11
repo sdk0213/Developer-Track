@@ -39,8 +39,8 @@
   * 문자열
   * 자르기
   * 정수 짜르기(스트링 변환없이)
-  * 문자열대체하기
-  * 문자열확인하기  
+  * 문자열 대체
+  * 문자열 확인
 * [hash](#hash)
 * [수학](#math)
   * 최솟값, 최댓값, 절대값, 제곱
@@ -376,7 +376,7 @@
 * ```java
   Comparator<Integer> comp = (a, b) ->
               {
-                  // 오름차순
+                  // 오름차순  // 아주 쉽게는 list.sort(Integer::compareTo);
                   if(a > b) return 1; // a 가 앞에
                   else if(a < b) return -1; // a 가 뒤에 
                   else return 0; // 변화 없음
@@ -385,8 +385,40 @@
                   // else if(a < b) return 1; // a 가 뒤에 
                   // else return 0; // 변화 없음
               };
-### 숫자 정렬
+
+### 숫자 정렬                          
+<details>
+  <summary>Array 코드 (배열에서의 정렬시 주의할점) </summary>
+  
 * ```java
+  int[] arr = new int[]{1,0,2,3,5,6,7,8,9,36};
+  Arrays.sort(arr);
+  System.out.println(Arrays.toString(arr));
+  [0, 1, 2, 3, 5, 6, 7, 8, 9, 36]
+  // 배열해서는 자료형일경우 Comparator 사용불가
+  // 즉, 다음과같으 사용불가
+  // Arrays.sort(arr, (a,b) -> {
+      ...
+  });
+  
+  // 하지만 2차원 배열의 경우에는 가능
+  int[][] arr = new int[][]{{77,0},{2,3},{16,6},{7,8},{9,36}};
+  Arrays.sort(arr, (a,b) -> {
+       if(a[0] > b[0]) return 1;
+       else if(a[0] < b[0]) return -1;
+       else return 0;
+  });
+  for(int[] i: arr){
+      System.out.print(Arrays.toString(i) + " ");
+  }
+  // [2, 3] [7, 8] [9, 36] [16, 6] [77, 0]
+  
+</details>
+  
+<details>
+  <summary>리스트 코드</summary>
+  
+* ```java                                   
   List<Integer> list = new ArrayList<>();
   list.add(5);
   list.add(1);
@@ -417,6 +449,7 @@
 
   System.out.println(list.toString());
   // [1, 4, 5, 7, 8]
+                                
 ### 문자 정렬
 * ```java
   List<String> list = new ArrayList<>();
@@ -451,6 +484,7 @@
   
   System.out.println(list.toString());
   // [가, 나, 다, 마, 자]
+</details>
 </details>
   
 
