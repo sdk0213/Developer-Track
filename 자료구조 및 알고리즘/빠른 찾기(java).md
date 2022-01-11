@@ -385,8 +385,7 @@
                   // else if(a < b) return 1; // a 가 뒤에 
                   // else return 0; // 변화 없음
               };
-
-### 숫자 정렬                          
+                      
 <details>
   <summary>Array 코드 (배열에서의 정렬시 주의할점) </summary>
   
@@ -418,6 +417,7 @@
 <details>
   <summary>리스트 코드</summary>
   
+### 숫자 정렬
 * ```java                                   
   List<Integer> list = new ArrayList<>();
   list.add(5);
@@ -692,6 +692,14 @@
 * ```java
   String s = "hello, my friend. hello kotlin. hello world.";
   String[] splitedString = s.split(", ");
+  
+### 공백이 무수히 있어도 완전히 제거
+* ```java
+  // 공백제거 1
+  " a  3people  unFollowed   me  ".replaceAll("\\s{1,}","");
+  // 공백제거해서 첫항이 "" 이 안나오게 분리
+  String[] array = Arrays.stream("  a  3people   unFollowed    me   ".split("\\s{1,}")).filter( a -> !a.equals("")).toArray(String[]::new);
+  
 ### 정수 짜르기(스트링 변환없이)
 * ```java
   int remain = 0;
