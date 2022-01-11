@@ -760,7 +760,7 @@
   Math.max(a,b) // 최댓값
   Math.min(a,b) // 최솟값
   Math.pow(a,b) // 제곱값 (a의 b 제곱)
-  Math.pow(a,b) // 절댓값
+  Math.abs(a,b) // 절댓값
 </details>
   
 ### 일반적으로 경우의수는 순열이 조합보다 많다.
