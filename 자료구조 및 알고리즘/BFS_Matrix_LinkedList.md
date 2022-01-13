@@ -1,6 +1,6 @@
 * BFS
   * 넓이 우선 탐색
-
+* ![dfs-vs-bfs](https://user-images.githubusercontent.com/51182964/149276731-7b3c1902-9397-4dae-b7ec-c8107737f94a.gif)
 * 전체 노드 개수: V 간선의 개수: E
 * 기본적으로 이미 방문한 정점을 다시 방문하지 않아야 함
 * 시간복잡도
