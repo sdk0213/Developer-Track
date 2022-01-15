@@ -1101,7 +1101,17 @@
         }
         return result;
     }
-    ```                                                                 
+    ```     
+                                  
+    ```java
+    // 재귀
+    private int factorial(int i){
+        if(i < 1){
+            return 1;
+        }
+        return i*factorial(i-1);
+    }
+    ```
   </details>
 ### 피보나치
 * <details>
@@ -1119,7 +1129,29 @@
         return result;
 
     }
-    ```                                                                 
+    ```
+                                  
+    ```java
+    private int pibo(int n){
+        if(n < 3){
+            return 1;
+        }
+        return pibo(n-2) + pibo(n-1);
+    }
+ 
+    // with Memoization
+    private int pibo(int n, int[] visited){
+        if(visited[n] != 0){
+            return visited[n];
+        }
+        if(n < 3){
+            return 1;
+        }
+        visited[n] = pibo(n-2, visited) + pibo(n-1, visited);
+        return visited[n];
+    }
+    ```
+ 
   </details>
 ### 진법 변환
 <details>
