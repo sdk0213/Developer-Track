@@ -812,6 +812,57 @@
   Math.abs(a,b) // 절댓값
 </details>
   
+ 
+### 부분 집합
+<details>
+   <summary>펼치기 + 코드 보기</summary>
+ 
+* [ 4,6,2 ] 의 부분 집합은 [4][6][2][4,6][4,2][6,2][4,6,2]
+```java
+ 
+@Test
+public void solution(){
+    Combination(new int[]{4,6,2}, new boolean[3], 0);
+}
+// 출력결과
+// 4 6 2 
+// 4 6 
+// 4 2 
+// 4 
+// 6 2 
+// 6 
+// 2 
+ 
+
+public void Combination(int[] arr, boolean[] visited, int index) {
+        // index 를 초과하지 않는다.
+        if(index == arr.length) {
+            print(arr, visited);
+            return;
+        }
+
+
+        // 탐색하기 떄문에 index 는 계속 증가해야한다.
+        visited[index] = true; // 나를 포함하는것
+        Combination(arr, visited, index + 1); // 포함했기 떄문에 r 은 1 을 뺀다.
+
+        visited[index] = false; // 나를 포함하지 않는것
+        Combination(arr, visited, index + 1); // 포함안했기 떄문에 r 은 그대로 유지한다.
+}
+ 
+// 배열 출력
+public void print(int[] arr, boolean[] visited) {
+    for(int i = 0; i < arr.length; i++) {
+        if(visited[i] == true)
+            System.out.print(arr[i] + " ");
+    }
+    System.out.println();
+}
+                                  
+```
+ 
+</details>
+ 
 ### 일반적으로 경우의수는 순열이 조합보다 많다.
 ### 조합
 <details>
