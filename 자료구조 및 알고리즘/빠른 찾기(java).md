@@ -1066,7 +1066,7 @@ public void print(int[] arr, boolean[] visited) {
       <summary>코드 보기</summary>
          
       ```java
-      private boolean isPrimeNumber(int number){
+      private boolean isPrimeNumber(long number) // int 로 하면 에러 나올수도 있음
           if(number < 2){
               return false;
           }
@@ -1258,6 +1258,14 @@ public void print(int[] arr, boolean[] visited) {
   </details>
 * 10 -> N
   * ```java
+    public void main().... {
+     
+        String binary = convertBin(123123, 2);
+        binary = binary.replaceAll("^0+", ""); // 앞에 0 전부 제거 (000011010101) 과 같은 경우도 나올수 있기 때문에
+ 
+    }
+ 
+ 
     private String converterBin(int number, int bin){
         StringBuilder sb = new StringBuilder();
         while(number > 0){
@@ -1266,6 +1274,7 @@ public void print(int[] arr, boolean[] visited) {
         }
         return sb.reverse().toString();
     }
+ 
 * N -> 10
   * ```java
     String third = converterBin(45, 3);
