@@ -899,7 +899,7 @@ public void print(int[] arr, boolean[] visited) {
   
 ### 중복조합
 <details>
-    <summary>펼치기 + 코드 보기</summary>
+    <summary>(기본) n개에서 r 개 중복뽑기 (펼치기 + 코드 보기)</summary>
   
 * 3개 중에 2 개를 선택 근데 이미 선택한거 **또 선택됨**
   ```java
@@ -932,6 +932,49 @@ public void print(int[] arr, boolean[] visited) {
       }
   }
     ```
+</details>
+ 
+ 
+ <details>
+    <summary>11개중 5개만 뽑은 개수만큼 배열에 표시</summary>
+  
+```java
+ @Test
+ public void solution2(){
+    // 11개중 5개만 뽑은 개수만큼 배열에 표시
+     comb(5, new int[5], 0, 0, new int[11]);
+     System.out.println("cnt: " + cnt);
+ }
+
+ public void comb(int r, int[] temp, int current, int start, int[] arr){
+     if(r == current){
+         int[] validArray = new int[11];
+         for(int i = 0 ; i < temp.length ; i++){
+             validArray[temp[i]]++;
+         }
+         System.out.println(Arrays.toString(validArray));
+         return;
+     }
+
+     for(int i = start ; i < arr.length ; i++){
+         temp[current] = i;
+         comb(r, temp, current + 1, i, arr);
+     }
+ }
+
+// 출력
+// [5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+// [4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+// [4, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+// [4, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+// [4, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+// [4, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+// [4, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+// ...
+// ..
+
+```
+  
 </details>
 
 ### 순열
