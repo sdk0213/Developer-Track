@@ -298,7 +298,7 @@
 * ||예외 발생|값 리턴|
   |:--:|:--:|:--:|
   |enqueue|add(e)|offer(e)|
-  |dequeue|remove(e)|poll(e)|
+  |dequeue|remove(e) 값 반환도 하고 특정 객체 삭제 가능|poll()|
   |peek|element()|peek(), 없을경우 null 반환|
 * ```java
   Queue<Integer> queueInteger = new LinkedList<>();
@@ -368,10 +368,9 @@
   // clear()
   // []
 
-  java.lang.NullPointerException 발생함 // 만약 String Queue<String> 일경우 발생하지 않음
+  // java.lang.NullPointerException 발생함 // 만약 String Queue<String> 일경우 발생하지 않음
+ 
 </details>
-
-
   
 ------------
 # comparator
