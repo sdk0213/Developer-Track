@@ -34,6 +34,7 @@
   * a.compareTo(b)
   * sort
 * [collection - stream](#collection-stream)
+  * index 말고 숫자를 삭제
   * 합계 - sum
   * 평균 - average
   * 최대값 - max, min
@@ -600,7 +601,11 @@
 [맨 위로](#index)
 <details>
   <summary>collection-stream</summary>
-
+ 
+### index 말고 숫자를 삭제
+* ```java
+  list.remove(Integer.valueOf(1));
+ 
 ### 합계 - sum
 * Stream
   * ```java
