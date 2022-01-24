@@ -41,27 +41,27 @@ public class javaUnitTest {
     boolean[] visited = new boolean[linkedGraph.length];
     boolean[] visited_matrix = new boolean[matrixGraph.length];
 
-    public void dfs_graph(int x){
+    public void dfs_graph(int myPos){
         // 현재 노드를 방문 처리
-        visited[x] = true;
-        System.out.print(x + " -> ");
+        visited[myPos] = true;
+        System.out.print(myPos + " -> ");
         // 현재 노드와 연결된 다른 노드를 재귀적으로 방문
-        for (int i = 0; i < linkedGraph[x].length; i++) {
-            int y = linkedGraph[x][i];
-            if(!visited[y]){
-                dfs_graph(y);
+        for (int i = 0; i < linkedGraph[myPos].length; i++) {
+            int temp = linkedGraph[myPos][i];
+            if(!visited[temp]){
+                dfs_graph(temp);
             }
         }
     }
 
-    public void dfs_matrixGraph(int x){
+    public void dfs_matrixGraph(int myPos){
         // 현재 노드를 방문 처리
-        visited_matrix[x] = true;
-        System.out.print(x + " -> ");
+        visited_matrix[myPos] = true;
+        System.out.print(myPos + " -> ");
         // 현재 노드와 연결된 다른 노드를 재귀적으로 방문
         for (int i = 0; i < matrixGraph.length; i++) {
-            int y = matrixGraph[x][i];
-            if(y == 1 && !visited_matrix[i]){
+            int temp = matrixGraph[myPos][i];
+            if(temp == 1 && !visited_matrix[i]){
                 dfs_matrixGraph(i);
             }
         }
