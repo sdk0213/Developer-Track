@@ -14,6 +14,7 @@
 
 # INDEX 
 ### 클릭 & 이동
+* [비트연산](#bit)
 * [아스키](#ascii)
 * [비교](#comparison)
 * [for](#for)
@@ -67,6 +68,25 @@
 * [자료구조 전체사진, 컬렉션포함](#data-structure)
 
   
+
+------------
+# BIT
+[맨 위로](#index)
+<details>
+  <summary>비트 연산 요약</summary>
+* ```java
+  int a = 7; //0111
+  int b = 2; //0010
+  int result = a&b; //0010 (실제 결과값은 10진수 2)
+  int result = a|b; //0111 (실제 결과값은 10진수 7)
+  int result = a^b; //0101 (실제 결과값은 10진수 5)
+  int result = ~a; //11111111111111111111111111111000
+  int result = a<<2; //11100 (실제 결과값은 10진수 28) ==> x = x *(2^n) 와 같은 효과
+  int result2 = b>>2; //11111111111111111111111111111110 ==> x = x / (2^n) 와 같은 효과
+  
+</details>
+ 
+ 
 ------------
 # ASCII
 [맨 위로](#index)
