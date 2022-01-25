@@ -74,6 +74,7 @@
 [맨 위로](#index)
 <details>
   <summary>비트 연산 요약</summary>
+ 
 * ```java
   int a = 7; //0111
   int b = 2; //0010
