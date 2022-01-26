@@ -831,12 +831,16 @@
   int indexOfZero = str.lastIndexOf("0");
  
 ### StringBuilder
+* 탐색 - String 과 동일함
+  ```java
+  StringBuilder sb = new StringBuilder("Sd2345dff");
+  System.out.println(sb.indexOf("d")); // 1
+  System.out.println(sb.lastIndexOf("d")); // 6
 * 특정 index 값 대체
   ```java
   StringBuilder sb = new StringBuilder("abcd);
   sb.setCharAt(2,"d");
-  System.out.println(sb.toString());
-  // abdd
+  System.out.println(sb.toString()); // abdd
 * 특정 index 범위 값 대체
   ```java
   StringBuilder sb = new StringBuilder("Sdf");
