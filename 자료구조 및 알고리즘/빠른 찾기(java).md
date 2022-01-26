@@ -107,6 +107,7 @@
 * Z	<-> 90
 * a	<-> 97
 * z	<-> 122
+* 공백 <-> 32
 <details>
 <summary>아스키 코드 표(펼치기/접기)</summary>
   
@@ -807,7 +808,8 @@
   System.out.println(sb.toString());
  
 ### 대체
-* ```java
+* String
+  ```java
   String s = "hello, my friend. hello kotlin. hello world.";
   String new_s = s.replace(' ', '+');
   
@@ -819,6 +821,48 @@
   boolean contains = s.contains("kotlin"); // ture
   System.out.println(start + " / " + end + " / " + contains);
   // true / false / true
+ 
+### 탐색
+* 첫 문자 찾기
+  ```java
+  int indexOfZero = str.indexOf("0");
+* 마지막 문자 찾기
+  ```java
+  int indexOfZero = str.lastIndexOf("0");
+ 
+### StringBuilder
+* 특정 index 값 대체
+  ```java
+  StringBuilder sb = new StringBuilder("abcd);
+  sb.setCharAt(2,"d");
+  System.out.println(sb.toString());
+  // abdd
+* 특정 index 범위 값 대체
+  ```java
+  StringBuilder sb = new StringBuilder("Sdf");
+  sb.replace(1,3,"1"); // 1 이상 3 미만
+  System.out.println(sb.toString()); // S1
+* 특정 index 값 삭제
+  ```java
+  StringBuilder sb = new StringBuilder("Sdf");
+  sb.deleteCharAt(1);
+  System.out.println(sb.toString()); // Sf
+* 특정 index 값 변경
+  ```java
+  StringBuilder sb = new StringBuilder("Sdf");
+  sb.setCharAt(1, 'a');
+  System.out.println(sb.toString()); // Saf
+* 특정 index 에 추가
+  ```java
+  StringBuilder sb = new StringBuilder("Sdf");
+  sb.insert(3, "2"); // offset 이기 떄문에 index 의 +1 을 한 값을 넣어야한다. 즉 실제 위치 + 1
+  System.out.println(sb.toString()); // Sdf22
+* 특정 index 범위 삭제
+  ```java
+  StringBuilder sb = new StringBuilder("Sdf");
+  sb.delete(1,2); // 1 이상 2 미만
+  System.out.println(sb.toString()); // Sf
+ 
 
 </details>
   
