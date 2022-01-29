@@ -453,7 +453,64 @@
   // java.lang.NullPointerException 발생함 // 만약 String Queue<String> 일경우 발생하지 않음
  
 </details>
+ 
+<details>
+<summary>우선순위큐 (queue)</summary>
+ 
+### 우선순위큐
+* 높은 우선순위의 요소를 먼저 꺼내서 처리하는 구조 
+* 우선순위는 힙으로 유지된다. 그래서 최대힙, 최소힙을 정해줘야한다.
+* ```java
+  Queue<Integer> priorityQueue = new PriorityQueue<>();
+  // 최소힙 사용할경우: Queue<Integer> priorityQueue = new PriorityQueue<>(Collections.reverseOrder());
+  priorityQueue.offer(2);     // priorityQueue에 값 2 추가
+  priorityQueue.offer(1);     // priorityQueue에 값 1 추가
+  priorityQueue.offer(3);     // priorityQueue에 값 3 추가
+  priorityQueue.peek();       // priorityQueue에 첫번째 값 참조 = 1
+ 
+* ```java
+  class Student implements Comparable<Student> {
+      String name;
+      int age;
+
+      public Student(String name, int age) {
+          this.name = name;
+          this.age = age;
+      }
+
+      @Override
+      public int compareTo(Student target) {
+          return this.age <= target.age ? 1 : - 1;
+      }
+
+      @Override
+      public String toString() {
+          return "이름 : " + name + ", 나이 : " + age;
+      }
+  }
   
+  class main...(){
+      PriorityQueue<Student> priorityQueue = new PriorityQueue<>();
+
+      priorityQueue.offer(new Student("김철수", 20));
+      priorityQueue.offer(new Student("김영희", 100));
+      priorityQueue.offer(new Student("한택희", 66));
+      priorityQueue.offer(new Student("이나영", 7));
+      priorityQueue.offer(new Student("이혁", 43));
+      priorityQueue.offer(new Student("안영희", 100));
+ 
+      // 출력할경우
+      // 이름 : 김영희, 나이 : 100
+      // 이름 : 안영희, 나이 : 100
+      // 이름 : 한택희, 나이 : 66
+      // 이름 : 이혁, 나이 : 43
+      // 이름 : 김철수, 나이 : 20
+      // 이름 : 이나영, 나이 : 7
+  }
+ 
+</details>
+  
+ 
 ------------
 # comparator
 [맨 위로](#index)
