@@ -121,10 +121,10 @@
           Node cur_node = queue.poll();
 
           // 아래 주석된 코드는 목표 정점이 구해졌다면 빠르게 탈출할 수 있는 조건이다.
-//			if (curNode.idx == end) {
-//				System.out.println(dist[curNode.idx]);
-//				return;
-//			}
+          //			if (curNode.idx == end) {
+          //				System.out.println(dist[curNode.idx]);
+          //				return;
+          //			}
 
           if(dist[cur_node.idx] < cur_node.cost) continue;
 
