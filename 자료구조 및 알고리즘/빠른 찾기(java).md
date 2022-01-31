@@ -28,6 +28,8 @@
   * 배열사이즈 구하기
 * [stack](#stack)
 * [queue](#queue)
+  * 큐
+  * 우선순위큐
 * [comparator](#comparator)
   * 문자 정렬
   * 숫자 정렬
@@ -507,6 +509,17 @@
       // 이름 : 김철수, 나이 : 20
       // 이름 : 이나영, 나이 : 7
   }
+* 간단하게 아래처럼 선언가능
+  ```java
+  Queue<Node> distanceQueue = new PriorityQueue<>((a, b) -> {
+            if(a.cost > b.cost){
+                return 1;
+            } else if(a.cost < b.cost){
+                return -1;
+            } else{
+                return 0;
+            }
+  });
  
 </details>
   
