@@ -1,4 +1,9 @@
 ### 인접행렬 + 인접리스트 형태
+* ||Dijkstra|Floyd Warshall|
+  |:--:|:--:|:--:|
+  |용도|한 정점 → 다른 모든 정점 최단 거리|모든 정점 → 모든 정점 최단 거리|
+  |공간복잡도|인접행렬 O(V^2), 인접리스트 O(V+E)|O(V^2)|
+  |시간복잡도|인접행렬 O(V^2), 인접리스트 + 우선순위 큐 O((V+E)logV)|O(V^3)|
 * ```java
   private int INF = Integer.MAX_VALUE-1000000; // =infinity distance // 사실은 끝값에서 노드 비용의 최대값 + 1 을 지워줘야한ㄷ.
 
