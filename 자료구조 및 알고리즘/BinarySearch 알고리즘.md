@@ -8,9 +8,9 @@
   ... Test() {
   
       int[] arr = {1, 3, 5, 7, 8, 10, 20, 35, 99, 100};
-      System.out.println(binSearch(7, 0, arr.length - 1, arr));
-      System.out.println(binSearch(100, 0, arr.length - 1, arr));
-      System.out.println(binSearch(30, 0, arr.length - 1, arr));
+      System.out.println(binSearch(7, 0, arr.length - 1, arr)); // 7 검색됨
+      System.out.println(binSearch(100, 0, arr.length - 1, arr)); // 100 검색됨
+      System.out.println(binSearch(30, 0, arr.length - 1, arr)); // -1.. 검색안됨
 
   }
 
