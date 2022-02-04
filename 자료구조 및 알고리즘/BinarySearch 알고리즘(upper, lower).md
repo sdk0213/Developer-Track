@@ -65,5 +65,5 @@
           }
 
       }
-      return arr[low];
+      return arr[low]; // 만약에 key가 배열 모든 값보다 초과할경우 arr.length 만큼 나오기 때문에 indexExcpetion 발생할수있음
   }
