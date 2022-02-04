@@ -55,7 +55,7 @@
           if(key > arr[mid]){
               low = mid + 1;
           } else if(key < arr[mid]){
-              high = mid -1;
+              high = mid;
           } else{
               if(upper){
                   low = mid + 1;
