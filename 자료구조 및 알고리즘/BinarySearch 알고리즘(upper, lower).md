@@ -45,22 +45,25 @@
   }
 
 
-  public int binSearchBound(int[] arr, int value, boolean upper) {
+  public int binSearchBound(int[] arr, int key, boolean upper) {
       int low = 0;
       int high = arr.length;
-      while (low < high) {
+
+      while(low < high){
           int mid = low + (high - low)/2;
-          if(value == arr[mid]){
-              if (upper) {
+
+          if(key > arr[mid]){
+              low = mid + 1;
+          } else if(key < arr[mid]){
+              high = mid -1;
+          } else{
+              if(upper){
                   low = mid + 1;
               } else {
                   high = mid;
               }
-          } else if (value < arr[mid]) {
-              high = mid;
-          } else {
-              low = mid + 1;
           }
+
       }
       return arr[low];
   }
