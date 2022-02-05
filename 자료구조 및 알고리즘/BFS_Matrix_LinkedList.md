@@ -116,3 +116,78 @@ public class javaUnitTest {
 
     }
 }
+```
+
+---
+### 최단 거리 찾기 [ 문제 - 게임 맵 최단거리 ](https://programmers.co.kr/learn/courses/30/lessons/1844)
+* ```java
+  // maps: 벽이 없는 확인하는 배열
+  public int bfs(int[][] maps){
+        
+      int n = maps.length;
+      int m = maps[0].length;
+      // System.out.println("n: " + n + " / m: " + m);
+      boolean[][] visited = new boolean[n][m];
+
+      Queue<Pos> q = new LinkedList<>();
+
+      q.offer(new Pos(0,0,1));
+
+      visited[0][0] = true;
+
+      while(!q.isEmpty()){
+          Pos myPos = q.poll();
+          int x = myPos.getX();
+          int y = myPos.getY();
+          int cost = myPos.getCost();
+
+          if(x == n-1 && y == m-1){
+              return cost;
+          }
+          System.out.print("[" + x + "," + y + "]" + " -> " );
+
+
+          // 비용증가 및 이동 경로 위/아래/왼쪽/오른쪽 탐색.. 단, 벽이 없고 방문하지 않는지역일경우만 탐색
+          if(x >= 1 && maps[x-1][y] == 1 && !visited[x-1][y]){
+              q.offer(new Pos(x-1, y, cost + 1));
+              visited[x-1][y] = true;
+          }
+          if(y >= 1 && maps[x][y-1] == 1 && !visited[x][y-1]){
+              q.offer(new Pos(x, y-1, cost + 1));
+              visited[x][y-1] = true;
+          }
+          if(y < m-1 && maps[x][y+1] == 1 && !visited[x][y+1]){
+              q.offer(new Pos(x, y+1, cost + 1));
+              visited[x][y+1] = true;
+          }
+          if(x < n-1 && maps[x+1][y] == 1 && !visited[x+1][y]){
+              q.offer(new Pos(x+1,y, cost + 1));
+              visited[x+1][y] = true;
+          }
+
+      }
+
+      return -1;
+        
+        
+   }
+
+   class Pos{
+       int x;
+       int y;
+       int cost;
+       public Pos(int x, int y, int cost){
+           this.x = x;
+           this.y = y;
+           this.cost = cost;
+       }
+       int getX(){
+           return x;
+       }
+       int getY(){
+           return y;
+       }
+       int getCost(){
+           return cost;
+       }
+   }
