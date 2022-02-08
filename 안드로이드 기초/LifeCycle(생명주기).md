@@ -16,6 +16,9 @@ Service
 
 Fragment
 ---
+* Fragment 는 API 28 을 기준으로 onStop() 의 생명주기가 다르다.
+* [사진 출처 - readystory 님의 블로그](https://readystory.tistory.com/199)
+  * <img width="1009" alt="스크린샷 2022-02-08 오후 9 50 07" src="https://user-images.githubusercontent.com/51182964/152990375-cfd51f8e-9a43-4fe4-968d-360563d82442.png">
 ![](https://developer.android.com/images/fragment_lifecycle.png?hl=ko)
 
 Activity & Fragment
