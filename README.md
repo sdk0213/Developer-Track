@@ -247,6 +247,7 @@
 * [ViewPager2 에서 횡스크롤.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/ViewPager2%20에서%20횡스크롤.md)
 * [안드로이드 캐싱 전략.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/안드로이드%20캐싱%20전략.md)
 * [Android KTX.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Android%20KTX.md)
+* [Activity(Or Fragment) LifeCycle 수집.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20중급/Activity(Or%20Fragment)%20LifeCycle%20수집.md)
 
 # :bulb: 안드로이드 아키텍쳐
 ## [Android Architecture](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20디자인%20패턴)
