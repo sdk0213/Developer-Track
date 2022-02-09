@@ -207,6 +207,33 @@
 * https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#conflict-resolution
 ### 작업 취소
 * https://developer.android.com/topic/libraries/architecture/workmanager/how-to/managing-work?hl=ko#stop-worker
+* 작업 취소시 같은 WorkRequest 객체일 경우 재시작이 되지 않는다. 버그 인것인지 의도한것인지는 모르나 같은 객체일경우 재시작할수없다. 새로운 WorkReuest 객체를 생성하면 잘 작동한다.
+  ```java
+  // ex...
+  int delay = 10;
+  WorkRequest request = new OneTimeWorkRequest.Builder(SomeWorkerClass.class)
+                .setInitialDelay(delay, TimeUnit.SECONDS)
+                .addTag("SOME TAG NAME")
+                .build();
+ 
+ 
+  WorkRequest request2 = new OneTimeWorkRequest.Builder(SomeWorkerClass.class)
+                .setInitialDelay(delay, TimeUnit.SECONDS)
+                .addTag("SOME TAG NAME")
+                .build();
+ 
+  // 아래 세 개의 코드는 결국 request 를 동작시키지 않음
+  WorkManager.getInstance(context).enqueue(request);
+  WorkManager.getInstance(context).cancelAllWork();
+  WorkManager.getInstance(context).enqueue(request);
+ 
+ 
+  // 동작함
+  WorkManager.getInstance(context).enqueue(request);
+  WorkManager.getInstance(context).cancelAllWork();
+  WorkManager.getInstance(context).enqueue(request2); // 새로운 객체로 생성
+ 
+  
 
 ### 외부에서 데이터 넣어주기
 * Pass params as follow
