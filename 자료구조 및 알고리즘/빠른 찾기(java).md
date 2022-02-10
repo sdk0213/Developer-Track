@@ -26,6 +26,7 @@
   * 배열 거꾸로 (String / int)
   * Array <-> List 변환
   * 배열사이즈 구하기
+  * 배열내에서 끝 <-> 시작을 순환할수있는 탐색
 * [stack](#stack)
 * [queue](#queue)
   * 큐
@@ -339,9 +340,33 @@
 
   System.out.println("x: " + x + " / y:" + y + " / z :" + z);
   // x: 3 / y:4 / z :5
+
+### 배열내에서 끝 <-> 시작을 순환할수있는 탐색
+* 배열이 끝지점에 한번 더 가면 처음 지점으로 복귀하고 처음 지점에서 뒤로가면 끝지점으로 반복하는 index 를 구하는 법
+* 전체 크기를 n 으로 두었을때 공식은 다음과 같다.
+  * (n + currentPosIdx + plusIdx) % n 
+  * (배열의 길이 + 현재 인덱스 + 이동할인덱스크기) % 배열의 크기
+* ```java
+  int[][] matrix = new int[][]{
+          {1, 2, 3},
+          {4, 5, 6},
+          {7, 8, 9}
+  };
+
+  // 1번 위치(x=0)에서 -2 번 이동 x축 이동 => x index 는 1 번이됨
+  int moveX_less = (3 + 0 + (-2)) % 3;
+  // 1번 위치(x=2)에서 +1 번 이동 x축 이동 => x index 는 0 번이됨
+  int moveX_over = (3 + 2 + (+1)) % 3;
+  // 8번 위치(y=0)에서 -2 번 이동 y축 이동 => y index 는 2 번이됨
+  int moveY_less = (3 + 0 + (-2)) % 3;
+  // 8번 위치(y=2)에서 +1 번 이동 y축 이동 => y index 는 2 번이됨
+  int moveY_over = (3 + 2 + (+1)) % 3;
+  System.out.println(matrix[0][moveX_less]); // 2출력
+  System.out.println(matrix[0][moveX_over]); // 1출력
+  System.out.println(matrix[moveY_less][2]); // 6출력
+  System.out.println(matrix[moveY_over][2]); // 3출력
+  
 </details>
-  
-  
   
 ------------
 # stack
