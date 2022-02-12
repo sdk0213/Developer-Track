@@ -51,7 +51,7 @@
   |[^abc]|abc 가 아니여야 됩니다.|
   |[a-z&&[^bc]]|b와 c를 제외한 a 부터 z까지 중의 하나와 일치합니다|
   |[a-z&&[^m-p]]|m부터 p 까지를 제외한, a 부터 z까지 중의 하나와 일치합니다|
-  |\|뒤에 특수문자 취급|
+  |\\\\ | \\\\ 뒤에 특수문자 취급|
   |.|모든 문자를 확인|
   |\\d|[0-9] 와 동일함|
   |\\D|[^0-9] 와 동일함|
@@ -113,6 +113,7 @@
   |뒷쪽의 4자리를 제외하고 * 으로 변경|s.replaceAll(".(?=.{4})", "*");|
   |공백제거|" a  3people  unFollowed   me  ".replaceAll("\\s{1,}","");|
   |공백제거해서 첫항이 "" 이 안나오게 분리|Arrays.stream("  a  3people   unFollowed    me   ".split("\\s{1,}")).filter( a -> !a.equals("")).toArray(String[]::new);|
+  |숫자는 모두 삭제하여 분리하기|String[] operator = exp.replaceAll("[\\d]","").split("");|
   |숫자|^[0-9]*$|
   |영문자|^[a-zA-Z]*$|
   |한글|^[가-힣]*$|
