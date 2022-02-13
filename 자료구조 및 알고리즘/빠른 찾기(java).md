@@ -27,6 +27,7 @@
   * Array <-> List 변환
   * 배열사이즈 구하기
   * 배열내에서 끝 <-> 시작을 순환할수있는 탐색
+  * 합집합 / 교집합 구하기
 * [stack](#stack)
 * [queue](#queue)
   * 큐
@@ -365,6 +366,24 @@
   System.out.println(matrix[0][moveX_over]); // 1출력
   System.out.println(matrix[moveY_less][2]); // 6출력
   System.out.println(matrix[moveY_over][2]); // 3출력
+ 
+### 합집합 / 교집합 구하기
+* ```java
+  ArrayList<String> s1 = new ArrayList<>();
+  ArrayList<String> s2 = new ArrayList<>();  
+  ... s1 과 s2 에 데이터 삽입.......
+  ...
+ 
+  ArrayList<String> g = new ArrayList<>();
+  ArrayList<String> h = new ArrayList<>();
+  for(String i : s1){
+      if(s2.contains(i)){
+          g.add(i);
+          s2.remove(i);
+      }
+      h.add(i);
+  }
+  h.addAll(s2); 
   
 </details>
   
