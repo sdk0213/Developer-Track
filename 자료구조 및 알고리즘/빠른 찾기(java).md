@@ -273,6 +273,7 @@
   int[] b = a;
   // b는 a의 주소를 가짐
 ### 깊은 복사 = .clone()
+* **2차원 배열의 경우 깊은복사가 진행되지 않음**
 * ```java
   int[] a = new int[];
   int[] b = a.clone();
