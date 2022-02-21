@@ -26,6 +26,8 @@
   * 얕은/깊은 복사
   * 배열 거꾸로 (String / int)
   * Array <-> List 변환
+    * int[] <-> List<Integer>
+    * String[] <-> List<String>
   * 배열사이즈 구하기
   * 배열내에서 끝 <-> 시작을 순환할수있는 탐색
   * 합집합 / 교집합 구하기
@@ -40,7 +42,8 @@
   * a.compareTo(b)
   * sort
 * [collection - stream](#collection-stream)
-  * index 말고 숫자를 삭제
+  * 중복 문자 제거 - distinct
+  * index 말고 숫자를 삭제 (String 이 아닌 Integer 경우)
   * 합계 - sum
   * 평균 - average
   * 최대값 - max, min
@@ -56,6 +59,8 @@
   * 문자열 대체
   * 문자열 확인
 * [hash](#hash)
+  * Hash
+  * LinkedHashMap(순서보장)
 * [수학](#math)
   * 최솟값, 최댓값, 절대값, 제곱
   * 조합 + 중복조합
@@ -331,6 +336,12 @@
 ### List -> Array 변환
 * ```java
   List.stream().mapToInt(Integer::intValue).toArray()
+ 
+  // String 변환
+  String[] s = list.stream().toArray(String[]::new);
+ 
+  // Stirng 변환 처럼 int 를 변환은 불가능(Integer 로만 가능)
+<!--   Integer[] s = list.stream().toArray(Integer[]::new); -->
  
  
 ### 배열사이즈 구하기
@@ -747,6 +758,28 @@
 <details>
   <summary>collection-stream</summary>
  
+### 중복 문자 제거
+* Array
+  ```java
+  String[] id_list = {"muzi", "muzi", "muzi", "neo", "neo", "frodo"};
+  id_list = Arrays.stream(id_list).distinct().toArray(String[]::new);
+  System.out.println(Arrays.toString(id_list));
+ 
+  // [muzi, neo, frodo]
+ 
+* List
+  ```java
+  List<String> list = new ArrayList<>();
+  list.add("muzi");
+  list.add("muzi");
+  list.add("neo");
+  list.add("neo");
+  list.add("frodo");
+
+  System.out.println(Arrays.toString(list.stream().distinct().toArray(String[]::new)));
+ 
+  // [muzi, neo, frodo]
+ 
 ### index 말고 숫자를 삭제
 * ```java
   list.remove(Integer.valueOf(1));
@@ -1048,6 +1081,35 @@
 * 벨류가 있나요? - containsValue(value) == true
     
 </details>
+ 
+ 
+<details>
+  <summary>LinkedHashMap</summary>
+ 
+### 링크드 해쉬맵
+* 순서가 보장되는 해쉬맵
+* 사용
+  ```java
+  LinkedHashMap<String, Integer> map1 = new LinkedHashMap<String, Integer>();
+* 차이점
+  ```java
+  HashMap hashMap = new HashMap<>();
+  hashMap.put("apple", "apple");
+  hashMap.put("banana", "banana");
+  hashMap.put("tomato", "tomato");
+ 
+  // banana, apple, tomato
+ 
+  LinkedHashMap linkedHashMap = new LinkedHashMap<>();
+  linkedHashMap.put("apple", "apple");
+  linkedHashMap.put("banana", "banana");
+  linkedHashMap.put("tomato", "tomato");
+ 
+  // apple, banana, tomato (순서 보장)
+            
+ 
+</details>
+ 
   
   
 ------------  
