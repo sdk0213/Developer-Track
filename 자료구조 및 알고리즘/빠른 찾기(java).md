@@ -15,6 +15,7 @@
 
 # INDEX 
 ### 클릭 & 이동
+* [날짜계산](#time)
 * [비트연산](#bit)
 * [아스키](#ascii)
 * [비교](#comparison)
@@ -78,6 +79,46 @@
 * [자료구조 전체사진, 컬렉션포함](#data-structure)
 
   
+ 
+------------
+# TIME
+[맨 위로](#index)
+<details>
+  <summary>날짜 객체 가져다 쓰기</summary>
+ 
+* import
+  ```java
+  import java.text.*;
+ 
+* 날짜 포멧 정하기
+  ```java
+  SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+ 
+* 날짜 객체로 변환 시키기
+  ```java 
+  try {
+      Date date = format.parse(logs); // <-- Date 반환
+  } catch (ParseException e) { // <-- Exception 은 걍 외우기
+      e.printStackTrace();
+  }
+  Date date = new Date(2350235); // 해당 milliseconds 로 변경
+
+* 캘린더 객체로 변환하여 날짜 계산 쉽게 하기
+  ```java
+  Calendar cal = Calendar.getInstance();
+  cal.setTime(date); // date 객체
+  cal.add(Calendar.MILLISECOND, -(1000)); // 1초 전으로 설정
+  cal.add(Calendar.SECOND, 1); // 1초 후
+  cal.add(Calendar.MINUTE, 1); // 1분 후
+  cal.add(Calendar.HOUR, 1); // 1시간 후
+  cal.add(Calendar.MONTH, 1); // 1달 후 
+  cal.add(Calendar.YEAR, 1); // 1년 후
+  cal.add(Calendar.DATE, 1) // 1일 후
+ 
+  cal.getTime() // return Date 객체 반환
+  cal.getTiem().getTime() // return (long)milliseconds 반환 
+
+</details>
 
 ------------
 # BIT
