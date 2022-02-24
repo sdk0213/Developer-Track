@@ -369,7 +369,7 @@
 
 ### Array -> List 변환
 * ```java
-  // Immutable
+  // Immutable (불변이라서 ArrayList 의 특성이 죽을수있음)
   Arrays.asList() // return List<T> 
   
   // Mutable
