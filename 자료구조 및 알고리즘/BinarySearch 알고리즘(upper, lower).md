@@ -20,7 +20,7 @@
       int high = arr.length - 1;
 
       while (low <= high) {
-          int mid = low + (high - low)/2; // mid 값을 계산.
+          int mid = (low + high)/2; // mid 값을 계산.
 
           if (key > arr[mid]) // 키값이 더 크면 왼쪽을 버린다.
               low = mid + 1;
@@ -50,7 +50,7 @@
       int high = arr.length;
 
       while(low < high){
-          int mid = low + (high - low)/2;
+          int mid = (low + high)/2;
 
           if(key > arr[mid]){
               low = mid + 1;
