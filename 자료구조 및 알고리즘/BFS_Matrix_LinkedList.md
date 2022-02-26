@@ -71,6 +71,7 @@ public class javaUnitTest {
         while(!queue.isEmpty()){
             int myPos = queue.poll();
 
+            // queue 에서 꺼낸것은 방문한것이니 기록함
             sb.append(myPos).append(" -> ");
 
             for(int i = 1 ; i < graph[myPos].length ; i++){
@@ -79,6 +80,7 @@ public class javaUnitTest {
                 // 방문하지 않았다면
                 if(!visited[temp]){
                     queue.offer(graph[myPos][i]);
+                    // 방문처리는 항상 queue 에 offer 와 동시에 처리해야한다. 만약에 꺼낼때 처리한다면 다른 결과가 나올수있기 때문이다.(queue 에 특성상 나중에 꺼내지는것은 나중에 방문처리 되어버리기 때문에 이는 잘못된것임)
                     visited[temp] = true;
                 }
             }
