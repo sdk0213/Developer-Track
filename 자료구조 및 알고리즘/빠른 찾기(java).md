@@ -1166,8 +1166,18 @@
   linkedHashMap.put("tomato", "tomato");
  
   // apple, banana, tomato (순서 보장)
-            
- 
+* 순서가 보장되지만 List 처럼 index 의 형태로 접근이 불가능하다.
+* 순서가 보장되기에 메모리 사용량이 기본 HashMap 보다 높다.
+* 오래된 데이터 삭제
+  ```java
+  @Override
+  protected boolean removeEldestEntry(Map.Entry<K, V> eldest){
+        // return false -> 유지
+        // return true  -> 삭제
+        // 이를 활용하여 lruCache 를 구현 가능하다.
+        // 사이즈가 7이면 삭제 진행. 즉, 사이즈 6으로 유지한다는뜻 (윗 내용중 lru cache 부분 참고)
+        return size() == 7 ? true : false;
+  }
 </details>
  
   
