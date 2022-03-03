@@ -1052,6 +1052,11 @@
   StringBuilder sb = new StringBuilder("Sd2345dff");
   System.out.println(sb.indexOf("d")); // 1
   System.out.println(sb.lastIndexOf("d")); // 6
+* 초기화
+  ```java
+  StringBuilder sb = new StringBuilder("sdfsdaf");
+  sb.setLength(0);
+  System.out.println(); // ""
 * 특정 index 값 대체
   ```java
   StringBuilder sb = new StringBuilder("abcd);
