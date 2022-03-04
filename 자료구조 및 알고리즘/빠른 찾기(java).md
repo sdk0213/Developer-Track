@@ -55,6 +55,7 @@
 * [queue](#queue)
   * 큐
   * 우선순위큐
+  * 데크(Deque)
 * [comparator](#comparator)
   * 문자 정렬
   * 숫자 정렬
@@ -646,7 +647,8 @@
   });
  
 </details>
-  
+    
+* [Deque(stack+queue)_이동](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/collections.deque.md)
  
 ------------
 # comparator
