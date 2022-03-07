@@ -74,6 +74,7 @@
   * removeIf
 * [string](#string)
   * 문자열
+  * 대/소문자 판별 및 변경
   * 자르기
   * 공백이 무수히 있어도 완전히 제거
   * 정수 짜르기(스트링 변환없이)
@@ -986,6 +987,14 @@
   <summary>string</summary>
   
 ### 문자열
+* 대문자, 소문자 판별
+  * ```java
+    Character.isUpperCase('A'); // return boolean -> true
+    Character.isUpperCase('a'); // return boolean -> false
+    
+    Character.isLowerCase('A'); // return boolean -> false
+    Character.isLowerCase('a'); // return boolean -> true
+    
 * 대문자
   * str.toUpperCase()
 * 소문자
