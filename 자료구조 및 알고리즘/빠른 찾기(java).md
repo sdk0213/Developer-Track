@@ -1271,6 +1271,7 @@ public void print(int[] arr, boolean[] visited) {
 <details>
     <summary>펼치기 + 코드 보기</summary>
   
+* <img width="226" alt="스크린샷 2022-03-08 오후 3 33 18" src="https://user-images.githubusercontent.com/51182964/157180461-46b3a749-352b-4905-bbbd-a91f5f145016.png">
 * 3개 중에 2 개를 선택 근데 이미 선택한건 **못 선택함**
   ```java
   1 2
@@ -1304,6 +1305,7 @@ public void print(int[] arr, boolean[] visited) {
 <details>
     <summary>(기본) n개에서 r 개 중복뽑기 (펼치기 + 코드 보기)</summary>
   
+* <img width="241" alt="스크린샷 2022-03-08 오후 3 33 31" src="https://user-images.githubusercontent.com/51182964/157180513-37dba026-f17b-4de1-9185-2e3be2f1167e.png">
 * 3개 중에 2 개를 선택 근데 이미 선택한거 **또 선택됨**
   ```java
   1 1 
@@ -1384,6 +1386,7 @@ public void print(int[] arr, boolean[] visited) {
 <details>
     <summary>펼치기 + 코드 보기</summary>
   
+* <img width="204" alt="스크린샷 2022-03-08 오후 3 33 13" src="https://user-images.githubusercontent.com/51182964/157180567-0562e209-9f6f-4c0c-97d0-207efe3c7526.png">
 * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한건 **못 선택함**, 쉽게말해서 뽑는 순서까지 포함해서 내가 1 이라는 값을 첫번째에 뽑고 2 라는값을 두번째에 뽑은거랑 2라는 값을 첫번째에 뽑고 1이라는 값을 두번째에 뽑은것은 다른 경우의수로 취급함
   ```java
   1 2 
@@ -1425,6 +1428,7 @@ public void print(int[] arr, boolean[] visited) {
 <details>
     <summary>펼치기 + 코드 보기</summary>
 
+* <img width="194" alt="스크린샷 2022-03-08 오후 3 33 27" src="https://user-images.githubusercontent.com/51182964/157180702-36432d8e-61dc-4a0d-97f5-442db7258232.png">
 * 3개 중에 2 개를 선택해서 나열함 근데 이미 선택한거 **또 선택가능**
   ```java
   1 1 
