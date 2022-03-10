@@ -40,7 +40,7 @@
       if(parent[x] == x) {
           return x;
       }
-      else return getParent(parent, parent[x]);
+      else return parent[x] = getParent(parent, parent[x]);
       // 부모 노드의 값과 자신이 다르다면 재귀 호출
   }
 
