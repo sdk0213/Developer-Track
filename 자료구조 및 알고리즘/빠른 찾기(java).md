@@ -114,7 +114,7 @@
 * 날짜 포멧 정하기
   ```java
   SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
- 
+   
 * 날짜 객체로 변환 시키기
   ```java 
   try {
@@ -123,6 +123,9 @@
       e.printStackTrace();
   }
   Date date = new Date(2350235); // 해당 milliseconds 로 변경
+    
+  // format.format(Date 객체) <-- 사용할경우 String 으로 반환
+
 
 * 캘린더 객체로 변환하여 날짜 계산 쉽게 하기
   ```java
