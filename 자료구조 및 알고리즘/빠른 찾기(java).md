@@ -51,6 +51,7 @@
   * 배열사이즈 구하기
   * 배열내에서 끝 <-> 시작을 순환할수있는 탐색
   * 합집합 / 교집합 구하기
+  * 배열(행렬) 90도 변환하기
 * [stack](#stack)
 * [queue](#queue)
   * 큐
@@ -462,6 +463,22 @@
       h.add(i);
   }
   h.addAll(s2); 
+    
+### 배열(행렬) 90도 변환하기
+* 다음의 규칙이 적용된다.
+  * [y, x] -> [x, N-1-y]
+* 코드
+  ```java
+  // 90 도 회전
+  int[][] rotate(int[][] arr) {
+    int[][] rotate = new int[arr.length][arr[0].length];
+    for(int i = 0 ; i < arr.length ; i++) {
+        for(int j = 0 ; j < arr[0].length ; j++) {
+            rotate[i][j] = arr[arr.length-1-j][i];
+        }         
+    }
+    return rotate;
+  }
   
 </details>
   
