@@ -1,6 +1,9 @@
 
 # Closure(클로저)
 ---
+### kotlin 에서의 람다표현식과 많이 비슷하면서도 조금씩 다르다.
+* closure 중에 trailling closure 는 trailling lambda 라는 [kotlin 문법 - [Developer-Track -> 안드로이드 공부(Kotlin) -> 고차함수와 람다함수.md 파일 참고]](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20공부(Kotlin)/고차함수와%20람다함수.md)과 동일한다. 이를 통해서 swift closure는 lambda 의 swift 식 표현이라고 봐도 될것같다.
+---
 ### 중괄호({})로 감싸진 '실행 가능한 코드 블럭' Closure
 * 이름이 없이 함수를 선언한것이 java, kotlin 의 람다와 매우 비슷하다.
 ---
@@ -74,6 +77,7 @@
     }
 ---  
 ### 경량화
+* 개인적인 생각으로 파라미터 넘버링화부터는 가독성이 너무 안좋아서 진짜 명확한거 아니거나 협업이라면 사용 지양하는게 좋을듯싶다.
 * ```swift
   func doSomething(closure: (Int, Int, Int) -> Int) {
     closure(1, 2, 3)
@@ -96,7 +100,7 @@
   })
   
   // ▽▽▽▽▽ return 단일인경우 생략
-  doSomething(closure: {  
+  doSomething(closure: {
      $0 + $1 + $2
   })
 
@@ -105,9 +109,71 @@
      $0 + $1 + $2
   }
 
+---
+### @autoclosure [출처는 eunjin3786님의 티스토리이며 여기서 보면 자세하게 설명되어있음](https://eunjin3786.tistory.com/468)
+* 클로저 함수에 대한 지연동작 보장
+* 파라미터로 함수 + 직접값을 넣는 두가지로 형태로 전달이 가능하게 하고싶을때 사용한다.
+* ```swift
+  func goodMorning(morning: Bool, whom: String) {
+    if morning {
+        print("Good morning, \(whom)")
+    }
+  }
 
+  func giveAname() -> String {
+      print("giveAname() is called")
+      return "Robert"
+  }
+
+  goodMorning(morning: true, whom: giveAname())
+
+  // 출력결과
+  // giveAname() is called
+  // Good morning, Robert
  
  
+  goodMorning(morning: false, whom: giveAname())
 
-# https://devxoul.gitbooks.io/ios-with-swift-in-40-hours/content/Chapter-3/functions-and-closures.html
-# 클로즈 관련 추가내용 필요 
+  // 출력결과
+  // giveAname() is called // <---------중요Point!!------------ 무조건 한번 실행된다. 
+  
+* 무조건 한번 실행되기보다는 지연되게 동작하고싶다면? -> 클로저로 사용
+  * ```swift
+    func goodMorning(morning: Bool, whom: () -> String) {
+      if morning {
+          print("Good morning, \(whom())")
+      }
+    }
+
+    func giveAname() -> String {
+        print("giveAname() is called")
+        return "Robert"
+    }
+
+    goodMorning(morning: true, whom: giveAname)
+    // 출력결과
+    // giveAname() is called
+    // Good morning, Robert
+
+    goodMorning(morning: false, whom: giveAname)
+    // 출력결과 없음
+    
+* 그런데 이렇게하면 값만 넘겨주에 컴파일 에러가 뜨는데.. 하지만 그냥 값 그 자체를 넘겨주고 싶은경우도 있을수있으니까 @autoclosure 사용한다.
+  * ```swift
+    func goodMorning(morning: Bool, whom: @autoclosure () -> String) {
+      if morning {
+          print("Good morning, \(whom())")
+      }
+    }
+
+    func giveAname() -> String {
+        print("giveAname() is called")
+        return "Robert"
+    }
+
+    goodMorning(morning: false, whom: giveAname())
+    goodMorning(morning: true, whom: "Pavel")
+
+    // 출력결과
+    // Good morning, Pavel
+
