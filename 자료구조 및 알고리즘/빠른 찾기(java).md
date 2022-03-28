@@ -864,6 +864,7 @@
   // [muzi, neo, frodo]
  
 ### index 말고 숫자를 삭제
+* list.remove 는 기본적으로 Index 삭제이며 Object 를 넣을경우 해당 Object 를 삭제함
 * ```java
   list.remove(Integer.valueOf(1));
  
