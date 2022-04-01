@@ -158,6 +158,7 @@
 * [java, groovy plugin not compatible with android plugin (동시 지원 불가).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/java,%20groovy%20plugin%20not%20compatible%20with%20android%20plugin%20(동시%20지원%20불가).md)
 * [Dalvik, ART, MultiDex.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/Dalvik%2C%20ART%2C%20MultiDex.md)
 * [M1 Macbook 설정.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/M1%20Macbook%20설정.md)
+* [Android 메모리 최적화 코드 작성팁.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20스튜디오/Android%20메모리%20최적화%20코드%20작성팁.md)
 
 # :bulb: 안드로이드 API 관련
 ## [Android API](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20API%20기초)
