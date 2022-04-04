@@ -5,6 +5,7 @@
 # 2. Android 에서 enum 의 사용은 메모리용량을 많이 사용한다?
 * [youtube 비디오 (enum의 위험성)- The price of ENUMs (100 Days of Google Dev)](https://www.youtube.com/watch?v=Hzs6OBcvNQE)
 * <img width="685" alt="스크린샷 2022-04-01 오후 10 52 36" src="https://user-images.githubusercontent.com/51182964/161277328-d8d5c2aa-596c-4838-b676-418e3d952d9e.png">
+* **이는 kotlin 에서도 동일하다. 최대하 지양한다.**
 * int 로 열거했을때와 enum 으로 열겨했을때의 메모리 차이는 13배 정도난다.
 * enum 으로 티끌모아 태산이 되면 이미 늦었다. 
 ### 대처법 1
