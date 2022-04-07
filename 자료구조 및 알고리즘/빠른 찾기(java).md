@@ -1089,7 +1089,7 @@
   StringBuilder sb = new StringBuilder("sdfsdaf");
   sb.setLength(0);
   System.out.println(); // ""
-* 특정 index 값 대체
+* 특정 index 값 대체(변경)
   ```java
   StringBuilder sb = new StringBuilder("abcd);
   sb.setCharAt(2,"d");
@@ -1104,11 +1104,6 @@
   StringBuilder sb = new StringBuilder("Sdf");
   sb.deleteCharAt(1);
   System.out.println(sb.toString()); // Sf
-* 특정 index 값 변경
-  ```java
-  StringBuilder sb = new StringBuilder("Sdf");
-  sb.setCharAt(1, 'a');
-  System.out.println(sb.toString()); // Saf
 * 특정 index 에 추가
   ```java
   StringBuilder sb = new StringBuilder("Sdf");
