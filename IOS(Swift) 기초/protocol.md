@@ -8,6 +8,45 @@
 * 사용이유
   * 자바나 코틀린처럼 상속의 한계 극복
 
+##### 기본 형태
+* 프로토콜을 따를 때 해당 변수는 { get } 과 { get set } 으로 구현한다.
+* protocol
+  ```swift
+  protocol ComputerScienceStudent{
+     var name:String { get }
+     var laptop:String? { get set }
+
+     func doDataStructure()
+     func doOperatingSystem()
+     func doNetwork()
+  }
+* class
+  ```swift
+  class Student:ComputerScienceStudent{
+ 
+     ... property 코드들..     
+     var laptop:String?{
+         get{
+             return self._laptop
+         }
+
+         set{
+             self._laptop = newValue
+         }
+     }
+     ... property 코드들..     
+
+     func doDataStructure(){
+         print("I love Data Structure") // <-- 구현
+     }
+     func doOperatingSystem(){
+         print("It's boring") // <-- 구현    
+     }
+     func doNetwork(){
+         print("I like Network") // <-- 구현
+     }
+  }
+
 
 ---
 ### [주의점](https://academy.realm.io/kr/posts/understanding-swift-protocol/)
