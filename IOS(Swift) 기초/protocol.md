@@ -47,7 +47,18 @@
      }
   }
 
+##### 선택적인 구현을 하고싶을때는 @objc
+* ```swift
+  @objc protocol ComputerScienceStudent{
+     var name:String { get }
+     var laptop:String? { get set }
 
+     func doDataStructure()
+     func doOperatingSystem()
+     func doNetwork()
+
+     @objc optional func doGraphics()
+  }
 ---
 ### [주의점](https://academy.realm.io/kr/posts/understanding-swift-protocol/)
 * Swift 프로그래밍이라고 무조건 프로토콜을 사용하기보다는 프로토콜을 필요한 경우에 잘 쓴다면 좀 더 Swift스러운 코드
