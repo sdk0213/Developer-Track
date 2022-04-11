@@ -11,48 +11,78 @@
 * 자바 인터페이스보다는 조금 더 넓은 의미를 가지며 객체를 만들 때 스케치를 하는 느낌이 강한것같다.
 
 ##### property
-##### method
-##### initializer
-
-
-##### 기본 형태
-* 프로토콜을 따를 때 해당 변수는 { get } 과 { get set } 으로 구현한다.
-* protocol
-  ```swift
+* 항상 var 키워드를 쓰는 변수 프로퍼티로 사용하며 아래코드 처럼 get set 으로 접근 수정 처리
+* ```swift
   protocol ComputerScienceStudent{
      var name:String { get }
      var laptop:String? { get set }
-
-     func doDataStructure()
-     func doOperatingSystem()
-     func doNetwork()
+     
+     ..
+     .
   }
-* class
-  ```swift
-  class Student:ComputerScienceStudent{
- 
-     ... property 코드들..     
-     var laptop:String?{
-         get{
-             return self._laptop
-         }
+  
+##### method
+* static 혹은 class 키워드 사용
+* ```swift
+   protocol Animal {
+     var name: String {get set} //읽기, 쓰기 모두 가능
+     var age: Int {get set} //읽기만
 
-         set{
-             self._laptop = newValue
-         }
-     }
-     ... property 코드들..     
+     func sayNameAndAge()
 
-     func doDataStructure(){
-         print("I love Data Structure") // <-- 구현
-     }
-     func doOperatingSystem(){
-         print("It's boring") // <-- 구현    
-     }
-     func doNetwork(){
-         print("I like Network") // <-- 구현
-     }
+      mutating func addAge(amount: Int) // <----------- 인스턴스 내부의 값을 변경하는 가변 메서드의 경우 mutating(struct 한정, class 는 안해도됨)
   }
+
+  struct Human: Animal {
+      var name: String = "Park"
+      var age: Int = 15
+
+      func sayNameAndAge() {
+          print(name)
+          print(age)
+      }
+
+      mutating func addAge(amount: Int) {
+          age += amount
+      }
+  }
+##### initializer
+* ```swift
+  protocol Animal {
+     var name: String {get set} //읽기, 쓰기 모두 가능
+     var age: Int {get set} //읽기만
+
+     init(name: String, age: Int)    // <----------------- initializer
+
+
+     func sayNameAndAge()
+
+     mutating func addAge(amount: Int)
+  }
+
+  class Human: Animal {
+      var name: String
+      var age: Int
+
+      required init(name: String, age: Int) {
+          self.name = name
+          self.age = age
+      }
+
+
+      func sayNameAndAge() {
+          print(name)
+          print(age)
+      }
+
+      func addAge(amount: Int) {
+          age += amount
+      }
+  }
+  
+  // var p1: Human = Human(name: "Park", age: 15)
+  // p1.addAge(amount: 5)
+  // p1.sayNameAndAge()
 
 ##### 선택적인 구현을 하고싶을때는 @objc
 * ```swift
