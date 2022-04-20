@@ -9,20 +9,20 @@
 * wiki 에서는 protocl 과 다른언어의 interface 는 동일하다고 말한다.
   * [Protocol is a term used by particular object-oriented programming languages with a variety of specific meanings, which other languages may term interface or trait.](https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)) - wiki -
 * 초기 구현 선택적으로 받을수있으나 초기 값 설정이 불가능 (java inteface 는 이와 반대)
-* mutating 을 사용한다.
+* mutating 을 사용한다. mutating 은 유일하게 property 값을 수정가능한 mehtod(?)
  * ```swift
-  struct Meeting {
-    var name: String
-    var state: MeetingState
-    var reminderDate: Date?
-    ...
+   struct Meeting {
+     var name: String
+     var state: MeetingState
+     var reminderDate: Date?
+     ...
 
-    mutating func cancel(withMessage message: String) {
-        state = .cancelled(message: message)
-        reminderDate = nil
-    }
-  }
-* 이 외 많은 사소한 차이가 있지만 POP 의 시작은 protocol Extension 부터 온다고 함
+     mutating func cancel(withMessage message: String) {
+         state = .cancelled(message: message)
+         reminderDate = nil
+     }
+   }
+* 이 외 많은 사소한 차이가 있지만 POP 의 시작은 protocol Extension 부터 온다고 한다.
 ---
 ### OOP 단점
 * superClass 가 뭔지를 알아야 한다.
