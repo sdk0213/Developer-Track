@@ -10,7 +10,8 @@
   * [Protocol is a term used by particular object-oriented programming languages with a variety of specific meanings, which other languages may term interface or trait.](https://en.wikipedia.org/wiki/Protocol_(object-oriented_programming)) - wiki -
 * 초기 구현 선택적으로 받을수있으나 초기 값 설정이 불가능 (java inteface 는 이와 반대)
 * mutating 을 사용한다.
- * struct Meeting {
+ * ```swift
+  struct Meeting {
     var name: String
     var state: MeetingState
     var reminderDate: Date?
