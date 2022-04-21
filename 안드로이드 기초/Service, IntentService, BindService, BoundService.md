@@ -9,7 +9,14 @@ Service - [출처](https://fullstatck.tistory.com/23)
 * 아무 스레드에서 생성되며 아무곳에서 실행 가능
 * Main Thread에 포함되는 백그라운드에서 동작
 * 무거운 작업이면 Main Thread에 영향을 줄수 있음
-
+* return
+  * when the phone runs out of memory and kills the service before it finishes executing
+  * START_STICKY
+    * tells the OS to recreate the service after it has enough memory and call onStartCommand() again with a null intent
+  * START_NOT_STICKY
+    * tells the OS to not bother recreating the service again.
+  * START_REDELIVER_INTENT
+    * tells the OS to recreate the service and redeliver the same intent to onStartCommand()
 IntentService
 ---
 * 오래걸리지만 메인스레드와 관련이 없는 작업을 할때 주로 이용한다. 메인스레드와 관련된 작업을 해야 한다면 Handler와 BroadCastIntent를 사용해야 한다.
