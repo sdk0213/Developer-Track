@@ -490,6 +490,7 @@
 * [(Naver D2 옥수환) 앱 속도 올리기.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20옥수환)%20앱%20속도%20올리기.md)
 * [(Naver D2 임원석)디버깅, 분석 꿀팁.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Naver%20D2%20임원석)디버깅%2C%20분석%20꿀팁.md)
 * [(Droid knight - 권혁신) Asynchronous Programming.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20컨퍼런스%20영상%20정리/(Droid%20knight%20-%20권혁신)%20Asynchronous%20Programming.md)
+* [네이버 LINE 앱 개발자.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20컨퍼런스%20영상%20정리/네이버%20LINE%20앱%20개발자.md)
 
 # 💡 Git
 ## [Git](https://github.com/sdk0213/Developer-Track/tree/master/협업/Git)
