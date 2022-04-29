@@ -1,8 +1,20 @@
-Junit
-===
-> 정의
+# Junit
+---
+### 정의
 * JUnit은 자바용 단위 테스트 도구
-> 기본 사용 함수
+---
+### 버전
+* |비교|JUnit4|JUnit5|
+  |:--:|:--:|:--:|
+  |required java version|JDK 5|JDK 8(Android Gradle 3.2.0 Gradle 4.7|
+  |무시 annotation|@Ignore|@Disable|
+  |태킹 annotation|@Category|@Tag|
+  |초기화 annotation|@Before|@BeforeEach|
+  |1번 초기화 annotation|[@BeforeClass](https://junit.org/junit4/javadoc/4.12/org/junit/BeforeClass.html)|@BeforeAll|
+  |결과 annotation|@After|@AfterEach|
+  |결과로 인한 초기화 annotation|[@AfterClass](https://junit.org/junit4/javadoc/4.12/org/junit/AfterClass.html)|@AfterAll|
+---
+### 기본 사용 함수
 * assertArrayEquals(a, b); 
   * 배열 A와 B가 일치함을 확인
 * assertEquals(a, b);
@@ -67,7 +79,7 @@ Junit
       assertThat(result, is(20)); 
     } 
    }
-> 테스트 수행하기
+### 테스트 수행하기
   * 메뉴 -> Run -> Edit Configurations -> '+'버튼 -> Android Test -> 테스트의 이름을 작성 -> Module을 app선택 -> Test는 Class 선택 -> Class는 테스트 클래스인 TestSample을 선택 -> instrumentation runner는 gradle에서 설정한 AndroidJUnitRunner를 선택 -> **Run(실행)**
   * 예상값과 다르다면 에러 아니면 초록색으로 성공표시됨
 
