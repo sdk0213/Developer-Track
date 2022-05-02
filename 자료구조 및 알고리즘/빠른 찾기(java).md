@@ -659,6 +659,7 @@
   }
 * 간단하게 아래처럼 선언가능
   ```java
+  // 오름차순일경우 Min 를 꺼냄
   Queue<Node> distanceQueue = new PriorityQueue<>((a, b) -> {
             if(a.cost > b.cost){
                 return 1;
@@ -668,7 +669,16 @@
                 return 0;
             }
   });
- 
+  // 내림차순일경우 Min 를 꺼냄
+    Queue<Node> distanceQueue = new PriorityQueue<>((a, b) -> {
+        if(a.cost < b.cost){
+            return 1;
+        } else if(a.cost > b.cost){
+            return -1;
+        } else{
+            return 0;
+        }
+  });                                                    
 </details>
     
 * [Deque(stack+queue)_이동](https://github.com/sdk0213/Developer-Track/blob/master/자바%20지식/collections.deque.md)
