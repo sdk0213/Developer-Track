@@ -74,7 +74,9 @@
   }
   
 ---
-### Parametric Search
+### Parametric Search (매개변수탐색)
+* <img width="907" alt="스크린샷 2022-05-06 오후 7 30 59" src="https://user-images.githubusercontent.com/51182964/167115437-9cb87ea6-bc63-45c8-8a46-c8c9f35dbc62.png">
+* <img width="921" alt="스크린샷 2022-05-06 오후 7 31 49" src="https://user-images.githubusercontent.com/51182964/167115483-ce811182-3f89-4c80-8de8-9c96c8376a96.png">
 * 최적화 문제를 결정 문제로 바꾸어 푸는 것
 * 선택할수 있는 모든 경우의 수가 있을텐데 모든 경우의 수를 오름차순으로 나열하고 이분탐색으로 반으로 쪼개서 해당 경우의 수가 가능한지 불가능한지 여부를 따지는것이다.
   * 1, 2, 3 은 조건 만족 4, 5는 조건 불만족의 형태로 나타낼수있는 문제의 경우는 Parametric Search 로 해결가능하다.
