@@ -385,6 +385,7 @@
 * [애니메이션(animation).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/애니메이션(animation).md)
 * [CoordinatorLayout.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/CoordinatorLayout.md) 
 * [custom radiobutton.md](https://github.com/sdk0213/Developer-Track/blob/master/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C%20%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83(layout)/custom%20radiobutton.md)
+* [Spannable(글자_마크업) - 글자색 입히기, 글자에 링크달기 등..](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/Spannable(글자_마크업).md)
  
 # :bulb: RxJava2
 ## [Android Rxjava2](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20공부(RxJava2))
