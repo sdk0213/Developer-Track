@@ -63,6 +63,10 @@
   * ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbvxWjo%2FbtqDebw9kA9%2F7jpEbOkQuyPxx9LNg041G0%2Fimg.png)
 * 아무 Manager 나 골라써서 만든다고 하여서 문제가되지는(메모리 릭) 않는듯보이나 의도치 못한 버그가 생성될것으로 보이기 때문에 위 사항을 따라서 개발하여야함
 ---
+### fragment 와 activity 간의 통신 설정하기
+* ![Page1](https://user-images.githubusercontent.com/51182964/167651013-d2cd29e3-6cc5-4fb0-8994-938afd268d80.jpg)
+* ![Page2](https://user-images.githubusercontent.com/51182964/167651032-a878ca54-6253-4a92-9456-d0371b789f80.jpg)
+
 ### 애니메이션
 * setCustomAnimations(enter, exit, popEnter, popExit)
 * fromX(or Y)Delta -> toX(or Y)Delta
