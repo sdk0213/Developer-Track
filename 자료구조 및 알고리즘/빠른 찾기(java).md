@@ -1505,6 +1505,8 @@ public void print(int[] arr, boolean[] visited) {
           if(number < 2){
               return false;
           }
+          // 2 는 소수임 ㅋ
+          if(number == 2) return true;
           if(number % 2 == 0){
               return false;
           }
