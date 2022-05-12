@@ -1529,11 +1529,12 @@ public void print(int[] arr, boolean[] visited) {
       // 체로 거르기
       private boolean[] getPrime(int number){
           boolean[] prime = new boolean[number+1];
-          if(number < 2){
-              return new boolean[]{true};
+          if(number < 2 
+              return new boolean[]{true, true}; // 숫자 0과 1은 소수가아님
           }
           prime[0] = prime[1] = true;
 
+          // 2의 배수들 거르고, 3의 배수들 거르고 ...
           for(int i = 2 ; i <= Math.sqrt(number) ; i++){
 
               // 이미 걸렀다면 넘어가기
