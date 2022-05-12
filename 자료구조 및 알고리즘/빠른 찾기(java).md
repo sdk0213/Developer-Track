@@ -1544,7 +1544,7 @@ public void print(int[] arr, boolean[] visited) {
                   continue;
               }
 
-              for(int j = i*i ; j < prime.length ; j+=i){
+              for(int j = i*i ; j <= number ; j+=i){
                   prime[j] = true; // 체로 거르기
               }
           }
