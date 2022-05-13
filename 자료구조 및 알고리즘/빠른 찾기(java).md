@@ -1305,6 +1305,7 @@ public void print(int[] arr, boolean[] visited) {
   1 2
   1 3
   2 3
+* ![image](https://user-images.githubusercontent.com/51182964/168310975-a63416ae-e5e6-45ce-9d4d-03d4231beb8c.png)
 * ```java
   /**
     * r : 뽑고자 하는 개수
