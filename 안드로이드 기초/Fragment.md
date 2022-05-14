@@ -125,3 +125,29 @@
             android:fromYDelta="100%"
             android:toYDelta="0" />
     </set>
+       
+---
+### onBackPressed() 처리하기
+* 주의점
+  * fragment 에서 activity 의 onbackpressed 리스너로 콜백을 받는경우 activitiy 에서 따로 onbackpressed 를 커스텀해서 무시해버린다면 해당 콜백은 받지못하니 activity onbackpressed 를 다시 점검할 필요가있다.
+* fragment add 로 stack 을 쌓는경우
+  * ```java
+    // 현재 fragment 가 마지막일경우
+    if(fm.getBackStackEntryCount() == 1){
+        finish()
+    } 
+    
+    // 마지막 fragment 전 일경우
+    else if(fm.getBackStackEntryCount() == 2){
+    
+    } 
+* fragment replace 일경우 -> 조금 더 관련 정보 탐색 필요
+  * 주의
+    * add 로 stack 을 쌓는경우에는 아래 findFragmentId 로 찾을경우 isVisible() 이 보이지 않는데도 true 로 반환하는 경우가있음
+  * ```java
+    Fragment frag = (SamsungHelloFragment) getSupportFragmentManager().findFragmentByTag(SamsungHelloFragment.class.getSimpleName());
+    if((frag != null && frag.isVisible())){
+        finish();
+        return;
+    } 
+
