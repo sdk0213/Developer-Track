@@ -150,4 +150,7 @@
         finish();
         return;
     } 
+---    
+### fragment 겹치는 현상
+* ![Fragment 겹침 문제](https://user-images.githubusercontent.com/51182964/168475901-1d0128c4-0c9e-4e22-93e9-30c1992a88b3.jpg)
 
