@@ -238,7 +238,10 @@
 * [RecyclerView-adapter-DiffUItil.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/RecyclerView-adapter-DiffUItil.md)
 * [ListAdapter.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/ListAdapter.md)
 * [Fragment](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20기초/Fragment.md)
-
+  * fragment 와 activity 간의 통신 설정하기
+  * 애니메이션 설정
+  * onBackPressed() 처리하기
+  * fragment 겹치는 현상
 
 # :bulb: 안드로이드 중급
 ## [Android Intermediate](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20중급)
