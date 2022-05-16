@@ -174,6 +174,7 @@
 * [camera2.java - 예제코드](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/camera2.java)
 * [camera2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20API%20기초/camera2.md)
 * [sdcard.java - 예제코드](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/sdcard.java)
+* [전화상태 감시.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20API%20기초/전화상태%20감시.md)
 
 
 # :bulb: 안드로이드 OS 관련
