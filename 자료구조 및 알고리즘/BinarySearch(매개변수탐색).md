@@ -1,7 +1,7 @@
 ### 이진탐색 - 아래 UpperBound 코드만 활용해도 문제풀이가능함
 * 정렬된 알고리즘에서 사용되며 선형 탐색에 비해 속도가 빠르다. 하지만 정렬이 되어있어야한다는 전제조건이 붙는다.
 * 시간복잡도: O(logN)
-* ![image](https://user-images.githubusercontent.com/51182964/169064708-baec0a6f-e3f9-43c2-b56a-fe63bd32c268.png)
+* ![image](https://user-images.githubusercontent.com/51182964/169071765-3da3e423-9494-462b-8f32-81ba789f03c9.png)
 * ```java
 
   @Test
