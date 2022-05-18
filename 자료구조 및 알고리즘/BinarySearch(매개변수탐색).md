@@ -1,6 +1,7 @@
 ### 이진탐색 - 아래 UpperBound 코드만 활용해도 문제풀이가능함
 * 정렬된 알고리즘에서 사용되며 선형 탐색에 비해 속도가 빠르다. 하지만 정렬이 되어있어야한다는 전제조건이 붙는다.
 * 시간복잡도: O(logN)
+* ![image](https://user-images.githubusercontent.com/51182964/169064708-baec0a6f-e3f9-43c2-b56a-fe63bd32c268.png)
 * ```java
 
   @Test
@@ -15,20 +16,20 @@
 
   public int binSearch(int[] arr, int key) {
       // 맨처음 low = 0, high는 배열의 끝이다.
-      int low = 0;
-      int high = arr.length - 1;
+      int left = 0;
+      int right = arr.length - 1;
 
-      while (low <= high) {
-          int mid = (low + high)/2; // mid 값을 계산.
+      while (left <= right) {
+          int mid = (left + right)/2; // mid 값을 계산.
 
           if (key > arr[mid]) // 키값이 더 크면 왼쪽을 버린다.
-              low = mid + 1;
+              left = mid + 1;
           else if (key < arr[mid]) // 키값이 더 작으면 오른쪽을 버린다.
-              high = mid - 1;
+              right = mid - 1;
           else
               return arr[mid]; // key found
       }
-      return - (low + 1);  // key not found
+      return - (left + 1);  // key not found
   }
 
 ### Upper,Lower Bound binary Search
@@ -39,6 +40,10 @@
     * upperBound 로 4를 검색하며 -> 5가 시작되는 첫항을 검색
 * upper -> 무조건 큰 수의 index
 * lower -> 같거나 큰 수의 index
+* loewr 일 경우에 [1,2,3,3,4] 에서 3을 탐색한 경우 첫번째로 mid 가 바로 3을 찾았는데 이때 만약에 right = mid - 1 을 하는 경우에는 이미 찾은 값을 건너뛰어버리는 경우가 발생하기 때문에 high = mid 로 진행한다.
+* upper 일 경우에는 [1,2,3,3,3,3,4,5] 에서 3이 첫번째로 탐색되었을 때 3이라는값보다 큰 값을 찾아야 하기 때문에 3을 left = right + 1 로 둔다. +1 을 하는 이유는 어짜피 3보다는 큰값이기 때문에 +1항을 탐색해도되기 때문이다.
+  * upper 일 경우에도 left 와 마찬가지로 mid 가 큰 값이라면 right = mid - 1 을 할 경우 해당 값이 정답일수도 있는 경우도 있기 때문에 right = mid 로 정해놓는다.
+  * 즉, ...3,3,4,4... 배열에서 mid 가 첫번째 4를 찾았는데 right 를 mid - 1 을 해버릴경우 정답인 '4' 는 건너뛰어 버리고 마지막 3을 마지막 범위로 두어서 오답이 나타날수있다.
 * ```java
   @Test
   public void Test(){
@@ -50,27 +55,35 @@
 
 
   public int binSearchBound(int[] arr, int key, boolean upper) {
-      int low = 0;
-      int high = arr.length;
+      int left = 0;
+      int right = arr.length; // 찾는 값이 배열의 있는 모든 값보다 큰 경우가 존재하기때문에
 
-      while(low < high){
-          int mid = (low + high)/2;
+      while(left < right){
+          int mid = (left + right)/2;
 
           if(key > arr[mid]){
-              low = mid + 1;
+              left = mid + 1;
+
           } else if(key < arr[mid]){
-              high = mid;
+              right = mid;
           } else{
               if(upper){
-                  low = mid + 1;
+                  left = mid + 1; 
               } else {
-                  high = mid;
+                  right = mid;
               }
           }
 
       }
-      return arr[low]; // 만약에 key가 배열 모든 값보다 초과할경우 arr.length 만큼 나오기 때문에 indexExcpetion 발생할수있음
-      // 개수를 구할경우: low - arr.length
+
+      if(left == arr.length){
+          return -1;
+      } else {
+          return left;
+          // lowerBound: 해당 값을 포함하여 큰 값의 개수를 구할경우: low - arr.length;
+          // upperBound: 해당 값보다 큰 값의 개수를 구할경우: low - arr.length;
+          // 해당 값을 구할경우 : arr[low];
+      }
   }
   
 ---
