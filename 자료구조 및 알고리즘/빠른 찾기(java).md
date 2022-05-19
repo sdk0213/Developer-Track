@@ -1600,7 +1600,8 @@ public void print(int[] arr, boolean[] visited) {
 ### 소인수분해
 * <details>
     <summary>코드 보기</summary>
-  
+ 
+    * 1 으로는 의미가 없으니 나누지 않으며 2부터 루트(n)까지 순서대로 해당 수로 못나눌때 까지 나눈다
     ```java
     private int[] Pf(int number){
         List<Integer> list = new ArrayList<>();
