@@ -1,4 +1,4 @@
-# 자료구조_deque
+# 자료구조_deque(Double Ended Queue)
 ---
 * deque 란 Stack + Queue 의 형태로 앞과 뒤에서 넣고 뺄수있는 자료구조이다.
 * 기본적인 사용방법은 Queue 매우 비슷하다.
