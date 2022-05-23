@@ -175,6 +175,7 @@
 * [camera2.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20API%20기초/camera2.md)
 * [sdcard.java - 예제코드](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20API%20기초/sdcard.java)
 * [전화상태 감시.md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20API%20기초/전화상태%20감시.md)
+* [ssh,sftp(JSch).md](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20API%20기초/ssh%2Csftp(JSch).md)
 
 
 # :bulb: 안드로이드 OS 관련
@@ -520,6 +521,7 @@
 * [단위테스트.md](https://github.com/sdk0213/RememberDevelop/blob/master/프로그래머%20기초/테스트주도개발/단위테스트.md)
 * [multi part.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/multi%20part.md)
 * [Agile vs DevOps.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/Agile%20vs%20DevOps.md)
+* [오픈소스_공개 SW 라이센스.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/오픈소스_공개%20SW%20라이센스.md)
 
  </div>
 </details>
