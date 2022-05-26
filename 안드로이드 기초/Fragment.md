@@ -64,8 +64,22 @@
 * 아무 Manager 나 골라써서 만든다고 하여서 문제가되지는(메모리 릭) 않는듯보이나 의도치 못한 버그가 생성될것으로 보이기 때문에 위 사항을 따라서 개발하여야함
 ---
 ### fragment 와 activity 간의 통신 설정하기
+##### Interface 이용한 리스너
+* 개인적인 경험으로는 노가다가 심함
 * ![Page1](https://user-images.githubusercontent.com/51182964/167651013-d2cd29e3-6cc5-4fb0-8994-938afd268d80.jpg)
 * ![Page2](https://user-images.githubusercontent.com/51182964/167651032-a878ca54-6253-4a92-9456-d0371b789f80.jpg)
+---
+### fragment 와 fragment 통신
+##### inteface 사용 - [자세히 알아보기_찰스의 안드로이드](https://www.charlezz.com/?p=1062)
+* 공식문서에 적혀있는 정석적인 방법
+* 매우 귀찮음
+##### AAC ViewModel - [자세히 알아보기_찰스의 안드로이드](https://www.charlezz.com/?p=1062)
+* viewModel 이 워낙 잘되어있어서 공유하기가 매우 편함
+##### RxJava2를 이용한 EventBus - [자세히 알아보기_찰스의 안드로이드](https://www.charlezz.com/?p=1062)
+##### navigation component로 넘기기 (개인적인 경험)
+* fragment -> fragment 로 전체화면 넘김시사용가능한 방법
+* navigation component 를 사용해야함
+* Navigation Arguments 사용했을때 interface 이 없어도 데이터를 주고 받기 편했다.
 
 ### 애니메이션
 * setCustomAnimations(enter, exit, popEnter, popExit)
