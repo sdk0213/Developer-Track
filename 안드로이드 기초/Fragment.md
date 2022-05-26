@@ -80,13 +80,23 @@
 * fragment -> fragment 로 전체화면 넘김시사용가능한 방법
 * navigation component 를 사용해야함
 * Navigation Arguments 사용했을때 interface 이 없어도 데이터를 주고 받기 편했다.
-
+---
 ### 애니메이션
 * setCustomAnimations(enter, exit, popEnter, popExit)
 * fromX(or Y)Delta -> toX(or Y)Delta
   * x1 -> x2 또는 y1 -> y2 로 이동
 * duration
   * 슬라이드 속도를 뜻하면 보통은 값이 200
+* 경우에 따라서 setCustomAnimations(param, param) 의 사용과 setCustomAnimations(param, param, param, param) 기 나뉨
+  * javadoc 설명을 보면 backstack 에는 작동하지 않는다고 적혀있음
+    * <img width="669" alt="스크린샷 2022-05-27 오전 12 01 55" src="https://user-images.githubusercontent.com/51182964/170515976-ff1fe477-972d-48fc-bdb8-2c0ca02c5b8e.png">
+  * setCustomAnimations(param, param) 는 백스택 처리를 안해주니 backstack 을 넣는다면 사용하면 안됨
+  * 코드상에서 아래와 같이 사용
+    * replace 의 경우
+      ```java
+      ft.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
+    * add 의 경우
+      ft.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_in_left, R.anim.slide_out_left, R.anim.slide_out_right); 
 * ```java
   mTransaction.setCustomAnimations(R.anim.slide_up, R.anim.slide_down,R.anim.slide_up, R.anim.slide_down);
 * slide_down.xml
