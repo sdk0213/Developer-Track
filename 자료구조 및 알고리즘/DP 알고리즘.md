@@ -31,3 +31,45 @@
         fiboData[n] = fibo(n-1) + fibo(n-2);
       return fiboData[n];
     }
+---
+### 2*n 타일링
+* d(n) = d(n-1) + d(n-2) + d(n-2)
+* ```java
+  import java.util.*;
+  import java.io.*;
+
+  class Main{
+
+      public static void main(String[] args){
+          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+          BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+
+
+          try {
+
+              int input = Integer.parseInt(br.readLine());
+
+              System.out.println(dp(input));
+
+              bw.close();
+              br.close();
+
+
+          } catch(Exception e){
+
+          }
+
+
+      }
+
+      static int[] d = new int[1001];
+
+      static int dp(int n){
+          if(n == 1) return 1;
+          if(n == 2) return 3;
+          if(d[n] != 0) return d[n];
+          return d[n] = (2*dp(n-2) + dp(n-1)) % 10007;
+      }
+
+  }
