@@ -523,6 +523,7 @@
 * [multi part.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/multi%20part.md)
 * [Agile vs DevOps.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/Agile%20vs%20DevOps.md)
 * [오픈소스_공개 SW 라이센스.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/오픈소스_공개%20SW%20라이센스.md)
+* [software와 hardware Thread.md](https://github.com/sdk0213/Developer-Track/blob/master/프로그래머%20기초/software와%20hardware%20Thread.md)
 
  </div>
 </details>
