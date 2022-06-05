@@ -1,4 +1,5 @@
 # (DIP)Dependency Inversion Principle
+* ![image](https://user-images.githubusercontent.com/51182964/172050341-e011707e-8959-43e9-b855-c72c1a7aec78.png)
 * "구체화(변동성이 큼)된것에 의존하지 말고 추상적(변동성이 작음)인것에 의존하라"
 * 소스 코드 단계에서의 의존을 역전시킨다는 의미이며 곧 개발자에게 의미있는것이며 런타임에서는 의존관계가 역전되지 않는다
 * 원칙
