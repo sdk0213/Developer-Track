@@ -1,3 +1,9 @@
+### JIT VS AOT
+* |컴파일 방식|배터리 사용량|CPU 사용량|용량|실행 속도|
+  |:--:|:--:|:--:|:--:|:--:|
+  |JIT|많음|높음|적게 차지|느림|
+  |AOT|적음|적음|많이 차지|빠름|
+  
 ### 참고하면 도움이 될만한 사진
 * ![](https://i.stack.imgur.com/hpwhy.png)
 * ![](https://i.stack.imgur.com/1kLrB.png)
