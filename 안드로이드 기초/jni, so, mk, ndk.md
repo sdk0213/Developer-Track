@@ -10,6 +10,7 @@
 
 + JNI
 	+ **J**ava **N**ative **I**nterface
+	+ support android frame work. but recently c or c++ not required any more. so used for some specific case
 	+ JVM위에서 실행되고 있는 Java 코드가 다음과 같은 라이브러리를 호출하거나 반대로 호출되는것을 가능하게 하는 프로그래밍 프레임워크
 		+ Native Application Program
 		+ c
