@@ -28,6 +28,8 @@
 * --location 또는 -L
  
  
-#### Multipart
-* 아래와 같이 boundary 를 설정하지 않아도 된다.
+#### Multipart Form
+* -F 또는 --form 을 사용
+* -F 또는 --form 를 사용하면 "Content-Type: multipart/form-data" 를 사용하지 않아도 된다.
+ * 추가적으로  boundary 를 설정하지 않아도 된다.
   * -H 'content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
