@@ -1,5 +1,7 @@
 ### 재귀를 사용한 DFS 탐색
 * DFS 같은경우는 재귀와 매우 비슷하고 직관적으로 이해가 쉬우며 더불어 코드 또한 짧아서 이를 사용하는것이 더 유리
+* <img width="771" alt="image" src="https://user-images.githubusercontent.com/51182964/201645867-17dfc778-bc9f-4b25-9b0f-f95eb7b90cca.png">
+
 ---
 ```java
 // 0 번 트랙은 실제 트랙에서 1번으로 취급하면 된다.
