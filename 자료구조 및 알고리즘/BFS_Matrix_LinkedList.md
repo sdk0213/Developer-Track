@@ -14,6 +14,7 @@
 * 정점들의 연결정보를 확인하고 싶을때는?
   * 인접행렬 -> 전부다 출력하여야함
   * 링크드리스트 -> [i] 번 출력하면된다. -> O(E)
+* <img width="771" alt="image" src="https://user-images.githubusercontent.com/51182964/201646014-26b1ce9f-693f-4f02-ac13-755d254db736.png">
 
 
 ```java
