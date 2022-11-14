@@ -1,6 +1,7 @@
 * DFS
   * 깊이 우선 탐색
 * ![dfs-vs-bfs](https://user-images.githubusercontent.com/51182964/149276674-29eac22f-974e-4c59-94e2-fd7559e20319.gif)
+* <img width="771" alt="image" src="https://user-images.githubusercontent.com/51182964/201645956-9aa65d19-e34c-4cc1-ada3-395ac84ff4d7.png">
 
 
 ```java
