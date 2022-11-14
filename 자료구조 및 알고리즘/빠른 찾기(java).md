@@ -813,6 +813,21 @@
   <summary>compareTo</summary>
 
 ### a.compareTo(b)
+* 문자열 오름/내림 차순
+  ```java
+  List<String> stringList = new ArrayList<>();
+
+  stringList.add("C");
+  stringList.add("B");
+  stringList.add("A");
+  stringList.add("D");
+
+  Collections.sort(stringList, (a, b) -> {
+      if(a.compareTo(b) > 0) return 1; // 오름차순.. 그 반대는 내림차순
+      else if(a.compareTo(b) < 0) return -1;
+      else return 0;
+  });
+
 * 문자열 비교시에는 아스키코드 값 차이만큼 반환함
   * ```java
     String numStr1 = "756";
