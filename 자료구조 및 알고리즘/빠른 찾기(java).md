@@ -1719,6 +1719,7 @@ public void print(int[] arr, boolean[] visited) {
  
  
     private String converterBin(int number, int bin){
+        if(number == 0) return "0";
         StringBuilder sb = new StringBuilder();
         while(number > 0){
             sb.append(number % bin);
