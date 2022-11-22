@@ -1708,10 +1708,14 @@ public void print(int[] arr, boolean[] visited) {
   
     <img width="313" alt="스크린샷 2022-01-09 오후 3 36 11" src="https://user-images.githubusercontent.com/51182964/148671948-4c5eb990-9945-4f2b-a335-b39db080c69c.png">
   </details>
+* 이걸로 사용하기
+  * ```java
+    String binary = Integer.toString(123123, 2); // < 10 -> N
+    String binary = Integer.parseInt(11010101, 2); // N -> 10
 * 10 -> N
   * ```java
     public void main().... {
-     
+    
         String binary = convertBin(123123, 2);
         binary = binary.replaceAll("^0+", ""); // 앞에 0 전부 제거 (000011010101) 과 같은 경우도 나올수 있기 때문에
  
