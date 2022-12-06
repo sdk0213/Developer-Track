@@ -143,6 +143,11 @@
 
               Node nxt_node = adjList.get(cur_node.idx).get(i);
 
+              // if (dist[cur_node.idx] + nxt_node.cost < dist[nxt_node.idx]) <--- 와 동일하다.
+              // 왜냐하면 다익스트라는 가장 짧은 비용의 거리를 뽑았을경우 이미 해당 값이 이미 최솟값을 갱신되었다는것을 가정으로 하는 그리디 알고리즘이기 때문이다.
+              // "(중략)최소 비용을 갖는 노드로 선택이 되었다면, 그 노드는 앞으로 다른 노드를 방문하는 것과 관계없이 항상 값이 갱신되지 않을 것이라는 말이다. 다익스트라 알고리즘은 이 명제를 이용하여 정당성을 증명"
+              // [ 이해가 안될경우 다익스트라의 증명을 정리한 https://sskl660.tistory.com/59 블로그 내용을 참고 바람 ]
+             
               if (cur_node.cost + nxt_node.cost < dist[nxt_node.idx]) {
                   dist[nxt_node.idx] = cur_node.cost + nxt_node.cost;
                   queue.offer(new Node(nxt_node.idx, dist[nxt_node.idx]));
