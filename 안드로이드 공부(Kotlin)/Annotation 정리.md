@@ -1,6 +1,8 @@
 # Kotlin 에서 자주 쓰이는 Annotation 정리 - [출처](https://codechacha.com/ko/kotlin-annotations/)
 # [안드로이드에서 자주쓰이는 어노테션은 여기로 이동](https://medium.com/hongbeomi-dev/android-annotation-정리-8d0b5b6845c3)
 ---
+### [annotation 활용 - 강남언니 블로그](https://blog.gangnamunni.com/post/kotlin-annotation/)
+
 ### @JvmName
 ##### 역할
 * 바이트코드로 변환할 때 JVM 시그니쳐를 변경할 때 사용
