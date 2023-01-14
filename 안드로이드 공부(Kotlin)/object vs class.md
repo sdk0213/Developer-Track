@@ -6,6 +6,7 @@
 ### object
 ##### class + signleton = object (싱글톤)
 * object를 키워드를 사용함으로서 singleton 정의 boilerplate code 를 절약할수있다.
+* lazy 키워드를 사용하여 실제 사용할때 객체가 생성되도록 설정하는것이 좋다
 * ```kotlin
   object SomeFactory {
       val somes = mutableListOf<Some>()
