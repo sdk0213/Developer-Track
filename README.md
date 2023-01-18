@@ -377,7 +377,7 @@
 # :bulb: 안드로이드 레이아웃(layout)
 ## [Android Layout](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20레이아웃(layout))
 * [맨 위로 가기 ⬆️](#book-mark)
-* [Naming Rule](https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20레이아웃(layout))
+* [Naming Rule]([https://github.com/sdk0213/Developer-Track/tree/master/안드로이드%20레이아웃(layout)](https://github.com/sdk0213/Developer-Track/blob/master/안드로이드%20레이아웃(layout)/Naming%20Rule.md))
 * [Shape 요소.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/Shape%20요소.md)
 * [ripple(물결효과).md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/ripple(물결효과).md)
 * [selector.md](https://github.com/sdk0213/RememberDevelop/blob/master/안드로이드%20레이아웃(layout)/selector.md)
