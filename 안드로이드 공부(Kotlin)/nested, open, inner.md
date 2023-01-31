@@ -19,7 +19,49 @@
 * open -> 상속, 오버라이드 
 ---
 ### inner
-* 코틀린에서는 **한 클래스안에 다른 클래스를 정의하면 기본적으로는 중첩 클래스**가 되고, **내부 클래스로 만들고 싶다면 inner 키워드**로 클래스를 선언해야 한다
+* 코틀린에서는 **한 클래스안에 다른 클래스를 정의하면 기본적으로는 중첩 클래스(static nested class)** 가 되고, **내부 클래스로 만들고 싶다면 inner 키워드**로 클래스를 선언해야 한다
+* 기본적인 static nested class 로 되기에 다음과 같이 OuterClass 변수에 접근이 필요하거나 두 가지 해결방법이 있다. - [출처](https://thdev.tech/kotlin/2020/11/17/kotlin_effective_11/)
+  * ```kotlin
+    class Outer {
+
+        private val outer = "Outer"
+
+        class InnerClass {
+
+            init {
+                print(outer) // <------- 에러 발생
+            }
+        }
+    }
+    
+  * 해결책 1
+    ```kotlin
+    class Outer {
+
+        private val outer = "Outer"
+
+        inner class InnerClass {
+
+            init {
+                print(outer)
+            }
+        }
+    }
+  * 해결책 2
+    ```kotlin
+    class Outer {
+
+        private val outer = "Outer"
+
+        class InnerClass(
+            private val out: Outer
+        ) {
+
+            init {
+                print(out.outer)
+            }
+        }
+    }
 * 주의점
   * Outer 클래스를 참조하기에 메모리 누수가능성이 있다.
 * ```kotlin
